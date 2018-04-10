@@ -10,7 +10,8 @@ function roots_setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus(array(
-    'primary_navigation' => __('Primary Navigation', 'roots')
+    'primary_navigation' => __('Primary Navigation', 'roots'),
+    'footer_menu' => __('Footer Navigation', 'roots')
   ));
 
   // Add post thumbnails
@@ -47,3 +48,36 @@ function roots_widgets_init() {
   ));
 }
 add_action('widgets_init', 'roots_widgets_init');
+
+/**
+ * Show/Hide/Modify Existing post types
+ */
+function roots_remove_menu_item() {
+  global $menu;
+  global $submenu;
+  remove_menu_page( 'edit-comments.php' ); //Removing the Comments (unused)
+  $menu[5][0] = 'News';
+  $menu[5][6] = 'dashicons-media-document';
+  $submenu['edit.php'][5][0] = 'Articles';
+  $submenu['edit.php'][10][0] = 'Add Articles';
+ }
+ add_action( 'admin_menu', 'roots_remove_menu_item' );
+
+/**
+ * Modify 'Post' page, tooltip and titles to say something else
+ */
+function roots_admin_labels() {
+  global $wp_post_types;
+  $labels = &$wp_post_types['post']->labels;
+  $labels->name = 'News';
+  $labels->singular_name = 'Article';
+  $labels->add_new = 'Add Article';
+  $labels->add_new_item = 'Add Article';
+  $labels->edit_item = 'Edit Articles';
+  $labels->new_item = 'Article';
+  $labels->view_item = 'View Articles';
+  $labels->search_items = 'Search Articles';
+  $labels->not_found = 'No Articles found';
+  $labels->not_found_in_trash = 'No Articles found in Trash';
+ }
+ add_action( 'init', 'roots_admin_labels' );

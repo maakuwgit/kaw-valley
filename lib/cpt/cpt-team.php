@@ -34,7 +34,7 @@ if ( ! function_exists('register_team_custom_post_type') ) {
       'show_in_menu'        => true,
       'show_in_nav_menus'   => false,
       'show_in_admin_bar'   => true,
-      'menu_position'       => 20,
+      'menu_position'       => 21,
       'menu_icon'           => 'dashicons-groups',
       'can_export'          => true,
       'has_archive'         => true,
