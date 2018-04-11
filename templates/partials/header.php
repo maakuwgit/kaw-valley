@@ -21,7 +21,7 @@
       </a>
     </figure>
     <?php if (has_nav_menu('primary_navigation')) : ?>
-    <nav primary-nav" id="primary-nav" role="navigation">
+    <nav class="primary-nav" id="primary-nav" role="navigation">
       <?php
       wp_nav_menu(array('theme_location'  => 'primary_navigation',
                         'menu_class'      => 'row'));

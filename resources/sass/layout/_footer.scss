@@ -10,7 +10,7 @@ body > footer {
       justify-content: space-between;
     }
 
-    @include screen-md-up {
+    @include screen-lg-up {
       .footer__copyright {
         text-align: left;
       }

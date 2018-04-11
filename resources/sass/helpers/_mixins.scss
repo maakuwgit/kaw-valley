@@ -107,6 +107,18 @@
   }
 }
 
+@mixin screen-xl-up {
+  @media (min-width: $screen-xl) {
+    @content;
+  }
+}
+
+@mixin screen-xl-only {
+  @media (min-width: $screen-xl) and (max-width: $screen-xl-maximum) {
+    @content;
+  }
+}
+
 @mixin screen-lg {
   @media (max-width: $screen-lg-maximum) {
     @content;
@@ -181,6 +193,18 @@
 
 @mixin screen-xxs {
   @media (max-width: $screen-xxs-maximum) {
+    @content;
+  }
+}
+
+@mixin screen-xxs-up {
+  @media (min-width: $screen-xxs) {
+    @content;
+  }
+}
+
+@mixin screen-xxs-only {
+  @media (min-width: $screen-xxs) and (max-width: $screen-xxs-maximum) {
     @content;
   }
 }

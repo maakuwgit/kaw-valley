@@ -45,52 +45,47 @@
       width: 100% / $i * $j;
       max-width: 100% / $i * $j;
     }
-    .col-xl-#{$j}of#{$i} {
-      width: 100% / $i * $j;
-      max-width: 100% / $i * $j;
-      @include screen-xl {
-        width: 100%;
-        max-width: 100%;
+
+
+    @include screen-xl-up {
+      .col-xl-#{$j}of#{$i} {
+        width: 100% / $i * $j;
+        max-width: 100% / $i * $j;
       }
     }
-    .col-lg-#{$j}of#{$i} {
-      width: 100% / $i * $j;
-      max-width: 100% / $i * $j;
-      @include screen-lg {
-        width: 100%;
-        max-width: 100%;
+
+    @include screen-lg-only {
+      .col-lg-#{$j}of#{$i} {
+        width: 100% / $i * $j;
+        max-width: 100% / $i * $j;
       }
     }
-    .col-md-#{$j}of#{$i} {
-      width: 100% / $i * $j;
-      max-width: 100% / $i * $j;
-      @include screen-md {
-        width: 100%;
-        max-width: 100%;
+
+    @include screen-md-only {
+      .col-md-#{$j}of#{$i} {
+        width: 100% / $i * $j;
+        max-width: 100% / $i * $j;
       }
     }
-    .col-sm-#{$j}of#{$i} {
-      width: 100% / $i * $j;
-      max-width: 100% / $i * $j;
-      @include screen-sm {
-        width: 100%;
-        max-width: 100%;
+
+    @include screen-sm-only {
+      .col-sm-#{$j}of#{$i} {
+        width: 100% / $i * $j;
+        max-width: 100% / $i * $j;
       }
     }
-    .col-xs-#{$j}of#{$i} {
-      width: 100% / $i * $j;
-      max-width: 100% / $i * $j;
-      @include screen-xs {
-        width: 100%;
-        max-width: 100%;
+
+    @include screen-xs-only {
+      .col-xs-#{$j}of#{$i} {
+        width: 100% / $i * $j;
+        max-width: 100% / $i * $j;
       }
     }
-    .col-xxs-#{$j}of#{$i} {
-      width: 100% / $i * $j;
-      max-width: 100% / $i * $j;
-      @include screen-xxs {
-        width: 100%;
-        max-width: 100%;
+
+    @include screen-xxs-only {
+      .col-xxs-#{$j}of#{$i} {
+        width: 100% / $i * $j;
+        max-width: 100% / $i * $j;
       }
     }
   }
