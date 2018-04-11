@@ -88,7 +88,7 @@ function roots_theme_activation_options_render_page() { ?>
                 <option selected="selected" value="true"><?php echo _e('Yes', 'roots'); ?></option>
                 <option value="false"><?php echo _e('No', 'roots'); ?></option>
               </select>
-              <p class="description"><?php printf(__('Create the Header and Footer Navigation menu and set the location', 'roots')); ?></p>
+              <p class="description"><?php printf(__('Create the Primary and Secondary Navigation menu and set the location', 'roots')); ?></p>
             </fieldset>
           </td>
         </tr>
@@ -96,7 +96,7 @@ function roots_theme_activation_options_render_page() { ?>
           <td>
             <fieldset>
               <legend class="screen-reader-text"><span><?php _e('Add pages to menu?', 'roots'); ?></span></legend>
-              <select name="roots_theme_activation_options[add_pages_to_header_navigation]" id="add_pages_to_header_navigation">
+              <select name="roots_theme_activation_options[add_pages_to_primary_navigation]" id="add_pages_to_primary_navigation">
                 <option selected="selected" value="true"><?php echo _e('Yes', 'roots'); ?></option>
                 <option value="false"><?php echo _e('No', 'roots'); ?></option>
               </select>
@@ -168,36 +168,36 @@ function roots_theme_activation_action() {
   if ($roots_theme_activation_options['create_navigation_menus'] === 'true') {
     $roots_theme_activation_options['create_navigation_menus'] = false;
 
-    $roots_header_nav_theme_mod = $roots_footer_nav_theme_mod = false;
+    $roots_primary_nav_theme_mod = $roots_secondary_nav_theme_mod = false;
 
-    $header_nav = wp_get_nav_menu_object(__('Header Navigation', 'roots'));
-    $footer_nav = wp_get_nav_menu_object(__('Footer Navigation', 'roots'));
+    $header_nav = wp_get_nav_menu_object(__('Primary Navigation', 'roots'));
+    $footer_nav = wp_get_nav_menu_object(__('Secondary Navigation', 'roots'));
 
     if (!$header_nav) {
-      $header_nav_id = wp_create_nav_menu(__('Header Navigation', 'roots'), array('slug' => 'header_navigation'));
-      $roots_header_nav_theme_mod['header_navigation'] = $header_nav_id;
+      $primary_nav_id = wp_create_nav_menu(__('Primary Navigation', 'roots'), array('slug' => 'primary_navigation'));
+      $roots_primary_nav_theme_mod['primary_navigation'] = $primary_nav_id;
     } else {
-      $roots_header_nav_theme_mod['header_navigation'] = $header_nav->term_id;
+      $roots_primary_nav_theme_mod['primary_navigation'] = $header_nav->term_id;
     }
 
     if (!$footer_nav) {
-      $footer_nav_id = wp_create_nav_menu(__('Footer Navigation', 'roots'), array('slug' => 'footer_navigation'));
-      $roots_footer_nav_theme_mod['footer_navigation'] = $footer_nav_id;
+      $secondary_nav_id = wp_create_nav_menu(__('Secondary Navigation', 'roots'), array('slug' => 'secondary_navigation'));
+      $roots_secondary_nav_theme_mod['secondary_navigation'] = $secondary_nav_id;
     } else {
-      $roots_footer_nav_theme_mod['footer_navigation'] = $footer_nav->term_id;
+      $roots_secondary_nav_theme_mod['secondary_navigation'] = $footer_nav->term_id;
     }
 
-    if ($roots_header_nav_theme_mod || $roots_footer_nav_theme_mod) {
-      set_theme_mod('nav_menu_locations', [$roots_header_nav_theme_mod, $roots_footer_nav_theme_mod]);
+    if ($roots_primary_nav_theme_mod || $roots_secondary_nav_theme_mod) {
+      set_theme_mod('nav_menu_locations', [$roots_primary_nav_theme_mod, $roots_secondary_nav_theme_mod]);
     }
   }
 
-  if ($roots_theme_activation_options['add_pages_to_header_navigation'] === 'true') {
-    $roots_theme_activation_options['add_pages_to_header_navigation'] = false;
+  if ($roots_theme_activation_options['add_pages_to_primary_navigation'] === 'true') {
+    $roots_theme_activation_options['add_pages_to_primary_navigation'] = false;
 
     $header_nav = wp_get_nav_menu_object(__('Primary Navigation', 'roots'));
-    $header_nav_term_id = (int) $header_nav->term_id;
-    $menu_items= wp_get_nav_menu_items($header_nav_term_id);
+    $primary_nav_term_id = (int) $header_nav->term_id;
+    $menu_items= wp_get_nav_menu_items($primary_nav_term_id);
 
     if (!$menu_items || empty($menu_items)) {
       $pages = get_pages();
@@ -208,7 +208,7 @@ function roots_theme_activation_action() {
           'menu-item-type' => 'post_type',
           'menu-item-status' => 'publish'
         );
-        wp_update_nav_menu_item($header_nav_term_id, 0, $item);
+        wp_update_nav_menu_item($primary_nav_term_id, 0, $item);
       }
     }
   }

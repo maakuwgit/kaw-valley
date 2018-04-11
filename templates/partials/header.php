@@ -20,10 +20,10 @@
     <?php endif; ?>
       </a>
     </figure>
-    <?php if (has_nav_menu('header_navigation')) : ?>
+    <?php if (has_nav_menu('primary_navigation')) : ?>
     <nav primary-nav" id="primary-nav" role="navigation">
       <?php
-      wp_nav_menu(array('theme_location'  => 'header_navigation',
+      wp_nav_menu(array('theme_location'  => 'primary_navigation',
                         'menu_class'      => 'row'));
       ?>
     </nav>
