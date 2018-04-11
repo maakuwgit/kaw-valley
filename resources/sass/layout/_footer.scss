@@ -1,29 +1,30 @@
 /**
  * Footer styles
  */
-.footer {
+body > footer {
 
-}
-
-.footer__bottom {
-
-  .row {
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-.footer__credits {
-  text-align: right;
-}
-
-.footer__credits,
-.footer__copyright,
-.footer__social {
-  flex: 0 0 auto;
-
-  @include screen-sm {
-    flex: 1 1 100%;
+  .footer__bottom {
     text-align: center;
+    &.row {
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include screen-md-up {
+      .footer__copyright {
+        text-align: left;
+      }
+      .footer__ll-logo {
+        text-align: right;
+      }
+    }
   }
+
+  .footer__credits,
+  .footer__copyright,
+  .footer__ll-logo,
+  .footer__social {
+    flex: 0 0 auto;
+  }
+
 }

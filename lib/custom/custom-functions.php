@@ -141,9 +141,10 @@ function ll_get_forms_as_options() {
  * "social_name" => "social_link". To use, make sure all social media
  * options under "Contact Options" are prefixed with _options_contact_social.
  * Example: _options_contact_social_facebook
+ * @param  $css a css class to add to the ul element
  * @return array array of social media sites and links
  */
-function ll_get_social_list() {
+function ll_get_social_list( $css = '' ) {
 
   $social_media_sites = array(
     'facebook' => get_field( 'social_facebook', 'option' ),
@@ -158,7 +159,8 @@ function ll_get_social_list() {
   $social_media_sites = ll_filter_array( $social_media_sites );
 
   if ( $social_media_sites ) {
-    echo '<ul class="social-list">';
+    if ( $css !== '' ) $css = ' ' . $css;
+    echo '<ul class="social-list'.$css.'">';
       foreach ( $social_media_sites as $social => $link ) {
         echo '<li class="social-list__item"><a class="social-list__link '.$social.'" href="'.$link.'" target="_blank"><svg class="icon icon-'.$social.'"><use xlink:href="#icon-'.$social.'"></use></svg></a></li>';
       }
