@@ -8,17 +8,17 @@
 
 html {
   position: relative;
-  min-height: 100%;
-  font-size: 62.5%;
+  min-height: 100vh;
+  font-size: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   color: $text-dark;
-  background-color: white;
+  background-color: $black;
   @include font-size(16);
-  line-height: 1.4;
+  line-height: 1;
 
   /**
    * Set after content to use for easily checking
@@ -46,4 +46,17 @@ body {
   text-shadow: none;
   color: $selection;
   background: $selection-bg;
+}
+
+button {
+  transition: all 0.10s ease-in-out;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+code {
+  white-space: normal;
 }

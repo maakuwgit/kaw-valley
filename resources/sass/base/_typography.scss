@@ -9,8 +9,20 @@
         url('../fonts/SuisseIntl-Medium.woff') format('woff'),
         url('../fonts/SuisseIntl-Medium.ttf') format('truetype'),
         url('../fonts/SuisseIntl-Medium.svg#SuisseIntl-Medium') format('svg');
-    font-weight: 500;
+    font-weight: bold;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuisseIntl-MediumItalic';
+    src: url('../fonts/SuisseIntl-MediumItalic.eot');
+    src: url('../fonts/SuisseIntl-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SuisseIntl-MediumItalic.woff2') format('woff2'),
+        url('../fonts/SuisseIntl-MediumItalic.woff') format('woff'),
+        url('../fonts/SuisseIntl-MediumItalic.ttf') format('truetype'),
+        url('../fonts/SuisseIntl-MediumItalic.svg#SuisseIntl-MediumItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
 }
 
 @font-face {
@@ -27,49 +39,13 @@
 
 @font-face {
     font-family: 'SuisseIntl';
-    src: url('../fonts/SuisseIntl-SemiBold.eot');
-    src: url('../fonts/SuisseIntl-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SuisseIntl-SemiBold.woff2') format('woff2'),
-        url('../fonts/SuisseIntl-SemiBold.woff') format('woff'),
-        url('../fonts/SuisseIntl-SemiBold.ttf') format('truetype'),
-        url('../fonts/SuisseIntl-SemiBold.svg#SuisseIntl-SemiBold') format('svg');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SuisseIntl';
     src: url('../fonts/SuisseIntl-Bold.eot');
     src: url('../fonts/SuisseIntl-Bold.eot?#iefix') format('embedded-opentype'),
         url('../fonts/SuisseIntl-Bold.woff2') format('woff2'),
         url('../fonts/SuisseIntl-Bold.woff') format('woff'),
         url('../fonts/SuisseIntl-Bold.ttf') format('truetype'),
         url('../fonts/SuisseIntl-Bold.svg#SuisseIntl-Bold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SuisseIntl-MediumItalic';
-    src: url('../fonts/SuisseIntl-MediumItalic.eot');
-    src: url('../fonts/SuisseIntl-MediumItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SuisseIntl-MediumItalic.woff2') format('woff2'),
-        url('../fonts/SuisseIntl-MediumItalic.woff') format('woff'),
-        url('../fonts/SuisseIntl-MediumItalic.ttf') format('truetype'),
-        url('../fonts/SuisseIntl-MediumItalic.svg#SuisseIntl-MediumItalic') format('svg');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SuisseIntl-Book';
-    src: url('../fonts/SuisseIntl-Book.eot');
-    src: url('../fonts/SuisseIntl-Book.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SuisseIntl-Book.woff2') format('woff2'),
-        url('../fonts/SuisseIntl-Book.woff') format('woff'),
-        url('../fonts/SuisseIntl-Book.ttf') format('truetype'),
-        url('../fonts/SuisseIntl-Book.svg#SuisseIntl-Book') format('svg');
-    font-weight: normal;
+    font-weight: bolder;
     font-style: normal;
 }
 
@@ -79,7 +55,7 @@
 
 a {
   color: $link-color;
-  text-decoration: $link-hover-decoration;
+  text-decoration: $link-decoration;
   transition: all 0.10s ease-in-out;
 
   &:hover {
@@ -88,50 +64,72 @@ a {
   }
 }
 
-button {
-  transition: all 0.10s ease-in-out;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-code {
-  white-space: normal;
-}
-
 h1,.h1, h2, .h2, h3,.h3, h4, .h4, h5, .h5, h6, .h6 {
-  margin: 0.5em auto;
-  line-height: 1.2;
+  margin: auto;
+  line-height: 1;
+}
+
+h1, .h1,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+.large {
+  font-weight: $text-medium;
+}
+
+.hero,
+h2,.h2 {
+  font-weight: $text-bold;
 }
 
 h1,
 .h1 {
-  font-size: 2.441em;
+  font-size: 1.5625rem;
+  line-height: 33px;
+  line-height: 2;
 }
 
 h2,
 .h2 {
-  font-size: 1.953em;
+  font-size: 4.0625rem;
+  line-height: 4;
 }
 
 h3,
 .h3 {
-  font-size: 1.563em;
+  font-size: 2.8125rem;
+  line-height: 58px;
+  line-height: 3;
 }
 
 h4,
 .h4 {
   font-size: 1.25em;
+  line-height: 39px;
+  line-height: 2.1875;
 }
 
 h5,
 .h5 {
-  font-size: 1em;
+  font-size: 1.125rem;
+  line-height: 18px;
+  line-height: 1.25;
 }
 
 h6,
 .h6 {
-  font-size: 0.8em;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1;
+}
+
+p, td, li, dd, address {
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.625;
+}
+
+small, .small {
+  font-size: 0.875rem;
+  line-height: 1.375;
 }

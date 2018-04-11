@@ -1,20 +1,47 @@
 /**
- * Navbar styles
+ * Header (only DIRECTLY beneath the body tag) styles
  */
+$logo_width: 75px;
+$logo_height: 52px;
+$padding_top: 1.25rem;
+$padding_bottom: $padding_top;
 
 // Top nav
-.navbar {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-}
+body > header {
+  padding-top: $padding_top;
+  padding-bottom: $padding_bottom;
 
-.primary-nav {
-  display: block;
+  a {
+    display: block;
+  }
 
-  @include screen-sm {
-    display: none;
+  nav {
+    display: block;
+    ul {
+      padding: 0;
+      margin: auto;
+      list-style: none;
+    }
+    @include screen-sm {
+      display: none;
+    }
+  }
+
+  .container.row {
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: stretch;
+  }
+
+  a.logo {
+    width: $logo_width;
+    height: $logo_height;
+    img {
+      position: absolute;
+      clip: rect(0, $logo_width, $logo_height, 0);
+      width: auto;
+      height: $logo_height;
+    }
   }
 }
 

@@ -11,10 +11,13 @@
  * _________________________________*/
 
  // Base colors
-$selection: #000;
-$selection-bg: #ccc;
 $white: white;
 $black: black;
+
+// Markup Oriented
+$text-color: $black;
+$selection: $black;
+$selection-bg: #ccc;
 
 // Official social colors
 $facebook: #3461a1;
@@ -25,6 +28,11 @@ $google: #d44a2c;
 $danger-color: #a94442;
 $danger-background: #f2dede;
 $danger-border: #ebccd1;
+
+// Font Weights
+$text-normal: normal;
+$text-medium: bold;
+$text-bold: bolder;
 
 // Theme colors
 $text-dark: #424242;
@@ -92,6 +100,7 @@ $container-md:    ($screen-md - $grid-gutter-width);
 $container-lg:    ($screen-lg - $grid-gutter-width);
 
 // Links
-$link-color: darkblue;
+$link-color: $text-color;
+$link-decoration: none;
 $link-hover-color: blue;
 $link-hover-decoration: none;

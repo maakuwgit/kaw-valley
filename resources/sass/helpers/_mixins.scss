@@ -51,7 +51,7 @@
     $height: nth($font-size, 2);
     // set the sizes
     font-size: $size + px;
-    font-size: ($size / 10) + rem;
+    font-size: ($size / 16) + rem;
     @if (length($font-size) > 1) {
       line-height: $height;
     }
@@ -59,7 +59,7 @@
   // If is number
   @else if type-of($font-size) == "number" {
     font-size: ($font-size) + px;
-    font-size: ($font-size / 10) + rem;
+    font-size: ($font-size / 16) + rem;
   }
 }
 

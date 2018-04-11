@@ -32,11 +32,8 @@
 }
 
 %flex-center {
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-align-items: center;
   align-items: center;
 }
 
@@ -44,8 +41,6 @@
 %vertical-align {
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -68,6 +63,7 @@
   margin: -1px;
   padding: 0;
   overflow: hidden;
+  clip: rect(0 0 0 0);
   clip: rect(0,0,0,0);
   border: 0;
 }
@@ -318,8 +314,14 @@
 }
 
 //theme specific colors
-//
-//
-//.text-primary {
-// color: $primary-color;
-//}
+article.dark,
+aside.dark,
+footer.dark,
+header.dark,
+main.dark,
+section.dark {
+  background-color: $black;
+  * {
+    color: $white;
+  }
+}
