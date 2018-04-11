@@ -1,6 +1,6 @@
 <?php
 /**
- * Register the custom post type
+ * Register the Team custom post type
  */
 if ( ! function_exists('register_team_custom_post_type') ) {
 

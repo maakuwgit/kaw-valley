@@ -1,6 +1,6 @@
 <?php
 /**
- * Register the custom post type
+ * Register the Career custom post type
  */
 if ( ! function_exists('register_career_custom_post_type') ) {
 
