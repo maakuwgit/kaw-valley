@@ -56,9 +56,11 @@ body {
       padding: 0;
       margin: 0 auto;
       list-style: none;
-    }
-    @include screen-sm {
-      display: none;
+      @include screen-sm {
+        &.header__menu {
+          width: 100%;
+        }
+      }
     }
   }
 
@@ -73,6 +75,13 @@ body {
   margin-right: 3rem;
   .menu-item a {
     padding: 1rem 2rem;
+    @include screen-sm {
+      padding: 1rem;
+      font-size: 0.875rem;
+    }
+  }
+  @include screen-xs {
+    display: none;
   }
 }
 #secondary-nav {
@@ -99,6 +108,16 @@ body {
   @include screen-md {
     top: $offset;
     min-height: calc(100vh - #{$offset} );
+  }
+
+  @include screen-sm {
+    .header__menu:first-of-type {
+     > li {
+        width: 50%;
+        margin-left: 0;
+        float: left;
+      }
+    }
   }
 
   &:visible + #primary-nav {

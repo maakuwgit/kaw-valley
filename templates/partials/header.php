@@ -5,8 +5,8 @@
 ?>
 <header class="navbar dark" role="banner">
   <div class="container row nowrap">
-    <figure class="col-sm-10of12 col-md-6of12 col-lg-6of12">
-      <a href="<?php echo $href ?>" class="logo">
+    <figure>
+      <a href="<?php echo $href ?>" class="logo block">
     <?php if ( $logo ) : ?>
         <img class="logo logo--header" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>">
     <?php else : ?>
@@ -16,7 +16,7 @@
     </figure>
     <nav class="secondary-nav" id="secondary-nav" role="navigation">
       <div class="container row text-left">
-        <ul class="no-bullet header__menu col-md-4of12 col-lg-6of12">
+        <ul class="no-bullet header__menu col-sm-4of12 col-md-4of12 col-lg-6of12">
         <?php if (has_nav_menu('secondary_navigation')) : ?>
             <li>
               <h5>General.</h5>
@@ -56,7 +56,7 @@
               </nav>
             </li><!-- Services -->
         <?php endif; ?>
-          </ul>
+        </ul>
         <?php
             $args = array(
                 'post_type'     => 'location',
@@ -69,7 +69,7 @@
 
             if ( $locations->have_posts() ) :
         ?>
-          <ul class="no-bullet header__menu col-md-4of12 col-lg-6of12">
+          <ul class="no-bullet header__menu col-sm-8of12 col-md-8of12 col-lg-6of12">
             <li>
             <dl class="menu row">
               <?php
@@ -83,8 +83,8 @@
                   <dt class="h5"><?php echo $title; ?></dt>
                   <dd>
                     <address>2319 North Jackson<br>Junction City, KS 66441</address>
-                    <a href="tel:+17857625040">+ 785.762.5040</a>
-                    <a href="mailto:jc@kveng.com">jc@kveng.com</a>
+                    <a class="block" href="tel:+17857625040">+ 785.762.5040</a>
+                    <a class="block" href="mailto:jc@kveng.com">jc@kveng.com</a>
                   </dd>
                 </div>
               <?php
