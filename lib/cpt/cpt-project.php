@@ -1,6 +1,6 @@
 <?php
 /**
- * Register the Portfolio custom post type
+ * Register the Project custom post type
  */
 if ( ! function_exists('register_project_custom_post_type') ) {
 
@@ -33,8 +33,8 @@ if ( ! function_exists('register_project_custom_post_type') ) {
       'show_in_menu'        => true,
       'show_in_nav_menus'   => false,
       'show_in_admin_bar'   => true,
-      'menu_position'       => 9,
-      'menu_icon'           => 'dashicons-id-alt',
+      'menu_position'       => 8,
+      'menu_icon'           => 'dashicons-portfolio',
       'can_export'          => true,
       'has_archive'         => true,
       'exclude_from_search' => true,

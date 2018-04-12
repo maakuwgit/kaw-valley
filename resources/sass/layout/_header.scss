@@ -1,24 +1,60 @@
 /**
  * Header (only DIRECTLY beneath the body tag) styles
  */
-$logo_width: 75px;
-$logo_height: 52px;
+$logo_width: 4.6875rem;
+$logo_height: 3.25rem;
 $padding_top: 1.25rem;
 $padding_bottom: $padding_top;
+$admin_bar: 2.875rem;
+$admin_bar_lg: 2rem;
+$offset: $logo_height + $padding-top + $padding-bottom;
+$offset_admin: $logo_height + $padding-top + $padding-bottom + $admin_bar;
+$offset_lg_admin: $logo_height + $padding-top + $padding-bottom + $admin_bar_lg;
 
 // Top nav
-body > header {
-  padding-top: $padding_top;
-  padding-bottom: $padding_bottom;
+body {
+  &.locked {
+    height: 100vh;
+    overflow: hidden;
+  }
+  &.admin-bar > header {
+    top: $admin_bar;
+    @include screen-lg-up {
+      top: $admin_bar_lg;
+    }
+  }
+  > header {
+    position: fixed;
+    top: 0;
+    right:0;
+    left: 0;
+    z-index: 25;
+    padding-top: $padding_top;
+    padding-bottom: $padding_bottom;
 
-  a {
-    display: block;
+    a {
+      display: inline-block;
+      &.logo {
+        width: $logo_width;
+        height: $logo_height;
+        img {
+          position: absolute;
+          clip: rect(0, $logo_width, $logo_height, 0);
+          width: auto;
+          height: $logo_height;
+        }
+      }
+    }
+
+    dd, dt, h5, .h5, .menu {
+      margin-bottom: 1.5rem;
+    }
   }
 
   nav {
     ul {
       padding: 0;
-      margin: auto;
+      margin: 0 auto;
       list-style: none;
     }
     @include screen-sm {
@@ -31,30 +67,52 @@ body > header {
     align-content: stretch;
     align-items: stretch;
   }
-
-  a.logo {
-    width: $logo_width;
-    height: $logo_height;
-    img {
-      position: absolute;
-      clip: rect(0, $logo_width, $logo_height, 0);
-      width: auto;
-      height: $logo_height;
-    }
-  }
 }
 
-.dropdown-menu.collapsed {
+#primary-nav {
+  margin-right: 3rem;
+  .menu-item a {
+    padding: 1rem 2rem;
+  }
+}
+#secondary-nav {
+  position: fixed;
+  top: $offset;
+  right: 0;
+  left: 0;
+  z-index: 20;
   display: none;
+  width: 100vw;
+  overflow: hidden;
+  min-height: calc(100vh - #{$offset} );
+  background-color: $black;
+
+  body.admin-bar & {
+    top: $offset_lg_admin;
+    min-height: calc(100vh - #{$offset_lg_admin} );
+    @include screen-md {
+      top: $offset_admin;
+      min-height: calc(100vh - #{$offset_admin} );
+    }
+  }
+
+  @include screen-md {
+    top: $offset;
+    min-height: calc(100vh - #{$offset} );
+  }
+
+  &:visible + #primary-nav {
+    display: none;
+  }
 }
 
 .navbar-toggle {
   display: none;
   background-color: transparent;
-  border-color: #000;
+  border-color: $white;
 
   .icon-bar {
-    background-color: #000;
+    background-color: $white;
   }
 
   @include screen-sm {
@@ -73,10 +131,11 @@ body > header {
 // navbar-toggle
 // ==================================================
 .navbar-toggle {
-  padding: 15px 15px;
-  display: none;
+  padding: 1rem;
+  display: inline-block;
   cursor: pointer;
-
+  position: absolute;
+  right: -1rem;
   transition-property: opacity, filter;
   transition-duration: 0.15s;
   transition-timing-function: linear;
@@ -90,13 +149,9 @@ body > header {
   border: 0;
   margin: 0;
   overflow: visible;
-
-  @include screen-nav-mobile {
-    display: inline-block;
-  }
+  z-index:25;
 
   &:hover {
-    opacity: 0.7;
   }
 
   &.open {
@@ -126,10 +181,26 @@ body > header {
 }
 
 .navbar-toggle__box {
-  width: 22px;
-  height: 2px * 3 + 4px * 2;
+  width: 30px;
+  height: 22px;
   display: inline-block;
   position: relative;
+}
+.navbar {
+  .navbar-toggle {
+    .menu-txt,
+    .close-txt {
+      padding-top: 0.3125rem;
+      font-size: 0.75rem;
+    }
+    &.open .menu-txt,
+    .close-txt {
+      display: none;
+    }
+    &.open .close-txt {
+      display: block;
+    }
+  }
 }
 
 .navbar-toggle__inner {
@@ -142,10 +213,9 @@ body > header {
   &,
   &::before,
   &::after {
-    width: 22px;
+    width: inherit;
     height: 2px;
-    background-color: black;
-    border-radius: 2px;
+    background-color: $white;
     position: absolute;
   }
 

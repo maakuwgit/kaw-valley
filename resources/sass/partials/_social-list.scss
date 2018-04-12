@@ -7,42 +7,31 @@
  */
 
 .social-list {
-  font-size: 1em;
-  text-align: center;
   list-style: none;
-
-  .navbar & {
-    display: inline-block;
-    margin: 0;
-    vertical-align: middle;
-    font-size: 0.75em;
-
-    @include screen-xs {
-      display: none;
-    }
-  }
 }
 
 .social-list__item {
   display: inline-block;
   vertical-align: middle;
-  margin: 0 0.77em;
-  font-size: 1em;
+  margin: auto 0;
+  font-size: inherit;
+  &:first-child {
+    margin-left: -0.75rem;
+  }
 }
 
 .social-list__link {
   position: relative;
   display: inline-block;
-  width: 2.057em;
-  height: 2.057em;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
-  background-color: $white;
-  color: $text-dark;
+  background-color: transparent;
+  color: $white;
   border: none;
   text-align: center;
 
   &:hover {
-    background-color: $primary-color;
     color: $white;
   }
 }
@@ -51,5 +40,5 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.25em;
+  font-size: 1rem;
 }

@@ -17,6 +17,22 @@
   margin: 0 0 20px 15px;
 }
 
+.block {
+  display: block;
+}
+
+.iblock {
+  display: inline-block;
+}
+
+.no-bullet {
+  list-style: none;
+}
+
+.relative {
+  position: relative;
+}
+
 .row--full {
   margin: 0;
 }

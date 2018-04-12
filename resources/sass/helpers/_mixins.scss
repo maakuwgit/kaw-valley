@@ -114,7 +114,7 @@
 }
 
 @mixin screen-xl-only {
-  @media (min-width: $screen-xl) and (max-width: $screen-xl-maximum) {
+  @media (min-width: $screen-xl) and (max-width: $screen-xxl-maximum) {
     @content;
   }
 }
@@ -132,7 +132,7 @@
 }
 
 @mixin screen-lg-only {
-  @media (min-width: $screen-lg) and (max-width: $screen-lg-maximum) {
+  @media (min-width: $screen-lg) and (max-width: $screen-xl-maximum) {
     @content;
   }
 }
@@ -150,7 +150,7 @@
 }
 
 @mixin screen-md-only {
-  @media (min-width: $screen-md) and (max-width: $screen-md-maximum) {
+  @media (min-width: $screen-md) and (max-width: $screen-lg-maximum) {
     @content;
   }
 }
@@ -168,7 +168,7 @@
 }
 
 @mixin screen-sm-only {
-  @media (min-width: $screen-sm) and (max-width: $screen-sm-maximum) {
+  @media (min-width: $screen-sm) and (max-width: $screen-md-maximum) {
     @content;
   }
 }
@@ -186,7 +186,7 @@
 }
 
 @mixin screen-xs-only {
-  @media (min-width: $screen-xs) and (max-width: $screen-xs-maximum) {
+  @media (min-width: $screen-xs) and (max-width: $screen-sm-maximum) {
     @content;
   }
 }
@@ -204,7 +204,7 @@
 }
 
 @mixin screen-xxs-only {
-  @media (min-width: $screen-xxs) and (max-width: $screen-xxs-maximum) {
+  @media (min-width: $screen-xxs) and (max-width: $screen-xs-maximum) {
     @content;
   }
 }

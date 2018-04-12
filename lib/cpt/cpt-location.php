@@ -75,15 +75,13 @@ if ( ! function_exists('register_location_taxonomies') ) {
     $args = array(
       'hierarchical'        => true,
       'labels'              => $labels,
-      'public'              => false,
-      'publicly_queryable'  => false,
       'show_ui'             => true,
       'show_admin_column'   => true,
       'query_var'           => true,
       'rewrite'             => array( 'slug' => 'location' )
     );
 //Dev Note: potentional crash here, shouldn't happen but just might....
-    register_taxonomy( 'location', array( 'location' ), $args ); // Must include custom post type name
+    register_taxonomy( 'state', array( 'location' ), $args ); // Must include custom post type name
 
   }
 

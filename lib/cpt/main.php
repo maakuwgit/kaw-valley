@@ -5,4 +5,5 @@
 require_once( plugin_dir_path( __FILE__ ) . 'cpt-career.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'cpt-location.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'cpt-project.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'cpt-service.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'cpt-team.php' );
