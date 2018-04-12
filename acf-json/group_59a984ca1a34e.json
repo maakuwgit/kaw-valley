@@ -19,15 +19,84 @@
             "endpoint": 0
         },
         {
-            "key": "field_59b2ab01ec54f",
-            "label": "Schema Type",
-            "name": "schema_type",
+            "key": "field_5acf8e3af5b50",
+            "label": "Schema: Source",
+            "name": "schema_type_copy",
             "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "false": "----",
+                "existing": "Existing",
+                "new": "New"
+            },
+            "default_value": [
+                "false"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5acf8d45b050c",
+            "label": "Use Location",
+            "name": "schema_location",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "existing"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "location"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "post_type"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_59b2ab01ec54f",
+            "label": "Schema: Type",
+            "name": "schema_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -61,11 +130,16 @@
                         "field": "field_59b2ab01ec54f",
                         "operator": "!=",
                         "value": "Person"
+                    },
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
                     }
                 ]
             ],
             "wrapper": {
-                "width": "33",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -93,11 +167,16 @@
                         "field": "field_59b2ab01ec54f",
                         "operator": "!=",
                         "value": "Person"
+                    },
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
                     }
                 ]
             ],
             "wrapper": {
-                "width": "33",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -119,7 +198,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -138,7 +225,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -157,7 +252,15 @@
             "type": "message",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -174,7 +277,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -193,7 +304,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -212,7 +331,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "30",
                 "class": "",
@@ -231,7 +358,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "20",
                 "class": "",
@@ -250,7 +385,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -280,6 +423,11 @@
                         "field": "field_59b2ab01ec54f",
                         "operator": "!=",
                         "value": "Person"
+                    },
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
                     }
                 ]
             ],
@@ -310,6 +458,11 @@
                         "field": "field_59b2ab01ec54f",
                         "operator": "!=",
                         "value": "Person"
+                    },
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
                     }
                 ]
             ],
@@ -441,6 +594,11 @@
                         "field": "field_59b2ab01ec54f",
                         "operator": "!=",
                         "value": "Person"
+                    },
+                    {
+                        "field": "field_5acf8e3af5b50",
+                        "operator": "==",
+                        "value": "new"
                     }
                 ]
             ],
@@ -825,5 +983,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1513806765
+    "modified": 1523554787
 }

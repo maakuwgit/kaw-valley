@@ -80,6 +80,7 @@
             <?php
               while( $locations->have_posts() ) :
                 $locations->the_post();
+
                 $title = get_the_title();
                 $location_cat = get_the_terms(get_the_ID(), 'state');
                 if( $location_cat ) $title .= ',&nbsp;' . strtoupper($location_cat[0]->slug);
