@@ -332,8 +332,11 @@
 //theme specific colors
 article.dark,
 aside.dark,
-footer.dark,
+footer.dark, 
 header.dark,
+header.top, 
+body.locked header,
+body.locked header.top, 
 main.dark,
 section.dark {
   background-color: $black;

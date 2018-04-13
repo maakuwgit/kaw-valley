@@ -1,0 +1,16 @@
+body > aside {
+  min-height: 50vh;
+  @include row-gutter;
+  background: $white url(#{$callout-bg}) center no-repeat;
+  * {
+    color: $black;
+  }
+  .hero {
+    margin-left: 0;
+  }
+  @include screen-lg-up {
+    .hero, nav {
+      width: 50%;
+    }
+  }
+}

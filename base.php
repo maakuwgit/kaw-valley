@@ -11,16 +11,7 @@
   do_action('get_header');
   get_template_part('templates/partials/header');
   ?>
-
-  <div class="wrap" role="document">
-    <div class="content">
-
-      <main class="main" role="main">
-        <?php include roots_template_path(); ?>
-      </main><!-- /.main -->
-
-    </div><!-- /.content -->
-  </div><!-- /.wrap -->
+  <?php include roots_template_path(); ?>
 
   <?php get_template_part('templates/partials/footer'); ?>
 

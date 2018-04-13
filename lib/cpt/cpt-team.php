@@ -25,9 +25,10 @@ if ( ! function_exists('register_team_custom_post_type') ) {
     $args = array(
       'label'               => 'team',
       'description'         => 'Team description',
+      'supports'            => array( 'title', 'thumbnail', 'page-attributes' ),
       'labels'              => $labels,
-      'supports'            => array( 'title', 'page-attributes' ),
-      // 'taxonomies'          => array( 'category', 'post_tag' ),
+      'with_front'          => true,
+      'rewrite'             => array( 'slug' => 'team' ),
       'hierarchical'        => true,
       'public'              => true,
       'show_ui'             => true,

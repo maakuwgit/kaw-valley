@@ -1,3 +1,4 @@
+<?php get_template_part('templates/contents/content', 'hero'); ?>
 <article <?php post_class('entry'); ?>>
   <header class="entry__header">
     <h2 class="entry__header__title">

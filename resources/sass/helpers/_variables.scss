@@ -30,9 +30,9 @@ $danger-background: #f2dede;
 $danger-border: #ebccd1;
 
 // Font Weights
-$text-normal: normal;
-$text-medium: bold;
-$text-bold: bolder;
+$text-normal: 100;
+$text-medium: 300;
+$text-bold: 400;
 
 // Theme colors
 $text-dark: #424242;
@@ -93,6 +93,8 @@ $grid-float-breakpoint: $screen-nav-mobile + 1;
 // Grid
 $grid-columns:      12;
 $grid-gutter-width: 30px;
+$row-gutter-lg: 15vh;
+$row-gutter: 2rem;
 
 // Container widths
 $container-sm:    ($screen-sm - $grid-gutter-width);
@@ -104,3 +106,6 @@ $link-color: $text-color;
 $link-decoration: none;
 $link-hover-color: blue;
 $link-hover-decoration: none;
+
+// Imagery
+$callout-bg: '../img/background-callout.svg';

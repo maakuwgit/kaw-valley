@@ -1,0 +1,54 @@
+/**
+ * Hero Banner Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.hero-banner {
+  position: relative;
+  height: 93vh;
+  background-color: $black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: $white;
+
+  &.has-image::before {
+    content: '';
+    @extend %overlay;
+    background-color: rgba(0,0,0,0.39);
+    z-index: 1
+  }
+
+  .loop-video-container {
+    z-index: 0
+  }
+
+
+  & > svg {
+    position: absolute;
+    width: 100%;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    min-width: 100vw;
+    z-index: 1;
+  }
+
+  & > .container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .button {
+    margin-top: 3.57em;
+  }
+
+  .play-video-button {
+    margin-top: 3.57em;
+  }
+}

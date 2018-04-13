@@ -3,7 +3,7 @@
   $href = esc_url(home_url('/'));
   $name = get_bloginfo('name');
 ?>
-<header class="navbar dark" role="banner">
+<header class="navbar top" role="banner">
   <div class="container row nowrap">
     <figure>
       <a href="<?php echo $href ?>" class="logo block">

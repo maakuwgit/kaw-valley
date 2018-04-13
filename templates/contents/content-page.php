@@ -1,2 +1,5 @@
-<?php the_content(); ?>
-<?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
+<div class="container row">
+
+  <?php the_content(); ?>
+  <?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
+</div>

@@ -71,6 +71,10 @@
   background: rgba($color, $opacity);
 }
 
+/**
+ * Grid Manipulation
+ */
+
 // Centered container element
 @mixin container-fixed($gutter: $grid-gutter-width) {
   margin-right: auto;
@@ -78,6 +82,24 @@
   padding-left:  floor(($gutter / 2));
   padding-right: ceil(($gutter / 2));
   *zoom: 1;
+}
+
+// Consistent padding top/bottom for .row
+@mixin row-gutter($gutter: $row-gutter, $gutter-lg: $row-gutter-lg) {
+  @include screen-lg-up {
+    padding-top: $gutter-lg;
+    padding-bottom: $gutter-lg;
+  }
+  padding-top: $gutter;
+  padding-bottom: $gutter;
+}
+
+/*
+ * Buttons
+ */
+@mixin push_button(){
+  box-shadow: 0 0 0 $black;
+  transform: translate(3px, 3px);
 }
 
 /**

@@ -63,6 +63,48 @@ function ll_get_banner_image( $id=null ) {
   return $banner_image;
 }
 
+
+function ll_format_post_banner( $post_id=null ) {
+  global $post;
+  if ( !$post_id ) {
+    $post_id = $post->ID;
+  }
+
+  $hero_banner = array(
+    'main_text'        => get_field( 'hero_banner_main_text', $post_id ),
+    'sub_text'         => get_field( 'hero_banner_sub_text', $post_id ),
+    'call_to_action'   => get_field( 'hero_banner_cta', $post_id ),
+    'background_image' => wp_get_attachment_image_src( get_field( 'hero_banner_background_image', $post_id ), 'll_full_image' )
+  );
+
+  if ( !$hero_banner['main_text']['text'] ) {
+    $hero_banner['main_text']['text'] = get_the_title( $post_id );
+    $hero_banner['main_text']['tag'] = 'h1';
+  }
+
+  if ( !$hero_banner['sub_text']['text'] ) {
+
+    $categories = wp_get_post_categories( $post_id );
+
+    if ( $categories ) {
+      foreach ($categories as $cat_key => $category) {
+        if ( $cat_key == 0 ) {
+          $hero_banner['sub_text']['text'] .= get_cat_name( $category );
+        } else {
+          $hero_banner['sub_text']['text'] .= ', '.get_cat_name( $category );
+        }
+      }
+
+    }
+    $hero_banner['sub_text']['tag']  = 'p';
+  }
+
+  if ( !$hero_banner['background_image'] ) {
+    $hero_banner['background_image'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'll_full_image' );
+  }
+
+  return $hero_banner;
+}
 /**
 * Converts phone numbers to the formatting standard
 *
