@@ -1,3 +1,8 @@
+<?php
+  $logo = get_field( 'global_logo', 'option' );
+  $href = esc_url(home_url('/'));
+  $name = get_bloginfo('name');
+?>
 <footer class="footer dark" role="contentinfo">
   <div class="container row">
     <figure class="footer__social col-md-6of12 col-lg-4of12">

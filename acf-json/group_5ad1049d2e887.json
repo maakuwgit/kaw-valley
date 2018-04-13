@@ -1,0 +1,43 @@
+{
+    "key": "group_5ad1049d2e887",
+    "title": "Career Details",
+    "fields": [
+        {
+            "key": "field_5ad104bcedcea",
+            "label": "Application",
+            "name": "career_application",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": 5,
+            "mime_types": ".pdf, .doc, .txt"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "career"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1523647855
+}

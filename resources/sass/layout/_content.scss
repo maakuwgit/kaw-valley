@@ -1,33 +1,23 @@
 /**
  * Content
  */
-
 .content {
-}
-
-.content {
-
-  b, strong {
-  }
-
-  i, em {
-  }
-
-  strong i,
-  strong em,
-  b i,
-  b em,
-  i b,
-  i strong,
-  em b,
-  em strong {
-  }
-
-  p {
-  }
-
-  ol {
-    li {
+  &.dark {
+    * {
+      color: $white;
     }
+    background-color: $black;
+    background-image: url(#{$page-header-bg});
+  }
+  min-height: 50vh;
+  @include row-gutter;
+  color: $text-color;
+  background: $white url(#{$page-header-bg}) center no-repeat;
+  h3 {
+    max-width: 700px;
+    margin-left: 0;
+  }
+  p {
+    line-height: 1.5;
   }
 }

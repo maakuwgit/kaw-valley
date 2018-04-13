@@ -41,7 +41,7 @@ do_action( "component_name_before_display", $component_data, $component_args );
 
 <?php
 
-$has_prefooter = get_field('has_prefooter', $post->ID);;
+$has_prefooter = get_field('has_prefooter', $post->ID);
 if ( ll_empty( $data ) || !$has_prefooter || $has_prefooter === null ) return;
 $css = ($args['classes'] ? ' class="' . implode( " ", $args['classes'] ) . '"' : '');
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
