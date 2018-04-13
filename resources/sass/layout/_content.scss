@@ -7,7 +7,7 @@
       color: $white;
     }
     background-color: $black;
-    background-image: url(#{$page-header-bg});
+    background-image: url(#{$page-header-alt-bg});
   }
   min-height: 50vh;
   @include row-gutter;

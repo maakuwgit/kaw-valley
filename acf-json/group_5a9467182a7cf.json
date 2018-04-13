@@ -134,6 +134,25 @@
             "return_format": "array"
         },
         {
+            "key": "field_5ad1202e0820e",
+            "label": "Show Triangles?",
+            "name": "hero_banner_show_icons",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5a9467c07d454",
             "label": "Background Image",
             "name": "hero_banner_background_image",
@@ -142,7 +161,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -223,5 +242,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1523647612
+    "modified": 1523655157
 }

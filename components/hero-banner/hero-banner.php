@@ -16,6 +16,7 @@ $defaults = [
     'tag'  => 'p',
   ),
   'call_to_action' => null,
+  'show_icons' => true,
   'background_image'   => null,
   'loop_video'    => null,
   'popup_video'   => null
@@ -23,9 +24,10 @@ $defaults = [
 
 $component_data = ll_parse_args( $component_data, $defaults );
 
-$main_text = $component_data['main_text'];
-$sub_text  = $component_data['sub_text'];
-$call_to_action = $component_data['call_to_action'];
+$main_text        = $component_data['main_text'];
+$sub_text         = $component_data['sub_text'];
+$call_to_action   = $component_data['call_to_action'];
+$show_icons       = $component_data['show_icons'];
 $background_image = $component_data['background_image'];
 $loop_video       = $component_data['loop_video'];
 $popup_video      = $component_data['popup_video'];
@@ -70,7 +72,18 @@ if ( $background_image ) {
       );
     ?>
   <?php endif; ?>
-  <figcaption class="container">
+  <?php echo $show_icons; ?>
+  <?php if ( $show_icons !== 1) : ?>
+  <?php endif; ?>
+  <figcaption class="container row">
+    <?php if ( $show_icons ) : ?>
+      <div class="col-6of12 text-right">
+        <img alt="" src="<?php echo get_template_directory_uri() . '/assets/img/icons-triangles.svg';?>">
+      </div>
+    <?php endif; ?>
+    <?php if ( $show_icons ) : ?>
+      <div class="col-6of12 text-left">
+    <?php endif; ?>
     <?php if ( $main_text['text'] ) : ?>
       <<?php echo $main_text['tag'] ?> class="hero"><?php echo $main_text['text']; ?></<?php echo $main_text['tag']; ?>>
     <?php endif; ?>
@@ -78,7 +91,9 @@ if ( $background_image ) {
     <?php if ( $sub_text['text'] ) : ?>
       <<?php echo $sub_text['tag'] ?> class="h1"><?php echo $sub_text['text']; ?></<?php echo $sub_text['tag']; ?>>
     <?php endif; ?>
-
+    <?php if ( $show_icons ) : ?>
+      </div>
+    <?php endif; ?>
     <?php if ( $call_to_action ) : ?>
       <a class="button" href="<?php echo $call_to_action['url']; ?>" target="<?php echo $call_to_action['target']; ?>"><?php echo $call_to_action['title']; ?></a>
     <?php endif; ?>

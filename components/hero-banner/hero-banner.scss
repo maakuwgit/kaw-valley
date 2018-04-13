@@ -18,7 +18,10 @@
   &.has-image::before {
     content: '';
     @extend %overlay;
-    background-color: rgba(0,0,0,0.39);
+/*    background: radial-gradient(ellipse at 80vw 50vh, rgba(#ff0000,1) 0%,rgba($black,1) 60%);*/
+    background: transparent url(#{$hero-midground}) center no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
     z-index: 1
   }
 
@@ -50,5 +53,11 @@
 
   .play-video-button {
     margin-top: 3.57em;
+  }
+
+  figcaption {
+    div:last-of-type(){
+      align-self: flex-end;
+    }
   }
 }

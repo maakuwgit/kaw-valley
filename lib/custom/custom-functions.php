@@ -74,7 +74,8 @@ function ll_format_post_banner( $post_id=null ) {
     'main_text'        => get_field( 'hero_banner_main_text', $post_id ),
     'sub_text'         => get_field( 'hero_banner_sub_text', $post_id ),
     'call_to_action'   => get_field( 'hero_banner_cta', $post_id ),
-    'background_image' => wp_get_attachment_image_src( get_field( 'hero_banner_background_image', $post_id ), 'll_full_image' )
+    'background_image' => wp_get_attachment_image_src( get_field( 'hero_banner_background_image', $post_id ), 'll_full_image' ),
+    'show_icons'       => get_field( 'hero_banner_show_icons', $post_id )
   );
 
   if ( !$hero_banner['main_text']['text'] ) {
