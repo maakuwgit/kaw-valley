@@ -1,0 +1,16 @@
+/**
+ * Career Archive and Single
+ */
+.post-type-archive-career {
+  section.content:first-of-type {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  section.content:last-of-type {
+    padding-top: 0;
+  }
+  article.content {
+    padding-top: 0;
+    padding-bottom: 4.25rem
+  }
+}

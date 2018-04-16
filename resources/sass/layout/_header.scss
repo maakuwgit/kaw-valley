@@ -56,28 +56,28 @@ body {
     dd, dt, h5, .h5, .menu {
       margin-bottom: 1.5rem;
     }
-  }
 
-  nav {
-    ul {
-      padding: 0;
-      margin: 0 auto;
-      list-style: none;
-      @include screen-sm {
-        &.header__menu {
-          width: 100%;
+    nav {
+      ul {
+        padding: 0;
+        margin: 0 auto;
+        list-style: none;
+        @include screen-sm {
+          &.header__menu {
+            width: 100%;
+          }
         }
       }
     }
-  }
 
-  .container.row {
-    justify-content: space-between;
-    align-content: stretch;
-    align-items: stretch;
+    .container.row {
+      justify-content: space-between;
+      align-content: stretch;
+      align-items: stretch;
 
-    h1, .h1, h2, .h2, h3, .h3, h4, .h4, p {
-      margin-left: 0;
+      h1, .h1, h2, .h2, h3, .h3, h4, .h4, p {
+        margin-left: 0;
+      }
     }
   }
 }

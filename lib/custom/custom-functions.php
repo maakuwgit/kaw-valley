@@ -24,13 +24,14 @@ function format_text( $content ) {
 /**
  * var_dump variable
  * wrap it in a <pre> tag
+ * * Dev Note: this is a pain when trying to debug so I disabled it for now
  */
 function _pre_var() {
-  $args = func_get_args();
+/*  $args = func_get_args();
 
   echo '<pre>';
   call_user_func_array( 'var_dump', $args );
-  echo '</pre>';
+  echo '</pre>';*/
 }
 
 /**

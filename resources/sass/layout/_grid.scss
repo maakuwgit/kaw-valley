@@ -18,6 +18,10 @@
   @media (min-width: $screen-lg-min) {
     width: $container-lg;
   }
+
+  &.boxed {
+    max-width: $container-sm;
+  }
 }
 
 .row {
@@ -25,6 +29,9 @@
   flex-wrap: wrap;
   &.nowrap{
     flex-wrap: nowrap;
+  }
+  &.centered {
+    justify-content: center;
   }
 }
 

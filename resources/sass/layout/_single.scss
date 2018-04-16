@@ -1,0 +1,18 @@
+/**
+ * Single
+ */
+body.single {
+  .hero-banner {
+    p {
+      display: none;
+    }
+  }
+  .content {
+    min-height: 100vh;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    time {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

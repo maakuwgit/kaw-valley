@@ -81,7 +81,7 @@ h2,.h2 {
   font-weight: $text-bold;
 }
 
-.hero { 
+.hero {
   font-size: 5.3125rem;
   font-weight: $text-bold;
   letter-spacing: -0.1px;
@@ -106,7 +106,7 @@ h3,
 
 h4,
 .h4 {
-  font-size: 1.25em;
+  font-size: 1.875rem;
 }
 
 h5,
@@ -126,4 +126,8 @@ p, td, li, dd, address {
 
 small, .small {
   font-size: 0.875rem;
+}
+
+.superhead {
+  margin-left: 0;
 }

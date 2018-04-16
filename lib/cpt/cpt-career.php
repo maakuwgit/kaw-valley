@@ -47,5 +47,18 @@ if ( ! function_exists('register_career_custom_post_type') ) {
 
   // Hook into the 'init' action
   add_action( 'init', 'register_career_custom_post_type', 0 );
-
 }
+
+/**
+ * Create ACF setting page under CPT menu
+ */
+
+ if ( function_exists( 'acf_add_options_sub_page' ) ){
+   acf_add_options_sub_page(array(
+     'page_title' => 'Career Settings',
+     'menu_title' => 'Settings',
+     'menu_slug'  => 'career_settings',
+     'parent'     => 'edit.php?post_type=career',
+     'capability' => 'manage_options'
+   ));
+ }

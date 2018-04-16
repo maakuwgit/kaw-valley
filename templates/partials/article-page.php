@@ -1,9 +1,10 @@
 <?php
-$headline    = get_field('page_headline');
-$subheadline = get_field('page_subheadline');
-$excerpt     = get_field('page_excerpt');
-$layout      = get_field('page_layout');
-$direction   = get_field('page_direction');
+/* Dev Note: should move this to "contents" because it's markup? */
+if ( !$headline ) $headline = get_field( 'page_headline' );
+if ( $subheadline === '') $subheadline = get_field( 'page_subheadline');
+if ( !$excerpt ) $excerpt     = get_field( 'page_excerpt' );
+if ( !$layout ) $layout      = get_field( 'page_layout' );
+if ( !$direction ) $direction   = get_field( 'page_direction' );
 
 switch($layout){
   case 'split':
@@ -22,9 +23,9 @@ switch($layout){
     $output .= '</div>';
   break;
   case 'full':
-    if( $headline ) $output .= '<h3>' . $headline .'</h3>';
-    if( $subheadline ) $output .= '<h4>' . $subheadline .'</h4>';
-    if( $excerpt ) $output .= $excerpt;
+    if( $headline !== '' ) $output .= '<h3>' . $headline .'</h3>';
+    if( $subheadline !== '' ) $output .= '<h4>' . $subheadline .'</h4>';
+    if( $excerpt !== '') $output .= $excerpt;
   break;
   default:
   break;

@@ -43,7 +43,7 @@ function roots_remove_menu_item() {
   $menu[5][0] = 'News';
   $menu[5][6] = 'dashicons-media-document';
   $submenu['edit.php'][5][0] = 'Articles';
-  $submenu['edit.php'][10][0] = 'Add Articles';
+  $submenu['edit.php'][10][0] = 'Add Article';
  }
  add_action( 'admin_menu', 'roots_remove_menu_item' );
 
@@ -57,9 +57,9 @@ function roots_admin_labels() {
   $labels->singular_name = 'Article';
   $labels->add_new = 'Add Article';
   $labels->add_new_item = 'Add Article';
-  $labels->edit_item = 'Edit Articles';
+  $labels->edit_item = 'Edit Article';
   $labels->new_item = 'Article';
-  $labels->view_item = 'View Articles';
+  $labels->view_item = 'View Article';
   $labels->search_items = 'Search Articles';
   $labels->not_found = 'No Articles found';
   $labels->not_found_in_trash = 'No Articles found in Trash';

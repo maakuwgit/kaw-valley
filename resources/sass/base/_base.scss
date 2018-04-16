@@ -51,15 +51,66 @@ address {
   font-style: normal;
 }
 
+blockquote {
+  position: relative;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  font-size: 1.5rem;
+  font-weight: $text-medium;
+  p {
+    margin: auto;
+    font-weight: inherit;
+    font-size: inherit;
+  }
+  &:before {
+    position: absolute;
+    content: "“";
+    font-size: 6.875rem;
+    margin-left: -4rem;
+    top: calc(50% - 1.5rem);
+    height: 3rem;
+  }
+}
+
 button {
   transition: all 0.10s ease-in-out;
 }
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
 }
 
 code {
   white-space: normal;
+}
+
+p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+table {
+  width: 100%;
+  a {
+    color: #762123;
+  }
+  th {
+    font-size: 1rem;
+    font-weight: $text-normal;
+  }
+  td, th {
+    text-align: center;
+    border-bottom: solid 1px $black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    &:first-of-type {
+      text-align: left;
+    }
+    &:last-of-type {
+      text-align: right;
+    }
+  }
 }

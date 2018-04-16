@@ -1,0 +1,45 @@
+/**
+ * Post
+ *   Used on single post pages
+ */
+$thumb-padding-top: 4.5rem;
+$thumb-padding-right: 1.5rem;
+$thumb-padding-bottom: 1.5rem;
+$thumb-padding-left: 1.5rem;
+$thumb-padding: $thumb-padding-top $thumb-padding-right $thumb-padding-bottom $thumb-padding-left;
+
+.thumbnail {
+  position: relative;
+  width: 100%;
+  display: table;
+  padding: $thumb-padding;
+  background-color: $white;
+  @include screen-sm-only {
+    width: 50%;
+  }
+  @include screen-md-up {
+    width: 33.3333%;
+  }
+  a {
+    color: inherit;
+    transition: none;
+  }
+
+  h3, h4, .h3, .h1, .h2, {
+    margin-bottom: 2.375rem;
+  }
+
+  p, time, .block {
+    margin-bottom: 0.625rem;
+  }
+
+  hr {
+    margin-top: $thumb-padding-bottom;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $white;
+    background-color: $black;
+  }
+}

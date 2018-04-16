@@ -27,7 +27,7 @@ $component_data = ll_parse_args( $component_data, $defaults );
 $main_text        = $component_data['main_text'];
 $sub_text         = $component_data['sub_text'];
 $call_to_action   = $component_data['call_to_action'];
-$show_icons       = $component_data['show_icons'];
+$show_icons       = ( $component_data['show_icons'] === null ? true : $component_data['show_icons'] );
 $background_image = $component_data['background_image'];
 $loop_video       = $component_data['loop_video'];
 $popup_video      = $component_data['popup_video'];
@@ -57,6 +57,7 @@ if ( $background_image ) {
 } else {
  $style            = '';
 }
+
 ?>
 
 <?php if ( ll_empty( $component_data ) ) return; ?>
@@ -72,17 +73,14 @@ if ( $background_image ) {
       );
     ?>
   <?php endif; ?>
-  <?php echo $show_icons; ?>
-  <?php if ( $show_icons !== 1) : ?>
-  <?php endif; ?>
   <figcaption class="container row">
     <?php if ( $show_icons ) : ?>
-      <div class="col-6of12 text-right">
+      <div class="col-6of12">
         <img alt="" src="<?php echo get_template_directory_uri() . '/assets/img/icons-triangles.svg';?>">
       </div>
     <?php endif; ?>
     <?php if ( $show_icons ) : ?>
-      <div class="col-6of12 text-left">
+      <div class="col-6of12">
     <?php endif; ?>
     <?php if ( $main_text['text'] ) : ?>
       <<?php echo $main_text['tag'] ?> class="hero"><?php echo $main_text['text']; ?></<?php echo $main_text['tag']; ?>>

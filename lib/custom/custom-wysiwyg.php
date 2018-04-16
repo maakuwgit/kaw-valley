@@ -14,6 +14,15 @@ function ll_new_mce_button( $buttons ) {
 add_filter( 'mce_buttons_2', 'll_new_mce_button' );
 
 /**
+ * Removes the random classes added by TinyMCE vß4
+ */
+function strip_tinymce_styles($in) {
+  $in['paste_preprocess'] = "function(pl,o){ o.content = o.content.replace(/p class=\"p[0-9]+\"/g,'p'); o.content = o.content.replace(/span class=\"s[0-9]+\"/g,'span'); }";
+  return $in;
+}
+add_filter('tiny_mce_before_init', 'strip_tinymce_styles');
+
+/**
  * adds custom formats to the formats selection
  * on the tinymce editor
  *
