@@ -76,6 +76,8 @@ function ll_format_post_banner( $post_id=null ) {
     'sub_text'         => get_field( 'hero_banner_sub_text', $post_id ),
     'call_to_action'   => get_field( 'hero_banner_cta', $post_id ),
     'background_image' => wp_get_attachment_image_src( get_field( 'hero_banner_background_image', $post_id ), 'll_full_image' ),
+    'loop_video'       => get_field( 'hero_banner_loop_video', $post_id ),
+    'popup_video'      => get_field( 'hero_banner_popup_video', $post_id ),
     'show_icons'       => get_field( 'hero_banner_show_icons', $post_id )
   );
 

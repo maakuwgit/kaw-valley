@@ -41,8 +41,7 @@
 
   & > .container {
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 100%;
     z-index: 1;
   }
 
@@ -51,7 +50,25 @@
   }
 
   .play-video-button {
-    margin-top: 3.57em;
+    position:absolute;
+    bottom: 0;
+    display: inline-flex;
+    margin: auto;
+    padding: 2rem;
+    color: white;
+    background-color: black;
+    left: 0;
+    right: 0;
+    max-width: 400px;
+    span {
+      align-self:center;
+      margin-right: 3rem;
+      margin-left: 5rem;
+      font-size: 1.5rem;
+    }
+    &:hover #inner-triangle {
+      transform: scale(1.5) rotate(-90deg) translate(-18px, -2px);
+    }
   }
 
   figcaption {

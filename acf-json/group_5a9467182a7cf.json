@@ -236,6 +236,25 @@
                 "param": "post_type",
                 "operator": "!=",
                 "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "team"
+            }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "career_settings"
+            }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "team_settings"
             }
         ]
     ],
@@ -247,5 +266,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1523898460
+    "modified": 1523921383
 }

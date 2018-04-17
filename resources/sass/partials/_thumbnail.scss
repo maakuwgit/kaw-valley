@@ -1,6 +1,6 @@
 /**
  * Post
- *   Used on single post pages
+ * Used on single post pages
  */
 $thumb-padding-top: 4.5rem;
 $thumb-padding-right: 1.5rem;
@@ -14,6 +14,13 @@ $thumb-padding: $thumb-padding-top $thumb-padding-right $thumb-padding-bottom $t
   display: table;
   padding: $thumb-padding;
   background-color: $white;
+  background-position: center;
+  background-size: cover;
+  &[data-background] {
+    height: 25vw;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
   @include screen-sm-only {
     width: 50%;
   }
@@ -33,8 +40,21 @@ $thumb-padding: $thumb-padding-top $thumb-padding-right $thumb-padding-bottom $t
     margin-bottom: 0.625rem;
   }
 
+  figcaption {
+    position: absolute;
+    top: 25vw;
+    .h1, .h2, .h3, .h4 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
   hr {
     margin-top: $thumb-padding-bottom;
+  }
+
+  .feature {
+    display: none;
   }
 
   &:hover {

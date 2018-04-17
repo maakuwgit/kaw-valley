@@ -104,7 +104,7 @@ $container-lg:    ($screen-lg - $grid-gutter-width);
 // Links
 $link-color: $text-color;
 $link-decoration: none;
-$link-hover-color: blue;
+$link-hover-color: $danger-color;
 $link-hover-decoration: none;
 
 // Imagery

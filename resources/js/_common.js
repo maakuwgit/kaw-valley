@@ -57,6 +57,48 @@
         });
       });
 
+      $('[data-background]').each(function(args){
+        var feat    = $(this).find('.feature');
+        var target  = feat;
+        if(feat.length <= 0) {
+          target = $(this);
+        }
+
+        var img     = false;
+
+        if(feat.length > 0) {
+          img = $(feat).find('img');
+        }else{
+          img = $(this).find('img');
+        }
+
+        if(img.length > 0) {
+          var src = $(img).attr('src');
+
+          if($(img).attr('data-src-xlarge') && size === 'xlarge') {
+            src = $(img).attr('data-src-xlarge');
+          }
+          if($(img).attr('data-src-large') && size === 'large') {
+            src = $(img).attr('data-src-large');
+          }
+          if($(img).attr('data-src-medium') && size === 'medium') {
+            src = $(img).attr('data-src-medium');
+          }
+          if($(this).attr('style')){
+              if(feat.length > 0) {
+                $(feat).css('background-color',$(this).css('background-color'));
+                $(feat).delay(300).fadeOut(300);
+              }
+              $(this).css({'background-image': 'url('+src+')'});
+          }else{
+            $(this).css({'background-image':'url('+src+')', 'background-color':$(this).css('background-color')});
+            if(feat.length > 0) {
+              $(feat).delay(300).fadeOut(300);
+            }
+          }
+        }
+      });
+
       // JavaScript to be fired on all pages
       //Basic Collapse toggle for dropdowns and toggle menus
       $('[data-toggle="collapse"]').on('click', function(e) {

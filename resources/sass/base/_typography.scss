@@ -54,12 +54,8 @@
 }
 
 a {
-  color: $link-color;
   text-decoration: $link-decoration;
-  transition: all 0.10s ease-in-out;
-
   &:hover {
-    color: $link-hover-color;
     text-decoration: $link-hover-decoration;
   }
 }
@@ -72,12 +68,12 @@ h1,.h1, h2, .h2, h3,.h3, h4, .h4, h5, .h5, h6, .h6 {
 h1, .h1,
 h3, .h3,
 h4, .h4,
-h5, .h5,
 .large {
   font-weight: $text-medium;
 }
 
-h2,.h2 {
+h2,.h2,
+h5, .h5 {
   font-weight: $text-bold;
 }
 

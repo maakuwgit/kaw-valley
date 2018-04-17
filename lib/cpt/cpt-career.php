@@ -52,7 +52,6 @@ if ( ! function_exists('register_career_custom_post_type') ) {
 /**
  * Create ACF setting page under CPT menu
  */
-
  if ( function_exists( 'acf_add_options_sub_page' ) ){
    acf_add_options_sub_page(array(
      'page_title' => 'Career Settings',

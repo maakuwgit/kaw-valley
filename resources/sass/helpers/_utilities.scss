@@ -25,6 +25,10 @@
   display: inline-block;
 }
 
+.hide {
+  display: none;
+}
+
 .no-bullet {
   list-style: none;
 }
@@ -332,15 +336,21 @@
 //theme specific colors
 article.dark,
 aside.dark,
-footer.dark, 
+footer.dark,
 header.dark,
-header.top, 
+header.top,
 body.locked header,
-body.locked header.top, 
+body.locked header.top,
 main.dark,
 section.dark {
   background-color: $black;
   * {
     color: $white;
+  }
+}
+
+a, p, dt, dd, span, time {
+  &.red {
+    color: $danger-color;
   }
 }

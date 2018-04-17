@@ -103,18 +103,18 @@
       </div>
     </section><!-- .footer__social -->
   </div>
-  <div class="footer__bottom container row small">
-      <div class="footer__copyright col-md-5of12 col-lg-4of12">
-        <?php bloginfo('name'); ?>. All Rights Reserved <?php echo date('Y'); ?>
-      </div><!-- .footer__copyright -->
-
-      <div class="footer__credits col-md-6of12 col-lg-4of12">
-        <a href="https://liftedlogic.com/" target="_blank">Web Design in Kansas City</a> by <a href="https://liftedlogic.com/" target="_blank">Lifted Logic</a>
-      </div><!-- .footer__credits -->
-
-      <div class="footer__ll-logo col-md-1of12 col-lg-4of12">
-        <a href="https://liftedlogic.com/" target="_blank"><a href="https://liftedlogic.com/" target="_blank">LL</a>
-      </div><!-- .footer__ll-logo -->
-    </div>
-  </div>
+  <dl class="footer__bottom container row small">
+    <dt class="hide"></dt>
+    <dd class="footer__copyright col-md-5of12 col-lg-4of12">
+      <span><?php bloginfo('name'); ?>. All Rights Reserved <?php echo date('Y'); ?></span>
+    </dd><!-- .footer__copyright -->
+    <dt class="hide"></dt>
+    <dd class="footer__credits col-md-6of12 col-lg-4of12">
+      <a href="https://liftedlogic.com/" target="_blank">Web Design in Kansas City</a> by <a href="https://liftedlogic.com/" target="_blank">Lifted Logic</a>
+    </dd><!-- .footer__credits -->
+    <dt class="hide"></dt>
+    <dd class="footer__ll-logo col-md-1of12 col-lg-4of12">
+      <a href="https://liftedlogic.com/" target="_blank" class="iblock"><img alt="LL" src="<?php echo get_template_directory_uri() . '/assets/img/logo-lifted_logic.svg';?>"></a>
+    </dd><!-- .footer__ll-logo -->
+  </dl>
 </footer>

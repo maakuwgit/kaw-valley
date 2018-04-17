@@ -47,6 +47,15 @@ body {
   color: $selection;
   background: $selection-bg;
 }
+
+a {
+  color: $link-color;
+  transition: all 0.10s ease-in-out;
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
 address {
   font-style: normal;
 }

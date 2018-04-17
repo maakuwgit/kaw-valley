@@ -4,10 +4,16 @@ body > aside {
   background: $white url(#{$callout-bg}) center no-repeat;
   * {
     color: $black;
+    align-self: center;
   }
   .hero {
     margin-left: 0;
   }
+
+  nav {
+    text-align: center;
+  }
+  
   @include screen-lg-up {
     .hero, nav {
       width: 50%;

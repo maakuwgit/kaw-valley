@@ -95,14 +95,23 @@ if ( $background_image ) {
     <?php if ( $call_to_action ) : ?>
       <a class="button" href="<?php echo $call_to_action['url']; ?>" target="<?php echo $call_to_action['target']; ?>"><?php echo $call_to_action['title']; ?></a>
     <?php endif; ?>
-
     <?php if ( $popup_video ) : ?>
       <a class="play-video-button js-init-video" href="<?php echo $popup_video; ?>">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-          <path class="play-video-button__circle" d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
-          <path class="play-video-button__icon" d="M20.571 16l-6.857 5.714v-11.429z"></path>
+        <svg width="25px" height="31px" viewBox="0 0 25 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g transform="translate(-703.000000, -740.000000)" stroke="#FFFFFF">
+              <g>
+                <g transform="translate(703.000000, 741.000000)">
+                  <g>
+                    <polygon id="inner-triangle" fill="#FFFFFF" transform="translate(8.000000, 10.000000) rotate(-90.000000) translate(-8.000000, -10.000000) " points="7.99992306 17.3636364 17 2.63636364 -1 2.63636364"></polygon>
+                    <polygon transform="translate(12.500000, 14.500000) rotate(-90.000000) translate(-12.500000, -14.500000) " points="12.499876 26.3636364 27 2.63636364 -2 2.63636364"></polygon>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
         </svg>
-        Watch Video
+        <span>Watch Video</span>
       </a>
     <?php endif; ?>
   </figcaption>
