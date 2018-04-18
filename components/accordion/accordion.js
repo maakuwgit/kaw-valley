@@ -20,7 +20,21 @@
           dl = $( this.selector() ),
           triggers  = $( dl ).find('.accordion--trigger');
 
-      triggers.on('mouseenter.hoverAccordion', hoverAccordion);
+      $(window).on('resize.refactorAccordions', refactorAccordions );
+      refactorAccordions();
+
+console.log(breakpoints.lg);
+      function refactorAccordions(e) {
+        if( $(window).outerWidth() > breakpoints.lg ) {
+          $('.accordion').css({'display':'none', 'opacity':0});
+          $(dl).on('mouseleave.checkAccordion', resetAccordions);
+          triggers.on('mouseenter.hoverAccordion', hoverAccordion);
+        }else{
+          $('.accordion').css({'display':'block', 'opacity':1});
+          $(dl).off('mouseleave.checkAccordion');
+          triggers.off('mouseenter.hoverAccordion');
+        }
+      }
 
       function resetAccordions(e) {
         triggers.removeClass('active').off('mouseenter.hoverAccordion').on('mouseenter.hoverAccordion', hoverAccordion);
@@ -54,7 +68,6 @@
         });
       }
     },
-
 
     finalize: function() {
 

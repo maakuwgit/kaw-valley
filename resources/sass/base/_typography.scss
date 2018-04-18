@@ -78,10 +78,13 @@ h5, .h5 {
 }
 
 .hero {
-  font-size: 5.3125rem;
+  font-size: 14vw;
   font-weight: $text-bold;
   letter-spacing: -0.1px;
   line-height: 1.125;
+  @include screen-sm-up {
+    font-size: 5.3125rem;
+  }
 }
 
 h1,

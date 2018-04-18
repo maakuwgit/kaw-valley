@@ -16,6 +16,14 @@
 
 
     init: function() {
+      //Media Query (match the _variables.scss breakpoints)
+      breakpoints = {};
+      breakpoints.xxs = 399;
+      breakpoints.xs  = 479;
+      breakpoints.sm  = 767;
+      breakpoints.md  = 991;
+      breakpoints.lg  = 1199;
+      breakpoints.xl  = 1599;
 
       window.userLoggedIn = false;
       window.adminBarHeight = 0;
@@ -57,6 +65,8 @@
         });
       });
 
+      // JavaScript to be fired on all pages
+      //Reads the "featured" image (class based) and sets the target background to whatever image is dynamically loaded then animates it in.
       $('[data-background]').each(function(args){
         var feat    = $(this).find('.feature');
         var target  = feat;
@@ -99,7 +109,6 @@
         }
       });
 
-      // JavaScript to be fired on all pages
       //Basic Collapse toggle for dropdowns and toggle menus
       $('[data-toggle="collapse"]').on('click', function(e) {
         e.preventDefault();

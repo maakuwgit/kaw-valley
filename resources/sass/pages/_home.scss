@@ -3,27 +3,29 @@
  */
 body.home {
   main {
-    .offset .hero {
-      margin-left: 33.3334%;
-      margin-right: 0;
-      max-width: 66.6667%;
-      margin-bottom: 2.5rem;
-    }
-
-    .right, .left {
-      .hero {
-        max-width: none;
+    @include screen-lg-up {
+      .offset .hero {
+        margin-left: 33.3334%;
+        margin-right: 0;
+        max-width: 66.6667%;
+        margin-bottom: 2.5rem;
       }
-    }
-    
-    .right .hero {
-      margin-left: auto;
-      margin-right: 0;
-    }
-    
-    .left .hero {
-      margin-right: auto;
-      margin-left: 0;
+
+      .right, .left {
+        .hero {
+          max-width: none;
+        }
+      }
+
+      .right .hero {
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .left .hero {
+        margin-right: auto;
+        margin-left: 0;
+      }
     }
   }
 }
