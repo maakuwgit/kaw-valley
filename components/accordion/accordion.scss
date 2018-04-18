@@ -1,3 +1,84 @@
-[data-component="accordion"] {
+$dl_padding_top : 16rem;
+$dl_padding_bottom : 4rem;
+$dt_height : 5.3125rem;
+$dd_top : $dt_height + $dl_padding_top;
 
+[data-component="accordion"] {
+  position: relative;
+  min-height: 100vh;
+  background-color: $black;
+  .accordion {
+    display: none;
+  }
+  dl {
+    min-height: inherit;
+    margin: auto;
+    padding: $dl_padding_top 0 $dl_padding_bottom 0;
+    dd, dt {
+      display: flex;
+      align-self: flex-start;
+    }
+    dt {
+      align-items: center;
+      height: $dt_height;
+      min-width: 25%;
+      padding: 1rem;
+      font-size: 1.25rem;
+      font-weight: $text-medium;
+      background-color: $black;
+      z-index: 1;
+    }
+    dd {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: $dd_top;
+      bottom: $dl_padding_bottom;
+      width: 100%;
+      min-height: calc(100vh - #{$dd_top} - #{$dl_padding_bottom});
+      .accordion--content,
+      .accordion--sidebar {
+        > div {
+          max-width: 440px;
+          margin: auto;
+          > :last-child {
+            margin-bottom: auto;
+          }
+        }
+      }
+
+      .accordion--sidebar {
+        position: relative;
+        width: 25%;
+        padding: 2rem;
+        border: solid 1px $white;
+        font-size: 0.75rem;
+        .accordion--id {
+          position: absolute;
+          bottom: 0;
+          left: 2rem;
+          font-size: 6.875rem;
+          font-weight: $text-bold;
+        }
+      }
+      .accordion--content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: center;
+        width: 75%;
+        padding: 2rem;
+        h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+          margin-bottom: 1.5rem;
+          margin-left: 0;
+        }
+      }
+    }
+    .row {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }

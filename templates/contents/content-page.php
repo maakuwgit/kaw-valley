@@ -5,7 +5,7 @@ if( have_rows( 'components' ) ) {
     the_row();
     if( get_row_layout() === 'headlines' ) {
       $headline   = get_sub_field('generic_headline_text');
-      $has_bg     = get_sub_field('generic_section_bg');
+      $has_bg     = get_sub_field('generic_section_bg');//Unused yet
       $theme      = get_sub_field('generic_headline_theme');
       $layout     = get_sub_field('generic_headline_layout');
       $direction  = get_sub_field('generic_headline_direction');
@@ -20,7 +20,7 @@ if( have_rows( 'components' ) ) {
       $output .= '</div></section>';
     }elseif( get_row_layout() === 'bands' ) {
       $theme      = get_sub_field('band_theme');
-      $has_bg     = get_sub_field('generic_section_bg');
+      $has_bg     = get_sub_field('band_section_bg');//Unused yet
       //Dev Note: Move this to a component
       $css      = ' class="';
       if( $theme !== '' ) $css .= $theme . '-bg';
@@ -35,11 +35,17 @@ if( have_rows( 'components' ) ) {
       }
       $output .= '</div></section>';
     }elseif( get_row_layout() === 'accordions' ) {
-      $theme      = get_sub_field('band_theme');
-      $has_bg     = get_sub_field('generic_section_bg');
+      $theme      = get_sub_field('accordion_theme');
+      $bg     = get_sub_field('accordion_bg');
+      $accordions  = get_sub_field('accordion_wrapper');
+
       ll_include_component(
         'accordion',
-        $accordion
+        $accordions,
+        array(
+          'theme' => $theme,
+          'background' => $bg
+        )
       );
     }
   }

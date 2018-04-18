@@ -8,7 +8,7 @@
 
   var COMPONENT = {
 
-    className: 'll-accordion',
+    className: 'accordion--trigger',
 
 
     selector : function() {
@@ -18,11 +18,12 @@
 
     // Fires after common.init, before .finalize and common.finalize
     init: function() {
-
       var _this = this;
+      var accordion = $( this.selector() );
 
-      $( _this.selector() ).hover(function(e) {
-        console.log('hovered');
+      $( accordion ).hover(function(e) {
+        $('.accordion').hide();
+        $(this).next().show();
       } );
     },
 
