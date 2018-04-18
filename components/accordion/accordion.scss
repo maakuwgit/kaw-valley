@@ -1,7 +1,7 @@
 $dl_padding_top : 16rem;
 $dl_padding_bottom : 4rem;
 $dt_height : 5.3125rem;
-$dd_top : $dt_height + $dl_padding_top;
+$dd_top : $dl_padding_top;
 
 [data-component="accordion"] {
   position: relative;
@@ -9,6 +9,16 @@ $dd_top : $dt_height + $dl_padding_top;
   background-color: $black;
   .accordion {
     display: none;
+    opacity: 0;
+  }
+  .accordion--spotlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    transform: scaleX(-1);
   }
   dl {
     min-height: inherit;
@@ -25,21 +35,58 @@ $dd_top : $dt_height + $dl_padding_top;
       padding: 1rem;
       font-size: 1.25rem;
       font-weight: $text-medium;
-      background-color: $black;
-      z-index: 1;
+      z-index: 10;
+      &:not(.active) {
+        background-color: $black;
+      }
+      @include screen-md {
+        min-width: 100%;
+      }
     }
     dd {
       position: absolute;
-      left: 0;
+      top: 0;
       right: 0;
-      top: $dd_top;
-      bottom: $dl_padding_bottom;
+      bottom: 0;
+      left: 0;
+      padding-top: $dd_top;
+      padding-bottom: $dl_padding_bottom;
       width: 100%;
       min-height: calc(100vh - #{$dd_top} - #{$dl_padding_bottom});
+      .accordion--content div {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+      }
+      &:nth-of-type(2n + 2),
+      &:nth-of-type(3n + 3){
+        .accordion--content {
+          width: 75%;
+        }
+      }
+      &:nth-of-type(2n + 2){
+        .accordion--sidebar {
+          left: 25%;
+        }
+        .accordion--content {
+          margin-left: 50%;
+        }
+      }
+      &:nth-of-type(3n + 3){
+        .accordion--sidebar {
+          right: 25%;
+        }
+        .accordion--content {
+          margin-right: 50%;
+        }
+      }
       .accordion--content,
       .accordion--sidebar {
+        z-index: 5;
         > div {
           max-width: 440px;
+          height: calc( 100% - #{$dt_height} );
+          margin-top: $dt_height;
           margin: auto;
           > :last-child {
             margin-bottom: auto;
@@ -48,9 +95,10 @@ $dd_top : $dt_height + $dl_padding_top;
       }
 
       .accordion--sidebar {
-        position: relative;
+        position: absolute;
         width: 25%;
-        padding: 2rem;
+        height: calc(100% - #{$dl_padding_bottom} - #{$dl_padding_top});
+        padding: #{$dt_height} 2rem 2rem 2rem;
         border: solid 1px $white;
         font-size: 0.75rem;
         .accordion--id {
@@ -60,19 +108,33 @@ $dd_top : $dt_height + $dl_padding_top;
           font-size: 6.875rem;
           font-weight: $text-bold;
         }
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          z-index: -1;
+          background-color: rgba($black, 0.67);
+        }
       }
       .accordion--content {
+        width: 75%;
+        margin-left: 25%;
+        padding: 2rem;
+        > div {
+        position: relative;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: flex-start;
         align-content: center;
-        width: 75%;
-        padding: 2rem;
-        h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-          margin-bottom: 1.5rem;
-          margin-left: 0;
+          h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+            margin-bottom: 1.5rem;
+            margin-left: 0;
+          }
         }
       }
     }

@@ -14,8 +14,6 @@ $thumb-padding: $thumb-padding-top $thumb-padding-right $thumb-padding-bottom $t
   display: table;
   padding: $thumb-padding;
   background-color: $white;
-  background-position: center;
-  background-size: cover;
   &[data-background] {
     height: 25vw;
     padding-top: 1.5rem;

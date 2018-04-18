@@ -97,7 +97,7 @@
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "25",
+                                "width": "20",
                                 "class": "",
                                 "id": ""
                             },
@@ -115,15 +115,34 @@
                             "return_format": "value"
                         },
                         {
-                            "key": "field_5ad675bdf6f81",
-                            "label": "Background",
-                            "name": "accordion_bg",
-                            "type": "image",
+                            "key": "field_5ad6750cf6f7e",
+                            "label": "Title",
+                            "name": "accordion_headline",
+                            "type": "text",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "25",
+                                "width": "80",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Accordion Title",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5ad784ee384b6",
+                            "label": "Sidebar Background",
+                            "name": "accordion_sidebar_bg",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "40",
                                 "class": "",
                                 "id": ""
                             },
@@ -139,25 +158,6 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5ad6750cf6f7e",
-                            "label": "Headline",
-                            "name": "accordion_headline",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "Accordion Title",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
                             "key": "field_5ad690c7dca80",
                             "label": "Sidebar",
                             "name": "accordion_sidebar",
@@ -166,7 +166,7 @@
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33.333",
+                                "width": "60",
                                 "class": "",
                                 "id": ""
                             },
@@ -177,6 +177,30 @@
                             "delay": 0
                         },
                         {
+                            "key": "field_5ad675bdf6f81",
+                            "label": "Main Background",
+                            "name": "accordion_bg",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "40",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_5ad6752ef6f7f",
                             "label": "Main Content",
                             "name": "accordion_content",
@@ -185,7 +209,7 @@
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "66.666",
+                                "width": "60",
                                 "class": "",
                                 "id": ""
                             },
@@ -217,5 +241,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1524062581
+    "modified": 1524073936
 }

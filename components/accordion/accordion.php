@@ -47,28 +47,56 @@ do_action( "component_name_before_display", $component_data, $component_args );
 
 <?php
 if ( ll_empty( $data ) ) return;
-if( $args['classes'] || $data['theme'] ) {
-  $css = ' class="';
+if( $args['classes'] || $args['theme'] ) {
+  $css = ' class="ll-accordion ';
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
   if( $args['theme'] && $args['classes'] ) $css .= ' ';
   if( $args['theme'] ) $css .= $args['theme'] . '-bg';
   $css .= '"';
 }
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
-
 ?>
-
 <section<?php echo $id . $css; ?> data-component="accordion">
   <dl class="container row">
 <?php if( $data[0]['accordion_element'] ) : ?>
 <?php
   $aID = 1;
   foreach( $data[0]['accordion_element'] as $accordion ) :
+    $bg   = $accordion['accordion_bg'];
+    $sbg  = $accordion['accordion_sidebar_bg'];
+    /* Dev Note: need support for srcset and data-sizes */
+    if( $bg ) {
+      $bg = $bg['sizes']['large'];
+    }
+    if( $sbg ) {
+      $sbg = $sbg['sizes']['large'];
+    }
 ?>
     <dt class="accordion--trigger"><?php echo $accordion['accordion_headline']; ?></dt>
-    <dd class="accordion">
+    <dd class="accordion" data-background>
+      <div class="accordion--spotlight">
+        <svg <?php echo $overlay_strength;?> width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <radialGradient cx="63.1500244%" cy="62.1083984%" fx="63.1500244%" fy="62.1083984%" r="57.4003906%" gradientTransform="translate(0.631500,0.621084),scale(0.625000,1.000000),rotate(90.000000),scale(1.000000,1.006260),translate(-0.631500,-0.621084)" id="radialGradient-1">
+                <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+                <stop stop-color="#000000" offset="100%"></stop>
+            </radialGradient>
+          </defs>
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g fill="url(#radialGradient-1)">
+              <rect x="0" y="0" width="100%" height="100%"></rect>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <figure class="feature">
+        <?php echo '<img alt="" src="' . $bg . '">'; ?>
+      </figure>
       <div class="row">
-        <aside class="accordion--sidebar">
+        <aside class="accordion--sidebar" data-background>
+          <figure class="feature">
+            <?php echo '<img alt="" src="' . $sbg . '">'; ?>
+          </figure>
           <?php echo $accordion['accordion_sidebar']; ?>
           <a class="accordion--id" name="<?php echo 'accordion--id-' . $aID; ?>">0<?php echo $aID; ?></a>
         </aside>
