@@ -46,7 +46,7 @@
         if ( insideDarkBackground ) {
           // Menu was inside a dark bg, add class
           $( target ).addClass( 'navbar--dark' );
-          return;
+          //return;
         } else {
           // Menu was not inside a dark bg, remove class
           $( target ).removeClass( 'navbar--dark' );

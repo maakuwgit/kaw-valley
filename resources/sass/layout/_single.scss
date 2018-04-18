@@ -2,6 +2,12 @@
  * Single
  */
 body.single {
+  &.single-post {
+    .content {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+  }
   .hero-banner {
     p {
       display: none;
@@ -9,8 +15,6 @@ body.single {
   }
   .content {
     min-height: 100vh;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
     time {
       margin-bottom: 1.5rem;
     }

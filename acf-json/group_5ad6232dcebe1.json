@@ -1,0 +1,108 @@
+{
+    "key": "group_5ad6232dcebe1",
+    "title": "Band",
+    "fields": [
+        {
+            "key": "field_5ad661ed2b25a",
+            "label": "Theme",
+            "name": "band_theme",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "light": "Light",
+                "dark": "Dark"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "light",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5ad6235bf9e0e",
+            "label": "Columns",
+            "name": "band_columns",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5ad623a3f9e0f",
+            "min": 1,
+            "max": 4,
+            "layout": "block",
+            "button_label": "+ Column",
+            "sub_fields": [
+                {
+                    "key": "field_5ad62a7e51140",
+                    "label": "Number of Columns",
+                    "name": "band_colspan",
+                    "type": "range",
+                    "instructions": "How many columns (of 12) does this content span?",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.3334",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 3,
+                    "min": 3,
+                    "max": 12,
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_5ad623a3f9e0f",
+                    "label": "Content",
+                    "name": "band_content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "66.6667",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "295"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1524002624
+}

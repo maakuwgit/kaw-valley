@@ -20,6 +20,7 @@ $thumb-padding: $thumb-padding-top $thumb-padding-right $thumb-padding-bottom $t
     height: 25vw;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+    box-shadow: 0 0 95px inset;
   }
   @include screen-sm-only {
     width: 50%;
@@ -56,9 +57,12 @@ $thumb-padding: $thumb-padding-top $thumb-padding-right $thumb-padding-bottom $t
   .feature {
     display: none;
   }
-
+  
   &:hover {
     cursor: pointer;
+  }
+
+  &:not[data-background]:hover {
     color: $white;
     background-color: $black;
   }

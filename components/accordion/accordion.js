@@ -2,13 +2,13 @@
 * callout JS
 * -----------------------------------------------------------------------------
 *
-* All the JS for the callout component.
+* All the JS for the accordion component.
 */
 ( function( app ) {
 
   var COMPONENT = {
 
-    className: 'll-callout',
+    className: 'll-accordion',
 
 
     selector : function() {
@@ -20,6 +20,10 @@
     init: function() {
 
       var _this = this;
+
+      $( _this.selector() ).hover(function(e) {
+        console.log('hovered');
+      } );
     },
 
 
@@ -29,5 +33,5 @@
   };
 
   // Hooks the component into the app
-  app.registerComponent( 'callout', COMPONENT );
+  app.registerComponent( 'accordion', COMPONENT );
 } )( app );

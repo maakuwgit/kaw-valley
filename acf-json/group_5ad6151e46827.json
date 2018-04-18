@@ -1,11 +1,11 @@
 {
-    "key": "group_5a9467182a7cf",
-    "title": "Hero Banner",
+    "key": "group_5ad6151e46827",
+    "title": "Careers Hero",
     "fields": [
         {
-            "key": "field_5a94671c7d44d",
+            "key": "field_5ad6151e4ca5b",
             "label": "Main Text",
-            "name": "hero_banner_main_text",
+            "name": "careers_hero_main_text",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -18,7 +18,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5a9467427d44e",
+                    "key": "field_5ad6151e4f213",
                     "label": "Text",
                     "name": "text",
                     "type": "textarea",
@@ -37,7 +37,7 @@
                     "new_lines": "br"
                 },
                 {
-                    "key": "field_5a9467587d44f",
+                    "key": "field_5ad6151e4f27d",
                     "label": "Heading Level",
                     "name": "tag",
                     "type": "button_group",
@@ -61,82 +61,9 @@
             ]
         },
         {
-            "key": "field_5a9467817d450",
-            "label": "Sub Text",
-            "name": "hero_banner_sub_text",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_5a9467817d451",
-                    "label": "Text",
-                    "name": "text",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 2,
-                    "new_lines": "br"
-                },
-                {
-                    "key": "field_5a9467817d452",
-                    "label": "Heading Level",
-                    "name": "tag",
-                    "type": "button_group",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "h2": "h2",
-                        "h1": "h1"
-                    },
-                    "allow_null": 0,
-                    "default_value": "h2",
-                    "layout": "horizontal",
-                    "return_format": "value"
-                }
-            ]
-        },
-        {
-            "key": "field_5a94679d7d453",
-            "label": "Call To Action",
-            "name": "hero_banner_cta",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
-            "key": "field_5ad1202e0820e",
+            "key": "field_5ad6151e4cce3",
             "label": "Show Triangles?",
-            "name": "hero_banner_show_icons",
+            "name": "careers_hero_show_icons",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -153,9 +80,9 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5a9467c07d454",
+            "key": "field_5ad6151e4cd9f",
             "label": "Background Image",
-            "name": "hero_banner_background_image",
+            "name": "careers_hero_background_image",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -177,9 +104,9 @@
             "mime_types": ""
         },
         {
-            "key": "field_5acb6132cc339",
+            "key": "field_5ad6151e4ce67",
             "label": "Loop Video Url",
-            "name": "hero_banner_loop_video",
+            "name": "careers_hero_oop_video",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -196,9 +123,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_5acb6167cc33a",
+            "key": "field_5ad6151e4cf49",
             "label": "Popup Video Url",
-            "name": "hero_banner_popup_video",
+            "name": "careers_hero_popup_video",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -215,9 +142,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_5ad58f55dcbd5",
+            "key": "field_5ad6151e4cffd",
             "label": "Spotlight Strength",
-            "name": "hero_banner_spotlight_strength",
+            "name": "careers_hero_spotlight_strength",
             "type": "range",
             "instructions": "",
             "required": 0,
@@ -238,24 +165,9 @@
     "location": [
         [
             {
-                "param": "page",
-                "operator": "!=",
-                "value": "20"
-            },
-            {
-                "param": "page",
-                "operator": "!=",
-                "value": "44"
-            },
-            {
-                "param": "post_type",
-                "operator": "!=",
-                "value": "post"
-            },
-            {
-                "param": "post_type",
-                "operator": "!=",
-                "value": "career"
+                "param": "options_page",
+                "operator": "==",
+                "value": "career_settings"
             }
         ]
     ],
@@ -267,5 +179,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1523982953
+    "modified": 1523979923
 }

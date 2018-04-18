@@ -29,6 +29,14 @@
   display: none;
 }
 
+.text-bold {
+  font-weight: $text-bold !important;
+}
+
+.text-med {
+  font-weight: $text-medium !important;
+}
+
 .no-bullet {
   list-style: none;
 }

@@ -3,42 +3,55 @@
     "title": "Page Header",
     "fields": [
         {
-            "key": "field_5ad0fc0cced6f",
-            "label": "Headline",
-            "name": "page_headline",
-            "type": "text",
+            "key": "field_5ad619f839fba",
+            "label": "Show Header?",
+            "name": "page_has_header",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "15",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
-            "key": "field_5ad0fdd0b4265",
-            "label": "Subheadline",
-            "name": "page_subheadline",
-            "type": "text",
+            "key": "field_5ad618ed0e670",
+            "label": "Theme",
+            "name": "page_theme",
+            "type": "radio",
             "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ad619f839fba",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": "",
+                "width": "20",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "choices": {
+                "light": "Light",
+                "dark": "Dark"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "light",
+            "layout": "vertical",
+            "return_format": "value"
         },
         {
             "key": "field_5ad0fc0f34616",
@@ -47,9 +60,17 @@
             "type": "radio",
             "instructions": "How should the headline be positioned?",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ad619f839fba",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": "50",
+                "width": "40",
                 "class": "",
                 "id": ""
             },
@@ -73,9 +94,17 @@
             "type": "radio",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ad619f839fba",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": "50",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -91,13 +120,75 @@
             "return_format": "value"
         },
         {
+            "key": "field_5ad0fc0cced6f",
+            "label": "Headline",
+            "name": "page_headline",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ad619f839fba",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ad0fdd0b4265",
+            "label": "Subheadline",
+            "name": "page_subheadline",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ad619f839fba",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5ad0fceb34617",
             "label": "Text",
             "name": "page_excerpt",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ad619f839fba",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -118,26 +209,19 @@
                 "value": "post"
             },
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "!=",
-                "value": "team"
+                "value": "archive-team.php"
             },
             {
-                "param": "page_type",
+                "param": "page_template",
                 "operator": "!=",
-                "value": "front_page"
-            }
-        ],
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "site-options"
+                "value": "archive.php"
             }
         ]
     ],
-    "menu_order": 0,
-    "position": "normal",
+    "menu_order": 1,
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -147,5 +231,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1523909535
+    "modified": 1523997769
 }

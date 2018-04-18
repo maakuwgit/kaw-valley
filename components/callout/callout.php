@@ -16,11 +16,12 @@ global $post;
  * @see data[]
  */
 $default_data = [
-  'headline' => "Let's Work Together.",
-  'link' => array(
-    'label' => 'Start a project',
-    'title' => 'Lorem ipsum',
-    'href'  => '/'
+  'theme'     => 'light',
+  'headline'  => "Let's Work Together.",
+  'link'      => array(
+    'label'   => 'Start a project',
+    'title'   => 'Lorem ipsum',
+    'href'    => '/'
   )
 ];
 
@@ -43,7 +44,13 @@ do_action( "component_name_before_display", $component_data, $component_args );
 
 $has_prefooter = get_field('has_prefooter', $post->ID);
 if ( ll_empty( $data ) || !$has_prefooter || $has_prefooter === null ) return;
-$css = ($args['classes'] ? ' class="' . implode( " ", $args['classes'] ) . '"' : '');
+if( $args['classes'] || $data['theme'] ) {
+  $css = ' class="';
+  if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
+  if( $data['theme'] && $args['classes'] ) $css .= ' ';
+  if( $data['theme'] ) $css .= $data['theme'] . '-bg';
+  $css .= '"';
+}
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
 ?>
 <aside<?php echo $id . $css; ?>>

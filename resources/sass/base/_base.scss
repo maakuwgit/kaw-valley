@@ -16,7 +16,7 @@ html {
 
 body {
   color: $text-dark;
-  background-color: $black;
+  background-color: $white;
   @include font-size(16);
   line-height: 1;
 
@@ -85,7 +85,7 @@ button {
   transition: all 0.10s ease-in-out;
 }
 
-img {
+img, svg.logo {
   display: block;
   max-width: 100%;
   height: auto;
@@ -93,6 +93,10 @@ img {
 
 code {
   white-space: normal;
+}
+
+main {
+  background-color: $black;
 }
 
 p {

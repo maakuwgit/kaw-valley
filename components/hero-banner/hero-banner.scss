@@ -8,19 +8,23 @@
 
 .hero-banner {
   position: relative;
-  height: 93vh;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  overflow:hidden;
+  padding: 15vh 0;
   background-color: $black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   color: $white;
 
-  &.has-image::before {
-    content: '';
-    @extend %overlay;
-    background: transparent url(#{$hero-midground}) center no-repeat;
-    background-size: cover;
-    background-blend-mode: multiply;
+  #hero-spotlight{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     z-index: 1
   }
 
@@ -46,11 +50,13 @@
   }
 
   .button {
-    margin-top: 3.57em;
+    position: relative;
+    z-index: 1;
   }
 
   .play-video-button {
     position:absolute;
+    z-index: 1;
     bottom: 0;
     display: inline-flex;
     margin: auto;

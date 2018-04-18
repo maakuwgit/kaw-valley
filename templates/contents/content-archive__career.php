@@ -1,4 +1,4 @@
-<section class="content">
+<section class="content light-bg">
   <div class="container row">
     <?php
       if( get_field( 'careers_subheadline', 'options') ) {
@@ -27,7 +27,7 @@
 
   if( $articles->have_posts() ) :
 ?>
-<section class="content">
+<section class="content light-bg">
   <div class="container row centered">
     <table>
       <thead>

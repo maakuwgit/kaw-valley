@@ -2,6 +2,7 @@ body > aside {
   min-height: 50vh;
   @include row-gutter;
   background: $white url(#{$callout-bg}) center no-repeat;
+  background-size: cover;
   * {
     color: $black;
     align-self: center;

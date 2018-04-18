@@ -31,8 +31,15 @@ body {
     z-index: 25;
     padding-top: $padding_top;
     padding-bottom: $padding_bottom;
-    &:not(.light) * {
+    &:not(.navbar--dark) * {
       color: $white;
+    }
+    &.navbar--dark * {
+      color: $black;
+      path {
+        fill:$black;
+        stroke: $black;
+      }
     }
     &.top,
     &.transparent {
@@ -44,11 +51,21 @@ body {
       &.logo {
         width: $logo_width;
         height: $logo_height;
-        img {
+        img,
+        svg {
           position: absolute;
-          clip: rect(0, $logo_width, $logo_height, 0);
           width: auto;
+        }
+        img {
+          clip: rect(0, $logo_width, $logo_height, 0);
           height: $logo_height;
+        }
+        svg {
+          top: 0;
+          left: 0;
+          transform: scale(0.65) translate(-46px, -21px);
+          clip: rect(0,7rem, 5rem,0);
+          height: 5rem;
         }
       }
     }
@@ -216,6 +233,11 @@ body {
   height: 22px;
   display: inline-block;
   position: relative;
+  .navbar--dark & *,
+  .navbar--dark & *:before,
+  .navbar--dark & *:after {
+    background-color: $black;
+  }
 }
 .navbar {
   .navbar-toggle {
