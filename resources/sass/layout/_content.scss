@@ -11,9 +11,14 @@
     background-image: url(#{$page-header-alt-bg});
   }
   body & {
-    background-size: cover;
+    background-size: contain;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+  }
+
+  body.archive & {
+    padding-top: $row-gutter;
+    padding-bottom: $row-gutter;
   }
 
   body:not([class*="-archive"]):not([class*="archive-"]):not(.single-post):not(.home) & {
@@ -23,7 +28,7 @@
     max-width: 700px;
     margin-left: 0;
   }
-  figure {
+  figure:not(.thumbnail) {
     margin-top: 3rem;
     margin-bottom: 1.5rem;
     @include screen-sm {

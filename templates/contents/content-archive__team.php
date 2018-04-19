@@ -9,7 +9,7 @@
 
   if( $members->have_posts() ) :
 ?>
-<section class="content">
+<section class="content light-bg">
   <div class="container row centered">
   <?php
     while ( $members->have_posts() ) {

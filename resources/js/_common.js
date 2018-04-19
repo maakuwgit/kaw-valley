@@ -159,14 +159,30 @@
       });
 
 
-      // Magnific Popup
+      /*
+       * Magnific Popup
+       */
+
       // For embeded images within the post content
       $('a[rel="magnific"]').magnificPopup({
-        type: 'image',
+        type: 'iframe',
         removalDelay: 300,
         mainClass: 'mfp-fade'
       });
 
+      // For using thumbnails to trigger
+      $('[data-mfp-src]').on('click.openPopup', function(e){
+        e.preventDefault();
+        $src =  $(this).attr('data-mfp-src');
+        $.magnificPopup.open({
+          items: {
+            src: $src
+          },
+          type: 'iframe',
+          removalDelay: 300,
+          mainClass: 'mfp-fade'
+        });
+      });
       /*
        * Address Autocompletes
        */

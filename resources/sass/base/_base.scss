@@ -136,3 +136,11 @@ table {
   background-position: center;
   background-size: cover;
 }
+
+html[lang] {
+  margin-top: initial !important;
+}
+
+.single-team #wpadminbar {
+  display: none;
+}

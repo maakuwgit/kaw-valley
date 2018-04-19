@@ -1,7 +1,7 @@
 /**
  * Button Styles
  */
-button:not([data-nav]),
+button:not([data-nav]):not(.mfp-close),
 .button {
   display: inline-block;
   border: 1px solid $black;

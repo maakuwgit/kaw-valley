@@ -1,4 +1,4 @@
-<section class="content">
+<section class="content light-bg">
   <div class="container row centered">
 <?php
   $args = array(
