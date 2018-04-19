@@ -38,6 +38,12 @@
 .row [class^=col-] {
   flex: 0 0 auto;
   max-width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @include screen-lg-up {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .col-full {

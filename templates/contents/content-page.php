@@ -4,48 +4,58 @@ if( have_rows( 'components' ) ) {
   while( have_rows( 'components' ) ) {
     the_row();
     if( get_row_layout() === 'headlines' ) {
-      $headline   = get_sub_field('generic_headline_text');
-      $has_bg     = get_sub_field('generic_section_bg');//Unused yet
-      $theme      = get_sub_field('generic_headline_theme');
-      $layout     = get_sub_field('generic_headline_layout');
-      $direction  = get_sub_field('generic_headline_direction');
-      //Dev Note: Move this to a component
-      $css        = ' class="';
-      if( $theme !== '' ) $css .= $theme . '-bg';
-      if( $layout !== '' ) $css .= ' ' . $layout;
-      $css .= '"';
-      $output .= '<section' . $css . '>';
-      $output .= '<div class="container row">';
-      $output .= '<h3 class="hero text-med">' . $headline . '</h3>';
-      $output .= '</div></section>';
+      $headline   = array(
+        'generic_headline_text'       => get_sub_field('generic_headline_text'),
+        'generic_section_bg'          => get_sub_field('generic_section_bg'),//Unused yet
+        'generic_headline_theme'      => get_sub_field('generic_headline_theme'),
+        'generic_headline_layout'     => get_sub_field('generic_headline_layout'),
+        'generic_headline_direction'  => get_sub_field('generic_headline_direction')
+      );
+
+      $output .= ll_include_component(
+        'headline',
+        $headline,
+        array(),
+        true
+      );
+
     }elseif( get_row_layout() === 'bands' ) {
-      $theme      = get_sub_field('band_theme');
-      $has_bg     = get_sub_field('band_section_bg');//Unused yet
-      //Dev Note: Move this to a component
-      $css      = ' class="';
-      if( $theme !== '' ) $css .= $theme . '-bg';
-      $css .= '"';
-      $output .= '<section' . $css . '>';
-      $output .= '<div class="container row">';
+      $cols = [];
+
       while( have_rows( 'band_columns' ) ) {
         the_row();
-        $num_cols   = get_sub_field('band_colspan');
-        $content    = get_sub_field('band_content');
-        $output .= '<div class="col-' . $num_cols . 'of12">' . $content . '</div>';
+        $cols[] = array(
+          'band_colspan' => get_sub_field('band_colspan'),
+          'band_content' => get_sub_field('band_content')
+        );
       }
-      $output .= '</div></section>';
+
+      $band   = array(
+        'band_bg'      => get_sub_field('band_section_bg'),//Unused yet
+        'band_theme'   => get_sub_field('band_theme'),
+        'band_columns' => $cols
+      );
+
+      $output .= ll_include_component(
+        'band',
+        $band,
+        array(),
+        true
+      );
+
     }elseif( get_row_layout() === 'accordions' ) {
       $theme      = get_sub_field('accordion_theme');
       $bg     = get_sub_field('accordion_bg');
       $accordions  = get_sub_field('accordion_wrapper');
 
-      ll_include_component(
+      $output .= ll_include_component(
         'accordion',
         $accordions,
         array(
           'theme' => $theme,
           'background' => $bg
-        )
+        ),
+        true
       );
     }
   }

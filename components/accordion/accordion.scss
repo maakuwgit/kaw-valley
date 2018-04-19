@@ -1,5 +1,7 @@
-$dl_padding_top : 16rem;
-$dl_padding_bottom : 4rem;
+$dl_padding_top__lg : 16rem;
+$dl_padding_bottom__lg : 4rem;
+$dl_padding_top : 18.75vh;
+$dl_padding_bottom : 1vh;
 $dt_height : 5.3125rem;
 $dd_top : $dl_padding_top;
 
@@ -27,8 +29,9 @@ $dd_top : $dl_padding_top;
     min-height: inherit;
     margin: auto;
     padding: $dl_padding_top 0 $dl_padding_bottom 0;
-    @include screen-lg {
-      padding-top: $dl_padding_bottom;
+    @include screen-xl-up {
+      padding-top: $dl_padding_top__lg;
+      padding-bottom: $dl_padding_bottom__lg;
     }
     dd, dt {
       display: flex;
@@ -44,6 +47,9 @@ $dd_top : $dl_padding_top;
       z-index: 10;
       &:not(.active) {
         background-color: $black;
+      }
+      @include screen-lg-up {
+        min-width: 25%;
       }
     }
     dd {

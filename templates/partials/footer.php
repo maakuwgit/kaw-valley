@@ -90,7 +90,7 @@
                 $location_cat = get_the_terms(get_the_ID(), 'state');
                 if( $location_cat ) $title .= ',&nbsp;' . strtoupper($location_cat[0]->slug);
             ?>
-                <li><?php echo $title; ?></li>
+                <li><a><?php echo $title; ?></a></li>
             <?php
               endwhile;
               wp_reset_postdata();

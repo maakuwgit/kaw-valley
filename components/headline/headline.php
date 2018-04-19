@@ -1,11 +1,11 @@
 <?php
 /**
-* callout
+* headline
 * -----------------------------------------------------------------------------
 *
-* callout component
+* headline component
 * @since 1.0.0
-* @author First Last
+* @author MaakuW
 */
 global $post;
 
@@ -16,18 +16,15 @@ global $post;
  * @see data[]
  */
 $default_data = [
-  'theme'     => 'light',
-  'headline'  => "Let's Work Together.",
-  'link'      => array(
-    'text'   => 'Start a project',
-    'title'   => 'Lorem ipsum',
-    'href'    => '/'
-  )
+  'generic_headline_theme'     => 'dark',
+  'generic_headline_layout'     => 'left',
+  'generic_headline_direction'     => 'above',
+  'generic_headline_text'  => "Lorem Ipsum."
 ];
 
 $default_args = [
   'classes' => array(),
-  'id' => uniqid('callout-')
+  'id' => uniqid('headline-')
 ];
 
 $data = ll_parse_args( $component_data, $default_data );
@@ -43,38 +40,23 @@ do_action( "component_name_before_display", $component_data, $component_args );
 <?php
 
 $has_prefooter = get_field('has_prefooter', $post->ID);
+$css = ' class="headline ';
+
 if ( ll_empty( $data ) || !$has_prefooter || $has_prefooter === null ) return;
-if( $args['classes'] || $data['theme'] ) {
-  $css = ' class="';
+if( $args['classes'] || $data['generic_headline_theme'] ) {
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
-  if( $data['theme'] && $args['classes'] ) $css .= ' ';
-  if( $data['theme'] ) $css .= $data['theme'] . '-bg';
-  $css .= '"';
+  if( $data['generic_headline_theme'] && $args['classes'] ) $css .= ' ';
+  if( $data['generic_headline_theme'] ) $css .= $data['generic_headline_theme'] . '-bg';
+  if( $data['generic_headline_layout'] ) $css .= ' ' . $data['generic_headline_layout'];
 }
+$css .= '"';
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
 ?>
-<aside<?php echo $id . $css; ?>>
+<section<?php echo $id . $css; ?>>
   <div class="container row">
-    <h3 class="hero"><?php echo $data['headline']; ?></h3>
-    <nav>
-    <?php
-      $button = array(
-        'text' => $data['link']['text'],
-        'link' => array(
-          'title' => $data['link']['title'],
-          'href'  => $data['link']['href']
-        )
-      );
-
-      ll_include_component(
-        'button',
-        $button
-      );
-    ?>
-    </nav>
+    <h3 class="hero text-med"><?php echo $data['generic_headline_text']; ?></h3>
   </div>
-</aside>
-
+</section>
 <?php
 /**
  * component_name_after_display hook

@@ -1,10 +1,10 @@
 <?php
 /**
-* Button
+* button
 * -----------------------------------------------------------------------------
 *
-* Button component
-* @since 1.0.0
+* button component
+* @since 1.0.1
 * @author First Last
 */
 
@@ -39,13 +39,13 @@ do_action( "component_name_before_display", $component_data, $component_args );
 <?php if ( ll_empty( $data ) ) return; ?>
 
 <a
-  class="ll-Button <?php echo implode( " ", $args['classes'] ); ?>"
+  class="button <?php echo implode( " ", $args['classes'] ); ?>"
   title="<?php echo $data['link']['title']; ?>"
   href="<?php echo $data['link']['href'] ?>"
   <?php echo $args['id'] ? 'id="' . $args['id'] . '"' : ''; ?>
-  data-component="Button"
+  data-component="button"
 >
-  <?php echo $args['text']; ?>
+  <?php echo $data['text']; ?>
 </a>
 
 <?php

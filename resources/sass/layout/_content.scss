@@ -2,18 +2,14 @@
  * Content
  */
 .content {
+  @include row-gutter;
+  color: $text-color;
   &.dark {
     * {
       color: $white;
-    }/*
-    background-color: $black;*/
+    }
     background-image: url(#{$page-header-alt-bg});
   }
-  @include row-gutter;
-  color: $text-color;
-  /*
-  background-color: $white;
-  */
   body & {
     background-size: cover;
     background-position: center;

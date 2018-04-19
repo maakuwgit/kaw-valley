@@ -4,8 +4,8 @@
 * -----------------------------------------------------------------------------
 *
 * Accordion component
-* @since 1.0.0
-* @author First Last
+* @since 1.2
+* @author MaakuW
 */
 global $post;
 

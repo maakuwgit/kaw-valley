@@ -37,11 +37,16 @@ body > footer {
         padding-left: 0;
         text-align: center;
       }
+      a {
+        display: inline-block;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+      }
     }
   }
 
   .footer__bottom {
-    margin-top: auto;
+    margin-top: 15vh;
     margin-bottom: auto;
     text-align: center;
     &.row {
