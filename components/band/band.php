@@ -21,7 +21,8 @@ $default_data = [
     array(
       'band_bg'      => array(),
       'band_theme'   => 'dark',
-      'band_colspan' => '4',
+      'band_align'   => 'flex-start',
+      'band_colspan' => '3',
       'band_content' => '<h5>Lorem ipsum</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
     )
   )
@@ -44,22 +45,30 @@ do_action( "component_name_before_display", $component_data, $component_args );
 
 <?php
 if ( ll_empty( $data ) ) return;
-if( $args['classes'] || $data['theme'] ) {
+if( $args['classes'] || $data['band_theme'] ) {
   $css = ' class="ll-accordion ';
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
-  if( $data['theme'] && $args['classes'] ) $css .= ' ';
-  if( $data['theme'] ) $css .= $data['theme'] . '-bg';
+  if( $data['band_theme'] && $args['classes'] ) $css .= ' ';
+  if( $data['band_theme'] ) $css .= $data['band_theme'] . '-bg';
   $css .= '"';
 }
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
+$align = ( $data['band_align'] === null ? '' : $data['band_align'] . ' ' );
 ?>
 <section<?php echo $id . $css; ?>>
   <div class="container row">
 <?php if( $data['band_columns'] ) : ?>
 <?php
   foreach( $data['band_columns'] as $band ) :
+    $col_span = $band['band_colspan'];
+    $col_suff = 'of12';
+    /*Dev Note: this logic is still very... loose*/
+    $col_md = 'col-md-' . ( $col_span < 6 ? 6 : floor( $col_span / 2 ) ) . $col_suff;
+    $col_lg = 'col-lg-' . $col_span . $col_suff;
+    $col_xl = 'col-xl-' . $col_span . $col_suff;
+    $col_class = ' class="' . $align . $col_md . ' ' . $col_lg . ' ' . $col_xl . '"';
 ?>
-    <div class="col-lg-<?php echo $band['band_colspan'];?>of12"><?php echo $band['band_content']; ?></div>
+    <div<?php echo $col_class; ?>><?php echo $band['band_content']; ?></div>
 <?php
   endforeach;
 ?>

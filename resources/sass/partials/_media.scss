@@ -2,16 +2,26 @@
  * Media object
  * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
  */
+.row .flex-start figcaption {
+  bottom: initial;
+  top: 2.5rem;
+}
+
+figure[class^='align-'],
 .wp-caption {
+  position: relative;
+  margin-top: auto;
   img {
     opacity: 0.7;
   }
-  .wp-caption-text {
-    margin-top: -6.25rem;
-    margin-left: 1.5rem;
+  figcaption {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 3.25rem;
     font-weight: $text-medium;
   }
 }
+
 .media {
   display: flex;
   align-items: flex-start;

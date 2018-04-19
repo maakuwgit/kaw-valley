@@ -11,7 +11,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -22,9 +22,85 @@
             "allow_null": 1,
             "other_choice": 0,
             "save_other_choice": 0,
-            "default_value": "light",
-            "layout": "horizontal",
+            "default_value": "dark",
+            "layout": "vertical",
             "return_format": "value"
+        },
+        {
+            "key": "field_5ad8af1a687d4",
+            "label": "Alignment",
+            "name": "band_align",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "flex-start": "Top",
+                "center": "Middle",
+                "flex-end": "Bottom"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "flex-start",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5ad8b6fa94722",
+            "label": "Has Background?",
+            "name": "has_background",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ad8b6d694721",
+            "label": "Background",
+            "name": "section_bg",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ad8b6fa94722",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_5ad6235bf9e0e",
@@ -59,7 +135,7 @@
                         "id": ""
                     },
                     "default_value": 3,
-                    "min": 3,
+                    "min": 2,
                     "max": 12,
                     "step": "",
                     "prepend": "",
@@ -104,5 +180,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1524002624
+    "modified": 1524152689
 }

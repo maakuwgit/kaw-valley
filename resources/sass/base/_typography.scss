@@ -77,7 +77,8 @@ h5, .h5 {
   font-weight: $text-bold;
 }
 
-.wp-caption-text, 
+figure[class^='align-'] figcaption,
+.wp-caption-text,
 .hero {
   font-size: 14vw;
   font-weight: $text-bold;

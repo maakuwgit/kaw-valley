@@ -6,7 +6,8 @@ if( have_rows( 'components' ) ) {
     if( get_row_layout() === 'headlines' ) {
       $headline   = array(
         'generic_headline_text'       => get_sub_field('generic_headline_text'),
-        'generic_section_bg'          => get_sub_field('generic_section_bg'),//Unused yet
+        'has_background'              => get_sub_field('has_background'),
+        'generic_section_bg'          => get_sub_field('section_bg'),//Unused yet
         'generic_headline_theme'      => get_sub_field('generic_headline_theme'),
         'generic_headline_layout'     => get_sub_field('generic_headline_layout'),
         'generic_headline_direction'  => get_sub_field('generic_headline_direction')
@@ -31,9 +32,11 @@ if( have_rows( 'components' ) ) {
       }
 
       $band   = array(
-        'band_bg'      => get_sub_field('band_section_bg'),//Unused yet
-        'band_theme'   => get_sub_field('band_theme'),
-        'band_columns' => $cols
+        'has_background' => get_sub_field('has_background'),
+        'band_align'     => get_sub_field('band_align'),
+        'band_bg'        => get_sub_field('section_bg'),
+        'band_theme'     => get_sub_field('band_theme'),
+        'band_columns'   => $cols
       );
 
       $output .= ll_include_component(
@@ -44,8 +47,8 @@ if( have_rows( 'components' ) ) {
       );
 
     }elseif( get_row_layout() === 'accordions' ) {
-      $theme      = get_sub_field('accordion_theme');
-      $bg     = get_sub_field('accordion_bg');
+      $theme       = get_sub_field('accordion_theme');
+      $bg          = get_sub_field('accordion_bg');
       $accordions  = get_sub_field('accordion_wrapper');
 
       $output .= ll_include_component(
