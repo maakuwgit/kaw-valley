@@ -20,12 +20,7 @@ article.thumbnail {
     min-height: 280px;
     max-height: 330px;
     padding: 0;
-    box-shadow: 0 0 95px inset;
-    background-color: #333;
-    &:hover {
-      box-shadow: 0 0 0 inset;
-      background-size: 125%;
-    }
+    background-color: #1f1f1f;
   }
   @include screen-sm-only {
     width: 50%;
@@ -36,6 +31,15 @@ article.thumbnail {
   @include screen-sm-up {
     [data-background] {
       height: 25vw;
+    }
+  }
+  @include screen-lg-up {
+    [data-background] {
+      box-shadow: 0 0 95px rgba($black, 0.6) inset;
+      &:hover {
+        box-shadow: 0 0 0 inset;
+        background-size: 125%;
+      }
     }
   }
   a {

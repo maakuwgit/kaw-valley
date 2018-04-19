@@ -26,7 +26,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "80",
                         "class": "",
                         "id": ""
                     },
@@ -45,7 +45,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     },
@@ -84,7 +84,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "80",
                         "class": "",
                         "id": ""
                     },
@@ -103,7 +103,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     },
@@ -127,7 +127,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33.3334",
                 "class": "",
                 "id": ""
             },
@@ -142,7 +142,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33.3334",
                 "class": "",
                 "id": ""
             },
@@ -153,6 +153,26 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_5ad58f55dcbd5",
+            "label": "Spotlight Strength",
+            "name": "hero_banner_spotlight_strength",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3334",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "0.8",
+            "min": 0,
+            "max": 1,
+            "step": "0.1",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_5a9467c07d454",
             "label": "Background Image",
             "name": "hero_banner_background_image",
@@ -161,7 +181,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -213,26 +233,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_5ad58f55dcbd5",
-            "label": "Spotlight Strength",
-            "name": "hero_banner_spotlight_strength",
-            "type": "range",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "min": 0,
-            "max": 1,
-            "step": "0.1",
-            "prepend": "",
-            "append": ""
         }
     ],
     "location": [
@@ -256,6 +256,11 @@
                 "param": "post_type",
                 "operator": "!=",
                 "value": "career"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "team"
             }
         ]
     ],
@@ -267,5 +272,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1523982953
+    "modified": 1524161487
 }

@@ -46,7 +46,7 @@ do_action( "component_name_before_display", $component_data, $component_args );
 <?php
 if ( ll_empty( $data ) ) return;
 if( $args['classes'] || $data['band_theme'] ) {
-  $css = ' class="ll-accordion ';
+  $css = ' class="band ';
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
   if( $data['band_theme'] && $args['classes'] ) $css .= ' ';
   if( $data['band_theme'] ) $css .= $data['band_theme'] . '-bg';

@@ -16,10 +16,13 @@ global $post;
  * @see data[]
  */
 $default_data = [
-  'generic_headline_theme'     => 'dark',
+  'generic_headline_theme'      => 'dark',
   'generic_headline_layout'     => 'left',
-  'generic_headline_direction'     => 'above',
-  'generic_headline_text'  => "Lorem Ipsum."
+  'generic_headline_position'   => 'above',
+  'generic_headline_direction'  => 'ltr',
+  'has_background'              => false,
+  'generic_section_bg'          => array(),
+  'generic_headline_text'       => "Lorem Ipsum."
 ];
 
 $default_args = [
@@ -41,20 +44,23 @@ do_action( "component_name_before_display", $component_data, $component_args );
 
 $has_prefooter = get_field('has_prefooter', $post->ID);
 $css = ' class="headline ';
+$layout = $data['generic_headline_layout'];
+$direction = $data['generic_headline_direction'];
+$position = $data['generic_headline_position'];
 
 if ( ll_empty( $data ) || !$has_prefooter || $has_prefooter === null ) return;
 if( $args['classes'] || $data['generic_headline_theme'] ) {
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
   if( $data['generic_headline_theme'] && $args['classes'] ) $css .= ' ';
   if( $data['generic_headline_theme'] ) $css .= $data['generic_headline_theme'] . '-bg';
-  if( $data['generic_headline_layout'] ) $css .= ' ' . $data['generic_headline_layout'];
+  if( $layout ) $css .= ' ' . $layout;
 }
 $css .= '"';
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
 ?>
 <section<?php echo $id . $css; ?>>
   <div class="container row">
-    <h3 class="hero text-med"><?php echo $data['generic_headline_text']; ?></h3>
+    <h3 class="hero text-med <?php echo $direction; ?>"><?php echo $data['generic_headline_text']; ?></h3>
   </div>
 </section>
 <?php

@@ -2,21 +2,114 @@
  * Single
  */
 body.single {
-  &.single-post {
+  &.single-post,
+  &.single-team {
     .content {
       padding-top: 2.5rem;
       padding-bottom: 2.5rem;
     }
   }
-  .hero-banner {
+
+  &.single-career,
+  &.single-team {
+    .content {
+      background-color: white;
+  }
+
+  &.single-career {
+    h3 {
+      margin-bottom: 2.5rem;
+    }
+    h4 {
+      margin-bottom: 1.25rem;
+      color: $danger-color;
+      font-size: 1.25rem;
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+    main {
+      padding-top: 0;
+    }
     p {
-      display: none;
+      margin-bottom: 2.5rem;
+      &.text-med,
+      &.text-bold {
+        margin-bottom: 1rem;
+      }
+    }
+    #hero-career {
+      padding-top: 16rem;
+      padding-bottom: 0;
+      color: $text-color;
+      .container {
+        position: relative;
+        overflow: visible;
+        &:before {
+          content: '';
+          position: absolute;
+          width: 262px;
+          height: 220px;
+          background: transparent url(../img/icons-triangles.svg) center no-repeat;
+          background-size: contain;
+          margin-top: -140px;
+          margin-left: -177px;
+        }
+      }
     }
   }
-  .content {
-    min-height: 100vh;
-    time {
-      margin-bottom: 1.5rem;
+
+  &.single-team {
+      figure {
+        margin-top: 1rem;
+        min-height: 320px;
+      }
+      *[class^="col-"] {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+    }
+  }
+  &.single-project {
+    @include screen-lg-up {
+      article.content:first-of-type {
+        padding-bottom: calc(15vh + 10rem);
+        + .band > .container:first-of-type {
+          margin-top: -16rem;
+        }
+      }
+      .band {
+        margin-bottom: 8rem;
+        h3 {
+          font-size: 5.3125rem;
+        }
+        h5 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+        p {
+          max-width: 580px;
+          margin-bottom: 3rem;
+          line-height: 1.5;
+        }
+        figure[class^=align-] img {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &.single-post {
+    .hero-banner {
+      p {
+        display: none;
+      }
+    }
+    .content {
+      min-height: 100vh;
+      time {
+        margin-bottom: 1.5rem;
+      }
     }
   }
 }

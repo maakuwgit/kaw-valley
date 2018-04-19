@@ -1,5 +1,5 @@
 <?php
-  $hero_banner = array(
+  $band = array(
     'main_text'        => array( 'text' => get_the_title() ),
     'sub_text'         => array( 'text' => '' ),
     'call_to_action'   => array( 'url' => get_the_permalink(),
@@ -9,7 +9,7 @@
   );
 
   ll_include_component(
-    'hero-banner',
-    $hero_banner
+    'band',
+    $band
   );
 ?>

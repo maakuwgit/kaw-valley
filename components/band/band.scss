@@ -1,0 +1,11 @@
+.band {
+  @include screen-md-up {
+    .col-lg-1of12,
+    .col-lg-2of12,
+    .col-lg-3of12 {
+      h3 {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

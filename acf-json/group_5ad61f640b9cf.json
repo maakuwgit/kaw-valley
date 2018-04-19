@@ -139,6 +139,13 @@
                 "operator": "!=",
                 "value": "295"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
         ]
     ],
     "menu_order": 0,
@@ -151,5 +158,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1524004411
+    "modified": 1524164636
 }

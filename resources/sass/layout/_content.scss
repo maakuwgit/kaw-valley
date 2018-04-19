@@ -11,7 +11,7 @@
     background-image: url(#{$page-header-alt-bg});
   }
   body & {
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: repeat;
   }
@@ -20,8 +20,8 @@
     padding-top: $row-gutter;
     padding-bottom: $row-gutter;
   }
-
-  body:not([class*="-archive"]):not([class*="archive-"]):not(.single-post):not(.home) & {
+/*Dev Note: need to return here and fix this awful selector */
+  body:not([class*="-archive"]):not([class*="archive-"]):not(.single-career):not(.single-post):not(.home) & {
     background-image: url(#{$page-header-bg});
   }
   h3 {
@@ -29,8 +29,9 @@
     margin-left: 0;
   }
   figure:not(.thumbnail) {
+    /*Dev Note: causing a LOT of ruckus
     margin-top: 3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;*/
     @include screen-sm {
       &.align-none {
         width: 100%;
