@@ -13,13 +13,13 @@ body.single {
   &.single-career,
   &.single-team {
     .content {
-      background-color: white;
+      background-color: $white;
     }
   }
 
   &.single-career {
     .content {
-      h3 {
+      h2, h3, p {
         margin-bottom: 2.5rem;
       }
 
@@ -34,10 +34,12 @@ body.single {
       }
 
       p {
-        margin-bottom: 2.5rem;
         &.text-med,
         &.text-bold {
           margin-bottom: 1rem;
+        }
+        &.h1 {
+          margin-bottom: 1.5rem;
         }
       }
     }
@@ -51,7 +53,7 @@ body.single {
     }
 
     #hero-career {
-      padding-top: 16rem;
+      padding-top: 20rem;
       padding-bottom: 0;
       color: $text-color;
       .container {
@@ -64,9 +66,16 @@ body.single {
           height: 220px;
           background: transparent url(../img/icons-triangles.svg) center no-repeat;
           background-size: contain;
-          margin-top: -140px;
-          margin-left: -177px;
+          margin-top: -220px;
+          margin-left: calc(50% - 131px);
+          @include screen-lg-up {
+            margin-top: -140px;
+            margin-left: -177px;
+          }
         }
+      }
+      @include screen-sm {
+        padding-top: 13rem;
       }
     }
   }

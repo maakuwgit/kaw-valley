@@ -6,7 +6,8 @@
  * General
  */
 
-.gform_wrapper {
+.gform_wrapper,
+.gform_confirmation_wrapper {
   position: relative;
   max-width: $container-sm;
   @include container-fixed;
@@ -23,6 +24,19 @@
   .screen-reader-text {
     display: none;
   }
+
+  @include screen-lg-up {
+    .gform_confirmation_message {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  .gform_confirmation_message {
+    font-size: 1.25rem;
+    font-weight: $text-medium;
+    color: $success-color;
+  }
 }
 
 .gform_fields {
@@ -33,7 +47,7 @@
 }
 
 .gfield {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 
@@ -42,7 +56,6 @@
  */
 
 .gfield_error {
-
   input,
   textarea {
     border-color: $danger-color;
@@ -53,8 +66,8 @@
   color: $danger-color;
   background-color: $danger-background;
   border: 1px solid $danger-border;
-  padding: 10px;
-  margin: 15px 0;
+  padding: 0.625rem;
+  margin: 0.9375rem 0;
 }
 
 .validation_message {

@@ -155,12 +155,17 @@ body {
   right: 0;
   left: 0;
   z-index: 20;
+  display: flex;
+  align-items: center;
   height: 0;
   width: 100vw;
   overflow: hidden;
   background-color: $black;
   &.active {
     height: calc(100vh - #{$offset} );
+    .header__menu {
+      opacity: 1;
+    }
   }
   body.admin-bar & {
     top: $offset_lg_admin;
@@ -194,6 +199,10 @@ body {
 
   &:visible + #primary-nav {
     display: none;
+  }
+
+  .header__menu {
+    opacity: 0;
   }
 }
 
