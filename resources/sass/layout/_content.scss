@@ -5,7 +5,7 @@
   @include row-gutter;
   color: $text-color;
   &.dark {
-    * {
+    *:not(input) {
       color: $white;
     }
     background-image: url(#{$page-header-alt-bg});
@@ -21,7 +21,7 @@
     padding-bottom: $row-gutter;
   }
 /*Dev Note: need to return here and fix this awful selector */
-  body:not([class*="-archive"]):not([class*="archive-"]):not(.single-career):not(.single-post):not(.home) & {
+  body:not([class*="-archive"]):not([class*="archive-"]):not(.single-career):not(.single-post):not(.home):not(.page-template-template-form) & {
     background-image: url(#{$page-header-bg});
   }
   h3 {

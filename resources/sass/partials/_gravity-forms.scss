@@ -10,32 +10,87 @@
 .gform_confirmation_wrapper {
   position: relative;
   max-width: $container-sm;
-  @include container-fixed;
+  margin-left: auto;
+  margin-right: auto;
 
-  @media (min-width: $screen-sm-min) {
-    width: $container-sm;
+  @include screen-sm {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
-  @media (min-width: $screen-md-min) {
-    width: $container-md;
+
+  main.has_locations & {
+    @include container-fixed;
+
+    @include screen-lg-up {
+      body.page-template-template-form & {
+        width: 50%;
+      }
+      .gform_confirmation_message {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
   }
-  @media (min-width: $screen-lg-min) {
-    width: $container-lg;
+
+  main.fullwidth & {
+    max-width: $container-md;
+    .gform_fields {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      .gfield:not(.gsection) {
+        padding-top: 0;
+        padding-bottom: 0;
+        @include screen-lg-up {
+          padding-right: 1rem;
+          padding-left: 1rem;
+          width: 50%;
+        }
+      }
+
+      textarea,
+      .gsection {
+        width: 100%;
+      }
+    }
   }
+
+  .gform_title {
+    font-size: 5.3125rem;
+    font-weight: $text-bold;
+  }
+
   .screen-reader-text {
     display: none;
-  }
-
-  @include screen-lg-up {
-    .gform_confirmation_message {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
   }
 
   .gform_confirmation_message {
     font-size: 1.25rem;
     font-weight: $text-medium;
     color: $success-color;
+  }
+
+  input[type="submit"] {
+    margin-top: 3rem;
+  }
+  .gform_heading {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3.5rem;
+    * {
+      display: block;
+      align-self: center;
+      width: 50%;
+    }
+    .gform_description {
+      line-height: 1.5;
+    }
+  }
+  .gsection_title {
+    font-size: 1.125rem;
   }
 }
 

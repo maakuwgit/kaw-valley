@@ -77,7 +77,7 @@ article.thumbnail {
     cursor: pointer;
   }
 
-  &:not([data-background]):hover {
+  &:not([data-background]):not([data-mfp-src]):hover {
     color: $white;
     background-color: $black;
   }

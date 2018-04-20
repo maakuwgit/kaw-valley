@@ -1,0 +1,82 @@
+{
+    "key": "group_5ada227038fe1",
+    "title": "Form Settings",
+    "fields": [
+        {
+            "key": "field_5ada22914f2b3",
+            "label": "Show Locations?",
+            "name": "form_show_locations",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3334",
+                "class": "",
+                "id": ""
+            },
+            "message": "Display all the Locations in a grid to the left of the form, and a map below the form",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ada22c54f2b4",
+            "label": "Show Description?",
+            "name": "form_show_description",
+            "type": "true_false",
+            "instructions": "Display the Gravity Forms description to the right of the title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3334",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ada267c90f1c",
+            "label": "Use Form",
+            "name": "form_use",
+            "type": "forms",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3334",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "allow_null": 0,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/template-form.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "comments"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1524246642
+}

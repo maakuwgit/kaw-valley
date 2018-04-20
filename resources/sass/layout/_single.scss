@@ -18,6 +18,9 @@ body.single {
   }
 
   &.single-career {
+     > header {
+      background-color: $black;
+    }
     .content {
       h2, h3, p {
         margin-bottom: 2.5rem;

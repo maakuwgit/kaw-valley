@@ -1,6 +1,7 @@
 /**
  * Button Styles
  */
+input[type="submit"],
 button:not([data-nav]):not(.mfp-close),
 .button {
   display: inline-block;

@@ -352,7 +352,7 @@ body.locked header.top,
 main.dark,
 section.dark {
   background-color: $black;
-  * {
+  *:not(input) {
     color: $white;
   }
 }

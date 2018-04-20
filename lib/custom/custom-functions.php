@@ -45,6 +45,71 @@ function set_post_background() {
   }
 }
 
+function ll_get_locations( $use_grid=true, $echo=true ) {
+  if( $use_grid ) {
+    $css = ' col-sm-8of12 col-md-8of12 col-lg-6of12';
+  }
+  $args = array(
+      'post_type'     => 'location',
+      'post_status'   => 'publish',
+      'order'         => 'ASC',
+      'showposts'     => 6
+  );
+
+  $locations = new WP_Query( $args );
+
+  if ( $locations->have_posts() ) {
+    $output = '<ul class="no-bullet header__menu' . $css . '"><li>';
+    $output .= '<dl class="menu row">';
+    while( $locations->have_posts() ) {
+      $locations->the_post();
+      $id       = get_the_ID();
+      $title    = get_the_title();
+      $city     = $title;
+      $state    = get_the_terms($id, 'state');
+      if( $state ) {
+        $title .= ',&nbsp;' . strtoupper( $state[0]->slug );
+      }
+      $street   = get_field('location_street');
+      $zip      = get_field('location_zip');
+      $country  = get_field('location_country');
+      $phone    = get_field('location_phone');
+      $email    = get_field('location_email');
+
+      $address  = $street . '<br>' . $title . '&nbsp;' . $zip;
+      if( $phone ) {
+        $p_href = 'tel:+1' . substr($phone, 0, 3) . substr($phone, 4, 3) . substr($phone, 6);
+        $phone  = '+' . substr($phone, 0, 3) . '.' . substr($phone, 4, 3) . '.' . substr($phone, 6);
+      }
+      if( $email ) {
+        $e_href = 'mailto:' . $email;
+      }
+
+      $output .= '<div class="col-6of12">';
+      $output .= '<dt class="h5">' . $title . '</dt>';
+      $output .= '<dd>';
+      $output .= '<address>' . $address . '</address>';
+      if( $phone ) {
+        $output .= '<a class="block" href="' . $p_href . '">' . $phone . '</a>';
+      }
+      if( $email ) {
+        $output .= '<a class="block" href="' . $e_href . '">' . $email . '</a>';
+      }
+      $output .= '</dd>';
+      $output .= '</div>';
+    }
+  }
+
+  wp_reset_postdata();
+  $output .= '</dl></li></ul>';
+
+  if( $echo === true ) {
+    echo $output;
+  }else{
+    return $output;
+  }
+}
+
 /**
  * Get attachement image
  */

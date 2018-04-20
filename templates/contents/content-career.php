@@ -9,7 +9,7 @@ if( $location ) {
   if( $state ) $location .= ' ' . ucwords($state[0]->name);
 }
 ?>
-<figure class="content light-bg" id="hero-career" data-component="hero-banner">
+<figure class="content" id="hero-career" data-component="hero-banner">
   <div class="container row boxed">
     <nav class="breadcrumb"><a href="">&lsaquo;&nbsp;Back to all job listings</a></nav>
     <div class="col-12of12">
@@ -18,7 +18,7 @@ if( $location ) {
     </div>
   </div>
 </figure>
-<main <?php post_class('content light-bg'); ?>>
+<main <?php post_class('content'); ?>>
   <div class="container row boxed">
     <div class="col-12of12">
       <h3 class="post__header__title">Kaw Valley Engineering has an immediate opening for a <b><?php the_title(); ?>.</b></h2>
@@ -30,6 +30,6 @@ if( $location ) {
     </h3>
   </div>
 </main>
-<section class="content light-bg">
+<section class="content">
   <?php gravity_form(1, false, false); ?>
 </section>

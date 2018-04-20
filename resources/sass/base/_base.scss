@@ -81,10 +81,6 @@ blockquote {
   }
 }
 
-button {
-  transition: all 0.10s ease-in-out;
-}
-
 code {
   white-space: normal;
 }
@@ -108,20 +104,7 @@ img, svg.logo {
 }
 
 input:not([type="button"]):not([type="image"]):not([type="submit"]) {
-  display: inline-block;
-  width: 100%;
-  padding: 1rem 1rem 0.875rem 1rem;
-  border: solid 2px $black;
-  font-size: 0.75rem;
-  @include screen-lg-up {
-    &:hover {
-      cursor: pointer;
-      @include input_effects;
-    }
-  }
-  &:focus {
-    @include input_effects;
-  }
+  @include input_base;
   &[type="file"]{
     position: relative;
     &:before {
@@ -168,6 +151,14 @@ ol {
 p {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+select {
+  @include input_base;
+  padding-right: 3.5rem;
+  background-image: url('../img/svg/chevron-down.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
 }
 
 table {
