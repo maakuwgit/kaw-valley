@@ -1,0 +1,53 @@
+{
+    "key": "group_5ada0a304907b",
+    "title": "Triangle Options",
+    "fields": [
+        {
+            "key": "field_5ada0a38b6c1f",
+            "label": "Color",
+            "name": "triangle_color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "red": "Red Orange",
+                "teal": "Seafoam",
+                "chartreuse": "Chartreuse",
+                "orange": "Sun Yellow"
+            },
+            "default_value": [
+                "orange"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1524239028
+}

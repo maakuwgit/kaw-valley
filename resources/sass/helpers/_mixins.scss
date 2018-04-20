@@ -63,6 +63,15 @@
   }
 }
 
+@mixin input_effects {
+  border-color: $link-hover-color;
+  outline: none;
+  &[type="file"]:after {
+    color: $black;
+    background-color: $link-hover-color;
+  }
+}
+
 /**
  * Background opacity
  */
@@ -97,7 +106,7 @@
 /*
  * Buttons
  */
-@mixin push_button(){
+@mixin push_button {
   box-shadow: 0 0 0 $black;
   transform: translate(3px, 3px);
 }

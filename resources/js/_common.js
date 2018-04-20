@@ -38,9 +38,9 @@
        * use this function
        */
       function checkAdminBar() {
-        // if ( window.userLoggedIn ) {
-        //   $('header.navbar').css('top', window.adminBarHeight);
-        // }
+         if ( window.userLoggedIn ) {
+           $('header.navbar').css('top', window.adminBarHeight);
+         }
       }
 
       checkAdminBar();
@@ -136,9 +136,18 @@
         e.preventDefault();
         var target = $(this).data('target');
         $(this).toggleClass('open');
-        $('body').toggleClass('locked');
         // $(target).toggleClass('collapsed');
-        $(target).slideToggle();
+        if( $(target).hasClass('active') ) {
+          $(target).animate({'height': 0}, 150, function(){
+            $(target).removeClass('active').removeAttr('style');
+            $('body').removeClass('locked');
+          });
+        }else{
+          $('body').addClass('locked');
+          $(target).animate({'height': '100vh'}, 300, function(){
+            $(target).addClass('active').removeAttr('style');
+          });
+        }
       });
 
       $(document).click(function(e) {

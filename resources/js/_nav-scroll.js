@@ -1,15 +1,3 @@
-/* ========================================================================
- * DOM-based Routing
- * Based on http://goo.gl/EUTi53 by Paul Irish
- *
- * Only fires on body classes that match. If a body class contains a dash,
- * replace the dash with an underscore when adding it to the object below.
- *
- * .noConflict()
- * The routing is enclosed within an anonymous function so that you can
- * always reference jQuery with $, even when in .noConflict() mode.
- * ======================================================================== */
-
 ( function( app ) {
 
 
@@ -18,11 +6,12 @@
     init: function() {
       var _this = this;
 
+      // Set the target
+      var target = '.navbar';
       // Get dark bg element offset information
-      var navRectangle = $( '.navbar' )[0].getBoundingClientRect();
+      var navRectangle = $( target )[0].getBoundingClientRect();
 
-      function checkForDarkBackground( navRectangle, target ) {
-
+      function checkForDarkBackground(e) {
         // Flag
         var insideDarkBackground = false;
 
@@ -53,41 +42,10 @@
         }
       }
 
-      checkForDarkBackground( navRectangle, '.navbar' );
+      checkForDarkBackground( false );
 
-      // $( '.nav-social__social li' ).each( function( index, element ) {
-      //   var elementRectangle = element.getBoundingClientRect();
-      //   checkForDarkBackground( elementRectangle, element );
-      // });
+      $( document ).on( 'scroll.checkForDarkBackground', checkForDarkBackground);
 
-      var timer = false;
-
-      $( document ).on( 'scroll', function() {
-
-        if( timer ) {
-          window.clearTimeout( timer );
-        }
-
-        timer = window.setTimeout( function() {
-          checkForDarkBackground( navRectangle, '.navbar' );
-
-          // $( '.nav-social__social li' ).each( function( index, element ) {
-          //   var elementRectangle = element.getBoundingClientRect();
-          //   checkForDarkBackground( elementRectangle, element );
-          // });
-        }, 10);
-      });
-
-
-
-
-      // $( '.dark-bg:not(.ignore-bg)' ).each( function( index, element ) {
-      //   var duration = $( element ).outerHeight();
-
-      //   new ScrollMagic.Scene({triggerElement: this, duration: duration })
-      //           .setClassToggle( _this.navId, _this.navToggle )
-      //           .addTo( _this.scrollController );
-      // });
     },
 
     finalize: function() {

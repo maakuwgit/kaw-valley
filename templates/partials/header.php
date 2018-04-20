@@ -2,6 +2,8 @@
   $logo = get_field( 'global_logo', 'option' );
   $href = esc_url(home_url('/'));
   $name = get_bloginfo('name');
+
+  $img_path = get_template_directory_uri() . '/assets/img/';
 ?>
 <header class="navbar" role="banner" data-component="nav-scroll">
   <div class="container row nowrap">
@@ -10,7 +12,7 @@
     <?php if ( $logo ) : ?>
         <img class="logo logo--header" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>">
     <?php else : ?>
-        <img class="logo logo--header" src="<?php echo get_template_directory_uri() . '/assets/img/logo-kaw_valley_engineering.svg'; ?>" alt="<?php echo $name; ?>">
+        <img class="logo logo--header" src="<?php echo $img_path . 'logo-kaw_valley_engineering.svg'; ?>" alt="<?php echo $name; ?>">
         <svg class="logo logo--header" width="255px" height="79px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g transform="translate(-55.000000, -119.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -53,7 +55,8 @@
     </figure>
     <nav class="secondary-nav" id="secondary-nav" role="navigation">
       <div class="container row text-left">
-        <ul class="no-bullet header__menu col-sm-4of12 col-md-4of12 col-lg-6of12">
+        <div class="no-bullet col-lg-1of12 hide-for-md-down"></div>
+        <ul class="no-bullet header__menu col-sm-4of12 col-md-4of12 col-lg-5of12">
         <?php if (has_nav_menu('secondary_navigation')) : ?>
             <li>
               <h5>General.</h5>
@@ -81,9 +84,11 @@
               <?php
                 while( $services->have_posts() ) :
                   $services->the_post();
+                  $triangle = get_field('triangle_color', get_the_ID());
+                  if( !$triangle ) $triangle = 'orange';
               ?>
                   <li>
-                    <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+                    <img alt="" class="iblock" src="<?php echo $img_path . 'graphic-triangle--' . $triangle . '.svg'; ?>"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
                   </li>
               <?php
                 endwhile;

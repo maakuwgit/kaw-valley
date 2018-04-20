@@ -16,11 +16,23 @@ body {
   &.locked {
     height: 100vh;
     overflow: hidden;
+    .navbar-toggle__inner,
+    .navbar-toggle__inner::before,
+    .navbar-toggle__inner::after {
+      background-color: $white;
+    }
   }
   &.admin-bar > header {
     top: $admin_bar;
     @include screen-lg-up {
       top: $admin_bar_lg;
+    }
+  }
+  &:not(.locked) > header.navbar--dark * {
+    color: $black;
+    path {
+      fill:$black;
+      stroke: $black;
     }
   }
   > header {
@@ -33,13 +45,6 @@ body {
     padding-bottom: $padding_bottom;
     &:not(.navbar--dark) * {
       color: $white;
-    }
-    &.navbar--dark * {
-      color: $black;
-      path {
-        fill:$black;
-        stroke: $black;
-      }
     }
     &.top,
     &.transparent {
@@ -68,13 +73,27 @@ body {
           height: 5rem;
         }
       }
+      @include screen-lg-up {
+        &:hover {
+          color: $link-hover-color;
+        }
+      }
     }
 
     dd, dt, h5, .h5, .menu {
+      margin-top: 0;
       margin-bottom: 1.5rem;
     }
 
     nav {
+      dd, nav {
+        margin-bottom: 3rem;
+      }
+
+      h5 {
+        font-size: 1.5rem;
+        font-weight: $text-medium;
+      }
       ul {
         padding: 0;
         margin: 0 auto;
@@ -84,6 +103,23 @@ body {
             width: 100%;
           }
         }
+        li > img {
+          margin-left: -75px;
+          margin-right: 57px;
+        }
+      }
+      &#secondary-nav {
+        li {
+          font-size: 1.25rem;
+          a {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+          }
+        }
+      }
+      .row [class*="col-"] [class*="col-"] {
+        padding-top: 0;
+        padding-bottom: 0;
       }
     }
 
@@ -119,24 +155,31 @@ body {
   right: 0;
   left: 0;
   z-index: 20;
-  display: none;
+  height: 0;
   width: 100vw;
   overflow: hidden;
-  min-height: calc(100vh - #{$offset} );
   background-color: $black;
-
+  &.active {
+    height: calc(100vh - #{$offset} );
+  }
   body.admin-bar & {
     top: $offset_lg_admin;
-    min-height: calc(100vh - #{$offset_lg_admin} );
+    &.active {
+      height: calc(100vh - #{$offset_lg_admin} );
+    }
     @include screen-md {
       top: $offset_admin;
-      min-height: calc(100vh - #{$offset_admin} );
+      &.active {
+        height: calc(100vh - #{$offset_admin} );
+      }
     }
   }
 
   @include screen-md {
     top: $offset;
-    min-height: calc(100vh - #{$offset} );
+    &.active {
+      height: calc(100vh - #{$offset} );
+    }
   }
 
   @include screen-sm {

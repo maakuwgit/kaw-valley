@@ -26,3 +26,6 @@ var_dump($location);
     </h3>
   </div>
 </main>
+<section class="content light-bg">
+  <?php gravity_form(1, false, false); ?>
+</section>

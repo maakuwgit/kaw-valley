@@ -7,6 +7,10 @@
   top: 2.5rem;
 }
 
+figure img.dark {
+  opacity: 0.7;
+}
+
 figure[class^='align-'],
 .wp-caption {
   position: relative;
@@ -15,6 +19,7 @@ figure[class^='align-'],
     position: absolute;
     bottom: 2.5rem;
     left: 3.25rem;
+    z-index: 1;
     font-weight: $text-medium;
   }
 }

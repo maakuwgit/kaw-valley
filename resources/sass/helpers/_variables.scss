@@ -13,6 +13,7 @@
  // Base colors
 $white: white;
 $black: black;
+$silver: #b9b9b9;
 
 // Markup Oriented
 $text-color: $black;
@@ -37,7 +38,7 @@ $text-bold: 400;
 // Theme colors
 $text-dark: #424242;
 $text-gray: gray;
-$primary-color: black;
+$primary-color: $black;
 
 
 /**
@@ -104,7 +105,7 @@ $container-lg:    ($screen-lg - $grid-gutter-width);
 // Links
 $link-color: $text-color;
 $link-decoration: none;
-$link-hover-color: $danger-color;
+$link-hover-color: $silver;
 $link-hover-decoration: none;
 
 // Imagery

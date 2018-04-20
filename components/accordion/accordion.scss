@@ -109,6 +109,10 @@ $dd_top : $dl_padding_top;
           position: absolute;
           width: 25%;
           height: calc(100% - #{$dl_padding_bottom} - #{$dl_padding_top});
+        }
+
+        article.accordion--content, 
+        aside.accordion--sidebar {
           padding-top: #{$dt_height};
         }
       }
