@@ -50,6 +50,15 @@
       padding-right: 1rem;
     }
   }
+  div:first-of-type.center[class*="col-lg-3"],
+  div:first-of-type.center[class*="col-lg-2"],
+  div:first-of-type.center[class*="col-lg-1"],
+  div:last-of-type.center[class*="col-lg-3"],
+  div:last-of-type.center[class*="col-lg-2"],
+  div:last-of-type.center[class*="col-lg-1"] {
+    display: flex;
+    align-self: flex-end;
+  }
 }
 
 .col-full {

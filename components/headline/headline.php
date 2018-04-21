@@ -21,7 +21,7 @@ $default_data = [
   'generic_headline_position'   => 'above',
   'generic_headline_direction'  => 'ltr',
   'has_background'              => false,
-  'generic_section_bg'          => array(),
+  'section_background'          => array(),
   'generic_headline_text'       => "Lorem Ipsum."
 ];
 
@@ -47,19 +47,31 @@ $css = ' class="headline ';
 $layout = $data['generic_headline_layout'];
 $direction = $data['generic_headline_direction'];
 $position = $data['generic_headline_position'];
+$theme = $data['generic_headline_theme'];
+$background_image = $data['section_background'];
 
 if ( ll_empty( $data ) || !$has_prefooter || $has_prefooter === null ) return;
 if( $args['classes'] || $data['generic_headline_theme'] ) {
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
-  if( $data['generic_headline_theme'] && $args['classes'] ) $css .= ' ';
-  if( $data['generic_headline_theme'] ) $css .= $data['generic_headline_theme'] . '-bg';
+  if( $theme && $args['classes'] ) $css .= ' ';
+  if( $theme ) $css .= $theme . '-bg';
   if( $layout ) $css .= ' ' . $layout;
+  if( $data['has_background'] ) {
+    $css .=  ' '. $theme;
+  }
 }
 $css .= '"';
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
+
+//image is image object
+if ( $background_image ) {
+ $style = ' style="background-image: url( '. $background_image['url'] .' );"';
+} else {
+ $style = '';
+}
 ?>
-<section<?php echo $id . $css; ?>>
-  <div class="container row">
+<section<?php echo $id . $css;?>>
+  <div class="container row"<?php echo $style;?>>
     <h3 class="hero text-med <?php echo $direction; ?>"><?php echo $data['generic_headline_text']; ?></h3>
   </div>
 </section>

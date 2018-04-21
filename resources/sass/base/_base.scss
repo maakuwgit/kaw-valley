@@ -161,6 +161,10 @@ select {
   background-position: right center;
 }
 
+textarea {
+  @include input_base;
+}
+
 table {
   width: 100%;
   a {

@@ -123,23 +123,24 @@
             "sub_fields": [
                 {
                     "key": "field_5ad62a7e51140",
-                    "label": "Number of Columns",
+                    "label": "# Columns",
                     "name": "band_colspan",
-                    "type": "range",
+                    "type": "number",
                     "instructions": "How many columns (of 12) does this content span?",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33.3334",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     },
                     "default_value": 3,
+                    "placeholder": 3,
+                    "prepend": "",
+                    "append": "",
                     "min": 2,
                     "max": 12,
-                    "step": "",
-                    "prepend": "",
-                    "append": ""
+                    "step": 1
                 },
                 {
                     "key": "field_5ad623a3f9e0f",
@@ -147,10 +148,10 @@
                     "name": "band_content",
                     "type": "wysiwyg",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "66.6667",
+                        "width": "80",
                         "class": "",
                         "id": ""
                     },
@@ -180,5 +181,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1524161237
+    "modified": 1524275109
 }

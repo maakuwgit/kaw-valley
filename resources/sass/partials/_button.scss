@@ -21,6 +21,7 @@ button:not([data-nav]):not(.mfp-close),
   @include screen-lg-up {
     &:hover {
       @include push_button;
+      color: inherit;
     }
   }
 }

@@ -17,11 +17,12 @@ global $post;
  */
 
 $default_data = [
-  'band_columns'     => array(
+  'has_background' => false,
+  'band_bg'        => array(),
+  'band_theme'     => 'dark',
+  'band_align'     => 'flex-start',
+  'band_columns'   => array(
     array(
-      'band_bg'      => array(),
-      'band_theme'   => 'dark',
-      'band_align'   => 'flex-start',
       'band_colspan' => '3',
       'band_content' => '<h5>Lorem ipsum</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
     )
@@ -45,17 +46,34 @@ do_action( "component_name_before_display", $component_data, $component_args );
 
 <?php
 if ( ll_empty( $data ) ) return;
+
+$theme = $data['band_theme'];
+$background_image = $data['band_bg'];
+
 if( $args['classes'] || $data['band_theme'] ) {
   $css = ' class="band ';
+
+  if ( $background_image ) $css .= 'has-image ';
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
-  if( $data['band_theme'] && $args['classes'] ) $css .= ' ';
-  if( $data['band_theme'] ) $css .= $data['band_theme'] . '-bg';
+  if( $theme && $args['classes'] ) $css .= ' ';
+  if( $theme ) $css .= $theme . '-bg';
+  if( $data['has_background'] ) {
+    $css .=  ' '. $theme;
+  }
+
   $css .= '"';
 }
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
 $align = ( $data['band_align'] === null ? '' : $data['band_align'] . ' ' );
+
+//image is image object
+if ( $background_image ) {
+ $style = ' style="background-image: url( '. $background_image['url'] .' );"';
+} else {
+ $style = '';
+}
 ?>
-<section<?php echo $id . $css; ?>>
+<section<?php echo $id . $css . $style; ?>>
   <div class="container row">
 <?php if( $data['band_columns'] ) : ?>
 <?php

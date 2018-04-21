@@ -7,7 +7,7 @@ if( have_rows( 'components' ) ) {
       $headline   = array(
         'generic_headline_text'       => get_sub_field('generic_headline_text'),
         'has_background'              => get_sub_field('has_background'),
-        'generic_section_bg'          => get_sub_field('section_bg'),
+        'section_background'          => get_sub_field('section_background'),
         'generic_headline_theme'      => get_sub_field('generic_headline_theme'),
         'generic_headline_layout'     => get_sub_field('generic_headline_layout'),
         'generic_headline_direction'  => get_sub_field('generic_headline_direction')

@@ -30,7 +30,7 @@ $sub_text         = ( $component_data['sub_text'] === null ? $defaults['sub_text
 $call_to_action   = $component_data['call_to_action'];
 $show_icons       = ( $component_data['show_icons'] === null ? $defaults['show_icons'] : $component_data['show_icons'] );
 $background_image = $component_data['background_image'];
-$overlay_strength = ( $component_data['spotlight_strength'] == null ? $defaults['spotlight_strength'] : $component_data['spotlight_strength'] );
+$overlay_strength = ( $component_data['spotlight_strength'] === null ? $defaults['spotlight_strength'] : $component_data['spotlight_strength'] );
 $loop_video       = $component_data['loop_video'];
 $popup_video      = $component_data['popup_video'];
 

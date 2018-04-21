@@ -11,6 +11,10 @@ figure img.dark {
   opacity: 0.7;
 }
 
+figure img.invert + figcaption {
+  color: $white;
+}
+
 figure[class^='align-'],
 .wp-caption {
   position: relative;
@@ -21,6 +25,7 @@ figure[class^='align-'],
     left: 3.25rem;
     z-index: 1;
     font-weight: $text-medium;
+    white-space: nowrap;
   }
 }
 

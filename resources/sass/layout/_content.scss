@@ -5,7 +5,7 @@
   @include row-gutter;
   color: $text-color;
   &.dark {
-    *:not(input) {
+    h1, h2, h3, h4, h5, h6, p, li, label, div {
       color: $white;
     }
     background-image: url(#{$page-header-alt-bg});
@@ -20,14 +20,26 @@
     padding-top: $row-gutter;
     padding-bottom: $row-gutter;
   }
-/*Dev Note: need to return here and fix this awful selector */
-  body:not([class*="-archive"]):not([class*="archive-"]):not(.single-career):not(.single-post):not(.home):not(.page-template-template-form) & {
+
+  body.single-project &,
+  body.single-team &,
+  body.single-service & {
     background-image: url(#{$page-header-bg});
   }
+
+  body.page-about & {
+    background-image: url(#{$page-header-rev-bg});
+  }
+
+  h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    display: block;
+  }
+
   h3 {
     max-width: 700px;
     margin-left: 0;
   }
+
   figure:not(.thumbnail) {
     /*Dev Note: causing a LOT of ruckus
     margin-top: 3rem;
