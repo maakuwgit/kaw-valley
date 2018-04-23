@@ -19,4 +19,11 @@
     wp_reset_postdata(); ?>
   </div>
 </section>
+<?php
+    while ( $members->have_posts() ) {
+      $members->the_post();
+      include( locate_template('templates/partials/modal-team.php') );
+    }
+    wp_reset_postdata();
+?>
 <?php endif; ?>

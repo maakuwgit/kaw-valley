@@ -16,7 +16,7 @@ if( $show_locations ) {
 <main class="main content dark<?php echo $css; ?>" role="main">
   <div class="container row">
     <?php if( $show_locations ) : ?>
-    <aside class="col-12of12 col-lg-6of12">
+    <aside class="col-12of12 col-lg-6of12 col-xl-6of12">
       <?php ll_get_locations(false);?>
     </aside>
     <?php endif; ?>

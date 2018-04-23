@@ -181,15 +181,14 @@
 
       // For using thumbnails to trigger
       $('[data-mfp-src]').on('click.openPopup', function(e){
-        e.preventDefault();
+        //e.preventDefault();
+        //
         $src =  $(this).attr('data-mfp-src');
         $.magnificPopup.open({
           items: {
+            type: 'inline',
             src: $src
-          },
-          type: 'iframe',
-          removalDelay: 300,
-          mainClass: 'mfp-fade'
+          }
         });
       });
       /*
