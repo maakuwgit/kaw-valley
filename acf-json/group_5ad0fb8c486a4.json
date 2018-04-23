@@ -228,6 +228,13 @@
                 "operator": "!=",
                 "value": "templates\/template-form.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
         ]
     ],
     "menu_order": 1,
@@ -241,5 +248,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1524246671
+    "modified": 1524364784
 }

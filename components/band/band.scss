@@ -28,10 +28,17 @@
   }
 }
 
-body.page-about .band{
-  min-height: 30rem;
-  &:first-of-type {
-    padding-top: 10rem;
+body.page-about,
+body.single-service {
+  .band {
+    &.stretch {
+      min-height: 100vh;
+    }
+    &:first-of-type {
+      padding-top: 10rem;
+    }
+    .container {
+      min-height: inherit;
+    }
   }
-  padding-top: 6rem;
 }

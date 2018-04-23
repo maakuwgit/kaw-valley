@@ -1,0 +1,17 @@
+a,
+[data-background] {
+  transition: all 300ms ease-in-out;
+}
+
+.button,
+button,
+input[type="submit"] {
+  transition: all 150ms ease-out;
+  &:hover {
+    transition: all 50ms ease-out;
+  }
+}
+
+#primary-nav .menu-item a {
+  transition: background 300ms ease-in-out, color 200ms ease-out;
+}

@@ -7,7 +7,7 @@ if( have_rows( 'components' ) ) {
       $headline   = array(
         'generic_headline_text'       => get_sub_field('generic_headline_text'),
         'has_background'              => get_sub_field('has_background'),
-        'section_background'          => get_sub_field('section_background'),
+        'section_bg'                  => get_sub_field('section_bg'),
         'generic_headline_theme'      => get_sub_field('generic_headline_theme'),
         'generic_headline_layout'     => get_sub_field('generic_headline_layout'),
         'generic_headline_direction'  => get_sub_field('generic_headline_direction')
@@ -27,14 +27,16 @@ if( have_rows( 'components' ) ) {
         the_row();
         $cols[] = array(
           'band_colspan' => get_sub_field('band_colspan'),
+          'band_bg'      => get_sub_field('band_bg'),
+          'band_align'     => get_sub_field('band_align'),
           'band_content' => get_sub_field('band_content')
         );
       }
 
       $band   = array(
         'has_background' => get_sub_field('has_background'),
-        'band_align'     => get_sub_field('band_align'),
-        'band_bg'        => get_sub_field('section_bg'),
+        'is_stretched'   => get_sub_field('is_stretched'),
+        'section_bg'     => get_sub_field('section_bg'),
         'band_theme'     => get_sub_field('band_theme'),
         'band_columns'   => $cols
       );

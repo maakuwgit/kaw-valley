@@ -3,6 +3,31 @@
     "title": "Band",
     "fields": [
         {
+            "key": "field_5adb512c2ae4b",
+            "label": "Layout",
+            "name": "band_layout",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "center": "Center",
+                "left": "Left",
+                "right": "Right"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "center",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
             "key": "field_5ad661ed2b25a",
             "label": "Theme",
             "name": "band_theme",
@@ -23,31 +48,6 @@
             "other_choice": 0,
             "save_other_choice": 0,
             "default_value": "dark",
-            "layout": "vertical",
-            "return_format": "value"
-        },
-        {
-            "key": "field_5ad8af1a687d4",
-            "label": "Alignment",
-            "name": "band_align",
-            "type": "radio",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "flex-start": "Top",
-                "center": "Middle",
-                "flex-end": "Bottom"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "flex-start",
             "layout": "vertical",
             "return_format": "value"
         },
@@ -103,6 +103,44 @@
             "mime_types": ""
         },
         {
+            "key": "field_5adc193c02844",
+            "label": "Has Navigation?",
+            "name": "has_navbar",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3334",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5add055fdc059",
+            "label": "Stretch?",
+            "name": "is_stretched",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3334",
+                "class": "",
+                "id": ""
+            },
+            "message": "Does this section fill the window from top to bottom?",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5ad6235bf9e0e",
             "label": "Columns",
             "name": "band_columns",
@@ -125,8 +163,28 @@
                     "key": "field_5ad62a7e51140",
                     "label": "# Columns",
                     "name": "band_colspan",
-                    "type": "number",
+                    "type": "range",
                     "instructions": "How many columns (of 12) does this content span?",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_5ad8af1a687d4",
+                    "label": "Alignment",
+                    "name": "band_align",
+                    "type": "radio",
+                    "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -134,13 +192,41 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": 3,
-                    "placeholder": 3,
-                    "prepend": "",
-                    "append": "",
-                    "min": 2,
-                    "max": 12,
-                    "step": 1
+                    "choices": {
+                        "flex-start": "Top",
+                        "center": "Middle",
+                        "flex-end": "Bottom"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "flex-start",
+                    "layout": "vertical",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_5adb4ee5f6fa5",
+                    "label": "Background",
+                    "name": "band_bg",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
                 },
                 {
                     "key": "field_5ad623a3f9e0f",
@@ -151,7 +237,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "80",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -160,6 +246,50 @@
                     "toolbar": "full",
                     "media_upload": 1,
                     "delay": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5adc17c51852b",
+            "label": "Navbar",
+            "name": "navbar",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5adc193c02844",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5adc199702845",
+            "min": 0,
+            "max": 4,
+            "layout": "row",
+            "button_label": "+ Button",
+            "sub_fields": [
+                {
+                    "key": "field_5adc199702845",
+                    "label": "Button",
+                    "name": "btn_href",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "65",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
                 }
             ]
         }
@@ -181,5 +311,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1524275109
+    "modified": 1524447251
 }

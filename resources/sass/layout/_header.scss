@@ -3,8 +3,8 @@
  */
 $logo_width: 4.6875rem;
 $logo_height: 3.25rem;
-$padding_top: 1.25rem;
-$padding_bottom: $padding_top;
+$padding_top: 2.25rem;
+$padding_bottom: 2rem;
 $admin_bar: 2.875rem;
 $admin_bar_lg: 2rem;
 $offset: $logo_height + $padding-top + $padding-bottom;
@@ -42,8 +42,6 @@ body {
     right:0;
     left: 0;
     z-index: 25;
-    padding-top: $padding_top;
-    padding-bottom: $padding_bottom;
     &:not(.navbar--dark) * {
       color: $white;
     }
@@ -67,7 +65,7 @@ body {
           height: $logo_height;
         }
         svg {
-          top: 0;
+          top: 1.3125rem;
           left: 0;
           transform: scale(0.65) translate(-46px, -21px);
           clip: rect(0,7rem, 5rem,0);
@@ -139,10 +137,19 @@ body {
 #primary-nav {
   margin-right: 3rem;
   .menu-item a {
-    padding: 1rem 2rem;
+    padding: 2.25rem 2rem;
     @include screen-sm {
       padding: 1rem;
       font-size: 0.875rem;
+    }
+    @include screen-lg-up {
+      &:hover {
+        background-color: #b9b9b938;
+        color: $white;
+        font-weight: $text-bold;
+        padding-left: 29.5px;
+        padding-right: 29.5px;
+      }
     }
   }
   @include screen-xs {
@@ -164,10 +171,11 @@ body {
   background-color: $black;
   &.active {
     height: calc(100vh - #{$offset} );
+    overflow: visible;
     .header__menu {
       opacity: 1;
     }
-  }
+  }/*
   body.admin-bar & {
     top: $offset_lg_admin;
     &.active {
@@ -180,7 +188,7 @@ body {
       }
     }
   }
-
+*/
   @include screen-md {
     top: $offset;
     &.active {

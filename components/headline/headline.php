@@ -21,7 +21,7 @@ $default_data = [
   'generic_headline_position'   => 'above',
   'generic_headline_direction'  => 'ltr',
   'has_background'              => false,
-  'section_background'          => array(),
+  'section_bg'                  => array(),
   'generic_headline_text'       => "Lorem Ipsum."
 ];
 
@@ -38,9 +38,6 @@ $args = ll_parse_args( $component_args, $default_args );
  * Type: Action
  */
 do_action( "component_name_before_display", $component_data, $component_args );
-?>
-
-<?php
 
 $has_prefooter = get_field('has_prefooter', $post->ID);
 $css = ' class="headline ';
@@ -48,9 +45,10 @@ $layout = $data['generic_headline_layout'];
 $direction = $data['generic_headline_direction'];
 $position = $data['generic_headline_position'];
 $theme = $data['generic_headline_theme'];
-$background_image = $data['section_background'];
+$section_bg = $data['section_bg'];
 
 if ( ll_empty( $data ) || !$has_prefooter || $has_prefooter === null ) return;
+
 if( $args['classes'] || $data['generic_headline_theme'] ) {
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
   if( $theme && $args['classes'] ) $css .= ' ';
@@ -63,9 +61,9 @@ if( $args['classes'] || $data['generic_headline_theme'] ) {
 $css .= '"';
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
 
-//image is image object
-if ( $background_image ) {
- $style = ' style="background-image: url( '. $background_image['url'] .' );"';
+//Background image object
+if ( $section_bg ) {
+ $style = ' style="background-image: url( '. $section_bg['url'] .' );"';
 } else {
  $style = '';
 }

@@ -4,7 +4,7 @@
 * -----------------------------------------------------------------------------
 *
 * Band component
-* @since 1.1
+* @since 1.3
 * @author MaakuW
 */
 global $post;
@@ -18,12 +18,18 @@ global $post;
 
 $default_data = [
   'has_background' => false,
-  'band_bg'        => array(),
+  'section_bg'     => array(),
   'band_theme'     => 'dark',
-  'band_align'     => 'flex-start',
+  'is_stretched'   => false,
+  'navbar'         => array(
+      'btn'        => array(
+      )
+  ),
   'band_columns'   => array(
     array(
       'band_colspan' => '3',
+      'band_bg'      => array(),
+      'band_align'     => 'flex-start',
       'band_content' => '<h5>Lorem ipsum</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
     )
   )
@@ -47,8 +53,10 @@ do_action( "component_name_before_display", $component_data, $component_args );
 <?php
 if ( ll_empty( $data ) ) return;
 
-$theme = $data['band_theme'];
-$background_image = $data['band_bg'];
+$theme    = $data['band_theme'];
+$section_bg  = $data['section_bg'];
+$band_bg  = $data['band_bg'];
+$stretch = $data['is_stretched'];
 
 if( $args['classes'] || $data['band_theme'] ) {
   $css = ' class="band ';
@@ -60,15 +68,17 @@ if( $args['classes'] || $data['band_theme'] ) {
   if( $data['has_background'] ) {
     $css .=  ' '. $theme;
   }
+  if( $stretch ) {
+    $css .= ' stretch';
+  }
 
   $css .= '"';
 }
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
-$align = ( $data['band_align'] === null ? '' : $data['band_align'] . ' ' );
 
-//image is image object
-if ( $background_image ) {
- $style = ' style="background-image: url( '. $background_image['url'] .' );"';
+//Background for the section element
+if ( $section_bg ) {
+ $style = ' style="background-image: url( '. $section_bg['url'] .' );"';
 } else {
  $style = '';
 }
@@ -78,15 +88,24 @@ if ( $background_image ) {
 <?php if( $data['band_columns'] ) : ?>
 <?php
   foreach( $data['band_columns'] as $band ) :
+    //Column Alignment
+    $align = ( $band['band_align'] === null ? '' : ' ' . $band['band_align'] );
+
+    //Background for a column
+    if ( $band_bg ) {
+     $col_style = ' style="background-image: url( '. $band_bg['url'] .' );"';
+    } else {
+     $col_style = '';
+    }
     $col_span = $band['band_colspan'];
     $col_suff = 'of12';
     /*Dev Note: this logic is still very... loose*/
     $col_md = 'col-md-' . ( $col_span < 6 ? 6 : floor( $col_span / 2 ) ) . $col_suff;
     $col_lg = 'col-lg-' . $col_span . $col_suff;
     $col_xl = 'col-xl-' . $col_span . $col_suff;
-    $col_class = ' class="' . $align . $col_md . ' ' . $col_lg . ' ' . $col_xl . '"';
+    $col_class = ' class="' . $col_md . ' ' . $col_lg . ' ' . $col_xl . $align . '"';
 ?>
-    <div<?php echo $col_class; ?>><?php echo $band['band_content']; ?></div>
+    <div<?php echo $col_class . $col_style; ?>><?php echo $band['band_content']; ?></div>
 <?php
   endforeach;
 ?>

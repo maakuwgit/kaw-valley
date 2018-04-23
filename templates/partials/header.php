@@ -12,8 +12,7 @@
     <?php if ( $logo ) : ?>
         <img class="logo logo--header" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>">
     <?php else : ?>
-        <img class="logo logo--header" src="<?php echo $img_path . 'logo-kaw_valley_engineering.svg'; ?>" alt="<?php echo $name; ?>">
-        <svg class="logo logo--header" width="255px" height="79px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg class="logo logo--header" width="255px" height="79px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" title="<?php echo $name; ?>">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g transform="translate(-55.000000, -119.000000)" fill="#FFFFFF" fill-rule="nonzero">
               <g transform="translate(55.000000, 119.000000)">
