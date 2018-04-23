@@ -138,4 +138,20 @@ body.single {
       }
     }
   }
+
+  &.single-service {
+    .hero-banner {
+      .triangle_icon {
+        position: absolute;
+        top: 0;
+        right: 3rem;
+      }
+      @include screen-lg-up {
+        .order {
+          margin-top: 3rem;
+          margin-right: 6rem;
+        }
+      }
+    }
+  }
 }

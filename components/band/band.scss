@@ -5,6 +5,26 @@
     background: transparent;
   }
 
+  @include screen-md {
+    &.stretch {
+      min-height: 600px;
+    }
+  }
+  @include screen-md-up {
+     &.padded-top {
+      padding-top: 16.875rem;
+    }
+     &.padded-bottom {
+      padding-bottom: 8.4375rem;
+    }
+    &:first-of-type {
+      padding-top: 10rem;
+    }
+    .container {
+      min-height: inherit;
+    }
+  }
+
   @include screen-md-up {
     .col-lg-1of12,
     .col-lg-2of12,
@@ -46,31 +66,6 @@
   figure {
     + h5 {
       margin-top: 3rem;
-    }
-  }
-}
-
-body.page-about,
-body.single-service {
-  .band {
-    @include screen-md {
-      &.stretch {
-        min-height: 600px;
-      }
-    }
-    @include screen-md-up {
-       &.padded-top {
-        padding-top: 16.875rem;
-      }
-       &.padded-bottom {
-        padding-bottom: 8.4375rem;
-      }
-      &:first-of-type {
-        padding-top: 10rem;
-      }
-      .container {
-        min-height: inherit;
-      }
     }
   }
 }

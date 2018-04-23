@@ -54,8 +54,8 @@
     </figure>
     <nav class="secondary-nav" id="secondary-nav" role="navigation">
       <div class="container row text-left">
-        <div class="no-bullet col-lg-1of12 hide-for-md-down"></div>
-        <ul class="no-bullet header__menu col-sm-4of12 col-md-4of12 col-lg-5of12">
+        <div class="no-bullet col-lg-1of12 col-xl-1of12 hide-for-md-down"></div>
+        <ul class="no-bullet header__menu col-sm-4of12 col-md-4of12 col-lg-5of12 col-xl-5of12">
         <?php if (has_nav_menu('secondary_navigation')) : ?>
             <li>
               <h5>General.</h5>

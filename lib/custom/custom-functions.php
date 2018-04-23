@@ -47,7 +47,7 @@ function set_post_background() {
 
 function ll_get_locations( $use_grid=true, $echo=true ) {
   if( $use_grid ) {
-    $css = ' col-sm-8of12 col-md-8of12 col-lg-6of12';
+    $css = ' col-sm-8of12 col-md-8of12 col-lg-6of12 col-xl-6of12';
   }
   $args = array(
       'post_type'     => 'location',

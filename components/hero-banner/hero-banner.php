@@ -17,6 +17,7 @@ $defaults = [
   ),
   'call_to_action' => null,
   'show_icons' => true,
+  'icon_markup' => '<img alt="" src="' . get_template_directory_uri() . '/assets/img/icons-triangles.svg' . '">',
   'background_image'   => null,
   'spotlight_strength'  => 0.8,
   'loop_video'    => null,
@@ -33,6 +34,8 @@ $background_image = $component_data['background_image'];
 $overlay_strength = ( $component_data['spotlight_strength'] === null ? $defaults['spotlight_strength'] : $component_data['spotlight_strength'] );
 $loop_video       = $component_data['loop_video'];
 $popup_video      = $component_data['popup_video'];
+
+$icon_markup = ( $component_data['icon_markup'] === null ? $defaults['icon_markup'] : $component_data['icon_markup'] );
 
 $overlay_strength = ' style="opacity:' . $overlay_strength . ';"';
 ?>
@@ -94,8 +97,8 @@ if ( $background_image ) {
   <?php endif; ?>
   <figcaption class="container row">
     <?php if ( $show_icons ) : ?>
-      <div class="col-6of12">
-        <img alt="" src="<?php echo get_template_directory_uri() . '/assets/img/icons-triangles.svg';?>">
+      <div class="col-6of12 relative">
+        <?php echo $icon_markup; ?>
       </div>
     <?php endif; ?>
     <?php if ( $show_icons ) : ?>
