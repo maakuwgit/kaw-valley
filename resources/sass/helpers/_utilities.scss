@@ -360,8 +360,44 @@ section.dark {
   }
 }
 
-a, p, dt, dd, span, time {
-  &.red {
+a, p, dt, dd, span, time, address {
+  &.danger {
     color: $danger-color;
+  }
+  &.success {
+    color: $success-color;
+  }
+  &.red {
+    color: $red;
+  }
+  &.teal {
+    color: $teal;
+  }
+  &.orange {
+    color: $orange;
+  }
+  &.chartreuse {
+    color: $chartreuse;
+  }
+}
+
+aside, article, main, div, header, footer, section, nav, menu, code, hr {
+  &.danger {
+    background-color: $danger-color;
+  }
+  &.success {
+    background-color: $success-color;
+  }
+  &.red {
+    background-color: $red;
+  }
+  &.teal {
+    background-color: $teal;
+  }
+  &.orange {
+    background-color: $orange;
+  }
+  &.chartreuse {
+    background-color: $chartreuse;
   }
 }

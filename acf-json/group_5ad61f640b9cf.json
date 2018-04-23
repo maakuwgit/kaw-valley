@@ -23,6 +23,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5addf2eddabfa",
+                            "label": "Group Label",
+                            "name": "group_label",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "ll-group-label",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5ad61fbe29651",
                             "label": "Headline",
                             "name": "component_headline",
@@ -54,6 +73,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5addf13f0cf1d",
+                            "label": "Group Label",
+                            "name": "group_label",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "ll-group-label",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5ad628b19915f",
                             "label": "Band",
                             "name": "component_band",
@@ -84,6 +122,25 @@
                     "label": "Accordion",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_5addf329dabfc",
+                            "label": "Group Label",
+                            "name": "group_label",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "ll-group-label",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5ad67618f2361",
                             "label": "Accordion",
@@ -165,5 +222,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1524364687
+    "modified": 1524495169
 }

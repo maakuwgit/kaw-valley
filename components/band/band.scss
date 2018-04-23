@@ -11,6 +11,11 @@
         transform: rotate(-90deg);
         transform-origin: left;
       }
+      &:last-child {
+        h2, h3 {
+          transform: rotate(90deg) translateX(-80%);
+        }
+      }
     }
   }
 
@@ -31,8 +36,16 @@
 body.page-about,
 body.single-service {
   .band {
-    &.stretch {
-      min-height: 600px;
+    @include screen-md {
+      &.stretch {
+        min-height: 600px;
+      }
+    }
+     &.padded-top {
+      padding-top: 16.875rem;
+    }
+     &.padded-bottom {
+      padding-bottom: 8.4375rem;
     }
     &:first-of-type {
       padding-top: 10rem;

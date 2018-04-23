@@ -26,10 +26,10 @@ if( have_rows( 'components' ) ) {
       while( have_rows( 'band_columns' ) ) {
         the_row();
         $cols[] = array(
-          'band_colspan' => get_sub_field('band_colspan'),
-          'band_bg'      => get_sub_field('band_bg'),
-          'band_align'     => get_sub_field('band_align'),
-          'band_content' => get_sub_field('band_content')
+          'band_colspan'  => get_sub_field('band_colspan'),
+          'band_bg'       => get_sub_field('band_bg'),
+          'band_align'    => get_sub_field('band_align'),
+          'band_content'  => get_sub_field('band_content')
         );
       }
 
@@ -38,6 +38,8 @@ if( have_rows( 'components' ) ) {
         'is_stretched'   => get_sub_field('is_stretched'),
         'section_bg'     => get_sub_field('section_bg'),
         'band_theme'     => get_sub_field('band_theme'),
+        'padded_top'    => get_sub_field('padded_top'),
+        'padded_bottom' => get_sub_field('padded_bottom'),
         'band_columns'   => $cols
       );
 

@@ -16,6 +16,10 @@ $black: black;
 $grey: gray;
 $gray: $grey;
 $silver: #b9b9b9;
+$red: #F15A29;
+$teal: #00A79D;
+$chartreuse: #BFD730;
+$orange: #BFD730;
 
 // Markup Oriented
 $text-color: $black;
@@ -28,12 +32,12 @@ $twitter: #28aae1;
 $google: #d44a2c;
 
 // Success
-$success-color: #00a79c;
+$success-color: $teal;
 
 // Danger
 $danger-color: #a94442;
 $danger-background: #f2dede;
-$danger-border: #ebccd1;
+$danger-border: $red;
 
 // Font Weights
 $text-normal: 100;

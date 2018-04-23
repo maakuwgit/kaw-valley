@@ -48,6 +48,15 @@ function ll_remove_dashboard_meta() {
 }
 add_action( 'admin_init', 'll_remove_dashboard_meta' );
 
+//enqueue our admin javascript/styles
+function ll_admin_enqueue_scripts() {
+  $screen = get_current_screen();
+
+  wp_enqueue_style( 'admin-css', get_template_directory_uri().'/assets/css/admin.css' );
+  wp_enqueue_script('admin-js', get_template_directory_uri() . '/assets/js/admin.js', 'jquery', '', true);
+}
+add_action('admin_enqueue_scripts', 'll_admin_enqueue_scripts');
+
 /**
  * Dashboard Help Widget
  */

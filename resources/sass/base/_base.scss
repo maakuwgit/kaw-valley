@@ -97,6 +97,13 @@ form {
   }
 }
 
+hr {
+  background-color: $gray;
+  width: 80%;
+  max-width: 225px;
+  margin-left: 0;
+}
+
 img, svg.logo {
   display: block;
   max-width: 100%;

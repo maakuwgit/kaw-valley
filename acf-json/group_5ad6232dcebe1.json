@@ -141,6 +141,44 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_5addf81f1f6da",
+            "label": "Pad the top?",
+            "name": "padded_top",
+            "type": "true_false",
+            "instructions": "Add some padding to the top of the band, either to prevent a crash or provide some visual separation.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5addf8ae1f6db",
+            "label": "Pad the bottom?",
+            "name": "padded_bottom",
+            "type": "true_false",
+            "instructions": "Add some padding to the bottom of the band, either to prevent a crash or provide some visual separation.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5ad6235bf9e0e",
             "label": "Columns",
             "name": "band_columns",
@@ -311,5 +349,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1524447251
+    "modified": 1524497641
 }

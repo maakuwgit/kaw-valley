@@ -27,10 +27,12 @@ $default_data = [
   ),
   'band_columns'   => array(
     array(
-      'band_colspan' => '3',
-      'band_bg'      => array(),
-      'band_align'     => 'flex-start',
-      'band_content' => '<h5>Lorem ipsum</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+      'band_colspan'  => '3',
+      'padded_top'    => false,
+      'padded_bottom' => false,
+      'band_bg'       => array(),
+      'band_align'    => 'flex-start',
+      'band_content'  => '<h5>Lorem ipsum</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
     )
   )
 ];
@@ -53,10 +55,12 @@ do_action( "component_name_before_display", $component_data, $component_args );
 <?php
 if ( ll_empty( $data ) ) return;
 
-$theme    = $data['band_theme'];
-$section_bg  = $data['section_bg'];
-$band_bg  = $data['band_bg'];
-$stretch = $data['is_stretched'];
+$theme          = $data['band_theme'];
+$section_bg     = $data['section_bg'];
+$band_bg        = $data['band_bg'];
+$stretch        = $data['is_stretched'];
+$padded_top     = $data['padded_top'];
+$padded_bottom  = $data['padded_bottom'];
 
 if( $args['classes'] || $data['band_theme'] ) {
   $css = ' class="band ';
@@ -70,6 +74,12 @@ if( $args['classes'] || $data['band_theme'] ) {
   }
   if( $stretch ) {
     $css .= ' stretch';
+  }
+  if( $padded_top === true ) {
+    $css .= ' padded-top';
+  }
+  if( $padded_bottom === true ) {
+    $css .= ' padded-bottom';
   }
 
   $css .= '"';
