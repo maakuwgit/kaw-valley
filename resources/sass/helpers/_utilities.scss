@@ -352,10 +352,10 @@ body.locked header.top,
 main.dark,
 section.dark {
   background-color: $black;
-  a, h1, h2, h3, h4, h5, h6, p, label, dt, dd, li {
+  a:not(.button), h1, h2, h3, h4, h5, h6, p, label, dt, dd, li {
     color: $white;
   }
-  a[href*="/"]:hover {
+  a:not(.button)[href*="/"]:hover {
     color: $silver;
   }
 }

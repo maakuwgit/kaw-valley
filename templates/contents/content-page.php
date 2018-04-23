@@ -36,6 +36,7 @@ if( have_rows( 'components' ) ) {
       $band   = array(
         'has_background' => get_sub_field('has_background'),
         'is_stretched'   => get_sub_field('is_stretched'),
+        'navbar'         => get_sub_field('navbar'),
         'section_bg'     => get_sub_field('section_bg'),
         'band_theme'     => get_sub_field('band_theme'),
         'padded_top'    => get_sub_field('padded_top'),

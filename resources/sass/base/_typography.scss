@@ -84,8 +84,15 @@ figure[class^='align-'] figcaption,
   font-weight: $text-bold;
   letter-spacing: -0.1px;
   line-height: 1.125;
-  @include screen-sm-up {
+  @include screen-md-up {
     font-size: 5.3125rem;
+  }
+}
+
+figure[class^='align-'] figcaption,
+.wp-caption-text {
+  @include screen-sm {
+    font-size: 3rem;
   }
 }
 
@@ -97,6 +104,9 @@ h1,
 h2,
 .h2 {
   font-size: 4.0625rem;
+  @include screen-sm {
+    font-size: 3rem;
+  }
 }
 
 h3,

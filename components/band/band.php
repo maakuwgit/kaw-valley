@@ -21,10 +21,7 @@ $default_data = [
   'section_bg'     => array(),
   'band_theme'     => 'dark',
   'is_stretched'   => false,
-  'navbar'         => array(
-      'btn'        => array(
-      )
-  ),
+  'navbar'         => array(),
   'band_columns'   => array(
     array(
       'band_colspan'  => '3',
@@ -56,11 +53,13 @@ do_action( "component_name_before_display", $component_data, $component_args );
 if ( ll_empty( $data ) ) return;
 
 $theme          = $data['band_theme'];
+$has_background = $data['has_background'];
 $section_bg     = $data['section_bg'];
 $band_bg        = $data['band_bg'];
 $stretch        = $data['is_stretched'];
 $padded_top     = $data['padded_top'];
 $padded_bottom  = $data['padded_bottom'];
+$navbar         = $data['navbar'];
 
 if( $args['classes'] || $data['band_theme'] ) {
   $css = ' class="band ';
@@ -80,6 +79,10 @@ if( $args['classes'] || $data['band_theme'] ) {
   }
   if( $padded_bottom === true ) {
     $css .= ' padded-bottom';
+  }
+
+  if( $has_background === false ) {
+    $css .= ' no_bg';
   }
 
   $css .= '"';
@@ -119,6 +122,14 @@ if ( $section_bg ) {
 <?php
   endforeach;
 ?>
+  <?php if( $navbar ) : ?>
+    <nav class="col-12of12">
+    <?php foreach( $navbar as $button ) : ?>
+      <!--- Dev Note: return here to make this a component call instead -->
+      <a href="<?php echo $button['btn']['url']; ?>" class="button hollow"><?php echo $button['btn']['title']; ?></a>
+    <?php endforeach; ?>
+    </nav>
+  <?php endif; ?>
   </div>
 <?php endif; ?>
 </section>

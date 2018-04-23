@@ -2,6 +2,15 @@
  * Home
  */
 body.home {
-  main {
+  /*This will convert to a component once built */
+  section.band:last-of-type {
+    .row {
+      div:first-of-type {
+        margin-top: 15%;
+        h3 {
+          margin-left: 55%;
+        }
+      }
+    }
   }
 }

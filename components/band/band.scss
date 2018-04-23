@@ -1,6 +1,10 @@
 .band {
   background-repeat: no-repeat;
   background-position: top center;
+  &.no_bg {
+    background: transparent;
+  }
+
   @include screen-md-up {
     .col-lg-1of12,
     .col-lg-2of12,
@@ -19,13 +23,26 @@
     }
   }
 
-  img.offset {
-    margin-top: -16.875rem;
+  @include screen-lg-up {
+    img.offset {
+      margin-top: -16.875rem;
+    }
+  }
+
+  h2, h3, h4, h5, h6, p {
+    a {
+      text-decoration: underline;
+    }
   }
 
   p:first-child {
     margin-top: auto;
   }
+
+  nav {
+    margin: auto;
+  }
+
   figure {
     + h5 {
       margin-top: 3rem;
@@ -41,17 +58,19 @@ body.single-service {
         min-height: 600px;
       }
     }
-     &.padded-top {
-      padding-top: 16.875rem;
-    }
-     &.padded-bottom {
-      padding-bottom: 8.4375rem;
-    }
-    &:first-of-type {
-      padding-top: 10rem;
-    }
-    .container {
-      min-height: inherit;
+    @include screen-md-up {
+       &.padded-top {
+        padding-top: 16.875rem;
+      }
+       &.padded-bottom {
+        padding-bottom: 8.4375rem;
+      }
+      &:first-of-type {
+        padding-top: 10rem;
+      }
+      .container {
+        min-height: inherit;
+      }
     }
   }
 }

@@ -4,6 +4,9 @@
     padding-bottom: 2.5rem;
     background-repeat: no-repeat;
     background-position: 0 -2.5rem;
+    @include screen-sm {
+      background-size: cover;
+    }
   }
 }
 

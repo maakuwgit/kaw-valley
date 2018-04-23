@@ -25,7 +25,13 @@ figure[class^='align-'],
     left: 3.25rem;
     z-index: 1;
     font-weight: $text-medium;
-    white-space: nowrap;
+    @include screen-lg-up {
+      white-space: nowrap;
+    }
+    @include screen-sm {
+      bottom: 0.5rem;
+      left: 1.25rem;
+    }
   }
 }
 
