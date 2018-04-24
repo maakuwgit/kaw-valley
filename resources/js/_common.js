@@ -46,6 +46,17 @@
       checkAdminBar();
 
       $(function() {
+        //If theres a controller for ScrollMagic, spool it up!
+        if( typeof controller !== 'undefined' ) {
+          var scene = new ScrollMagic.Scene({
+            triggerElement: '[data-component="anchor_nav"]',
+            duration: 300,
+          })
+          .setPin('[data-component="anchor_nav"]')
+          .addIndicators()
+          .addTo(controller);
+        }
+
         $('a[href*="#"]:not(.js-no-scroll):not([href="#"])').click(function() {
           if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
             var target = $(this.hash);
@@ -66,10 +77,24 @@
       });
 
       // JavaScript to be fired on all pages
+      function clickthrough(e) {
+        var target = $(this).find('a:first-of-type');
+        e.preventDefault();
+        document.location.href = target.attr('href');
+      }
+
+      // Converts a thumbnail into a link by reading the first link and using that
+      $('[data-clickthrough').each(function(args){
+        var target = $(this).find('a:first-of-type');
+        if( target ) {
+          $(this).on('click.clickthrough', clickthrough);
+        }
+      });
+
       //Reads the "featured" image (class based) and sets the target background to whatever image is dynamically loaded then animates it in.
       $('[data-background]').each(function(args){
         var feat    = $(this).find('.feature');
-        var target  = feat;
+        var target  = feat;//See if there's a featured image here, if not, just use the parent
         if(feat.length <= 0) {
           target = $(this);
         }
@@ -171,7 +196,6 @@
       /*
        * Magnific Popup
        */
-
       $('[data-mfp-src]').on('click.openPopup', function(e){
         e.preventDefault();
         $src =  $(this).attr('data-mfp-src');
@@ -230,66 +254,6 @@
                 }
               }
             }
-          });
-        }
-
-        /*
-          WooCommerce
-         */
-
-        if ( $('body').hasClass('woocommerce-checkout') ) {
-
-          // Billing
-          var billingAutocomplete = new google.maps.places.Autocomplete($(".woocommerce-checkout #billing_address_1")[0], {});
-
-          google.maps.event.addListener(billingAutocomplete, 'place_changed', function() {
-              var place = billingAutocomplete.getPlace();
-              var street_address = '';
-
-              for (var i = 0; i < place.address_components.length; i++) {
-                var addressType = place.address_components[i].types[0];
-                if ( componentForm[addressType] ) {
-                  var val = place.address_components[i][componentForm[addressType]];
-
-                  if ( addressType === 'street_number' || addressType === 'route' ) {
-                    street_address += val + ' ';
-                    $(".woocommerce-checkout #billing_address_1").val(street_address);
-                  } else if ( addressType === 'locality' ) {
-                    $('.woocommerce-checkout #billing_city').val(val);
-                  } else if ( addressType === 'administrative_area_level_1' ) {
-                    $('.woocommerce-checkout #billing_state').val(val).trigger('change');
-                  } else if ( addressType === 'postal_code' ) {
-                    $('.woocommerce-checkout #billing_postcode').val(val);
-                  }
-                }
-              }
-          });
-
-          // Shipping
-          var shippingAutocomplete = new google.maps.places.Autocomplete($(".woocommerce-checkout #shipping_address_1")[0], {});
-
-          google.maps.event.addListener(shippingAutocomplete, 'place_changed', function() {
-              var place = shippingAutocomplete.getPlace();
-              var street_address = '';
-
-              for (var i = 0; i < place.address_components.length; i++) {
-                var addressType = place.address_components[i].types[0];
-                if ( componentForm[addressType] ) {
-                  var val = place.address_components[i][componentForm[addressType]];
-
-                  if ( addressType === 'street_number' || addressType === 'route' ) {
-                    street_address += val + ' ';
-                    $(".woocommerce-checkout #shipping_address_1").val(street_address);
-                  } else if ( addressType === 'locality' ) {
-                    $('.woocommerce-checkout #shipping_city').val(val);
-                  } else if ( addressType === 'administrative_area_level_1' ) {
-                    $('.woocommerce-checkout #shipping_state').val(val).trigger('change');
-                  } else if ( addressType === 'postal_code' ) {
-                    $('.woocommerce-checkout #shipping_postcode').val(val);
-                  }
-                }
-              }
-
           });
         }
 
