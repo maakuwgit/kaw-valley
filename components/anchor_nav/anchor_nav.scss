@@ -24,6 +24,10 @@
         @include screen-sm {
           font-size: 0.875rem;
         }
+        @include screen-md-only {
+          padding-left: 3.5vw;
+          padding-right: 3.5vw;
+        }
         @include screen-lg-up {
           &:hover {
             background-color: #b9b9b938;
