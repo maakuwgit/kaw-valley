@@ -1,7 +1,7 @@
 body > aside {
   min-height: 50vh;
   @include row-gutter;
-  background: $white url(#{$callout-bg}) center no-repeat;
+  background: $white url(#{$terrain-bg--rainbow}) center no-repeat;
   background-size: cover;
   * {
     color: $black;
@@ -14,7 +14,7 @@ body > aside {
   nav {
     text-align: center;
   }
-  
+
   @include screen-lg-up {
     .hero, nav {
       width: 50%;

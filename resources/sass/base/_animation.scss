@@ -1,6 +1,9 @@
 a,
 [data-background] {
   transition: all 300ms ease-in-out;
+  &:hover {
+    transition: all 300ms ease-in-out;
+  }
 }
 
 .button,

@@ -4,7 +4,7 @@
     'sub_text'         => array( 'text' => '' ),
     'call_to_action'   => false,
     'spotlight_strength' => 0,
-    'background_image' => array( get_template_directory_uri() . '/assets/img/background-header--home.svg'),
+    'background_image' => array( get_template_directory_uri() . '/assets/img/background-terrain.svg'),
     'show_icons'       => true
   );
 

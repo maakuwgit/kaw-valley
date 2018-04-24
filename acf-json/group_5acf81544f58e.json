@@ -357,6 +357,44 @@
                     "ui_off_text": ""
                 }
             ]
+        },
+        {
+            "key": "field_5adf3a69c8f9a",
+            "label": "Latitude",
+            "name": "latitude",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "39.1190177",
+            "placeholder": "39.1190177",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5adf3afbc8f9b",
+            "label": "Longitude",
+            "name": "longitude",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "-95.0449064",
+            "placeholder": "-95.0449064",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -385,5 +423,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1523555323
+    "modified": 1524579124
 }
