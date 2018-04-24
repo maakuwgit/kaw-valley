@@ -85,7 +85,13 @@
       text-align: right;
       img {
         margin-left: auto;
-        margin-right: 0;
+        margin-right: auto;
+        @include screen-lg {
+          height: 15vh;
+        }
+        @include screen-lg-up {
+          margin-right: 0;
+        }
       }
     }
     div:last-of-type{

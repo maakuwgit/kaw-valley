@@ -84,7 +84,7 @@ figure[class^='align-'] figcaption,
   font-weight: $text-bold;
   letter-spacing: -0.1px;
   line-height: 1.125;
-  @include screen-md-up {
+  @include screen-lg-up {
     font-size: 5.3125rem;
   }
 }
@@ -98,48 +98,73 @@ figure[class^='align-'] figcaption,
 
 h1,
 .h1 {
-  font-size: 1.5625rem;
+  font-size: 0.875rem;
+  @include screen-lg-up {
+    font-size: 1.5625rem;
+  }
 }
 
 h2,
 .h2 {
-  font-size: 4.0625rem;
-  @include screen-sm {
-    font-size: 3rem;
+  font-size: 3rem;
+  @include screen-lg-up {
+    font-size: 4.0625rem;
   }
 }
 
 h3,
 .h3 {
-  font-size: 2.8125rem;
-  line-height: 1.25;
+  font-size: 2rem;
+  line-height: 1.125;
+  @include screen-lg-up {
+    font-size: 2.8125rem;
+    line-height: 1.25;
+  }
 }
 
 h4,
 .h4 {
-  font-size: 1.875rem;
+  font-size: 1.25rem;
+  @include screen-lg-up {
+    font-size: 1.875rem;
+  }
 }
 
 h5,
 .h5 {
-  font-size: 1.125rem;
+  font-size: 0.9375rem;
+  @include screen-lg-up {
+    font-size: 1.125rem;
+  }
 }
 
 h6,
 .h6 {
-  font-size: 1rem;
+  font-size: 0.875rem;
+  @include screen-lg-up {
+    font-size: 1rem;
+  }
 }
 
 p, td, li, dd, address {
-  font-size: 1rem;
+  font-size: 0.875rem;
+  @include screen-lg-up {
+    font-size: 1rem;
+  }
 }
 
 td, li, dd, address {
-  line-height: 1.25
+  line-height: 1.1875;
+  @include screen-lg-up {
+    line-height: 1.25;
+  }
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.375;
+  @include screen-lg-up {
+    line-height: 1.5;
+  }
 }
 
 small, .small {
