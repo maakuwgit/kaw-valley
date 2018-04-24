@@ -93,6 +93,7 @@ if ( ! function_exists('register_team_taxonomies') ) {
 /**
  * Create ACF setting page under CPT menu
  */
+/*
  if ( function_exists( 'acf_add_options_sub_page' ) ){
    acf_add_options_sub_page(array(
      'page_title' => 'Team Settings',
@@ -101,4 +102,4 @@ if ( ! function_exists('register_team_taxonomies') ) {
      'parent'     => 'edit.php?post_type=team',
      'capability' => 'manage_options'
    ));
- }
+ }*/

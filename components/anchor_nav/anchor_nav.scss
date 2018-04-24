@@ -5,6 +5,9 @@
   width: 100%;
   position: relative;
   border-top: solid 1px $silver;
+  @include screen-md {
+    display: none;
+  }
   ol {
     counter-reset: lis;
     margin-top: 0;

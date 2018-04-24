@@ -9,12 +9,12 @@
 .gform_wrapper,
 .gform_confirmation_wrapper {
   position: relative;
+  width: 100%;
   max-width: $container-sm;
   margin-left: auto;
   margin-right: auto;
 
   @include screen-sm {
-    width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -86,11 +86,14 @@
   }
   .gform_heading {
     @include screen-lg-up {
-      width: 50%;
+      .gform_title,
+      .gform_description {
+        width: 50%;
+      }
       display: flex;
     }
     align-items: flex-start;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
     * {
       display: block;
       align-self: center;

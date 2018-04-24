@@ -144,9 +144,18 @@ body.single {
       .triangle_icon {
         position: absolute;
         top: 0;
-        right: 3rem;
       }
-      @include screen-lg-up {
+      @include screen-sm {
+        .triangle_icon {
+          right: 50%;
+          left: 50%;
+          transform: scale(1.5);
+        }
+      }
+      @include screen-md-up {
+        .triangle_icon {
+          right: 3rem;
+        }
         .order {
           margin-top: 3rem;
           margin-right: 6rem;

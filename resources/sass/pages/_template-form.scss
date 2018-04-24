@@ -1,0 +1,25 @@
+/**
+ * Form Template
+ */
+body.page-template-template-form {
+  main {
+    padding-top: 4rem;
+    aside {
+      margin-top: 7.25rem;
+      @include screen-lg {
+        order: 2;
+        + div {
+          order: 1;
+        }
+      }
+    }
+    dt, dd {
+      margin-bottom: 1.5rem;
+    }
+    @include screen-lg {
+      .gfield[class*="col-"]{
+        width: 100%
+      }
+    }
+  }
+}

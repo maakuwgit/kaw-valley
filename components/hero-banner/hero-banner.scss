@@ -96,6 +96,25 @@
         margin-right: auto;
       }
     }
+
+    dl,
+    .triangle_icon-big {
+      width: 20rem;
+      margin: auto;
+      text-align: left;
+    }
+
+    dt, dd {
+      margin-bottom: 0.5rem;
+    }
+
+    .triangle_icon-big {
+      margin-bottom: 2rem;
+      polygon {
+        transform: scale(2);
+      }
+    }
+
     @include screen-md {
       div, div:first-of-type, div:last-of-type {
         width: 100%;
