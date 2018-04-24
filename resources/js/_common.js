@@ -43,18 +43,41 @@
          }
       }
 
-      checkAdminBar();
+      //checkAdminBar();
 
       $(function() {
         //If theres a controller for ScrollMagic, spool it up!
-        if( typeof controller !== 'undefined' ) {
-          var scene = new ScrollMagic.Scene({
-            triggerElement: '[data-component="anchor_nav"]',
-            duration: 300,
-          })
-          .setPin('[data-component="anchor_nav"]')
-          .addIndicators()
-          .addTo(controller);
+        if( typeof ScrollMagic !== 'undefined' ) {
+          var controller  = new ScrollMagic.Controller(),
+              adminHeight = ( $('#wpadminbar').length > 0 ? $('#wpadminbar').outerHeight() : 0 ),
+              anchor_nav  = '.anchor_nav',
+              hero        = '.hero-banner',
+              primary_nav = 'body > header',
+              offset      = 0;
+
+          if ( $(hero) ) {
+            offset = ( $(hero).outerHeight() - $(primary_nav).outerHeight() ) * 2;
+          }
+
+          if( $(anchor_nav) && $(hero) ) {
+
+            var navs_pin = new ScrollMagic.Scene({
+              triggerElement: hero,
+              triggerHook: 'onStart',
+              offset: offset
+            })
+            .setClassToggle(anchor_nav,'top')
+            .addTo(controller);
+          }
+          if( $(primary_nav) && $(hero) ) {
+
+            var primary_pin = new ScrollMagic.Scene({
+              triggerElement: hero,
+              offset: offset
+            })
+            .setClassToggle(primary_nav,'top')
+            .addTo(controller);
+          }
         }
 
         $('a[href*="#"]:not(.js-no-scroll):not([href="#"])').click(function() {

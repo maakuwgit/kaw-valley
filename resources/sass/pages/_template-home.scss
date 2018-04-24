@@ -1,3 +1,11 @@
 /**
  * Home
  */
+body.home {
+  .projects--header {
+    margin-top: 180px;
+    @include screen-lg-up {
+      margin-left: 140px !important;
+    }
+  }
+}

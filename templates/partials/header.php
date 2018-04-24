@@ -5,7 +5,7 @@
 
   $img_path = get_template_directory_uri() . '/assets/img/';
 ?>
-<header class="navbar" role="banner" data-component="nav-scroll">
+<header class="navbar" role="banner">
   <div class="container row nowrap">
     <figure>
       <a href="<?php echo $href ?>" class="logo block">

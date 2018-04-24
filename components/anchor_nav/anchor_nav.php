@@ -51,7 +51,7 @@ if( $args['classes'] ) {
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
 
 ?>
-<nav<?php echo $id . $css;?> data-component="anchor_nav">
+<nav<?php echo $id . $css;?> data-component="anchor_nav" class="anchor_nav">
   <ol class="container row no-bullet">
   <?php foreach( $data as $btn ) : ?>
     <li>

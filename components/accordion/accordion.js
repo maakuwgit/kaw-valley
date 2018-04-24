@@ -23,7 +23,6 @@
       $(window).on('resize.refactorAccordions', refactorAccordions );
       refactorAccordions();
 
-console.log(breakpoints.lg);
       function refactorAccordions(e) {
         if( $(window).outerWidth() > breakpoints.lg ) {
           $('.accordion').css({'display':'none', 'opacity':0});

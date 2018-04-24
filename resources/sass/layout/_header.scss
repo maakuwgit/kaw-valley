@@ -42,12 +42,13 @@ body {
     right:0;
     left: 0;
     z-index: 25;
+    min-height: 5.3125rem;
     &:not(.navbar--dark) * {
       color: $white;
     }
     &.top,
     &.transparent {
-      background: transparent;
+      background: rgba(0,0,0,0.6);
     }
 
     a {

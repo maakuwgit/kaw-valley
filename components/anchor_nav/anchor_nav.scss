@@ -5,6 +5,13 @@
   width: 100%;
   position: relative;
   border-top: solid 1px $silver;
+  &.top {
+    position: fixed;
+    background: rgba(0,0,0,0.6);
+    top: 7.5rem;
+    margin-top: initial;
+  }
+  
   @include screen-md {
     display: none;
   }

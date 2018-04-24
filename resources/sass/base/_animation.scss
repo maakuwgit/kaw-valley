@@ -14,7 +14,11 @@ input[type="submit"] {
     transition: all 50ms ease-out;
   }
 }
-
+body > header,
+body > header.top,
+body > header.transparent,
+[data-component="anchor_nav"],
+[data-component="anchor_nav"].top,
 #primary-nav .menu-item a {
   transition: background 300ms ease-in-out, color 200ms ease-out;
 }
