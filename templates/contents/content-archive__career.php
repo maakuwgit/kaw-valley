@@ -10,7 +10,7 @@
 <?php
     $headline = get_field( 'careers_subheadline', 'options');
     $subheadline = false;
-    $excerpt = get_field( 'careers_excerpt', 'options');
+    $excerpt = format_text(get_field( 'careers_excerpt', 'options'));
     $direction = 'left';
     $layout = 'split';
 

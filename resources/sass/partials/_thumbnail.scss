@@ -66,6 +66,8 @@ article.thumbnail {
   }
 
   hr {
+    width: 100%;
+    max-width: none;
     margin-top: $thumb-padding;
   }
 
