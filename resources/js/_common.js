@@ -77,7 +77,6 @@
               offset: offset
             })
             .setClassToggle(primary_nav,'top')
-            .addIndicators()
             .addTo(controller);
           }
         }
