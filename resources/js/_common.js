@@ -56,7 +56,7 @@
               offset      = 0;
 
           if ( $(hero) ) {
-            offset = ( $(hero).outerHeight() - $(primary_nav).outerHeight() ) * 2;
+            offset = ( $(hero).height() - $(primary_nav).height() ) * 2;
           }
 
           if( $(anchor_nav) && $(hero) ) {
@@ -69,6 +69,7 @@
             .setClassToggle(anchor_nav,'top')
             .addTo(controller);
           }
+
           if( $(primary_nav) && $(hero) ) {
 
             var primary_pin = new ScrollMagic.Scene({
@@ -76,6 +77,7 @@
               offset: offset
             })
             .setClassToggle(primary_nav,'top')
+            .addIndicators()
             .addTo(controller);
           }
         }
