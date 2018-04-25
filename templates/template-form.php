@@ -27,7 +27,7 @@ if( $show_locations ) {
 <?php if( $show_locations ) : ?>
   <?php get_template_part('templates/contents/content', 'map'); ?>
 <?php endif; ?>
-<?php endwhile; ?>
 <?php if( $show_prefooter ) : ?>
 <?php get_template_part('templates/contents/content', 'callout'); ?>
 <?php endif; ?>
+<?php endwhile; ?>
