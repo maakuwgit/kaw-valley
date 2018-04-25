@@ -1,0 +1,11 @@
+/**
+ * Team Archive
+ */
+body.post-type-archive-team {
+  @include screen-lg-up {
+    .content {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+}
