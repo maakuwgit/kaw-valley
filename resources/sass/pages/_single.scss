@@ -156,6 +156,7 @@ body.single {
       @include screen-md-up {
         .triangle_icon {
           right: 3rem;
+          transform: scale(1.25);
         }
         .order {
           margin-top: 3rem;
