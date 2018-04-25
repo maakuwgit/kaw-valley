@@ -1,0 +1,49 @@
+/**
+ * Project Landing Page
+ */
+body.single-project {
+  @include screen-lg-up {
+    article.content:first-of-type {
+      padding-bottom: 20rem;
+      + .band > .container:first-of-type {
+        margin-top: -21rem;
+      }
+    }
+    .band {
+      * {
+        color: $black;
+      }
+      &:first-of-type {
+        padding-top: 5rem;
+      }
+      .hero {
+        font-weight: $text-medium;
+      }
+      h3 {
+        margin-bottom: 2rem;
+        font-size: 5.3125rem;
+        line-height: 1;
+      }
+      h5 {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        font-weight: $text-medium;
+      }
+      p {
+        max-width: 580px;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  .hero-banner {
+    @include screen-lg-up {
+      min-height: 80vh;
+    }
+    figcaption {
+      div:first-of-type {
+        align-self: flex-start;
+      }
+    }
+  }
+}

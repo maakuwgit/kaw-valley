@@ -170,6 +170,7 @@ select {
 
 textarea {
   @include input_base;
+  max-height: 7.5rem;
 }
 
 table {
