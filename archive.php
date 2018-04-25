@@ -10,6 +10,7 @@ $banner_text = array(
 $banner_sub_text = array(
   'text' => false
 );
+
 $background_image   = get_field('news_hero_background_image', $cat);
 $loop_video         = get_field('news_hero_loop_video', $cat);
 $popup_video        = get_field('news_hero_popup_video', $cat);

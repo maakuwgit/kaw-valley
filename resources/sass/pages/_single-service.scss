@@ -3,6 +3,9 @@
  */
 body.single-service {
   .hero-banner {
+    @include screen-lg-up {
+      min-height: 80vh;
+    }
     figcaption {
       div:first-of-type {
         align-self: flex-start;
