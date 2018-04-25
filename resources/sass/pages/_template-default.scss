@@ -1,0 +1,31 @@
+/**
+ * Page Template Default
+ */
+body.page-template-default {
+  ul {
+    list-style: none;
+    li {
+      &.h4 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .headline,
+  .band {
+
+    h3.hero,
+    h5 {
+      font-weight: $text-medium;
+    }
+
+    h5 {
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+
+    h4 + hr, h3 + hr {
+      margin-top: -2.75rem;
+      margin-bottom: 3rem;
+    }
+  }
+}

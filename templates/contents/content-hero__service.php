@@ -9,6 +9,7 @@
   if( $order < 9 ) $order = '0' . $order;
 
   $hero_banner = ll_format_post_banner();
+  $hero_banner['spotlight_strength'] = 1;
   $hero_banner['icon_markup'] = '<svg class="block triangle_icon" width="18px" height="14px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <polygon points="7.99993161 12.9030516 16 0 0 0" fill="none" stroke="' . $color_scheme . '"></polygon>
 </svg>

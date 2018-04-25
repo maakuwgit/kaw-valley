@@ -163,13 +163,10 @@
 
 /**
  * Spacing styles
- * ----------------------------------------------------------------------------
- *
- * Utility classes for adjusting content alignment
- */
+ * ------------------------------------------------------------------------*/
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
-p, ul, time {
+figure, figure[class^=align-], h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
+img, p, ul, time {
   &.push-top {
     margin-top: 6.25rem;
   }

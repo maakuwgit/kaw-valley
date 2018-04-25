@@ -1,6 +1,6 @@
 /**
- * Media object
- * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+ * Media
+ *
  */
 .row .flex-start img:not(.align-top) + figcaption {
   bottom: initial;
@@ -20,6 +20,12 @@ figure[class^='align-'],
   position: relative;
   margin-top: auto;
   margin-bottom: 6.25rem;
+  img {
+    margin: auto;
+  }
+  &.align-left img {
+    margin-left: 0;
+  }
   figcaption {
     position: absolute;
     bottom: 2.5rem;
@@ -35,21 +41,3 @@ figure[class^='align-'],
     }
   }
 }
-
-.media {
-  display: flex;
-  align-items: flex-start;
-}
-
-.media__figure {
-  margin-right: 50px;
-
-  &:empty {
-    margin-right: 0;
-  }
-}
-
-.media__bd {
-  flex: 1 1 0%;
-}
-
