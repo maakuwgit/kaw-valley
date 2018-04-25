@@ -57,27 +57,26 @@
 
           if ( $(hero) ) {
             offset = ( $(hero).height() - $(primary_nav).height() ) * 2;
-          }
+            if( $(anchor_nav) ) {
 
-          if( $(anchor_nav) && $(hero) ) {
+              var navs_pin = new ScrollMagic.Scene({
+                triggerElement: hero,
+                triggerHook: 'onStart',
+                offset: offset
+              })
+              .setClassToggle(anchor_nav,'top')
+              .addTo(controller);
+            }
 
-            var navs_pin = new ScrollMagic.Scene({
-              triggerElement: hero,
-              triggerHook: 'onStart',
-              offset: offset
-            })
-            .setClassToggle(anchor_nav,'top')
-            .addTo(controller);
-          }
+            if( $(primary_nav) ) {
 
-          if( $(primary_nav) && $(hero) ) {
-
-            var primary_pin = new ScrollMagic.Scene({
-              triggerElement: hero,
-              offset: offset
-            })
-            .setClassToggle(primary_nav,'top')
-            .addTo(controller);
+              var primary_pin = new ScrollMagic.Scene({
+                triggerElement: hero,
+                offset: offset
+              })
+              .setClassToggle(primary_nav,'top')
+              .addTo(controller);
+            }
           }
         }
 
