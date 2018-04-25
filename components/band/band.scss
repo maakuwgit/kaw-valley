@@ -4,6 +4,9 @@
   &.no_bg {
     background: transparent;
   }
+  &:last-of-type {
+    padding-bottom: 15vh;
+  }
 
   @include screen-md {
     &.stretch {
