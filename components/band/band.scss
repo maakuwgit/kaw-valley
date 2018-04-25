@@ -44,8 +44,25 @@
   }
 
   @include screen-lg-up {
+    h4, .h4, h5.hero, ul {
+      margin-bottom: 3.125rem;
+    }
+    h4, .h4 {
+      line-height: 1.25;
+    }
+    h6, .h6 {
+      margin-bottom: 1.625rem;
+    }
     img.offset {
       margin-top: -16.875rem;
+    }
+    li {
+      &:not(:last-child){
+        margin-bottom: 0.5rem;
+      }
+    }
+    p {
+      line-height: 1.625;
     }
   }
 
@@ -53,6 +70,14 @@
     a {
       text-decoration: underline;
     }
+  }
+
+  .h2 {
+    font-weight: $text-medium;
+  }
+
+  h5.hero {
+    font-weight: $text-normal;
   }
 
   p:first-child {

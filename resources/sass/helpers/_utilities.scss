@@ -29,16 +29,25 @@
   display: none;
 }
 
+/* Font Weights */
 .text-bold {
   font-weight: $text-bold !important;
 }
 
-.text-med {
+.text-medium {
   font-weight: $text-medium !important;
+}
+
+.text-normal {
+  font-weight: $text-normal !important;
 }
 
 .no-bullet {
   list-style: none;
+}
+
+.bullet {
+  list-style: disc;
 }
 
 .relative {
@@ -157,6 +166,16 @@
  *
  * Utility classes for adjusting content alignment
  */
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
+p, ul, time {
+  &.push-top {
+    margin-top: 6.25rem;
+  }
+  &.pull-top {
+    margin-top: -12.5rem;
+  }
+}
 
 .m-t-1 {
   margin-top: calc( #{$grid-gutter-width} / 2 ) !important;
@@ -360,23 +379,26 @@ section.dark {
   }
 }
 
-a, p, dt, dd, span, time, address {
-  &.danger {
+a, p, dt, dd, span, time, address, ul {
+  &.danger, &.danger li {
     color: $danger-color;
   }
-  &.success {
+  &.success, &.success li {
     color: $success-color;
   }
-  &.red {
+  &.steel, &.steel li {
+    color: $steel;
+  }
+  &.red, &.red li {
     color: $red;
   }
-  &.teal {
+  &.teal, &.teal li {
     color: $teal;
   }
-  &.orange {
+  &.orange, &.orange li {
     color: $orange;
   }
-  &.chartreuse {
+  &.chartreuse, &.chartreuse li {
     color: $chartreuse;
   }
 }
@@ -387,6 +409,9 @@ aside, article, main, div, header, footer, section, nav, menu, code, hr {
   }
   &.success {
     background-color: $success-color;
+  }
+  &.steel {
+    background-color: $steel;
   }
   &.red {
     background-color: $red;

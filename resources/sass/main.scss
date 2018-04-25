@@ -26,8 +26,6 @@
 @import "layout/_content";
 @import "layout/_header";
 @import "layout/_footer";
-@import "layout/_career";
-@import "layout/_single";
 
 // Partials
 @import "partials/_block-table";
@@ -47,5 +45,8 @@
 @import "partials/_modal";
 
 // Pages/Templates
+@import "pages/_archive-career";
+@import "pages/_single";
+@import "pages/_single-service";
 @import "pages/_template-home";
 @import "pages/_template-form";
