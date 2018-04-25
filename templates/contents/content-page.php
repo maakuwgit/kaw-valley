@@ -47,7 +47,9 @@ if( have_rows( 'components' ) ) {
       $output .= ll_include_component(
         'band',
         $band,
-        array(),
+        array(
+         'id' => get_sub_field('target_name')
+        ),
         true
       );
 

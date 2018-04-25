@@ -57,9 +57,10 @@
 
           if ( $(hero) ) {
             offset = ( $(hero).height() - $(primary_nav).height() ) * 2;
-            if( $(anchor_nav) ) {
 
-              var navs_pin = new ScrollMagic.Scene({
+            //Adding styles to the anchor nav and pinning
+            if( $(anchor_nav) ) {
+              var anchor_navs_pin = new ScrollMagic.Scene({
                 triggerElement: hero,
                 triggerHook: 'onStart',
                 offset: offset
@@ -68,8 +69,8 @@
               .addTo(controller);
             }
 
+            //Adding styles to the primary nav and pinning
             if( $(primary_nav) ) {
-
               var primary_pin = new ScrollMagic.Scene({
                 triggerElement: hero,
                 offset: offset
