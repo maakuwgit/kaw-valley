@@ -8,4 +8,9 @@ body.home {
       margin-left: 140px !important;
     }
   }
+  @include screen-lg-up {
+    .hero-banner {
+      min-height: 100vh;
+    }
+  }
 }

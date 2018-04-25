@@ -1,24 +1,25 @@
+<?php
+  $cat = get_queried_object();
+
+  $headline = get_field( 'careers_subheadline', 'options' );
+  $subheadline = false;
+  $excerpt = format_text(get_field( 'careers_excerpt', 'option' ));
+  $direction = 'left';
+  $layout = 'split';
+?>
 <section class="content light-bg">
   <div class="container row">
     <?php
-      if( get_field( 'careers_subheadline', 'options') ) {
-        echo '<h2 class="h1 superhead">' . get_field( 'careers_headline', 'options') . '</h2>';
+      if( $headline ) {
+        echo '<h2 class="h1 superhead">' . get_field( 'careers_headline', 'options' ) . '</h2>';
       }
     ?>
   </div>
 </section>
-<?php
-    $headline = get_field( 'careers_subheadline', 'options');
-    $subheadline = false;
-    $excerpt = format_text(get_field( 'careers_excerpt', 'options'));
-    $direction = 'left';
-    $layout = 'split';
-
-    include( locate_template( 'templates/partials/article-page.php' ) );
-  ?>
+<?php include( locate_template( 'templates/partials/article-page.php' ) );?>
 <?php
   $args = array(
-    'numberposts' => 9,
+    'numberposts' => get_field( 'careers_num_output', $cat ),
     'post_status' => 'publish',
     'post_type'   => 'career',
   );

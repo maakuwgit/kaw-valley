@@ -1,7 +1,7 @@
 <?php
 /* Dev Note: should move this to "contents" because it's markup? */
-if ( !$headline ) $headline       = get_field( 'page_headline' );
-if ( !$subheadline ) $subheadline = get_field( 'page_subheadline');
+if ( $headline === null ) $headline       = get_field( 'page_headline' );
+if ( $subheadline === null ) $subheadline = get_field( 'page_subheadline');
 if ( !$excerpt ) $excerpt         = get_field( 'page_excerpt' );
 if ( !$layout ) $layout           = get_field( 'page_layout' );
 if ( !$theme ) $theme             = ( get_field( 'page_theme' ) ? get_field( 'page_theme' ) : 'light' );

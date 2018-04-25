@@ -1,12 +1,12 @@
 {
     "key": "group_5ad6151e46827",
-    "title": "Careers Hero",
+    "title": "Careers Settings",
     "fields": [
         {
-            "key": "field_5ad6151e4ca5b",
-            "label": "Main Text",
-            "name": "careers_hero_main_text",
-            "type": "group",
+            "key": "field_5ad60fea2c44a",
+            "label": "Careers show at most",
+            "name": "careers_num_output",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,69 +15,13 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_5ad6151e4f213",
-                    "label": "Text",
-                    "name": "text",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 2,
-                    "new_lines": "br"
-                },
-                {
-                    "key": "field_5ad6151e4f27d",
-                    "label": "Heading Level",
-                    "name": "tag",
-                    "type": "button_group",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "h2": "h2",
-                        "h1": "h1"
-                    },
-                    "allow_null": 0,
-                    "default_value": "h2",
-                    "layout": "horizontal",
-                    "return_format": "value"
-                }
-            ]
-        },
-        {
-            "key": "field_5ad6151e4cce3",
-            "label": "Show Triangles?",
-            "name": "careers_hero_show_icons",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "default_value": 2,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 2,
+            "max": 6,
+            "step": ""
         },
         {
             "key": "field_5ad6151e4cd9f",
@@ -88,7 +32,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -160,6 +104,63 @@
             "step": "0.1",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_5ae0c825e476d",
+            "label": "Headline",
+            "name": "careers_headline",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ae0c809ba38a",
+            "label": "Subheadline",
+            "name": "careers_subheadline",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ae0c7e42719f",
+            "label": "Text",
+            "name": "careers_excerpt",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -172,12 +173,12 @@
         ]
     ],
     "menu_order": 1,
-    "position": "acf_after_title",
-    "style": "default",
+    "position": "normal",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1523979923
+    "modified": 1524682533
 }

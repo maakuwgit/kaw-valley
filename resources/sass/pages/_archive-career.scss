@@ -1,7 +1,11 @@
 /**
- * Career Archive and Single
+ * Career Archive
  */
 .post-type-archive-career {
+  .hero-banner {
+    background-size: contain;
+    background-position: top right;
+  }
   section.content:first-of-type {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
@@ -11,7 +15,24 @@
   }
   article.content {
     padding-top: 0;
-    padding-bottom: 4.25rem
+    padding-bottom: 4.25rem;
+    .container {
+      *[class*="col-"]:first-of-type {
+        padding-left: 0;
+      }
+      *[class*="col-"]:last-of-type {
+        padding-right: 0;
+      }
+    }
+  }
+  @include screen-lg-up {
+    table {
+      margin-bottom: 15vh;
+      td {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+    }
   }
   @include screen-sm {
     table {

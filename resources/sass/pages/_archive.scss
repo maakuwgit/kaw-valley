@@ -1,0 +1,17 @@
+/**
+ * Archive
+ */
+body.archive {
+  &:not(.post-type-archive) {
+    .hero-banner {
+      @include screen-lg-up {
+        min-height: 100vh;
+      }
+      figcaption {
+        div:first-of-type {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+}

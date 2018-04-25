@@ -174,18 +174,22 @@ textarea {
 
 table {
   width: 100%;
+  margin-bottom: 2rem;
   a {
     color: #762123;
   }
   th {
+    padding-bottom: 2rem;
     font-size: 1rem;
     font-weight: $text-normal;
+  }
+  td {
+    padding-bottom: 1rem;
   }
   td, th {
     text-align: center;
     border-bottom: solid 1px $black;
     padding-top: 1rem;
-    padding-bottom: 1rem;
 
     &:first-of-type {
       text-align: left;

@@ -17,7 +17,6 @@
   background-repeat: no-repeat;
   background-position: center center;
   @include screen-lg-up {
-    min-height: 100vh;
     background-attachment: fixed;
   }
   color: $white;
@@ -82,6 +81,7 @@
 
   figcaption {
     div:first-of-type {
+      align-self: center;
       text-align: right;
       img {
         margin-left: auto;

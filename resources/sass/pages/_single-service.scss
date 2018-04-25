@@ -2,6 +2,13 @@
  * Service Landing Page
  */
 body.single-service {
+  .hero-banner {
+    figcaption {
+      div:first-of-type {
+        align-self: flex-start;
+      }
+    }
+  }
   ul {
     list-style: none;
     li {
