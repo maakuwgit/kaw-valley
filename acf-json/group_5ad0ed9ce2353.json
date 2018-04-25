@@ -79,7 +79,7 @@
             "key": "field_5ad0f0c318db5",
             "label": "Button Link",
             "name": "prefooter_link_href",
-            "type": "text",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -92,15 +92,11 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "100",
                 "class": "",
                 "id": ""
             },
-            "default_value": "\/",
-            "placeholder": "\/insert-link",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "return_format": "url"
         },
         {
             "key": "field_5ad0f10d18db6",
@@ -162,5 +158,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1524097614
+    "modified": 1524670251
 }
