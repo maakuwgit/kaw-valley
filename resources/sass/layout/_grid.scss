@@ -44,6 +44,9 @@
     &.flex-start {
       align-self: flex-start;
     }
+    &.center {
+      align-self: center;
+    }
 
     @include screen-lg-up {
       padding-left: 1rem;
