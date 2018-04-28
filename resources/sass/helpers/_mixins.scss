@@ -64,6 +64,40 @@
 }
 
 /**
+ * Flexi-box an element
+ */
+@mixin flexible {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+}
+
+/**
+ * Grid Manipulation
+ */
+
+// Consistent padding top/bottom for .row
+@mixin row-gutter($gutter: $row-gutter, $gutter-lg: $row-gutter-lg) {
+  @include screen-lg-up {
+    padding-top: $gutter-lg;
+    padding-bottom: $gutter-lg;
+  }
+  padding-top: $gutter;
+  padding-bottom: $gutter;
+}
+
+// Centered container element
+@mixin container-fixed($max-width: $container-width) {
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  max-width: $max-width;
+}
+
+/**
  * Input styles
  */
 @mixin input_base {
@@ -102,29 +136,6 @@
 @mixin bg-opacity($color, $opacity: 0.3) {
   background: $color; /* The Fallback */
   background: rgba($color, $opacity);
-}
-
-/**
- * Grid Manipulation
- */
-
-// Centered container element
-@mixin container-fixed($gutter: $grid-gutter-width) {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left:  floor(($gutter / 2));
-  padding-right: ceil(($gutter / 2));
-  *zoom: 1;
-}
-
-// Consistent padding top/bottom for .row
-@mixin row-gutter($gutter: $row-gutter, $gutter-lg: $row-gutter-lg) {
-  @include screen-lg-up {
-    padding-top: $gutter-lg;
-    padding-bottom: $gutter-lg;
-  }
-  padding-top: $gutter;
-  padding-bottom: $gutter;
 }
 
 /*

@@ -113,10 +113,11 @@ if ( $section_bg ) {
     $col_span = $band['band_colspan'];
     $col_suff = 'of12';
     /*Dev Note: this logic is still very... loose*/
-    $col_md = 'col-md-' . ( $col_span < 6 ? 6 : floor( $col_span / 2 ) ) . $col_suff;
+    $col_sm = 'col-sm-' . ( $col_span < 6 ? 6 : floor( $col_span / 2 ) ) . $col_suff;
+    $col_md = 'col-md-' . $col_span . $col_suff;
     $col_lg = 'col-lg-' . $col_span . $col_suff;
     $col_xl = 'col-xl-' . $col_span . $col_suff;
-    $col_class = ' class="' . $col_md . ' ' . $col_lg . ' ' . $col_xl . $align . '"';
+    $col_class = ' class="' . $col_sm . ' ' . $col_md . ' ' . $col_lg . ' ' . $col_xl . $align . '"';
 ?>
     <div<?php echo $col_class . $col_style; ?>><?php echo $band['band_content']; ?></div>
 <?php

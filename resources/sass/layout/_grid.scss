@@ -7,26 +7,18 @@
 
 .container {
   position: relative;
+  body > * > & {
+    padding-left: $grid-gutter-width;
+    padding-right: $grid-gutter-width;
+  }
   @include container-fixed;
-
-  @media (min-width: $screen-sm-min) {
-    width: $container-sm;
-  }
-  @media (min-width: $screen-md-min) {
-    width: $container-md;
-  }
-  @media (min-width: $screen-lg-min) {
-    width: $container-lg;
-  }
-
-  &.boxed {
-    max-width: $container-sm;
-  }
 }
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
+  @include flexible;
+  &.stretch {
+    align-items: stretch;
+  }
   &.nowrap{
     flex-wrap: nowrap;
   }
@@ -34,10 +26,7 @@
     justify-content: center;
   }
   [class*="col-"] {
-    flex: 0 0 auto;
-    max-width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    align-self: auto;
     &.flex-end {
       align-self: flex-end;
     }
@@ -47,24 +36,13 @@
     &.center {
       align-self: center;
     }
-
-    @include screen-lg-up {
-      padding-left: 1rem;
-      padding-right: 1rem;
+    &:not([class*="xxs-"]):not([class*="xs-"]):not([class*="sm-"]):not([class*="md-"]):not([class*="lg-"]):not([class*="xl-"]) {
+      flex: 0 1 auto;
     }
-  }
-  div:first-of-type.center[class*="col-lg-3"],
-  div:first-of-type.center[class*="col-lg-2"],
-  div:first-of-type.center[class*="col-lg-1"],
-  div:last-of-type.center[class*="col-lg-3"],
-  div:last-of-type.center[class*="col-lg-2"],
-  div:last-of-type.center[class*="col-lg-1"] {
-    display: flex;
-    align-self: flex-end;
   }
 }
 
-.col-full {
+.col {
   width: 100%;
   max-width: 100%;
 }
@@ -72,52 +50,46 @@
 @for $i from 2 through 12 {
 
   @for $j from 1 through ($i - 1) {
+    $col_width: 100% / $i * $j;
+    $col_flex: #{1 / $i * $j} 1 auto;
 
     .col-#{$j}of#{$i} {
-      width: 100% / $i * $j;
-      max-width: 100% / $i * $j;
+      width: $col_width;
+      flex: $col_flex;
     }
 
-
-    @include screen-xl-up {
-      .col-xl-#{$j}of#{$i} {
-        width: 100% / $i * $j;
-        max-width: 100% / $i * $j;
-      }
-    }
-
-    @include screen-lg-only {
-      .col-lg-#{$j}of#{$i} {
-        width: 100% / $i * $j;
-        max-width: 100% / $i * $j;
-      }
-    }
-
-    @include screen-md-only {
-      .col-md-#{$j}of#{$i} {
-        width: 100% / $i * $j;
-        max-width: 100% / $i * $j;
+    @include screen-xs {
+      .col-xs-#{$j}of#{$i} {
+        width: $col_width;
+        flex: $col_flex;
       }
     }
 
     @include screen-sm-only {
       .col-sm-#{$j}of#{$i} {
-        width: 100% / $i * $j;
-        max-width: 100% / $i * $j;
+        width: $col_width;
+        flex: $col_flex;
       }
     }
 
-    @include screen-xs-only {
-      .col-xs-#{$j}of#{$i} {
-        width: 100% / $i * $j;
-        max-width: 100% / $i * $j;
+    @include screen-md-only {
+      .col-md-#{$j}of#{$i} {
+        width: $col_width;
+        flex: $col_flex;
       }
     }
 
-    @include screen-xxs-only {
-      .col-xxs-#{$j}of#{$i} {
-        width: 100% / $i * $j;
-        max-width: 100% / $i * $j;
+    @include screen-lg-only {
+      .col-lg-#{$j}of#{$i} {
+        width: $col_width;
+        flex: $col_flex;
+      }
+    }
+
+    @include screen-xl-up {
+      .col-xl-#{$j}of#{$i} {
+        width: $col_width;
+        flex: $col_flex;
       }
     }
   }
