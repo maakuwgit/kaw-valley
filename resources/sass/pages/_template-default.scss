@@ -24,8 +24,14 @@ body.page-template-default {
     }
 
     h4 + hr, h3 + hr {
-      margin-top: -2.75rem;
-      margin-bottom: 3rem;
+      @include screen-lg-up {
+        margin-top: -2.75rem;
+        margin-bottom: 3rem;
+      }
+      @include screen-lg {
+        margin-top: -0.25rem;
+        margin-bottom: 1.25rem;
+      }
     }
   }
 }

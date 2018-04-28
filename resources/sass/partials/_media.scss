@@ -19,7 +19,15 @@ figure[class^='align-'],
 .wp-caption {
   position: relative;
   margin-top: auto;
-  margin-bottom: 6.25rem;
+  @include screen-sm {
+    margin-bottom: 2rem;
+  }
+  @include screen-md-only {
+    margin-bottom: 3.125rem;
+  }
+  @include screen-lg-up {
+    margin-bottom: 6.25rem;
+  }
   img {
     margin: auto;
   }

@@ -8,6 +8,9 @@
       background-size: cover;
     }
   }
+  @include screen-md {
+    padding-bottom: 3rem;
+  }
 }
 
 @include screen-lg-up {
