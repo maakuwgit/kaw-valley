@@ -175,6 +175,12 @@ img, p, ul, time {
   }
 }
 
+figure[class^=align-].no-margin,
+.no-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .m-t-1 {
   margin-top: calc( #{$grid-gutter-width} / 2 ) !important;
 }

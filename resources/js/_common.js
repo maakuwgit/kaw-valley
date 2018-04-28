@@ -108,7 +108,7 @@
       }
 
       // Converts a thumbnail into a link by reading the first link and using that
-      $('[data-clickthrough').each(function(args){
+      $('[data-clickthrough]').each(function(args){
         var target = $(this).find('a:first-of-type');
         if( target ) {
           $(this).on('click.clickthrough', clickthrough);

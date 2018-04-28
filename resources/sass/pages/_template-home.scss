@@ -8,9 +8,50 @@ body.home {
       margin-left: 140px !important;
     }
   }
+  .band:last-of-type {
+    padding-bottom: 0;
+  }
+  .content {
+    .band {
+      h3, .h3, h4, .h4, h5, .h5 {
+        font-weight: $text-medium;
+      }
+
+      h4 a {
+        display: block;
+        margin-top: 10rem;
+      }
+
+      h5 {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.25;
+      }
+      ul {
+        list-style: none;
+        margin-bottom: 3rem;
+      }
+      li {
+        color: $steel;
+        p {
+          color: inherit;
+          margin-bottom: 1.5rem !important;
+        }
+      }
+    }
+  }
   @include screen-lg-up {
     .hero-banner {
       min-height: 100vh;
+    }
+    .content {
+      figure.wp-caption,
+      figure[class^=align-] {
+        margin-bottom: auto;
+      }
+    }
+    *[class*="col-"] p:last-child {
+      margin-bottom: auto;
     }
   }
 }

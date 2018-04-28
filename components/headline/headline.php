@@ -70,7 +70,7 @@ if ( $section_bg ) {
 ?>
 <section<?php echo $id . $css;?>>
   <div class="container row"<?php echo $style;?>>
-    <h3 class="hero text-med <?php echo $direction; ?>"><?php echo $data['generic_headline_text']; ?></h3>
+    <h3 class="hero <?php echo $direction; ?>"><?php echo $data['generic_headline_text']; ?></h3>
   </div>
 </section>
 <?php

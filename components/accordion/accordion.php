@@ -4,7 +4,7 @@
 * -----------------------------------------------------------------------------
 *
 * Accordion component
-* @since 1.2
+* @since 1.3
 * @author MaakuW
 */
 global $post;
@@ -17,6 +17,7 @@ global $post;
  */
 $default_data = [
   array(
+    'accordion_background'    => array(),
     'accordion_element'       => array(
         array(
         'accordion_icon'        => 'orange',
@@ -28,6 +29,8 @@ $default_data = [
     )
   )
 ];
+
+//var_dump($component_data['accordion_background']);
 
 $default_args = [
   'classes' => array(),
@@ -54,9 +57,14 @@ if( $args['classes'] || $args['theme'] ) {
   if( $args['theme'] ) $css .= $args['theme'] . '-bg';
   $css .= '"';
 }
+if ( $data['accordion_background'] ) {
+  $acc_bg = $data['accordion_background'];
+}else{
+  $acc_bg = '';
+}
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
 ?>
-<section<?php echo $id . $css; ?> data-component="accordion">
+<section<?php echo $id . $css; ?> data-component="accordion"<?php echo $acc_b; ?>>
   <dl class="container row">
 <?php if( $data[0]['accordion_element'] ) : ?>
 <?php

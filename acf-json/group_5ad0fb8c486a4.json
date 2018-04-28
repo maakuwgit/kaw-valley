@@ -221,12 +221,12 @@
             {
                 "param": "page_template",
                 "operator": "!=",
-                "value": "templates\/template-home.php"
+                "value": "templates\/template-form.php"
             },
             {
                 "param": "page_template",
                 "operator": "!=",
-                "value": "templates\/template-form.php"
+                "value": "templates\/template-home.php"
             }
         ],
         [
@@ -248,5 +248,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1524680766
+    "modified": 1524691417
 }
