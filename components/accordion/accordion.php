@@ -16,25 +16,28 @@ global $post;
  * @see data[]
  */
 $default_data = [
-  array(
-    'accordion_background'    => array(),
-    'accordion_element'       => array(
+  'accordion_background'    => array(),
+  'accordion_theme'         => 'dark',
+  'accordion_wrapper'       => array(
+    array(
+      'accordion_element' => array(
         array(
-        'accordion_icon'        => 'orange',
-        'accordion_bg'          => array(),
-        'accordion_headline'    => 'Lorem ipsum',
-        'accordion_content'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        'accordion_sidebar'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          'accordion_icon'        => 'orange',
+          'accordion_bg'          => array(),
+          'accordion_headline'    => 'Lorem ipsum',
+          'accordion_content'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          'accordion_sidebar'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        )
       )
     )
   )
 ];
 
-//var_dump($component_data['accordion_background']);
+//var_dump($default_data['accordion_wrapper'][0]['accordion_element']);
+//var_dump($component_data['accordion_wrapper'][0]['accordion_element']);
 
 $default_args = [
   'classes' => array(),
-  'theme'     => 'dark',
   'id' => uniqid('accordion-')
 ];
 
@@ -50,34 +53,35 @@ do_action( "component_name_before_display", $component_data, $component_args );
 
 <?php
 if ( ll_empty( $data ) ) return;
-if( $args['classes'] || $args['theme'] ) {
+if( $args['classes'] || $data['theme'] ) {
   $css = ' class="ll-accordion ';
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
-  if( $args['theme'] && $args['classes'] ) $css .= ' ';
-  if( $args['theme'] ) $css .= $args['theme'] . '-bg';
+  if( $data['theme'] && $args['classes'] ) $css .= ' ';
+  if( $data['theme'] ) $css .= $data['theme'] . '-bg';
   $css .= '"';
 }
 if ( $data['accordion_background'] ) {
   $acc_bg = $data['accordion_background'];
+  if( $acc_bg ) $acc_bg = ' style="background-image: url(' . $acc_bg['url'] . ')"';
 }else{
   $acc_bg = '';
 }
+
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
+$accordions = $data['accordion_wrapper'][0]['accordion_element'];
 ?>
-<section<?php echo $id . $css; ?> data-component="accordion"<?php echo $acc_b; ?>>
+<section<?php echo $id . $css; ?> data-component="accordion"<?php echo $acc_bg; ?>>
   <dl class="container row">
-<?php if( $data[0]['accordion_element'] ) : ?>
+<?php if( $accordions ) : ?>
 <?php
   $aID = 1;
-  foreach( $data[0]['accordion_element'] as $accordion ) :
+  foreach( $accordions as $accordion ) :
     $bg   = $accordion['accordion_bg'];
     $sbg  = $accordion['accordion_sidebar_bg'];
-    /* Dev Note: need support for srcset and data-sizes */
+    // Dev Note: need support for srcset and data-sizes
+
     if( $bg ) {
       $bg = $bg['sizes']['large'];
-    }
-    if( $sbg ) {
-      $sbg = $sbg['sizes']['large'];
     }
 ?>
     <dt class="accordion--trigger"><?php echo $accordion['accordion_headline']; ?></dt>
@@ -103,7 +107,8 @@ $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
       <div class="row">
         <aside class="accordion--sidebar" data-background>
           <figure class="feature">
-            <?php echo '<img alt="" src="' . $sbg . '">'; ?>
+            <img alt="" src="<?php echo $sbg['sizes']['medium']; ?>"
+        srcset="<?php echo $sbg['sizes']['large']; ?> 2x, <?php echo $sbg['url']; ?> 3x" data-src-md="<?php echo $sbg['sizes']['medium']; ?>" data-src-lg="<?php echo $sbg['sizes']['large']; ?>" data-src-xl="<?php echo $sbg['url']; ?>">
           </figure>
           <?php echo $accordion['accordion_sidebar']; ?>
           <a class="accordion--id" name="<?php echo 'accordion--id-' . $aID; ?>">0<?php echo $aID; ?></a>

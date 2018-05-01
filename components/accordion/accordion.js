@@ -8,7 +8,7 @@
 
   var COMPONENT = {
 
-    className: 'll-accordion',
+    className: 'accordion',
 
     selector : function() {
       return '.' + this.className;
@@ -17,7 +17,7 @@
     // Fires after common.init, before .finalize and common.finalize
     init: function() {
       var _this     = this,
-          dl = $( this.selector() ),
+          dl = $('[data-component="accordion"]'),
           triggers  = $( dl ).find('.accordion--trigger');
 
       $(window).on('resize.refactorAccordions', refactorAccordions );
@@ -40,7 +40,7 @@
         showAccordion();
       }
 
-      function hoverAccordion(e) {
+      function hoverAccordion(e) {console.log('over');
         e.preventDefault();
         resetAccordions(e);
         $(this).off('mouseenter.hoverAccordion');

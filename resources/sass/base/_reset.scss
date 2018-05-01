@@ -222,6 +222,9 @@ hr {
 
 pre {
   overflow: auto;
+  .dark & {
+    color: $white;
+  }
 }
 
 /**

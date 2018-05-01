@@ -4,7 +4,6 @@
  * -- Must include bootstrap variable overrides before main bootstrap include
  */
 
-@import "base/_reset";
 // Helpers
 @import "helpers/_variables";
 @import "helpers/_maps";
@@ -17,6 +16,7 @@
 @import "vendors/_mfp";
 
 // Base
+@import "base/_reset";
 @import "base/_base";
 @import "base/_typography";
 @import "base/_animation";

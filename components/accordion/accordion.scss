@@ -9,6 +9,9 @@ $dd_top : $dl_padding_top;
   position: relative;
   min-height: 100vh;
   background-color: $black;
+  background-size: 1174px auto;/*Dev Note: this is the size of the background-triangles.png*/
+  background-repeat: no-repeat;
+  background-position: center;
   @include screen-lg-up {
     .accordion {
       display: none;

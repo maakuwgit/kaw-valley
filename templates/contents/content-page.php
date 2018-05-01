@@ -54,17 +54,16 @@ if( have_rows( 'components' ) ) {
       );
 
     }elseif( get_row_layout() === 'accordions' ) {
-      $theme       = get_sub_field('accordion_theme');
-      $bg          = get_sub_field('accordion_bg');
-      $accordions  = get_sub_field('accordion_wrapper');
+      $accordions = array(
+        'accordion_background' => get_sub_field('accordion_background'),
+        'accordion_theme'      => get_sub_field('accordion_theme'),
+        'accordion_wrapper'    => get_sub_field('accordion_wrapper')
+      );
 
       $output .= ll_include_component(
         'accordion',
         $accordions,
-        array(
-          'theme' => $theme,
-          'background' => $bg
-        ),
+        array(),
         true
       );
     }
