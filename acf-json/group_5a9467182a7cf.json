@@ -250,11 +250,6 @@
             {
                 "param": "post_type",
                 "operator": "!=",
-                "value": "post"
-            },
-            {
-                "param": "post_type",
-                "operator": "!=",
                 "value": "career"
             },
             {
@@ -272,5 +267,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1524161487
+    "modified": 1525192607
 }
