@@ -11,7 +11,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "33.3334",
                 "class": "",
                 "id": ""
             },
@@ -36,7 +36,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "33.3334",
                 "class": "",
                 "id": ""
             },
@@ -50,76 +50,6 @@
             "default_value": "dark",
             "layout": "vertical",
             "return_format": "value"
-        },
-        {
-            "key": "field_5ad8b6fa94722",
-            "label": "Has Background?",
-            "name": "has_background",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5ad8b6d694721",
-            "label": "Background",
-            "name": "section_bg",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5ad8b6fa94722",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5adc193c02844",
-            "label": "Has Navigation?",
-            "name": "has_navbar",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33.3334",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
         },
         {
             "key": "field_5add055fdc059",
@@ -179,6 +109,57 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_5ad8b6fa94722",
+            "label": "Has Background?",
+            "name": "has_background",
+            "type": "true_false",
+            "instructions": "If this field is selected, the \"Band\" will have a dark or light colored background, depending on the \"Theme\" setting",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ad8b6d694721",
+            "label": "Band Background",
+            "name": "section_bg",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ad8b6fa94722",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5ad6235bf9e0e",
             "label": "Columns",
             "name": "band_columns",
@@ -210,9 +191,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "min": "",
-                    "max": "",
+                    "default_value": 4,
+                    "min": 1,
+                    "max": 12,
                     "step": "",
                     "prepend": "",
                     "append": ""
@@ -244,7 +225,7 @@
                 },
                 {
                     "key": "field_5adb4ee5f6fa5",
-                    "label": "Background",
+                    "label": "Column Background",
                     "name": "band_bg",
                     "type": "image",
                     "instructions": "",
@@ -286,6 +267,25 @@
                     "delay": 0
                 }
             ]
+        },
+        {
+            "key": "field_5adc193c02844",
+            "label": "Has Navigation?",
+            "name": "has_navbar",
+            "type": "true_false",
+            "instructions": "If selected, you will have the ability to add buttons to the bottom of the \"Band\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_5adc17c51852b",
@@ -349,5 +349,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1524501953
+    "modified": 1525200080
 }

@@ -120,31 +120,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_5ad61d8625ca0",
-            "label": "Direction",
-            "name": "generic_headline_direction",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "ltr": "Left to Right",
-                "ttb": "Top to Bottom",
-                "btt": "Bottom to Top"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "ltr",
-            "layout": "vertical",
-            "return_format": "value"
         }
     ],
     "location": [
@@ -164,5 +139,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1524326889
+    "modified": 1525199287
 }
