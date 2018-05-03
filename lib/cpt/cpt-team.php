@@ -25,7 +25,7 @@ if ( ! function_exists('register_team_custom_post_type') ) {
     $args = array(
       'label'               => 'team',
       'description'         => 'Team description',
-      'supports'            => array( 'title', 'thumbnail', 'page-attributes' ),
+      'supports'            => array( 'title', 'thumbnail', 'page-attributes', 'revisions' ),
       'labels'              => $labels,
       'with_front'          => true,
       'rewrite'             => array( 'slug' => 'team' ),

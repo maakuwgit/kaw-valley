@@ -26,7 +26,7 @@ if ( ! function_exists('register_career_custom_post_type') ) {
       'label'               => 'career',
       'description'         => 'Career description',
       'labels'              => $labels,
-      'supports'            => array( 'title', 'editor', 'page-attributes' ),
+      'supports'            => array( 'title', 'editor', 'page-attributes', 'revisions' ),
       'hierarchical'        => true,
       'public'              => true,
       'show_ui'             => true,

@@ -26,7 +26,7 @@ if ( ! function_exists('register_location_custom_post_type') ) {
       'label'               => 'location',
       'description'         => 'Location description',
       'labels'              => $labels,
-      'supports'            => array( 'title', 'page-attributes' ),
+      'supports'            => array( 'title', 'page-attributes', 'revisions' ),
       'hierarchical'        => true,
       'public'              => true,
       'show_ui'             => true,
