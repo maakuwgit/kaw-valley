@@ -28,6 +28,15 @@ figure[class^='align-'],
   @include screen-lg-up {
     margin-bottom: 6.25rem;
   }
+  //Wordpress editors are somewhat flippant
+  //with nesting figure and p tags. This addresses
+  //that shortcoming
+  figure, p {
+    width: auto !important;
+    padding: 0 !important;
+    margin: auto !important;
+    float:none !important;
+  }
   img {
     margin: auto;
   }

@@ -113,6 +113,17 @@ function ll_format_tinymce( $data ) {
       ),
     ),
     array(
+      'title' => 'Lists',
+      'items' => array(
+        array(
+          'title'    => 'No Bullets',
+          'classes'  => 'no-bullet',
+          'selector' => 'ul, ol',
+          'wrapper'  => false
+        ),
+      ),
+    ),
+    array(
         'title' => 'Colors',
         'items' => array(
           array(
@@ -174,10 +185,46 @@ function ll_format_tinymce( $data ) {
   );
 
   $data['style_formats'] = json_encode( $style_formats );
+
+  $custom_colours = '
+        "00A79D", "Teal",
+        "BFD730", "Orange",
+        "F15A29", "Red",
+        "BFD730", "Chartreuese",
+        "000000", "Black",
+        "808080", "Grey",
+        "9b9b9b", "Steel",
+        "b9b9b9", "Silver",
+        "ffffff", "White"
+    ';
+
+    // build colour grid default+custom colors
+  $data['textcolor_map'] = '['.$custom_colours.']';
+
   return $data;
 }
 
 add_filter( 'tiny_mce_before_init', 'll_format_tinymce' );
+/**
+ * Remove the Color Picker plugin from tinyMCE. This will
+ * prevent users from adding custom colors. Note, the default color
+ * palette is still available (and customizable by developers) via
+ * textcolor_map using the tiny_mce_before_init hook.
+ *
+ * @param array $plugins An array of default TinyMCE plugins.
+ */
+function ll_tiny_mce_remove_custom_colors( $plugins ) {
+
+    foreach ( $plugins as $key => $plugin_name ) {
+        if ( 'colorpicker' === $plugin_name ) {
+            unset( $plugins[ $key ] );
+            return $plugins;
+        }
+    }
+
+    return $plugins;
+}
+add_filter( 'tiny_mce_plugins', 'll_tiny_mce_remove_custom_colors' );
 
 //Used with ACF to simplify wysiwyg toolbar
 

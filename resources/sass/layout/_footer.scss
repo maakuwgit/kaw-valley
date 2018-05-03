@@ -5,7 +5,14 @@ body > footer {
   @include row-gutter;
   padding-bottom: 2rem !important;
 
-  @include screen-md-up {
+  @include screen-md {
+    .footer__social {
+      h5, .h5 {
+        margin-top: rem-calc(32);
+      }
+    }
+  }
+  @include screen-lg-up {
     .footer__social {
       h5, .h5 {
         margin-top: 3rem;
@@ -31,15 +38,21 @@ body > footer {
     }
 
     .footer__menu {
-      padding-right: 3rem;
-      padding-left: 3rem;
+      padding-right: rem-calc(16);
+      padding-left: rem-calc(16);
       @include screen-sm {
         width: 50%;
         margin-left: auto;
         margin-right: auto;
-        padding-right: 0;
-        padding-left: 0;
         text-align: center;
+      }
+      @include screen-md-only {
+        padding-right: rem-calc(25);
+        padding-left: rem-calc(25);
+      }
+      @include screen-lg-up {
+        padding-right: 3rem;
+        padding-left: 3rem;
       }
       a {
         display: inline-block;

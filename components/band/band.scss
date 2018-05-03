@@ -12,7 +12,9 @@
     }
   }
 
-  @include screen-md {
+  @include screen-lg {
+    padding-left: rem-calc(16);
+    padding-right: rem-calc(16);
     &.stretch {
       min-height: 600px;
     }
@@ -22,7 +24,7 @@
     p {
       margin-bottom: 3rem;
       &:last-child {
-        margin-bottom: 6rem;
+        margin-bottom: rem-calc(32);
       }
     }
     nav[class*="col"] {
@@ -35,7 +37,7 @@
       order: -1;
     }
   }
-  @include screen-md-up {
+  @include screen-lg-up {
      &.padded-top {
       padding-top: 16.875rem;
     }

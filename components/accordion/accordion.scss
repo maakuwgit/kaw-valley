@@ -21,6 +21,7 @@ $dd_top : $dl_padding_top;
       cursor: pointer;
     }
   }
+  //Handles the black vignette effect over the image
   .accordion--spotlight {
     position: absolute;
     top: 0;
@@ -30,19 +31,23 @@ $dd_top : $dl_padding_top;
     pointer-events: none;
     transform: scaleX(-1);
     z-index: 0;
+    @include screen-lg {
+      opacity: 0.6;
+    }
   }
+  //The accordion itself
   dl {
     min-height: inherit;
     margin: auto;
     padding: $dl_padding_top 0 $dl_padding_bottom 0;
-    @include screen-xl-up {
-      //padding-top: $dl_padding_top__lg;
-      //padding-bottom: $dl_padding_bottom__lg;
+    @include screen-md {
+      padding: #{rem-calc(32)} 0;
     }
     dd, dt {
       display: flex;
       align-self: flex-start;
     }
+    //The trigger, and on mobile, the headline
     dt {
       align-items: center;
       height: $dt_height;
@@ -56,6 +61,10 @@ $dd_top : $dl_padding_top;
       }
       @include screen-lg-up {
         min-width: 25%;
+      }
+      @include screen-lg {
+        border-top: solid 1px $white;
+        border-bottom: solid 1px $white;
       }
     }
     dd {
@@ -114,7 +123,7 @@ $dd_top : $dl_padding_top;
           height: calc(100% - #{$dl_padding_bottom} - #{$dl_padding_top});
         }
 
-        article.accordion--content, 
+        article.accordion--content,
         aside.accordion--sidebar {
           padding-top: #{$dt_height};
         }
@@ -127,29 +136,14 @@ $dd_top : $dl_padding_top;
         z-index: 1;
         position: relative;
         padding: 2rem;
+        @include screen-lg {
+          margin-left: 0;
+          margin-right: 0;
+        }
       }
       .accordion--sidebar {
         border: solid 1px $white;
         font-size: 0.75rem;
-        .accordion--id {
-          font-size: 6.875rem;
-          font-weight: $text-bold;
-          @include screen-lg {
-            display: inline-block;
-            margin-top: 4rem;
-            line-height: 0;
-          }
-          @include screen-lg-up {
-            position: absolute;
-            bottom: 0;
-            left: 2rem;
-          }
-        }
-        @include screen-md {
-          width: calc( 100% - 4rem );
-          margin-left: 2rem;
-          margin-right: 2rem;
-        }
         &:before {
           content: '';
           position: absolute;
@@ -159,6 +153,31 @@ $dd_top : $dl_padding_top;
           bottom: 0;
           z-index: -1;
           background-color: rgba($black, 0.67);
+        }
+        .accordion--id {
+          font-size: 6.875rem;
+          font-weight: $text-bold;
+          @include screen-lg {
+            display: none;
+          }
+          @include screen-lg-up {
+            position: absolute;
+            bottom: 0;
+            left: 2rem;
+          }
+        }
+        @include screen-lg {
+          order: 2;
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          padding: 0;
+          padding-bottom:rem-calc(16);
+          border: none;
+          background: transparent !important;
+          &:before {
+          background: transparent;
+          }
         }
       }
       .accordion--content {
@@ -173,6 +192,13 @@ $dd_top : $dl_padding_top;
           h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
             margin-bottom: 1.5rem;
             margin-left: 0;
+          }
+        }
+        @include screen-lg {
+          padding-bottom:0;
+          padding-top:rem-calc(16);
+          h4 {
+            display: none;
           }
         }
         @include screen-lg-up {

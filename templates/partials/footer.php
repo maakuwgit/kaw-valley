@@ -5,7 +5,7 @@
 ?>
 <footer class="footer dark" role="contentinfo">
   <div class="container row">
-    <figure class="footer__social col-md-6of12 col-lg-4of12">
+    <figure class="footer__social col col-md-4of12 col-lg-4of12">
       <a href="<?php echo $href ?>" class="logo block">
     <?php if ( $logo ) : ?>
         <img class="logo logo--header" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>">
@@ -20,7 +20,7 @@
       </figcaption>
     <?php endif; ?>
     </figure>
-    <section class="footer__navigation col-md-6of12 col-lg-8of12 text-center">
+    <section class="footer__navigation col col-md-8of12 col-lg-8of12 text-center">
       <div class="row text-left">
       <?php if (has_nav_menu('secondary_navigation')) : ?>
         <ul class="no-bullet footer__menu">
@@ -105,15 +105,15 @@
   </div>
   <dl class="footer__bottom container row small">
     <dt class="hide"></dt>
-    <dd class="footer__copyright col-md-5of12 col-lg-4of12">
+    <dd class="footer__copyright col col-md-5of12 col-lg-4of12">
       <span><?php bloginfo('name'); ?>. All Rights Reserved <?php echo date('Y'); ?></span>
     </dd><!-- .footer__copyright -->
     <dt class="hide"></dt>
-    <dd class="footer__credits col-md-6of12 col-lg-4of12">
+    <dd class="footer__credits col col-md-6of12 col-lg-4of12">
       <a href="https://liftedlogic.com/" target="_blank">Web Design in Kansas City</a> by <a href="https://liftedlogic.com/" target="_blank">Lifted Logic</a>
     </dd><!-- .footer__credits -->
     <dt class="hide"></dt>
-    <dd class="footer__ll-logo col-md-1of12 col-lg-4of12">
+    <dd class="footer__ll-logo col col-md-1of12 col-lg-4of12">
       <a href="https://liftedlogic.com/" target="_blank" class="iblock"><img alt="LL" src="<?php echo get_template_directory_uri() . '/assets/img/logo-lifted_logic.svg';?>"></a>
     </dd><!-- .footer__ll-logo -->
   </dl>

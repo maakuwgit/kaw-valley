@@ -7,9 +7,9 @@
     @include screen-sm {
       background-size: cover;
     }
-  }
-  @include screen-md {
-    padding-bottom: 3rem;
+    @include screen-lg {
+      padding: #{rem-calc(32)} #{rem-calc(16)} #{rem-calc(16)};
+    }
   }
 }
 
