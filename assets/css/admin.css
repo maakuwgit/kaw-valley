@@ -20,10 +20,10 @@
   color: #333;
   font-size: 10px;
   font-weight: bold;
-  text-transform: uppercase;
   outline: none;
 }
 .ll-group-title {
+  text-transform: uppercase;
   margin-left: 35px;
 }
 .ll-target-title {
