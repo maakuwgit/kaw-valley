@@ -159,7 +159,6 @@ body {
     }
     @include screen-lg-up {
       &:hover {
-        background-color: #b9b9b938;
         color: $white;
         font-weight: $text-bold;
         padding-left: 29.5px;
@@ -258,16 +257,13 @@ body {
 // navbar-toggle
 // ==================================================
 .navbar-toggle {
-  padding: 1rem;
+  right: 0;
+  padding: rem-calc(16);
   display: inline-block;
   cursor: pointer;
   position: absolute;
   @include screen-md {
     top: 0.5rem;
-    right: 0;
-  }
-  @include screen-md-up {
-    right: -1rem;
   }
   transition-property: opacity, filter;
   transition-duration: 0.15s;

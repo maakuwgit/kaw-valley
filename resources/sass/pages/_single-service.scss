@@ -2,7 +2,30 @@
  * Service Landing Page
  */
 body.single-service {
+  article:first-of-type {
+    .row [class*=col-] {
+      padding-left: rem-calc(25);
+      padding-right: rem-calc(25);
+    }
+  }
   .hero-banner {
+    @include screen-sm {
+      .triangle_icon {
+        right: 50%;
+        left: 50%;
+        transform: scale(1.5);
+      }
+    }
+    @include screen-md-up {
+      .triangle_icon {
+        right: 3rem;
+        transform: scale(1.25);
+      }
+      .order {
+        margin-top: 3rem;
+        margin-right: 6rem;
+      }
+    }
     @include screen-lg-up {
       min-height: 80vh;
     }
@@ -10,6 +33,10 @@ body.single-service {
       div:first-of-type {
         align-self: flex-start;
       }
+    }
+    .triangle_icon {
+      position: absolute;
+      top: 0;
     }
   }
   ul {

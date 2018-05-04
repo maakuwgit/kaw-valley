@@ -11,12 +11,24 @@
       margin-bottom: auto;
     }
   }
+  .row [class*=col-] {
+    padding-left: rem-calc(25);
+    padding-right: rem-calc(25);
+  }
 
-  @include screen-lg {
-    padding-left: rem-calc(16);
-    padding-right: rem-calc(16);
+  @include screen-xl {
+    padding-bottom: $row-gutter;
+    &.padded-top {
+      padding-top: $row-gutter * 2;
+    }
+    &.padded-bottom {
+      padding-bottom:  $row-gutter;
+    }
     &.stretch {
       min-height: 600px;
+    }
+    &:first-of-type {
+      padding-top: $row-gutter * 4;
     }
     h4 {
       margin-bottom: 0.75rem;
@@ -65,9 +77,6 @@
         }
       }
     }
-  }
-
-  @include screen-lg-up {
     h4, .h4, h5.hero, ul {
       margin-bottom: 3.125rem;
     }

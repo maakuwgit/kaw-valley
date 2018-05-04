@@ -1,14 +1,22 @@
 .headline {
+  .row {
+    [class*="col-"] {
+      padding: $row-gutter;
+    }
+  }
   .container {
-    padding-top: 8.75rem;
-    padding-bottom: 2.5rem;
     background-repeat: no-repeat;
     background-position: 0 -2.5rem;
     @include screen-sm {
       background-size: cover;
+      padding-top: 8.75rem;
+      padding-bottom: 2.5rem;
     }
     @include screen-lg {
       padding: #{rem-calc(32)} #{rem-calc(16)} #{rem-calc(16)};
+    }
+    @include screen-md {
+      padding-top: $row-gutter * 4;
     }
   }
 }

@@ -11,6 +11,9 @@ body.home {
   .band:last-of-type {
     padding-bottom: 0;
   }
+  .hero-banner {
+    min-height: $banner-height;
+  }
   .content {
     .band {
       h3, .h3, h4, .h4, h5, .h5 {
@@ -41,9 +44,6 @@ body.home {
     }
   }
   @include screen-lg-up {
-    .hero-banner {
-      min-height: $banner-height;
-    }
     .content {
       figure.wp-caption,
       figure[class^=align-] {

@@ -4,18 +4,31 @@
 body > footer {
   @include row-gutter;
   padding-bottom: 2rem !important;
-
   @include screen-md {
+    a.logo {
+      margin-bottom: $row-gutter;
+    }
     .footer__social {
-      h5, .h5 {
-        margin-top: rem-calc(32);
-      }
+      margin-bottom: $row-gutter;
+      text-align: center;
+    }
+    .footer__copyright,
+    .footer__credits {
+      margin-bottom: rem-calc(12.5);
+    }
+    h5, .h5 {
+      margin-top: $row-gutter;
     }
   }
-  @include screen-lg-up {
+  @include screen-md-only {
+    .footer__social {
+      padding-bottom: $row-gutter;
+    }
+  }
+  @include screen-md-up {
     .footer__social {
       h5, .h5 {
-        margin-top: 3rem;
+        margin-top: $row-gutter;
       }
     }
   }
@@ -26,8 +39,8 @@ body > footer {
       margin-right: auto;
     }
     h5, .h5, h6, .h6 {
-      margin-top: 0.75rem;
-      margin-bottom: 1.25rem;
+      margin-top: rem-calc(12.5);
+      margin-bottom: rem-calc(25);
     }
     ul {
       margin-top: 0;
@@ -38,21 +51,26 @@ body > footer {
     }
 
     .footer__menu {
-      padding-right: rem-calc(16);
-      padding-left: rem-calc(16);
-      @include screen-sm {
+      padding-right: rem-calc(25);
+      padding-left: rem-calc(25);
+      @include screen-md {
         width: 50%;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
       }
-      @include screen-md-only {
-        padding-right: rem-calc(25);
-        padding-left: rem-calc(25);
+      @include screen-lg {
+        width: 33.3334%;
+        &:first-of-type {
+          padding-left: 0;
+        }
+        &:last-of-type {
+          padding-right: 0;
+        }
       }
       @include screen-lg-up {
-        padding-right: 3rem;
-        padding-left: 3rem;
+        padding-right: rem-calc(50);
+        padding-left: rem-calc(50);
       }
       a {
         display: inline-block;

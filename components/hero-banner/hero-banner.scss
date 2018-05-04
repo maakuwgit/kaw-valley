@@ -10,8 +10,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  overflow:hidden;
-  padding: #{rem-calc(75)} 0;
+  overflow: hidden;
+  padding: #{rem-calc(75)} 0 0 0;
+  color: $white;
   background-color: $black;
   background-size: cover;
   background-repeat: no-repeat;
@@ -20,7 +21,14 @@
   @include screen-lg-up {
     background-attachment: fixed;
   }*/
-  color: $white;
+  body:not(.single-project) & {
+    @include screen-md {
+      div, div:first-of-type, div:last-of-type {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
 
   #hero-spotlight{
     position: absolute;
@@ -34,7 +42,6 @@
   .loop-video-container {
     z-index: 0
   }
-
 
   & > svg {
     position: absolute;
@@ -63,20 +70,25 @@
     bottom: 0;
     display: inline-flex;
     margin: auto;
-    padding: 2rem;
+    padding: rem-calc(32);
     color: white;
-    background-color: black;
+    background-color: $black;
     left: 0;
     right: 0;
-    max-width: 400px;
+    max-width: 357px;
     span {
       align-self:center;
-      margin-right: 3rem;
-      margin-left: 5rem;
-      font-size: 1.5rem;
+      margin-right: rem-calc(42);
+      margin-left: rem-calc(66);
+      font-size: rem-calc(25);
+      font-weight: $text-medium;
     }
     &:hover #inner-triangle {
       transform: scale(1.5) rotate(-90deg) translate(-18px, -2px);
+    }
+    @include screen-md-up {
+      left: 50%;
+      right: initial;
     }
   }
 
@@ -119,13 +131,6 @@
       margin-bottom: 2rem;
       polygon {
         transform: scale(2);
-      }
-    }
-
-    @include screen-md {
-      div, div:first-of-type, div:last-of-type {
-        width: 100%;
-        text-align: center;
       }
     }
   }

@@ -106,7 +106,7 @@ $grid-float-breakpoint: $screen-nav-mobile + 1;
 $grid-columns:      12;
 $grid-gutter-width: rem-calc(25);
 $row-gutter-lg: rem-calc(75);
-$row-gutter: 2rem;
+$row-gutter: rem-calc(25);
 
 // Container widths
 $container-sm:    (rem-calc($screen-sm) - $grid-gutter-width);

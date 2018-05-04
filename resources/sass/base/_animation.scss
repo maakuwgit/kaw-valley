@@ -31,10 +31,14 @@ body > header.transparent,
 }
 [data-component=anchor_nav] ol li {
   a {
-    transition: width 100ms ease-out;
+    transition: background-color 100ms ease-out;
+    span {
+      transition: margin 150ms ease-out, width 150ms ease-out, opacity 75ms ease-out 50ms;
+    }
     &.active {
+      transition: background-color 200ms ease-out;
       span {
-        transition: width 150ms ease-out;
+        transition: margin 300ms ease-out, width 300ms ease-out, opacity 150ms ease-out 300ms;
       }
     }
   }

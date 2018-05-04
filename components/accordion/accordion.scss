@@ -41,7 +41,7 @@ $dd_top : $dl_padding_top;
     margin: auto;
     padding: $dl_padding_top 0 $dl_padding_bottom 0;
     @include screen-md {
-      padding: #{rem-calc(32)} 0;
+      padding: 0;
     }
     dd, dt {
       display: flex;

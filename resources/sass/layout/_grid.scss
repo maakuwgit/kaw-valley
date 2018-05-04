@@ -16,6 +16,9 @@
 
 .row {
   @include flexible;
+  &.boxed {
+    max-width: 760px;
+  }
   &.stretch {
     align-items: stretch;
   }

@@ -2,6 +2,27 @@
  * Single
  */
 body.single {
+  .hero-banner {
+    min-height: $banner-height;
+  }
+  &.single-post {
+    figure[class^=align-],
+    .wp-caption {
+      display: flex;
+      align-items: center;
+      figcaption {
+        white-space: normal;
+        font-size: rem-calc(16);
+        position: relative;
+        line-height: 1.625;
+        font-weight: $text-normal;
+        left: initial;
+        bottom: initial;
+        top: initial;
+        margin-left: $row-gutter;
+      }
+    }
+  }
   &.single-post,
   &.single-team {
     .content {
@@ -41,32 +62,6 @@ body.single {
       time {
         width: 100%;
         margin-bottom: 1.5rem;
-      }
-    }
-  }
-
-  &.single-service {
-    .hero-banner {
-      .triangle_icon {
-        position: absolute;
-        top: 0;
-      }
-      @include screen-sm {
-        .triangle_icon {
-          right: 50%;
-          left: 50%;
-          transform: scale(1.5);
-        }
-      }
-      @include screen-md-up {
-        .triangle_icon {
-          right: 3rem;
-          transform: scale(1.25);
-        }
-        .order {
-          margin-top: 3rem;
-          margin-right: 6rem;
-        }
       }
     }
   }

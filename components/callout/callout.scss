@@ -1,6 +1,7 @@
 body > aside {
-  min-height: 50vh;
-  @include row-gutter;
+  min-height: 280px;
+  padding-bottom: $row-gutter;
+  padding-top: $row-gutter;
   background: $white url(#{$terrain-bg--rainbow}) center no-repeat;
   background-size: cover;
   * {
@@ -14,8 +15,13 @@ body > aside {
   nav {
     text-align: center;
   }
-
+  @include screen-sm {
+    button, .button {
+      margin-left: 0;
+    }
+  }
   @include screen-lg-up {
+    min-height: 515px;
     .hero, nav {
       width: 50%;
     }

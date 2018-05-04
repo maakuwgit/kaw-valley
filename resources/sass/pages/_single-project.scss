@@ -2,6 +2,14 @@
  * Project Landing Page
  */
 body.single-project {
+  .hero-banner {
+    min-height: $banner-height;
+    figcaption {
+      div:first-of-type {
+        align-self: flex-start;
+      }
+    }
+  }
   @include screen-lg-up {
     article.content:first-of-type {
       padding-bottom: 20rem;
@@ -32,17 +40,6 @@ body.single-project {
       p {
         max-width: 580px;
         margin-bottom: 3rem;
-      }
-    }
-  }
-
-  .hero-banner {
-    @include screen-lg-up {
-      min-height: 80vh;
-    }
-    figcaption {
-      div:first-of-type {
-        align-self: flex-start;
       }
     }
   }
