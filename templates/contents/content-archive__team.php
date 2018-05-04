@@ -1,6 +1,6 @@
 <?php
   $args = array(
-    'numberposts' => 12,
+    'numberposts' => -1,
     'post_status' => 'publish',
     'post_type'   => 'team',
   );

@@ -16,7 +16,9 @@ if( have_rows( 'components' ) ) {
       $output .= ll_include_component(
         'headline',
         $headline,
-        array(),
+        array(
+         'id' => sanitize_title(get_sub_field('target_name'))
+        ),
         true
       );
 
@@ -48,7 +50,7 @@ if( have_rows( 'components' ) ) {
         'band',
         $band,
         array(
-         'id' => get_sub_field('target_name')
+         'id' => sanitize_title(get_sub_field('target_name'))
         ),
         true
       );
@@ -63,7 +65,9 @@ if( have_rows( 'components' ) ) {
       $output .= ll_include_component(
         'accordion',
         $accordions,
-        array(),
+        array(
+         'id' => sanitize_title(get_sub_field('target_name'))
+        ),
         true
       );
     }
