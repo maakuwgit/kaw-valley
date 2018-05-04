@@ -3,12 +3,11 @@
  */
 .post-type-archive-career {
   .hero-banner {
-    background-size: contain;
-    background-position: top right;
+    height: $banner-height;
   }
   section.content:first-of-type {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: rem-calc(50);
+    padding-bottom: rem-calc(50);
   }
   section.content:last-of-type {
     padding-top: 0;

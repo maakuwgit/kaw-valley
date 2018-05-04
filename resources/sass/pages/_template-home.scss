@@ -42,7 +42,7 @@ body.home {
   }
   @include screen-lg-up {
     .hero-banner {
-      min-height: 100vh;
+      min-height: $banner-height;
     }
     .content {
       figure.wp-caption,
