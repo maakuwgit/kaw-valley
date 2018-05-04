@@ -1,6 +1,6 @@
 <?php
   $args = array(
-    'numberposts' => -1,
+    'posts_per_page' => -1,
     'post_status' => 'publish',
     'post_type'   => 'team',
   );
@@ -16,7 +16,7 @@
       $members->the_post();
       include( locate_template('templates/partials/member.php') );
     }
-    wp_reset_postdata(); ?>
+  ?>
   </div>
 </section>
 <?php
