@@ -63,7 +63,7 @@ body > footer {
   }
 
   .footer__bottom {
-    margin-top: 15vh;
+    margin-top: rem-calc(75);
     margin-bottom: auto;
     text-align: center;
     &.row {

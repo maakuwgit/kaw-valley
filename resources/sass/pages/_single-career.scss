@@ -1,0 +1,73 @@
+/**
+ * Single Career
+ * Dev Note: I REALLY should clean this up and break it out now...
+ */
+body.single-career {
+  > header {
+    background-color: $black;
+  }
+  .content {
+    h2, h3, p {
+      margin-bottom: rem-calc(40);
+    }
+
+    h4 {
+      margin-bottom: rem-calc(20);
+      color: $danger-color;
+      font-size: rem-calc(20);
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      &.text-medium,
+      &.text-bold {
+        margin-bottom:  rem-calc(16);
+      }
+      &.h1 {
+        margin-bottom:  rem-calc(20);
+      }
+    }
+  }
+
+  .gform_wrapper {
+    margin-left: 0;
+  }
+
+  main, section.content {
+    padding-top: 0;
+  }
+
+  main, section.content:not(:last-of-type) {
+    padding-bottom: 0;
+  }
+
+  #hero-career {
+    padding-top: 20rem;
+    padding-bottom: 0;
+    color: $text-color;
+    .container {
+      position: relative;
+      overflow: visible;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 262px;
+        height: 220px;
+        background: transparent url(../img/icons-triangles.svg) center no-repeat;
+        background-size: contain;
+        margin-top: -220px;
+        margin-left: calc(50% - 131px);
+        @include screen-lg-up {
+          margin-top: -140px;
+          margin-left: -177px;
+        }
+      }
+    }
+    @include screen-sm {
+      padding-top: 13rem;
+    }
+  }
+}

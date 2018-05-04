@@ -21,5 +21,14 @@ body.page-template-template-form {
         width: 100%
       }
     }
+    .gform_wrapper {
+      button,
+      .button,
+      input[type="button"],
+      input[type="submit"] {
+        min-width: 255px;
+        margin-left: 0;
+      }
+    }
   }
 }

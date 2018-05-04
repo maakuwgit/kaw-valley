@@ -20,9 +20,9 @@
   }
 
   main.has_locations & {
-
+    max-width: 460px;
     @include screen-lg-up {
-    @include container-fixed;
+      @include container-fixed;
       body.page-template-template-form & {
         width: 50%;
         display: flex;

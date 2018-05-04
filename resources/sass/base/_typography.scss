@@ -14,7 +14,7 @@
 }
 
 @font-face {
-    font-family: 'SuisseIntl-MediumItalic';
+    font-family: 'SuisseIntl';
     src: url('../fonts/SuisseIntl-MediumItalic.eot');
     src: url('../fonts/SuisseIntl-MediumItalic.eot?#iefix') format('embedded-opentype'),
         url('../fonts/SuisseIntl-MediumItalic.woff2') format('woff2'),
@@ -59,6 +59,7 @@ a {
     text-decoration: $link-hover-decoration;
   }
 }
+
 
 h1,.h1, h2, .h2, h3,.h3, h4, .h4, h5, .h5, h6, .h6 {
   margin: auto;
@@ -153,22 +154,24 @@ h6,
 
 p, td, li, dd, address {
   font-size: 0.875rem;
+}
+p, td, li, dd {
   @include screen-lg-up {
     font-size: 1rem;
   }
 }
 
-td, li, dd, address {
-  line-height: 1.1875;
+td, li, dd {
+  line-height: 1.25;
   @include screen-lg-up {
-    line-height: 1.25;
+    line-height: 1.5;
   }
 }
 
-p {
-  line-height: 1.375;
+p, address {
+  line-height: 1.5;
   @include screen-lg-up {
-    line-height: 1.5;
+    line-height: 1.75;
   }
 }
 

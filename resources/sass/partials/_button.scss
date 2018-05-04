@@ -33,7 +33,7 @@ button:not([data-nav]):not(.mfp-close),
     &:not(.hollow) {
       &:hover {
         @include push_button;
-        color: inherit;
+        color: $black;
       }
     }
     &.hollow {

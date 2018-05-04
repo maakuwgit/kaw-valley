@@ -5,7 +5,7 @@
     background: transparent;
   }
   &:last-of-type {
-    padding-bottom: 15vh;
+    padding-bottom: rem-calc(75);
     p, ul,
     figure[class^=align-] {
       margin-bottom: auto;

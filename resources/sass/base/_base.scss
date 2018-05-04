@@ -51,8 +51,13 @@ body {
 a {
   color: $link-color;
   transition: all 0.10s ease-in-out;
-  &:hover {
-    color: $link-hover-color;
+  @include screen-lg-up {
+    &[href*="tel:"] {
+      cursor: select;
+    }
+    &:hover {
+      color: $link-hover-color;
+    }
   }
 }
 

@@ -105,14 +105,14 @@ $grid-float-breakpoint: $screen-nav-mobile + 1;
 
 // Grid
 $grid-columns:      12;
-$grid-gutter-width: 30px;
-$row-gutter-lg: 15vh;
+$grid-gutter-width: rem-calc(25);
+$row-gutter-lg: rem-calc(75);
 $row-gutter: 2rem;
 
 // Container widths
-$container-sm:    ($screen-sm - $grid-gutter-width);
-$container-md:    ($screen-md - $grid-gutter-width);
-$container-lg:    ($screen-lg - $grid-gutter-width);
+$container-sm:    (rem-calc($screen-sm) - $grid-gutter-width);
+$container-md:    (rem-calc($screen-md) - $grid-gutter-width);
+$container-lg:    (rem-calc($screen-lg) - $grid-gutter-width);
 
 // Links
 $link-color: $text-color;

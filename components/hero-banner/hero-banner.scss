@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   overflow:hidden;
-  padding: 15vh 0;
+  padding: #{rem-calc(75)} 0;
   background-color: $black;
   background-size: cover;
   background-repeat: no-repeat;
@@ -87,7 +87,7 @@
         margin-left: auto;
         margin-right: auto;
         @include screen-lg {
-          height: 15vh;
+          height: rem-calc(75);
         }
         @include screen-lg-up {
           margin-right: 0;

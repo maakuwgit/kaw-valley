@@ -8,7 +8,7 @@
   }
   section.content:first-of-type {
     padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: rem-calc(75);
   }
   section.content:last-of-type {
     padding-top: 0;
@@ -27,7 +27,7 @@
   }
   @include screen-lg-up {
     table {
-      margin-bottom: 15vh;
+      margin-bottom: rem-calc(75);
       td {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
