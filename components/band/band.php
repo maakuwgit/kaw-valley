@@ -4,7 +4,7 @@
 * -----------------------------------------------------------------------------
 *
 * Band component
-* @since 1.3
+* @since 1.3.1
 * @author MaakuW
 */
 global $post;
@@ -47,9 +47,7 @@ $args = ll_parse_args( $component_args, $default_args );
  * Type: Action
  */
 do_action( "component_name_before_display", $component_data, $component_args );
-?>
 
-<?php
 if ( ll_empty( $data ) ) return;
 
 $theme          = $data['band_theme'];
@@ -114,7 +112,13 @@ if ( $section_bg ) {
     $col_suff = 'of12';
     /*Dev Note: this logic is still very... loose*/
     $col_sm = 'col-sm-' . ( $col_span < 6 ? 6 : floor( $col_span / 2 ) ) . $col_suff;
-    $col_md = 'col-md-' . $col_span . $col_suff;
+    $col_md = 'col-md-';
+    if( $col_span < 3 || $col_span === 5 ){
+      $col_md .= 3;
+    }else{
+      $col_md .= $col_span;
+    }
+    $col_md .= $col_suff;
     $col_lg = 'col-lg-' . $col_span . $col_suff;
     $col_xl = 'col-xl-' . $col_span . $col_suff;
     $col_class = ' class="' . $col_sm . ' ' . $col_md . ' ' . $col_lg . ' ' . $col_xl . $align . '"';

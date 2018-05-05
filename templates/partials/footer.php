@@ -5,7 +5,7 @@
 ?>
 <footer class="footer dark" role="contentinfo">
   <div class="container row">
-    <figure class="footer__social col col-md-4of12 col-lg-4of12">
+    <figure class="footer__social col col-md-4of12 col-lg-4of12 col-xl-4of12">
       <a href="<?php echo $href ?>" class="logo block">
     <?php if ( $logo ) : ?>
         <img class="logo logo--header" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>">
@@ -20,7 +20,7 @@
       </figcaption>
     <?php endif; ?>
     </figure>
-    <section class="footer__navigation col col-md-8of12 col-lg-8of12 text-center">
+    <section class="footer__navigation col col-md-8of12 col-lg-8of12 col-xl-8of12 text-center">
       <div class="row text-left">
       <?php if (has_nav_menu('secondary_navigation')) : ?>
         <ul class="no-bullet footer__menu">

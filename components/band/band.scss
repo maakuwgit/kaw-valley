@@ -16,6 +16,15 @@
     padding-right: rem-calc(25);
   }
 
+  @include screen-md {
+    div:nth-child(n+2)[class*="lg-3of12"] {
+      order: 1;
+    }
+    div:nth-child(n+2)[class*="lg-5of12"] {
+      order: -1;
+    }
+  }
+
   @include screen-xl {
     padding-bottom: $row-gutter;
     &.padded-top {
@@ -41,12 +50,6 @@
     }
     nav[class*="col"] {
       margin-top: -4.5rem;
-    }
-    div:nth-child(n+2)[class*="lg-3of12"] {
-      order: 1;
-    }
-    div:nth-child(n+2)[class*="lg-5of12"] {
-      order: -1;
     }
   }
   @include screen-lg-up {

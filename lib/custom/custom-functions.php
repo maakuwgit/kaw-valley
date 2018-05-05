@@ -46,6 +46,7 @@ function set_post_background() {
 }
 
 function ll_get_locations( $use_grid=true, $echo=true ) {
+  $css = '';
   if( $use_grid ) {
     $css = ' col-sm-8of12 col-md-8of12 col-lg-6of12 col-xl-6of12';
   }
@@ -180,7 +181,7 @@ function ll_format_post_banner( $post_id=null ) {
 * @param   String   $num   A unformatted phone number
 * @return  String   Returns the formatted phone number
 */
-function format_phone( $num,$area = false,$sep='-' ) {
+function format_phone( $num,$area = false,$sep='.' ) {
 
   $num = preg_replace( '/[^0-9]/', '', $num );
   $len = strlen( $num );
@@ -192,7 +193,7 @@ function format_phone( $num,$area = false,$sep='-' ) {
   elseif( $len == 10 ) {
 
     if ( $area )
-      $num = preg_replace( '/([0-9]{3})([0-9]{3})([0-9]{4})/','($1) $2'.$sep.'$3', $num );
+      $num = preg_replace( '/([0-9]{3})([0-9]{3})([0-9]{4})/','+$1.$2'.$sep.'$3', $num );
     else
       $num = preg_replace( '/([0-9]{3})([0-9]{3})([0-9]{4})/','$1'.$sep.'$2'.$sep.'$3', $num );
   }
