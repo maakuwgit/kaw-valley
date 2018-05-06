@@ -2,6 +2,11 @@
  * Form Template
  */
 body.page-template-template-form {
+  &.admin-bar {
+    main {
+      padding-top: calc(4rem + 24px);
+    }
+  }
   main {
     padding-top: 4rem;
     aside {

@@ -24,7 +24,7 @@ body {
   }
   &.admin-bar > header {
     top: $admin_bar;
-    @include screen-lg-up {
+    @include screen-md-up {
       top: $admin_bar_lg;
     }
   }
@@ -153,6 +153,7 @@ body {
 #primary-nav {
   margin-right: 3rem;
   .menu-item a {
+    position: relative;
     padding: 2.25rem 2rem;
     @include screen-sm {
       font-size: 0.875rem;
@@ -160,9 +161,16 @@ body {
     @include screen-lg-up {
       &:hover {
         color: $white;
-        font-weight: $text-bold;
-        padding-left: 29.5px;
-        padding-right: 29.5px;
+        &:after {
+          position: absolute;
+          top: calc( 50% + 0.625rem );
+          right: 2rem;
+          left: 2rem;
+          width: calc(100% - 4rem);
+          height: 1px;
+          content: '';
+          background-color: $white;
+        }
       }
     }
   }
@@ -192,7 +200,7 @@ body {
     .header__menu {
       opacity: 1;
     }
-  }/*
+  }
   body.admin-bar & {
     top: $offset_lg_admin;
     &.active {
@@ -205,7 +213,7 @@ body {
       }
     }
   }
-*/
+
   @include screen-md {
     top: $offset;
     &.active {
@@ -232,20 +240,6 @@ body {
   }
 }
 
-.navbar-toggle {
-  display: none;
-  background-color: transparent;
-  border-color: $white;
-
-  .icon-bar {
-    background-color: $white;
-  }
-
-  @include screen-sm {
-    display: block;
-  }
-}
-
 .dropdown-menu {
 
   @include screen-nav-mobile {
@@ -262,6 +256,16 @@ body {
   display: inline-block;
   cursor: pointer;
   position: absolute;
+  background-color: transparent;
+  border-color: $white;
+
+  .icon-bar {
+    background-color: $white;
+  }
+
+  @include screen-sm {
+    display: block;
+  }
   @include screen-md {
     top: 0.5rem;
   }
