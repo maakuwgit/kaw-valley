@@ -187,6 +187,7 @@ body {
   z-index: 20;
   display: flex;
   align-items: center;
+  min-height: 0;
   height: 0;
   width: 100vw;
   overflow: hidden;
@@ -195,8 +196,15 @@ body {
     align-items: flex-start;
   }
   &.active {
-    height: calc(100vh - #{$offset} );
-    overflow: visible;
+    min-height: calc(100vh - #{$offset} );
+    overflow: scroll;
+    &:after {
+      position: absolute;
+      top: 0;
+      content: '';
+      height: 50px;
+      box-shadow: 0 50px 50px $black inset;
+    }
     .header__menu {
       opacity: 1;
     }
@@ -204,12 +212,12 @@ body {
   body.admin-bar & {
     top: $offset_lg_admin;
     &.active {
-      height: calc(100vh - #{$offset_lg_admin} );
+      min-height: calc(100vh - #{$offset_lg_admin} );
     }
     @include screen-md {
       top: $offset_admin;
       &.active {
-        height: calc(100vh - #{$offset_admin} );
+        min-height: calc(100vh - #{$offset_admin} );
       }
     }
   }
@@ -217,7 +225,7 @@ body {
   @include screen-md {
     top: $offset;
     &.active {
-      height: calc(100vh - #{$offset} );
+      min-height: calc(100vh - #{$offset} );
     }
   }
 

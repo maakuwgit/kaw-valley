@@ -256,7 +256,7 @@ add_filter( 'tiny_mce_plugins', 'll_tiny_mce_remove_custom_colors' );
  * for added tinymce plugins
  */
 function add_tiny_mce_plugins_button( $buttons ) {
-   array_push( $buttons, 'anchor' );
+   array_push( $buttons, 'anchor', 'square');
    return $buttons;
 }
 add_filter( 'mce_buttons', 'add_tiny_mce_plugins_button' );
@@ -295,3 +295,4 @@ function ll_acf_admin_footer() {
 <?php
 }
 add_action('acf/input/admin_footer', 'll_acf_admin_footer');
+*/

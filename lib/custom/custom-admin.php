@@ -3,8 +3,11 @@
  *
  * Lifted Logic custom admin
  *
+ * @package WordPress
+ * @subpackage Kaw Valley
+ * @since 1.5
+ * @version 1.5.1
  */
-
 /**
  * Custom admin styles
  */
@@ -51,8 +54,8 @@ add_action( 'admin_init', 'll_remove_dashboard_meta' );
 //enqueue our admin javascript/styles
 function ll_admin_enqueue_scripts() {
   $screen = get_current_screen();
-
-  wp_enqueue_style( 'admin-css', get_template_directory_uri().'/assets/css/admin.css' );
+//Dev Note: doing this through ll_admin_color_scheme now
+//  wp_enqueue_style( 'admin-css', get_template_directory_uri().'/assets/css/admin.css' );
   wp_enqueue_script('admin-js', get_template_directory_uri() . '/assets/js/admin.js', 'jquery', '', true);
 }
 add_action('admin_enqueue_scripts', 'll_admin_enqueue_scripts');
@@ -114,6 +117,7 @@ add_action('init', 'll_remove_editor');
  * @param  [type] $size    the selected output size
  * @return [type]          html
  */
+//Dev Note: Need to return here to ensure that REMOVING media also removes all this crap
 function ll_insert_image_media($html, $id, $caption, $title, $align, $url, $size) {
   $src = wp_get_attachment_image_src( $id, $size );
   $html5 = "<figure id='post-$id-media-$id' class='align-$align'>";
@@ -196,3 +200,38 @@ function ll_gallery_output($output, $attr) {
   $output .= "</div>\n";
   return $output;
 }
+
+/**
+* Admin Redesign
+*
+* @since Kaw Valley 1.5.1
+* @author MaakuW
+* @todo Hooks into the admin so this info can be changes via WP. They should also be updated
+*/
+function ll_admin_color_schemes() {
+    //Get the theme directory
+    $theme_dir = get_template_directory_uri();
+
+    //Pillar Custom Colors
+    wp_admin_css_color( 'kaw-valley', __( 'Kaw Valley' ),
+        $theme_dir . '/assets/css/admin.css',
+        array( '#00A79D', '#ffffff', '#9b9b9b', '#373e49' )
+    );
+}
+add_action('admin_init', 'll_admin_color_schemes');
+
+/**
+* Admin Style to default
+*
+* @since Kaw Valley 1.5.1
+* @author MaakuW
+* @todo Makes the default style the Kaw Valley style
+*/
+function ll_default_admin_color($user_id) {
+    $args = array(
+        'ID' => $user_id,
+        'admin_color' => 'kaw-valley'
+    );
+    wp_update_user( $args );
+}
+add_action('user_register', 'll_default_admin_color');

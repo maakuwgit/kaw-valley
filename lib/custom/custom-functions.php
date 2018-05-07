@@ -1,8 +1,12 @@
 <?php
 /**
- *
  * Lifted Logic custom functions
  *
+ *
+ * @package WordPress
+ * @subpackage Kaw Valley
+ * @since 1.5
+ * @version 1.5.2
  */
 
 /**
@@ -45,7 +49,29 @@ function set_post_background() {
   }
 }
 
-function ll_get_locations( $use_grid=true, $echo=true ) {
+if ( ! function_exists( 'll_edit_link' ) ) :
+/**
+ * Returns an accessibility-friendly link to edit a post or page.
+ *
+ * @since Kaw Valley 1.5
+ * @todo  add the ellisis (or whatever we want to use) to the icon sheet
+ */
+function ll_edit_link() {
+  edit_post_link('<svg class="icon icon-ellipsis"><use xlink:href="icon.svg#icon-ellipsis"></use></svg>',
+    '<span class="edit-link">',
+    '</span>'
+  );
+}
+endif;
+
+/**
+ * Get all custom post-type "locations"
+ * @param  boolean $use_grid add css to support .grid.scss classes
+ * @param  boolean $echo     spit out the code in the DOM?
+ * @return string            we use this in both the #secondary-nav element
+ *                           as well as the footer "location" widget
+ */
+function ll_get_locations( $use_grid=true, $echo=true, $wrapper=true ) {
   $css = '';
   if( $use_grid ) {
     $css = ' col-sm-8of12 col-md-8of12 col-lg-6of12 col-xl-6of12';
@@ -60,8 +86,10 @@ function ll_get_locations( $use_grid=true, $echo=true ) {
   $locations = new WP_Query( $args );
 
   if ( $locations->have_posts() ) {
-    $output = '<ul class="no-bullet header__menu' . $css . '"><li>';
-    $output .= '<dl class="menu row">';
+    if( $wrapper ) {
+      $output = '<ul class="no-bullet header__menu' . $css . '"><li>';
+      $output .= '<dl class="menu row">';
+    }
     while( $locations->have_posts() ) {
       $locations->the_post();
       $id       = get_the_ID();
@@ -85,10 +113,13 @@ function ll_get_locations( $use_grid=true, $echo=true ) {
       if( $email ) {
         $e_href = 'mailto:' . $email;
       }
-
-      $output .= '<div class="col-6of12">';
-      $output .= '<dt class="h5">' . $title . '</dt>';
-      $output .= '<dd>';
+      if( $wrapper ) {
+        $output .= '<div class="col-6of12">';
+        $output .= '<dt class="h5">' . $title . '</dt>';
+        $output .= '<dd>';
+      }else{
+        $output .= '<h5>' . $title . '</h5>';
+      }
       $output .= '<address>' . $address . '</address>';
       if( $phone ) {
         $output .= '<a class="block" href="' . $p_href . '">' . $phone . '</a>';
@@ -96,13 +127,17 @@ function ll_get_locations( $use_grid=true, $echo=true ) {
       if( $email ) {
         $output .= '<a class="block" href="' . $e_href . '">' . $email . '</a>';
       }
-      $output .= '</dd>';
-      $output .= '</div>';
+      if( $wrapper ) {
+        $output .= '</dd>';
+        $output .= '</div>';
+      }
     }
   }
 
   wp_reset_postdata();
-  $output .= '</dl></li></ul>';
+  if( $wrapper ) {
+    $output .= '</dl></li></ul>';
+  }
 
   if( $echo === true ) {
     echo $output;
@@ -431,3 +466,11 @@ function ll_generate_schema_json() {
   echo '<script type="application/ld+json">' . json_encode($schema) . '</script>';
 }
 add_action( 'wp_head', 'll_generate_schema_json'  );
+
+/**
+ * Checks to see if we're on the homepage or not. Seems basic, but there's nothing
+ * in the WP default that does this simple task
+ */
+function ll_is_frontpage() {
+  return ( is_front_page() && ! is_home() );
+}

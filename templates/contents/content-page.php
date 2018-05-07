@@ -41,8 +41,8 @@ if( have_rows( 'components' ) ) {
         'navbar'         => get_sub_field('navbar'),
         'section_bg'     => get_sub_field('section_bg'),
         'band_theme'     => get_sub_field('band_theme'),
-        'padded_top'    => get_sub_field('padded_top'),
-        'padded_bottom' => get_sub_field('padded_bottom'),
+        'padded_top'     => get_sub_field('padded_top'),
+        'padded_bottom'  => get_sub_field('padded_bottom'),
         'band_columns'   => $cols
       );
 

@@ -47,6 +47,13 @@
   border: 1px solid #F15A29;
 }
 
+.mce-i-square:before {
+  content: '■';
+  font-size: 1.5rem;
+  line-height: 0.3125;
+  vertical-align: text-top;
+}
+
 code {
   display: block;
   background-color: transparent;
