@@ -32,6 +32,9 @@
     }
     &.padded-bottom {
       padding-bottom:  $row-gutter;
+      nav[class*="col"] {
+        margin-top: -4.5rem;
+      }
     }
     &.stretch {
       min-height: 600px;
@@ -47,9 +50,6 @@
       &:last-child {
         margin-bottom: rem-calc(32);
       }
-    }
-    nav[class*="col"] {
-      margin-top: -4.5rem;
     }
   }
   @include screen-lg-up {
