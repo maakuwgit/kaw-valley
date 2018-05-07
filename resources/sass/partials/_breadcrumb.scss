@@ -3,11 +3,9 @@
  */
 .breadcrumb {
   position: absolute;
-  top: -7.5rem;
-  @include screen-sm-up {
-    top: -13rem;
-  }
+  top: -5.5rem;
   @include screen-lg-up {
+    top: -13rem;
     left: -10rem;
   }
 }

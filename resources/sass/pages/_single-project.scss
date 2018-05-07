@@ -3,8 +3,7 @@
  */
 body.single-project {
   .hero-banner {
-    min-height: $banner-height;
-    figcaption {
+    figcaption, .figcaption {
       div:first-of-type {
         align-self: flex-start;
       }

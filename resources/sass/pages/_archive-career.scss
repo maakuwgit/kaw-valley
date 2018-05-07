@@ -3,7 +3,7 @@
  */
 .post-type-archive-career {
   .hero-banner {
-    height: $banner-height;
+    max-height: $banner-height;
   }
   section.content:first-of-type {
     padding-top: rem-calc(50);

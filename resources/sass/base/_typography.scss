@@ -82,7 +82,7 @@ figure[class^='align-'] figcaption,
 .wp-caption-text,
 .hero {
   font-size: rem-calc(48);
-  font-weight: $text-bold;
+  font-weight: $text-medium;
   letter-spacing: -0.1px;
   line-height: 1.125;
   @include screen-lg-up {
@@ -92,10 +92,8 @@ figure[class^='align-'] figcaption,
 /* Dev Note: Clean this up later */
 h1.hero,
 #pre-footer .hero {
-  font-size: 3.25rem;
+  font-size: rem-calc(52);
   font-weight: $text-bold;
-  letter-spacing: -0.1px;
-  line-height: 1.125;
   @include screen-lg-up {
     font-size: rem-calc(85);
   }

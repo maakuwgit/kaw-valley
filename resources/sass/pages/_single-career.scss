@@ -32,10 +32,6 @@ body.single-career {
     }
   }
 
-  .gform_wrapper {
-    margin-left: 0;
-  }
-
   main, section.content {
     padding-top: 0;
   }
@@ -45,29 +41,32 @@ body.single-career {
   }
 
   #hero-career {
-    padding-top: 20rem;
+    padding-top: 13rem;
     padding-bottom: 0;
     color: $text-color;
-    .container {
-      position: relative;
-      overflow: visible;
-      &:before {
-        content: '';
-        position: absolute;
-        width: 262px;
-        height: 220px;
-        background: transparent url(../img/icons-triangles.svg) center no-repeat;
-        background-size: contain;
-        margin-top: -220px;
-        margin-left: calc(50% - 131px);
-        @include screen-lg-up {
-          margin-top: -140px;
-          margin-left: -177px;
+    @include screen-lg-up {
+      padding-top: 20rem;
+      .container {
+        position: relative;
+        overflow: visible;
+        &:before {
+          content: '';
+          position: absolute;
+          width: 262px;
+          height: 220px;
+          background: transparent url(../img/icons-triangles.svg) center no-repeat;
+          background-size: contain;
+          margin-top: -220px;
+          margin-left: calc(50% - 131px);
+          @include screen-lg-up {
+            margin-top: -140px;
+            margin-left: -177px;
+          }
         }
       }
-    }
-    @include screen-sm {
-      padding-top: 13rem;
+      @include screen-sm {
+        padding-top: 13rem;
+      }
     }
   }
 }

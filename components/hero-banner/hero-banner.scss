@@ -17,10 +17,15 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  /*
+  min-height: $banner-height;
   @include screen-lg-up {
-    background-attachment: fixed;
-  }*/
+    height: 95vh;
+  }
+
+  .hero + p {
+    margin-top: rem-calc(25);
+  }
+
   body:not(.single-project) & {
     @include screen-md {
       div, div:first-of-type, div:last-of-type {
@@ -53,10 +58,20 @@
     z-index: 1;
   }
 
-  & > .container {
+  & > .container,
+  & > .wrap {
     position: relative;
     align-self: stretch;
     z-index: 1;
+    width: 100%;
+    height: calc(100% - #{rem-calc(160)});
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: rem-calc(80);
+    margin-bottom: rem-calc(80);
+    > * {
+      max-width: 960px;
+    }
   }
 
   .button {
@@ -92,9 +107,9 @@
     }
   }
 
+  .figcaption,
   figcaption {
     div:first-of-type {
-      align-self: center;
       text-align: right;
       img {
         margin-left: auto;
@@ -108,7 +123,6 @@
       }
     }
     div:last-of-type{
-      align-self: flex-end;
       text-align: left;
       img {
         margin-left: 0;
@@ -118,9 +132,13 @@
 
     dl,
     .triangle_icon-big {
-      width: 20rem;
+      width: 13rem;
       margin: auto;
       text-align: left;
+    }
+
+    dt {
+      font-weight: $text-bold;
     }
 
     dt, dd {

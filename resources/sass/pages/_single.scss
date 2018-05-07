@@ -2,10 +2,10 @@
  * Single
  */
 body.single {
-  .hero-banner {
-    min-height: $banner-height;
-  }
   &.single-post {
+    .hero-banner {
+      max-height: $banner-height;
+    }
     figure[class^=align-],
     .wp-caption {
       display: flex;

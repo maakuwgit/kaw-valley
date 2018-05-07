@@ -174,7 +174,7 @@ body {
       }
     }
   }
-  @include screen-xs {
+  @include screen-sm {
     display: none;
   }
 }
@@ -194,6 +194,8 @@ body {
   background-color: $black;
   @include screen-sm {
     align-items: flex-start;
+    padding-left: rem-calc(25);
+    padding-right: rem-calc(25);
   }
   &.active {
     min-height: calc(100vh - #{$offset} );

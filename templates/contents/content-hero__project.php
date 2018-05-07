@@ -17,7 +17,8 @@
   $sub_text = ( !$sub_text['text'] ? get_the_title() : $sub_text['text'] );
 
   $hero_banner = array(
-    'main_text'        => array( 'text' => $main_text ),
+    'main_text'        => array( 'text' => $main_text,
+                                 'tag' => 'h1' ),
     'sub_text'         => array( 'text' => $sub_text ),
     'call_to_action'   => false,
     'background_image' => $background,

@@ -11,7 +11,7 @@ if( $location ) {
 ?>
 <figure class="content" id="hero-career" data-component="hero-banner">
   <div class="container row boxed">
-    <nav class="breadcrumb"><a href="">&lsaquo;&nbsp;Back to all job listings</a></nav>
+    <nav class="breadcrumb"><a href="../">&lsaquo;&nbsp;Back to all job listings</a></nav>
     <div class="col-12of12">
       <h2 class="hero">We're Hiring.</h2>
       <p class="h1">Full time, salaried position in <?php echo $location; ?></p>

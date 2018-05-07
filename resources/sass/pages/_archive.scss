@@ -2,9 +2,6 @@
  * Archive
  */
 body.archive {
-  .hero-banner {
-    min-height: $banner-height;
-  }
   &:not(.post-type-archive) {
     .hero-banner {
       figcaption {

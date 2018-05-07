@@ -9,6 +9,10 @@ body.single-service {
     }
   }
   .hero-banner {
+    padding-bottom: rem-calc(100);
+    .hero {
+      font-weight: $text-bold;
+    }
     @include screen-sm {
       .triangle_icon {
         right: 50%;

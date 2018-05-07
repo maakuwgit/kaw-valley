@@ -95,14 +95,14 @@ if ( $background_image ) {
       );
     ?>
   <?php endif; ?>
-  <figcaption class="container row">
+  <div class="container row figcaption">
     <?php if ( $show_icons ) : ?>
-      <div class="col-6of12 relative">
+      <div class="col-4of12 relative center">
         <?php echo $icon_markup; ?>
       </div>
     <?php endif; ?>
     <?php if ( $show_icons ) : ?>
-      <div class="col-6of12">
+      <div class="col-8of12 flex-end">
     <?php endif; ?>
     <?php if ( $main_text['text'] ) : ?>
       <<?php echo $main_text['tag'] ?> class="hero"><?php echo $main_text['text']; ?></<?php echo $main_text['tag']; ?>>
@@ -114,7 +114,7 @@ if ( $background_image ) {
     <?php if ( $show_icons ) : ?>
       </div>
     <?php endif; ?>
-  </figcaption>
+  </div>
   <?php if ( $call_to_action ) : ?>
     <a class="button" href="<?php echo $call_to_action['url']; ?>" target="<?php echo $call_to_action['target']; ?>"><?php echo $call_to_action['title']; ?></a>
   <?php endif; ?>

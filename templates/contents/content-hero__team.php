@@ -1,6 +1,6 @@
 <?php
   $hero_banner = array(
-    'main_text'        => array( 'text' => 'Our Team.' ),
+    'main_text'        => array( 'text' => 'Our Team.', 'tag' => 'h1' ),
     'sub_text'         => array( 'text' => '' ),
     'call_to_action'   => false,
     'spotlight_strength' => 0,
