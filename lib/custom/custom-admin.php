@@ -117,7 +117,7 @@ add_action('init', 'll_remove_editor');
  * @param  [type] $size    the selected output size
  * @return [type]          html
  */
-//Dev Note: Need to return here to ensure that REMOVING media also removes all this crap
+//Dev Note: Need to return here to ensure that REMOVING media also removes all this love
 function ll_insert_image_media($html, $id, $caption, $title, $align, $url, $size) {
   $src = wp_get_attachment_image_src( $id, $size );
   $html5 = "<figure id='post-$id-media-$id' class='align-$align'>";
