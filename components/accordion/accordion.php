@@ -33,9 +33,6 @@ $default_data = [
   )
 ];
 
-//var_dump($default_data['accordion_wrapper'][0]['accordion_element']);
-//var_dump($component_data['accordion_wrapper'][0]['accordion_element']);
-
 $default_args = [
   'classes' => array(),
   'id' => uniqid('accordion-')
@@ -53,11 +50,11 @@ do_action( "component_name_before_display", $component_data, $component_args );
 
 <?php
 if ( ll_empty( $data ) ) return;
-if( $args['classes'] || $data['theme'] ) {
+if( $args['classes'] || $data['accordion_theme'] ) {
   $css = ' class="ll-accordion ';
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
-  if( $data['theme'] && $args['classes'] ) $css .= ' ';
-  if( $data['theme'] ) $css .= $data['theme'] . '-bg';
+  if( $data['accordion_theme'] && $args['classes'] ) $css .= ' ';
+  if( $data['accordion_theme'] ) $css .= $data['accordion_theme'] . '-bg';
   $css .= '"';
 }
 if ( $data['accordion_background'] ) {
@@ -75,19 +72,22 @@ $accordions = $data['accordion_wrapper'][0]['accordion_element'];
 <?php if( $accordions ) : ?>
 <?php
   $aID = 1;
+  $flag = '';
   foreach( $accordions as $accordion ) :
     $bg   = $accordion['accordion_bg'];
     $sbg  = $accordion['accordion_sidebar_bg'];
-    // Dev Note: need support for srcset and data-sizes
-
-    if( $bg ) {
-      $bg = $bg['sizes']['large'];
+    if($aID === 1) {
+      $flag = ' active';//For testing
+    }else{
+      $flag = '';
     }
 ?>
-    <dt class="accordion--trigger"><?php echo $accordion['accordion_headline']; ?></dt>
+    <dt class="accordion--trigger<?php echo $flag; ?>">
+      <div><?php echo $accordion['accordion_headline']; ?></div>
+    </dt>
     <dd class="accordion" data-background>
       <div class="accordion--spotlight">
-        <svg <?php echo $overlay_strength;?> width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
             <radialGradient cx="63.1500244%" cy="62.1083984%" fx="63.1500244%" fy="62.1083984%" r="57.4003906%" gradientTransform="translate(0.631500,0.621084),scale(0.625000,1.000000),rotate(90.000000),scale(1.000000,1.006260),translate(-0.631500,-0.621084)" id="radialGradient-1">
                 <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
@@ -102,13 +102,12 @@ $accordions = $data['accordion_wrapper'][0]['accordion_element'];
         </svg>
       </div>
       <figure class="feature">
-        <?php echo '<img alt="" src="' . $bg . '">'; ?>
+        <?php echo ll_format_image($bg); ?>
       </figure>
       <div class="row">
         <aside class="accordion--sidebar" data-background>
           <figure class="feature">
-            <img alt="" src="<?php echo $sbg['sizes']['medium']; ?>"
-        srcset="<?php echo $sbg['sizes']['large']; ?> 2x, <?php echo $sbg['url']; ?> 3x" data-src-md="<?php echo $sbg['sizes']['medium']; ?>" data-src-lg="<?php echo $sbg['sizes']['large']; ?>" data-src-xl="<?php echo $sbg['url']; ?>">
+            <?php echo ll_format_image($sbg); ?>
           </figure>
           <?php echo $accordion['accordion_sidebar']; ?>
           <a class="accordion--id" name="<?php echo 'accordion--id-' . $aID; ?>">0<?php echo $aID; ?></a>

@@ -98,6 +98,9 @@
             }
           }
         });
+
+        //Animate everything with this one class
+        $('body').addClass('loaded');
       });
 
       // JavaScript to be fired on all pages

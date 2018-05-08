@@ -25,17 +25,24 @@ function format_text( $content ) {
   return $content;
 }
 
+/*
+ * Formats the image tag to support srcset as well as data-attributes for usage as a background image
+ */
+function ll_format_image( $hero ) {
+  return '<img alt="'.$hero['title'].'" src="'.$hero['sizes']['medium'].'"
+  srcset="'.$hero['sizes']['large'].' 2x, '.$hero['url'].' 3x" data-src-md="'.$hero['sizes']['medium'].'" data-src-lg="'.$hero['sizes']['large'].'" data-src-xl="'.$hero['url'].'">';
+}
+
 /**
  * var_dump variable
  * wrap it in a <pre> tag
- * * Dev Note: this is a pain when trying to debug so I disabled it for now
  */
 function _pre_var() {
-/*  $args = func_get_args();
+  $args = func_get_args();
 
   echo '<pre>';
   call_user_func_array( 'var_dump', $args );
-  echo '</pre>';*/
+  echo '</pre>';
 }
 
 /**

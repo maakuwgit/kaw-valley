@@ -53,20 +53,19 @@ if ( ll_empty( $data ) ) return;
 $theme          = $data['band_theme'];
 $has_background = $data['has_background'];
 $section_bg     = $data['section_bg'];
-$band_bg        = $data['band_bg'];
 $stretch        = $data['is_stretched'];
 $padded_top     = $data['padded_top'];
 $padded_bottom  = $data['padded_bottom'];
 $navbar         = $data['navbar'];
 
+$css = ' class="band';
 if( $args['classes'] || $data['band_theme'] ) {
-  $css = ' class="band ';
-
-  if ( $background_image ) $css .= 'has-image ';
+  $css .= ' ';
+  if ( $section_bg ) $css .= 'has-image ';
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
   if( $theme && $args['classes'] ) $css .= ' ';
   if( $theme ) $css .= $theme . '-bg';
-  if( $data['has_background'] ) {
+  if( $has_background ) {
     $css .=  ' '. $theme;
   }
   if( $stretch ) {
@@ -82,9 +81,10 @@ if( $args['classes'] || $data['band_theme'] ) {
   if( $has_background === false ) {
     $css .= ' no_bg';
   }
-
-  $css .= '"';
 }
+
+$css .= '"';
+
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
 
 //Background for the section element
@@ -103,6 +103,7 @@ if ( $section_bg ) {
     $align = ( $band['band_align'] === null ? '' : ' ' . $band['band_align'] );
 
     //Background for a column
+    $band_bg = $band['band_bg'];
     if ( $band_bg ) {
      $col_style = ' style="background-image: url( '. $band_bg['url'] .' );"';
     } else {

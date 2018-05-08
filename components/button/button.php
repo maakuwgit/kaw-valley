@@ -4,7 +4,7 @@
 * -----------------------------------------------------------------------------
 *
 * button component
-* @since 1.0.1
+* @since 1.2
 * @author First Last
 */
 
@@ -23,6 +23,7 @@ $default_data = [
 ];
 
 $default_args = [
+  'id' => uniqid('button-'),
   'classes' => array()
 ];
 

@@ -1,10 +1,11 @@
 <?php
-if ( $headline === null ) $headline       = get_field( 'page_headline' );
-if ( $subheadline === null ) $subheadline = get_field( 'page_subheadline');
-if ( !$excerpt ) $excerpt         = get_field( 'page_excerpt' );
-if ( !$layout ) $layout           = get_field( 'page_layout' );
-if ( !$theme ) $theme             = ( get_field( 'page_theme' ) ? get_field( 'page_theme' ) : 'light' );
-if ( !$direction ) $direction     = get_field( 'page_direction' );
+$output      = '';
+$headline    = get_field( 'page_headline' );
+$subheadline = get_field( 'page_subheadline');
+$excerpt     = get_field( 'page_excerpt' );
+$layout      = get_field( 'page_layout' );
+$theme       = ( get_field( 'page_theme' ) ? get_field( 'page_theme' ) : 'light' );
+$direction   = get_field( 'page_direction' );
 
 $template = get_page_template_slug();
 

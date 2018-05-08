@@ -125,7 +125,11 @@ $link-hover-decoration: none;
 $banner-height: rem-calc(580);
 
 // Imagery
-$terrain-bg--rainbow: '../img/background-terrain--rainbow.svg';
+$terrain-bg-lg--rainbow: '../img/background-terrain--rainbow.svg';
+$terrain-bg--rainbow: '../img/background-terrain--rainbow.png';
 $terrain-bg--red: '../img/background-terrain--red.svg';
+$terrain-bg-lg--red: '../img/background-terrain--red.png';
 $terrain-bg--grey: '../img/background-terrain--grey.svg';
+$terrain-bg-lg--grey: '../img/background-terrain--grey.png';
 $terrain-bg: '../img/background-terrain.svg';
+$terrain-bg-lg: '../img/background-terrain.png';

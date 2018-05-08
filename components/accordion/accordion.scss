@@ -43,31 +43,43 @@ $dd_top : $dl_padding_top;
     @include screen-md {
       padding: 0;
     }
-    dd, dt {
+    dd, dt, dt > div{
       display: flex;
       align-self: flex-start;
     }
     //The trigger, and on mobile, the headline
     dt {
+      align-self: stretch;
       align-items: center;
-      height: $dt_height;
-      min-width: 100%;
-      padding: 1rem;
-      font-size: 1.25rem;
-      font-weight: $text-medium;
-      z-index: 10;
-      &:not(.active) {
+      z-index: 3;
+      &:not(.active) > div {
+        min-width: 100%;
         background-color: $black;
+      }
+      @include screen-lg {
+        min-width: 100%;
       }
       @include screen-lg-up {
         min-width: 25%;
       }
-      @include screen-lg {
-        border-top: solid 1px $white;
-        border-bottom: solid 1px $white;
+      > div {
+        height: $dt_height;
+        align-items: center;
+        padding: 1rem;
+        font-size: 1.25rem;
+        font-weight: $text-medium;
+        z-index: 10;
+        background-color: transparent;
+        @include screen-lg {
+          border-top: solid 1px $white;
+          border-bottom: solid 1px $white;
+        }
       }
     }
     dd {
+      padding-top: 0;
+      padding-bottom: 0;
+      width: 100%;
       @include screen-lg-up {
         position: absolute;
         top: 0;
@@ -128,9 +140,6 @@ $dd_top : $dl_padding_top;
           padding-top: #{$dt_height};
         }
       }
-      padding-top: 0;
-      padding-bottom: 0;
-      width: 100%;
       .accordion--sidebar,
       .accordion--content {
         z-index: 1;
@@ -181,6 +190,7 @@ $dd_top : $dl_padding_top;
         }
       }
       .accordion--content {
+        align-self: stretch;
         > div {
           position: relative;
           display: flex;

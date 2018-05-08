@@ -8,7 +8,12 @@
     h1, h2, h3, h4, h5, h6, p, li, label, div {
       color: $white;
     }
-    background-image: url(#{$terrain-bg});
+    @include screen-xl-up {
+      background-image: url(#{$terrain-bg});
+    }
+    @include screen-xl {
+      background-image: url(#{$terrain-bg-lg});
+    }
   }
   body & {
     background-size: contain;
@@ -24,11 +29,21 @@
   body.single-project &,
   body.single-team &,
   body.single-service & {
-    background-image: url(#{$terrain-bg--red});
+    @include screen-xl-up {
+      background-image: url(#{$terrain-bg--red});
+    }
+    @include screen-xl {
+      background-image: url(#{$terrain-bg-lg--red});
+    }
   }
 
   body.page-about & {
-    background-image: url(#{$terrain-bg--grey});
+    @include screen-xl-up {
+      background-image: url(#{$terrain-bg--grey});
+    }
+    @include screen-xl {
+      background-image: url(#{$terrain-bg-lg--grey});
+    }
   }
 
   h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -46,9 +61,6 @@
   }
 
   figure:not(.thumbnail) {
-    /*Dev Note: causing a LOT of ruckus
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;*/
     @include screen-sm {
       &.align-none {
         width: 100%;

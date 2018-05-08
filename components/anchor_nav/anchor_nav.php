@@ -4,7 +4,7 @@
 * -----------------------------------------------------------------------------
 *
 * Band component
-* @since 1.0.0
+* @since 1.2
 * @author MaakuW
 */
 global $post;
@@ -41,13 +41,12 @@ do_action( "component_name_before_display", $component_data, $component_args );
 <?php
 if ( ll_empty( $data ) ) return;
 
+$css = ' class="';
 if( $args['classes'] ) {
-  $css = ' class="';
-
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
-  $css .= '"';
-
 }
+$css .= '"';
+
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
 
 ?>
@@ -62,7 +61,6 @@ $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
 <?php endforeach; ?>
   </ol>
 </nav>
-
 <?php
 /**
  * component_name_after_display hook

@@ -17,20 +17,20 @@
     // Fires after common.init, before .finalize and common.finalize
     init: function() {
       var _this     = this,
-          dl = $('[data-component="accordion"]'),
-          triggers  = $( dl ).find('.accordion--trigger');
+          accordion = $('[data-component="accordion"]'),
+          triggers  = $( accordion ).find('.accordion--trigger');
 
       $(window).on('resize.refactorAccordions', refactorAccordions );
       refactorAccordions();
 
       function refactorAccordions(e) {
         if( $(window).outerWidth() > breakpoints.lg ) {
-          $('.accordion').css({'display':'none', 'opacity':0});
-          $(dl).on('mouseleave.checkAccordion', resetAccordions);
+          $(accordion).find('.accordion').css({'display':'none', 'opacity':0});
+          $(accordion).on('mouseleave.checkAccordion', resetAccordions);
           triggers.on('mouseenter.hoverAccordion', hoverAccordion);
         }else{
-          $('.accordion').css({'display':'block', 'opacity':1});
-          $(dl).off('mouseleave.checkAccordion');
+          $(accordion).find('.accordion').css({'display':'block', 'opacity':1});
+          $(accordion).off('mouseleave.checkAccordion');
           triggers.off('mouseenter.hoverAccordion');
         }
       }
@@ -40,23 +40,24 @@
         showAccordion();
       }
 
-      function hoverAccordion(e) {console.log('over');
+      function hoverAccordion(e) {
+        console.log('run!');
         e.preventDefault();
         resetAccordions(e);
         $(this).off('mouseenter.hoverAccordion');
-        $(dl).on('mouseleave.checkAccordion', resetAccordions);
+        $(accordion).on('mouseleave.checkAccordion', resetAccordions);
 
-        var dt = $(this);
+        var trigger = $(this);
 
         triggers.removeClass('active');
-        showAccordion(dt);
+        showAccordion(trigger);
       }
 
       function showAccordion(target) {
         var speedIn   = 150,
             speedOut  = 100;
 
-        $('.accordion').stop().animate({'opacity':0}, speedOut, function(){
+        $(accordion).find('.accordion').stop().animate({'opacity':0}, speedOut, function(){
           $(this).hide();
           if( target ) {
             target.addClass('active');

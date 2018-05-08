@@ -6,7 +6,7 @@
 * Hero Banner component
 */
 
-$defaults = [
+$default_data = [
   'main_text' => array(
     'text' => null,
     'tag'  => 'h2'
@@ -24,53 +24,37 @@ $defaults = [
   'popup_video'   => null
 ];
 
-$component_data = ll_parse_args( $component_data, $defaults );
+$default_args = [
+  'id' => uniqid('hero-banner-'),
+  'classes' => array()
+];
 
-$main_text        = ( $component_data['main_text'] === null ? $defaults['main_text'] : $component_data['main_text'] );
-$sub_text         = ( $component_data['sub_text'] === null ? $defaults['sub_text'] : $component_data['sub_text'] );
-$call_to_action   = $component_data['call_to_action'];
-$show_icons       = ( $component_data['show_icons'] === null ? $defaults['show_icons'] : $component_data['show_icons'] );
-$background_image = $component_data['background_image'];
-$overlay_strength = ( $component_data['spotlight_strength'] === null ? $defaults['spotlight_strength'] : $component_data['spotlight_strength'] );
-$loop_video       = $component_data['loop_video'];
-$popup_video      = $component_data['popup_video'];
+$data = ll_parse_args( $component_data, $default_data );
+$args = ll_parse_args( $component_args, $default_args );
 
-$icon_markup = ( $component_data['icon_markup'] === null ? $defaults['icon_markup'] : $component_data['icon_markup'] );
+$main_text  = $data['main_text']['text'];
+$main_tag   = $data['main_text']['tag'];
+$sub_text   = $data['sub_text']['text'];
+$sub_tag    = $data['sub_text']['tag'];
 
-$overlay_strength = ' style="opacity:' . $overlay_strength . ';"';
-?>
-
-<?php
-/**
- * Any additional classes to apply to the main component container.
- *
- * @var array
- * @see args['classes']
- */
-$classes        = $component_args['classes'] ?: array();
-
-/**
- * ID to apply to the main component container.
- *
- * @var array
- * @see args['id']
- */
-$component_id   = $component_args['id'];
+$background_image = $data['background_image'];
 
 //image is image object
 if ( $background_image ) {
   $classes[] = 'has-image';
- $style            = 'style="background-image: url( '.$background_image[0].' );"';
+ $style = 'style="background-image: url( '.$background_image[0].' );"';
 } else {
- $style            = '';
+ $style = '';
 }
+
+$spotlight = ' data-spotlight="'.$data['spotlight_strength'].'" style="opacity:'.$data['spotlight_strength'].'"';
 
 ?>
 
-<?php if ( ll_empty( $component_data ) ) return; ?>
-<figure class="hero-banner <?php echo implode( " ", $classes ); ?>" <?php echo ( $component_id ? 'id="'.$component_id.'"' : '' ) ?> data-component="hero-banner" <?php echo $style; ?>>
+<?php if ( ll_empty( $data ) ) return; ?>
+<figure class="hero-banner <?php echo implode( " ", $args['classes'] ); ?>" <?php echo ( $args['id'] ? 'id="'.$args['id'].'"' : '' ) ?> data-component="hero-banner" <?php echo $style; ?>>
   <div id="hero-spotlight">
-    <svg <?php echo $overlay_strength;?> width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg <?php echo $spotlight;?> width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
         <radialGradient cx="63.1500244%" cy="62.1083984%" fx="63.1500244%" fy="62.1083984%" r="57.4003906%" gradientTransform="translate(0.631500,0.621084),scale(0.625000,1.000000),rotate(90.000000),scale(1.000000,1.006260),translate(-0.631500,-0.621084)" id="radialGradient-1">
             <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
@@ -84,42 +68,42 @@ if ( $background_image ) {
       </g>
     </svg>
   </div>
-  <?php if ( $loop_video ) : ?>
+  <?php if ( $data['loop_video'] ) : ?>
     <?php
       ll_include_component(
         'loop-video',
         array(
-          'video' => $loop_video,
+          'video' => $data['loop_video'],
           'fallback' => $background_image[0]
         )
       );
     ?>
   <?php endif; ?>
   <div class="container row figcaption">
-    <?php if ( $show_icons ) : ?>
+    <?php if ( $data['show_icons'] ) : ?>
       <div class="col-4of12 relative center">
-        <?php echo $icon_markup; ?>
+        <?php echo $data['icon_markup']; ?>
       </div>
     <?php endif; ?>
-    <?php if ( $show_icons ) : ?>
+    <?php if ( $data['show_icons'] ) : ?>
       <div class="col-8of12 flex-end">
     <?php endif; ?>
-    <?php if ( $main_text['text'] ) : ?>
-      <<?php echo $main_text['tag'] ?> class="hero"><?php echo $main_text['text']; ?></<?php echo $main_text['tag']; ?>>
+    <?php if ( $data['main_text'] ) : ?>
+      <<?php echo $main_tag; ?> class="hero"><?php echo $main_text; ?></<?php echo $main_tag; ?>>
     <?php endif; ?>
 
-    <?php if ( $sub_text['text'] ) : ?>
-      <<?php echo $sub_text['tag'] ?> class="h1"><?php echo $sub_text['text']; ?></<?php echo $sub_text['tag']; ?>>
+    <?php if ( $data['sub_text']) : ?>
+      <<?php echo $sub_tag; ?> class="h1"><?php echo $sub_text; ?></<?php echo $sub_tag; ?>>
     <?php endif; ?>
-    <?php if ( $show_icons ) : ?>
+    <?php if ( $data['show_icons'] ) : ?>
       </div>
     <?php endif; ?>
   </div>
-  <?php if ( $call_to_action ) : ?>
-    <a class="button" href="<?php echo $call_to_action['url']; ?>" target="<?php echo $call_to_action['target']; ?>"><?php echo $call_to_action['title']; ?></a>
+  <?php if ( $data['call_to_action'] ) : ?>
+    <a class="button" href="<?php echo $data['call_to_action']['url']; ?>" target="<?php echo $data['call_to_action']['target']; ?>"><?php echo $data['call_to_action']['title']; ?></a>
   <?php endif; ?>
-  <?php if ( $popup_video ) : ?>
-    <a class="play-video-button js-init-video" href="<?php echo $popup_video; ?>">
+  <?php if ( $data['popup_video'] ) : ?>
+    <a class="play-video-button js-init-video" href="<?php echo $data['popup_video']; ?>">
       <svg width="25px" height="31px" viewBox="0 0 25 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g transform="translate(-703.000000, -740.000000)" stroke="#FFFFFF">
