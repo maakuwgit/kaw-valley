@@ -101,6 +101,10 @@
 
         //Animate everything with this one class
         $('body').addClass('loaded');
+        var setAnimated = setTimeout(function(){
+          $('body').addClass('animated');
+          //Dev Note:
+        }, 2000);
       });
 
       // JavaScript to be fired on all pages

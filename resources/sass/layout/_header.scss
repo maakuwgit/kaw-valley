@@ -159,17 +159,20 @@ body {
       font-size: 0.875rem;
     }
     @include screen-lg-up {
+      &:after {
+        position: absolute;
+        top: calc( 50% + 0.625rem );
+        right: 2rem;
+        left: 2rem;
+        width: 0;
+        height: 1px;
+        content: '';
+        background-color: $white;
+      }
       &:hover {
         color: $white;
         &:after {
-          position: absolute;
-          top: calc( 50% + 0.625rem );
-          right: 2rem;
-          left: 2rem;
           width: calc(100% - 4rem);
-          height: 1px;
-          content: '';
-          background-color: $white;
         }
       }
     }

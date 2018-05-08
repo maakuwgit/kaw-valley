@@ -151,13 +151,25 @@ main {
 
 label {
   display: inline-block;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
+  margin-top: rem-calc(10);
+  margin-bottom:  rem-calc(10);
+  font-size:  rem-calc(14);
 }
 
 ol {
-  list-style-type: upper-roman;
+  list-style-type: none;
+  padding-left: 0;
+  counter-reset: olc;
+  li {
+    margin-left: rem-calc(30);
+    counter-increment: olc;
+    &:before {
+      position: absolute;
+      content: counter(olc, upper-roman) ".";
+      margin-left: rem-calc(-30);
+      width: rem-calc(25);
+    }
+  }
 }
 
 p {

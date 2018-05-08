@@ -8,12 +8,7 @@
     h1, h2, h3, h4, h5, h6, p, li, label, div {
       color: $white;
     }
-    @include screen-xl-up {
-      background-image: url(#{$terrain-bg});
-    }
-    @include screen-xl {
-      background-image: url(#{$terrain-bg-lg});
-    }
+    background-image: url(#{$terrain-bg});
   }
   body & {
     background-size: contain;
@@ -29,21 +24,11 @@
   body.single-project &,
   body.single-team &,
   body.single-service & {
-    @include screen-xl-up {
-      background-image: url(#{$terrain-bg--red});
-    }
-    @include screen-xl {
-      background-image: url(#{$terrain-bg-lg--red});
-    }
+    background-image: url(#{$terrain-bg--red});
   }
 
   body.page-about & {
-    @include screen-xl-up {
-      background-image: url(#{$terrain-bg--grey});
-    }
-    @include screen-xl {
-      background-image: url(#{$terrain-bg-lg--grey});
-    }
+    background-image: url(#{$terrain-bg--grey});
   }
 
   h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {

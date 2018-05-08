@@ -51,7 +51,7 @@ do_action( "component_name_before_display", $component_data, $component_args );
 <?php
 if ( ll_empty( $data ) ) return;
 if( $args['classes'] || $data['accordion_theme'] ) {
-  $css = ' class="ll-accordion ';
+  $css = ' class="accordion ';
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
   if( $data['accordion_theme'] && $args['classes'] ) $css .= ' ';
   if( $data['accordion_theme'] ) $css .= $data['accordion_theme'] . '-bg';

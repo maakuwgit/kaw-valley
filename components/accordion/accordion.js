@@ -41,7 +41,6 @@
       }
 
       function hoverAccordion(e) {
-        console.log('run!');
         e.preventDefault();
         resetAccordions(e);
         $(this).off('mouseenter.hoverAccordion');
@@ -54,8 +53,8 @@
       }
 
       function showAccordion(target) {
-        var speedIn   = 150,
-            speedOut  = 100;
+        var speedIn   = 100,
+            speedOut  = 50;
 
         $(accordion).find('.accordion').stop().animate({'opacity':0}, speedOut, function(){
           $(this).hide();
