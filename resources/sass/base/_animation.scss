@@ -44,6 +44,11 @@ body.loaded {
   > header.navbar {
     transition-delay: 1s, 0s, 0s;
   }
+  &.animated {
+    > header.navbar {
+      transition-delay: 0s;
+    }
+  }
   .play-video-button {
     transition-delay: 1.5s;
   }

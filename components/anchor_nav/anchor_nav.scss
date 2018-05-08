@@ -56,8 +56,6 @@
           }
         }
         &:before {
-          counter-increment: lis;
-          content: counter(lis, upper-roman) ".";
           color: inherit;
         }
         &.active {
