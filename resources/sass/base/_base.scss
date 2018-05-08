@@ -166,6 +166,7 @@ ol {
     &:before {
       position: absolute;
       content: counter(olc, upper-roman) ".";
+      align-self: center;
       margin-left: rem-calc(-30);
       width: rem-calc(25);
     }
