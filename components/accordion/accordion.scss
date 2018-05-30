@@ -14,7 +14,7 @@ $dd_top : $dl_padding_top;
   background-position: center;
   &.no-triangles {
     .accordion--trigger {
-      background-position: -100vh auto;
+      background: none !important;
     }
   }
   @include screen-lg-up {
