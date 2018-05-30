@@ -8,7 +8,6 @@ $theme       = ( get_field( 'page_theme' ) ? get_field( 'page_theme' ) : 'light'
 $direction   = get_field( 'page_direction' );
 
 $template = get_page_template_slug();
-
 switch($layout){
   case 'split':
     $output = '<div class="col-xxl-6of12 col-xl-8of12 col-lg-8of12 col-md-8of12">';
