@@ -37,6 +37,7 @@
 
       function resetAccordions(e) {
         triggers.removeClass('active').off('mouseenter.hoverAccordion').on('mouseenter.hoverAccordion', hoverAccordion);
+        $(accordion).removeClass('no-triangles');
         showAccordion();
       }
 
@@ -45,6 +46,7 @@
         resetAccordions(e);
         $(this).off('mouseenter.hoverAccordion');
         $(accordion).on('mouseleave.checkAccordion', resetAccordions);
+        $(accordion).addClass('no-triangles');
 
         var trigger = $(this);
 

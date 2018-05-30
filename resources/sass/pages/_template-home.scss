@@ -11,6 +11,20 @@ body.home {
   .band:last-of-type {
     padding-bottom: 0;
   }
+  main > article.content {
+    .col:first-of-type {
+      margin-bottom: rem-calc(50);
+    }
+    h4 {
+      margin-bottom: rem-calc(35);
+      line-height: 1.3125;
+    }
+    @include screen-lg-up {
+      p:last-of-type {
+        margin-bottom: rem-calc(50);
+      }
+    }
+  }
   .content {
     .band {
       h3, .h3, h4, .h4, h5, .h5 {

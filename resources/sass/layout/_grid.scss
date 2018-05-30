@@ -15,21 +15,34 @@
 }
 
 .row {
+  width: 100%;
   @include flexible;
-  &.boxed {
-    max-width: 760px;
+  @include screen-md {
+    justify-content: flex-start;
   }
   &.stretch {
     align-items: stretch;
   }
   &.nowrap{
     flex-wrap: nowrap;
+    position: initial;
   }
-  &.centered {
+  &.end {
+    justify-content: flex-end;
+  }
+  &.start {
+    justify-content: flex-start;
+  }
+  &.between {
+    justify-content: space-between;
+  }
+  &.center {
     justify-content: center;
   }
+  [class^="col"],
   [class*="col-"] {
     align-self: auto;
+    padding: 0 #{$grid-gutter-width/2};
     &.flex-end {
       align-self: flex-end;
     }
@@ -39,8 +52,22 @@
     &.center {
       align-self: center;
     }
+    &.stretch {
+      align-self: stretch;
+    }
     &:not([class*="xxs-"]):not([class*="xs-"]):not([class*="sm-"]):not([class*="md-"]):not([class*="lg-"]):not([class*="xl-"]) {
       flex: 0 1 auto;
+    }
+    > .col:not([data-component]):not([data-slick-nav]) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .row {
+      [class^="col"],
+      [class*="col-"] {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   }
 }

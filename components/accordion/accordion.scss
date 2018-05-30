@@ -12,6 +12,11 @@ $dd_top : $dl_padding_top;
   background-size: 1174px auto;/*Dev Note: this is the size of the background-triangles.png*/
   background-repeat: no-repeat;
   background-position: center;
+  &.no-triangles {
+    .accordion--trigger {
+      background-position: -100vh auto;
+    }
+  }
   @include screen-lg-up {
     .accordion {
       display: none;
@@ -98,13 +103,13 @@ $dd_top : $dl_padding_top;
           top: 0;
           bottom: 0;
         }
-        &:nth-of-type(2n + 2),
-        &:nth-of-type(3n + 3){
+        &:nth-of-type(4n+2),
+        &:nth-of-type(4n+3){
           .accordion--content {
             width: 75%;
           }
         }
-        &:nth-of-type(2n + 2){
+        &:nth-of-type(4n+2){
           .accordion--sidebar {
             left: 25%;
           }
@@ -112,12 +117,20 @@ $dd_top : $dl_padding_top;
             margin-left: 50%;
           }
         }
-        &:nth-of-type(3n + 3){
+        &:nth-of-type(4n+3){
           .accordion--sidebar {
             right: 25%;
           }
           .accordion--content {
             margin-right: 50%;
+          }
+        }
+        &:nth-of-type(4n+4){
+          .accordion--sidebar {
+            right: 0;
+          }
+          .accordion--content {
+            margin-left: 0;
           }
         }
         .accordion--content,
@@ -141,11 +154,6 @@ $dd_top : $dl_padding_top;
           display: flex;
           justify-content: center;
           flex-direction: column;
-          .triangle {
-            width: rem-calc(32);
-            height: rem-calc(32);
-            margin-bottom: rem-calc(25);
-          }
         }
 
         article.accordion--content,
@@ -184,6 +192,11 @@ $dd_top : $dl_padding_top;
             bottom: 0;
             left: 2rem;
           }
+        }
+        .triangle {
+          width: rem-calc(32);
+          height: rem-calc(32);
+          margin-bottom: rem-calc(25);
         }
         @include screen-lg {
           order: 2;

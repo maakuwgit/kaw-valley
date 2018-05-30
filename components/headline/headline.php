@@ -67,10 +67,11 @@ if ( $section_bg ) {
 } else {
  $style = '';
 }
+$direction = ' ' . $direction;
 ?>
 <section<?php echo $id . $css;?>>
   <div class="container row"<?php echo $style;?>>
-    <h3 class="hero <?php echo $direction; ?>"><?php echo $data['generic_headline_text']; ?></h3>
+    <h3 class="hero col col-12of12<?php echo $direction; ?>"><?php echo $data['generic_headline_text']; ?></h3>
   </div>
 </section>
 <?php

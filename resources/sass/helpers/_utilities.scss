@@ -18,11 +18,24 @@
 }
 
 .block {
+  &.button {
+    display: block;
+  }
   display: block;
 }
 
 .iblock {
+  &.button {
+    display: inline-block;
+  }
   display: inline-block;
+}
+
+.flex {
+  &.button {
+    display: flex;
+  }
+  display: flex;
 }
 
 .hide {

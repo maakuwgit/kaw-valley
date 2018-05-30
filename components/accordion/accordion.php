@@ -106,7 +106,7 @@ $accordions = $data['accordion_wrapper'][0]['accordion_element'];
         <?php echo ll_format_image($bg); ?>
       </figure>
       <div class="row">
-        <aside class="accordion--sidebar flex" data-background>
+        <aside class="accordion--sidebar" data-background>
           <figure class="feature">
             <?php echo ll_format_image($sbg); ?>
           </figure>
