@@ -40,9 +40,9 @@ function ll_format_image( $hero ) {
 function _pre_var() {
   $args = func_get_args();
 
-  echo '<pre>';
+//  echo '<pre>';
   call_user_func_array( 'var_dump', $args );
-  echo '</pre>';
+//  echo '</pre>';
 }
 
 /**

@@ -19,6 +19,11 @@ $dd_top : $dl_padding_top;
     }
     .accordion--trigger {
       cursor: pointer;
+      background-size: 25% auto;
+      background-repeat: no-repeat;
+      &.active {
+        background-size: 0 auto;
+      }
     }
   }
   //Handles the black vignette effect over the image
@@ -65,7 +70,7 @@ $dd_top : $dl_padding_top;
       > div {
         height: $dt_height;
         align-items: center;
-        padding: 1rem;
+        padding: #{rem-calc(15)} #{rem-calc(25)};
         font-size: 1.25rem;
         font-weight: $text-medium;
         z-index: 10;
@@ -133,6 +138,14 @@ $dd_top : $dl_padding_top;
           position: absolute;
           width: 25%;
           height: calc(100% - #{$dl_padding_bottom} - #{$dl_padding_top});
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          .triangle {
+            width: rem-calc(32);
+            height: rem-calc(32);
+            margin-bottom: rem-calc(25);
+          }
         }
 
         article.accordion--content,
@@ -144,7 +157,7 @@ $dd_top : $dl_padding_top;
       .accordion--content {
         z-index: 1;
         position: relative;
-        padding: 2rem;
+        padding: #{rem-calc(25)};
         @include screen-lg {
           margin-left: 0;
           margin-right: 0;
@@ -166,29 +179,22 @@ $dd_top : $dl_padding_top;
         .accordion--id {
           font-size: 6.875rem;
           font-weight: $text-bold;
-          @include screen-lg {
-            display: none;
-          }
           @include screen-lg-up {
             position: absolute;
             bottom: 0;
             left: 2rem;
           }
-          @include screen-lg {
-            font-size: 12vh;
-          }
         }
         @include screen-lg {
           order: 2;
           width: 100%;
-          margin-left: 0;
-          margin-right: 0;
-          padding: 0;
-          padding-bottom:rem-calc(16);
           border: none;
           background: transparent !important;
           &:before {
           background: transparent;
+          }
+          .accordion--id {
+            display: none;
           }
         }
       }

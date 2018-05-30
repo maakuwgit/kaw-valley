@@ -212,3 +212,9 @@ function my_acf_init()
   acf_update_setting( 'select2_version', 4 );
 }
 add_action('acf/init', 'my_acf_init');
+
+
+function ll_get_triangle( $color='orange', $css=false ) {
+  $style = ( $css ? ' class="' . $css . '"' : '' ) ;
+  return '<img alt=""' . $style . ' src="' . get_template_directory_uri() . '/assets/img/graphic-triangle--' . $color . '.svg">';
+}

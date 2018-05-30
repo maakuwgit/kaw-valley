@@ -4,7 +4,7 @@
 * -----------------------------------------------------------------------------
 *
 * Accordion component
-* @since 1.3
+* @since 1.4
 * @author MaakuW
 */
 global $post;
@@ -16,15 +16,14 @@ global $post;
  * @see data[]
  */
 $default_data = [
+  'accordion_service'       => false,
   'accordion_background'    => array(),
   'accordion_theme'         => 'dark',
   'accordion_wrapper'       => array(
     array(
       'accordion_element' => array(
         array(
-          'accordion_icon'        => 'orange',
           'accordion_bg'          => array(),
-          'accordion_headline'    => 'Lorem ipsum',
           'accordion_content'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           'accordion_sidebar'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
         )
@@ -72,18 +71,20 @@ $accordions = $data['accordion_wrapper'][0]['accordion_element'];
 <?php if( $accordions ) : ?>
 <?php
   $aID = 1;
-  $flag = '';
   foreach( $accordions as $accordion ) :
     $bg   = $accordion['accordion_bg'];
     $sbg  = $accordion['accordion_sidebar_bg'];
-    if($aID === 1) {
-      $flag = ' active';//For testing
-    }else{
-      $flag = '';
-    }
+    $service    = $accordion['accordion_service'];
+    $icon_color = get_field('triangle_color', $service);
 ?>
-    <dt class="accordion--trigger<?php echo $flag; ?>">
-      <div><?php echo $accordion['accordion_headline']; ?></div>
+    <dt class="accordion--trigger" data-clickthrough data-background>
+      <figure class="feature">
+        <?php echo ll_get_triangle($icon_color); ?>
+      </figure>
+      <div>
+        <?php echo $service->post_title; ?>
+        <a class="hidden" href="<?php echo $service->guid; ?>"></a>
+      </div>
     </dt>
     <dd class="accordion" data-background>
       <div class="accordion--spotlight">
@@ -105,16 +106,17 @@ $accordions = $data['accordion_wrapper'][0]['accordion_element'];
         <?php echo ll_format_image($bg); ?>
       </figure>
       <div class="row">
-        <aside class="accordion--sidebar" data-background>
+        <aside class="accordion--sidebar flex" data-background>
           <figure class="feature">
             <?php echo ll_format_image($sbg); ?>
           </figure>
+          <?php echo ll_get_triangle($icon_color, 'triangle'); ?>
           <?php echo $accordion['accordion_sidebar']; ?>
           <a class="accordion--id" name="<?php echo 'accordion--id-' . $aID; ?>">0<?php echo $aID; ?></a>
         </aside>
         <article class="accordion--content">
           <div>
-          <h4><?php echo $accordion['accordion_headline']; ?></h4>
+          <h4><?php echo $service->post_title; ?></h4>
           <?php echo $accordion['accordion_content']; ?>
         </article>
       </div>
