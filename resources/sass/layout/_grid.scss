@@ -61,7 +61,7 @@
       flex: $col_flex;
     }
 
-    @include screen-xs {
+    @include screen-sm {
       .col-xs-#{$j}of#{$i} {
         width: $col_width;
         flex: $col_flex;
