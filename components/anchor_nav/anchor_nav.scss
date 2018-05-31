@@ -8,8 +8,8 @@
   }
 }
 [data-component="anchor_nav"] {
-  margin-top: -5.3125rem;
-  min-height: 5.3125rem;
+  margin-top: rem-calc(-90);
+  min-height: rem-calc(90);
   z-index: 2;
   width: 100%;
   position: relative;

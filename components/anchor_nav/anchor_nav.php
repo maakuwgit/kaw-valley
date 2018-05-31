@@ -41,7 +41,7 @@ do_action( "component_name_before_display", $component_data, $component_args );
 <?php
 if ( ll_empty( $data ) ) return;
 
-$css = ' class="';
+$css = ' class="anchor_nav ';
 if( $args['classes'] ) {
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
 }
