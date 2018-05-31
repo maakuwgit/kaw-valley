@@ -11,9 +11,15 @@
       margin-bottom: auto;
     }
   }
+
   .row [class*=col-] {
     padding-left: rem-calc(25);
     padding-right: rem-calc(25);
+  }
+
+  figure.triangle {
+    margin-top: rem-calc(-120);
+    margin-bottom: rem-calc(57);
   }
 
   @include screen-md {

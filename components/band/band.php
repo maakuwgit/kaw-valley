@@ -4,7 +4,7 @@
 * -----------------------------------------------------------------------------
 *
 * Band component
-* @since 1.3.1
+* @since 1.3.2
 * @author MaakuW
 */
 global $post;
@@ -112,7 +112,7 @@ if ( $section_bg ) {
     $col_span = $band['band_colspan'];
     $col_suff = 'of12';
     /*Dev Note: this logic is still very... loose*/
-    $col_sm = 'col-sm-' . ( $col_span < 6 ? 6 : floor( $col_span / 2 ) ) . $col_suff;
+    $col_sm = 'col col-sm-' . ( $col_span < 6 ? 6 : floor( $col_span / 2 ) ) . $col_suff;
     $col_md = 'col-md-';
     if( $col_span < 3 || $col_span === 5 ){
       $col_md .= 3;
