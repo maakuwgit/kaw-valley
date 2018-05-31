@@ -256,7 +256,7 @@ add_filter( 'tiny_mce_plugins', 'll_tiny_mce_remove_custom_colors' );
  * for added tinymce plugins
  */
 function add_tiny_mce_plugins_button( $buttons ) {
-   array_push( $buttons, 'anchor', 'square');
+   array_push( $buttons, 'anchor', 'square', 'triangle');
    return $buttons;
 }
 add_filter( 'mce_buttons', 'add_tiny_mce_plugins_button' );
@@ -267,6 +267,8 @@ add_filter( 'mce_buttons', 'add_tiny_mce_plugins_button' );
  */
 function add_tinymce_plugins( $plugins ) {
     $plugins['anchor'] = get_template_directory_uri() . '/lib/tinymce/anchor/plugin.min.js';
+    $plugins['square'] = get_template_directory_uri() . '/lib/tinymce/square/plugin.min.js';
+    $plugins['triangle'] = get_template_directory_uri() . '/lib/tinymce/triangle/plugin.min.js';
     return $plugins;
 }
 add_filter( 'mce_external_plugins', 'add_tinymce_plugins' );
