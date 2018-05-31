@@ -1,15 +1,10 @@
 /**
  * Header (only DIRECTLY beneath the body tag) styles
  */
-$logo_width: 4.6875rem;
-$logo_height: 3.25rem;
-$padding_top: 1.25rem;
-$padding_bottom: 1rem;
+$logo_width: rem-calc(167);//The sized and scaled height
+$logo_height: rem-calc(96);//The sized and scaled height
 $admin_bar: 2.875rem;
-$admin_bar_lg: 2rem;
-$offset: $logo_height + $padding-top + $padding-bottom;
-$offset_admin: $logo_height + $padding-top + $padding-bottom + $admin_bar;
-$offset_lg_admin: $logo_height + $padding-top + $padding-bottom + $admin_bar_lg;
+$admin_bar_lg: rem-calc(32);
 
 // Top nav
 body {
@@ -184,7 +179,7 @@ body {
 
 #secondary-nav {
   position: fixed;
-  top: $offset;
+  top: $logo_height;
   right: 0;
   left: 0;
   z-index: 20;
@@ -201,7 +196,7 @@ body {
     padding-right: rem-calc(25);
   }
   &.active {
-    min-height: calc(100vh - #{$offset} );
+    min-height: calc(100vh - #{$logo_height} );
     overflow: scroll;
     &:after {
       position: absolute;
@@ -215,22 +210,16 @@ body {
     }
   }
   body.admin-bar & {
-    top: $offset_lg_admin;
+    top: $logo_height;
     &.active {
-      min-height: calc(100vh - #{$offset_lg_admin} );
-    }
-    @include screen-md {
-      top: $offset_admin;
-      &.active {
-        min-height: calc(100vh - #{$offset_admin} );
-      }
+      min-height: calc(100vh - #{$logo_height} );
     }
   }
 
   @include screen-md {
-    top: $offset;
+    top: $logo_height;
     &.active {
-      min-height: calc(100vh - #{$offset} );
+      min-height: calc(100vh - #{$logo_height} );
     }
   }
 

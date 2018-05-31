@@ -6,9 +6,32 @@
   width: 90vw;
   max-width: 1000px;
   margin: auto;
-  padding: 4rem;
   background-color: $white;
-  background-image: url($terrain-bg--grey);
+  background-image: url($terrain-bg);
+  background-size: 250% auto;
+  background-position: right bottom;
+  @include screen-md {
+    .mfp-close {
+      opacity: 1;
+      color: $white;
+      text-shadow: 0 0 #{rem-calc(4)} rgba($black, 0.3);
+    }
+  }
+  @include screen-lg-up {
+    padding: rem-calc(64);
+    .post__header__title,
+    dl {
+      margin-left: rem-calc(32);
+    }
+    .row figure[class*=col-],
+    figure {
+      margin-top: rem-calc(10);
+      margin-bottom: rem-calc(32);
+    }
+    .mfp-close {
+      color: $black;
+    }
+  }
   &:before {
     position: absolute;
     content: '';
@@ -18,12 +41,11 @@
     bottom: 0;
     background-color: rgba($white, 0.6);
   }
-  .container {
-    width: 100%;
+  figure {
+    margin-top: auto;
   }
   .post__header__title,
   dl {
-    margin-left:3rem;
     color: $black;
     * {
       color: inherit;
@@ -45,17 +67,20 @@
 
   .row figure[class*=col-],
   figure {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
     align-self: stretch;
+    min-height: 240px;
   }
+
+  .container {
+    width: 100%;
+  }
+
   .mfp-close {
-    width: 2rem;
-    height: 2rem;
-    top: 1.5rem;
-    right: 1.5rem;
-    font-size: 4rem;
-    line-height: 2rem;
-    color: $black;
+    width: rem-calc(32);
+    height: rem-calc(32);
+    top: rem-calc(24);
+    right: rem-calc(24);
+    font-size: rem-calc(64);
+    line-height: rem-calc(32);
   }
 }

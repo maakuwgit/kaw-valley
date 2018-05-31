@@ -8,7 +8,13 @@
 <figure class="thumbnail" data-mfp-src="#member-thumb-<?php the_ID(); ?>">
   <div data-background>
     <div class="feature">
-      <?php the_post_thumbnail(); ?>
+      <?php
+        if( !has_post_thumbnail() ) {
+          echo '<img width="378" height="601" src="http://via.placeholder.com/1600x1280" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://via.placeholder.com/1280x1600 378w, http://via.placeholder.com/320x640 189w" sizes="(max-width: 378px) 100vw, 378px">';
+        }else{
+          the_post_thumbnail();
+        }
+      ?>
     </div>
   </div>
   <figcaption>

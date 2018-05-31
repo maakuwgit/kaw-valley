@@ -23,7 +23,7 @@
 
   body.logged-in & {
     &.top {
-      top: 7.75rem;
+      top: rem-calc(127);
     }
   }
 
