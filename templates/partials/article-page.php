@@ -7,6 +7,9 @@ $layout      = get_field( 'page_layout' );
 $theme       = ( get_field( 'page_theme' ) ? get_field( 'page_theme' ) : 'light' );
 $direction   = get_field( 'page_direction' );
 
+$triangle    = get_field('triangle_color');
+if( $triangle ) $theme = $triangle;
+
 $template = get_page_template_slug();
 switch($layout){
   case 'split':

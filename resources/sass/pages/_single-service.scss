@@ -13,21 +13,23 @@ body.single-service {
     .hero {
       font-weight: $text-bold;
     }
-    @include screen-sm {
+    @include screen-md {
       .triangle_icon {
         right: 50%;
         left: 50%;
         transform: scale(1.5);
       }
     }
-    @include screen-md-up {
+    @include screen-lg-up {
       .triangle_icon {
-        right: 3rem;
-        transform: scale(1.25);
+        top: 0;
+        right: rem-calc(48);
+        transform: scale(2.5);
       }
       .order {
-        margin-top: 3rem;
-        margin-right: 6rem;
+        margin-top: rem-calc(48);
+        margin-right: rem-calc(96);
+        font-size:  rem-calc(112);
       }
     }
     @include screen-lg-up {
@@ -40,7 +42,7 @@ body.single-service {
     }
     .triangle_icon {
       position: absolute;
-      top: 0;
+      top: rem-calc(-32);
     }
   }
   ul {

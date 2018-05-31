@@ -10,7 +10,7 @@
     <?php if ( $logo ) : ?>
         <img class="logo logo--header" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>">
     <?php else : ?>
-        <img class="logo logo--header" src="<?php echo get_template_directory_uri() . '/assets/img/logo-kaw_valley_engineering.svg'; ?>" alt="<?php bloginfo('name'); ?>">
+        <?php echo ll_get_logo(); ?>
     <?php endif; ?>
       </a>
     <?php if ( ll_has_social() ) : ?>

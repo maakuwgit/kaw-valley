@@ -42,7 +42,8 @@ $background_image = $data['background_image'];
 //image is image object
 if ( $background_image ) {
   $classes[] = 'has-image';
- $style = 'style="background-image: url( '.$background_image[0].' );"';
+  $bg = ( $background_image[0] ? $background_image[0] : 'http://via.placeholder.com/1600x1280' );
+  $style = 'style="background-image: url( '. $bg .' );"';
 } else {
  $style = '';
 }

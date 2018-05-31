@@ -22,9 +22,23 @@
   }
 
   body.single-project &,
-  body.single-team &,
-  body.single-service & {
+  body.single-team & {
     background-image: url(#{$terrain-bg--red});
+  }
+
+  body.single-service & {
+    &.red-bg {
+      background-image: url(#{$terrain-bg--red});
+    }
+    &.teal-bg {
+      background-image: url(#{$terrain-bg--teal});
+    }
+    &.orange-bg {
+      background-image: url(#{$terrain-bg--orange});
+    }
+    &.chartreuse-bg {
+      background-image: url(#{$terrain-bg--chartreuse});
+    }
   }
 
   body.page-about & {

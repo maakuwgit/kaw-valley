@@ -25,6 +25,15 @@
       breakpoints.lg  = 1199;
       breakpoints.xl  = 1599;
 
+
+      var adminHeight = ( $('#wpadminbar').length > 0 ? $('#wpadminbar').outerHeight() : 0 ),
+          anchor_nav  = '.anchor_nav',
+          hero        = '.hero-banner',
+          primary_nav = 'body > header',
+          footer      = 'body > footer',
+          prefooter   = 'body > .callout',
+          sections    = $('body > article, body > section');
+
       window.userLoggedIn = false;
       window.adminBarHeight = 0;
 
@@ -46,13 +55,28 @@
       //checkAdminBar();
 
       $(function() {
+        function enterSection(e) {
+          var target = $(e.target.triggerElement()),
+              id     = target.attr('id');
+
+          target.addClass('enter');
+          if( id ) {
+            //app.components['section-nav'].setActive(id);
+          }
+        }
+
+        function leaveSection(e) {
+          var target = $(e.target.triggerElement()),
+              id     = target.attr('id');
+
+          target.removeClass('enter');
+          if( id ) {
+            //app.components['section-nav'].setActive(id);
+          }
+        }
         //If theres a controller for ScrollMagic, spool it up!
         if( typeof ScrollMagic !== 'undefined' ) {
           var controller  = new ScrollMagic.Controller(),
-              adminHeight = ( $('#wpadminbar').length > 0 ? $('#wpadminbar').outerHeight() : 0 ),
-              anchor_nav  = '.anchor_nav',
-              hero        = '.hero-banner',
-              primary_nav = 'body > header',
               offset      = 0;
 
           if ( $(hero) ) {
@@ -77,6 +101,33 @@
               })
               .setClassToggle(primary_nav,'top')
               .addTo(controller);
+            }
+
+            //Animate the Prefooter elements
+            if( $(prefooter) ) {
+              var prefooter_anim = new ScrollMagic.Scene({
+                triggerElement: prefooter,
+                offset: -1 * $(prefooter).height()/2
+              })
+              .setClassToggle(prefooter,'enter')
+              .addTo(controller);
+            }
+
+            //Animate the Sections in a general fashion
+            if ( $(sections) ) {
+              for( s = 0; s < sections.length; s++ ) {
+                section = sections[s];
+
+                offset = -1.334 * $(section).height();
+
+                var section_animate = new ScrollMagic.Scene({
+                  triggerElement: section,
+                  offset: offset
+                })
+                .on("enter", enterSection)
+                .on("leave", leaveSection)
+                .addTo(controller);
+              }
             }
           }
         }
@@ -103,7 +154,6 @@
         $('body').addClass('loaded');
         var setAnimated = setTimeout(function(){
           $('body').addClass('animated');
-          //Dev Note:
         }, 2000);
       });
 

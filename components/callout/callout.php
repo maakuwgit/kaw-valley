@@ -45,7 +45,7 @@ do_action( "component_name_before_display", $component_data, $component_args );
 $has_prefooter = get_field('has_prefooter', $post->ID);
 if ( ll_empty( $data ) || !$has_prefooter || $has_prefooter === null ) return;
 if( $args['classes'] || $data['theme'] ) {
-  $css = ' class="';
+  $css = ' class="callout ';
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
   if( $data['theme'] && $args['classes'] ) $css .= ' ';
   if( $data['theme'] ) $css .= $data['theme'] . '-bg';

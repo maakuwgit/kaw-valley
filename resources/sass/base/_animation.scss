@@ -1,3 +1,33 @@
+/*
+* Global or General Animations
+*/
+h1, h2, h3, h4, h5, h6, p,
+[data-component="picture"] img,
+.band figure[class*="align-"] *,
+#primary-nav .menu-item,
+.callout nav {
+  transition: all 500ms ease-out;
+}
+
+//Global General
+a,
+[data-background] {
+  transition: all 300ms ease-in-out;
+  &:hover {
+    transition: all 300ms ease-in-out;
+  }
+}
+
+//General Button
+.button,
+button,
+input[type="submit"] {
+  transition: all 150ms ease-out;
+  &:hover {
+    transition: all 50ms ease-out;
+  }
+}
+
 //Nav
 body.home > header.navbar {
   transform: translateY(-100px);
@@ -68,6 +98,36 @@ body.loaded {
       background-color: transparent;
     }
   }
+
+  //Anchor Nav
+  .anchor_nav {
+    li {
+      span {
+        opacity: 1;
+        transition-delay: 1150ms;
+      }
+      &:nth-of-type(2) {
+        span {
+          transition-delay: 1300ms;
+        }
+      }
+      &:nth-of-type(3) {
+        span {
+          transition-delay: 1450ms;
+        }
+      }
+      &:nth-of-type(4) {
+        span {
+          transition-delay: 1600ms;
+        }
+      }
+      &:nth-of-type(n+5) {
+        span {
+          transition-delay: 1700ms;
+        }
+      }
+    }
+  }
 }
 
 #hero-spotlight {
@@ -84,30 +144,6 @@ body.loaded {
 
 #hero-spotlight:before {
   transition: all 0.875s ease-out;
-}
-
-//Headlines
-h1, h2, h3, h4, h5, h6 {
-  transition: all 500ms ease-out;
-}
-
-//Global General
-a,
-[data-background] {
-  transition: all 300ms ease-in-out;
-  &:hover {
-    transition: all 300ms ease-in-out;
-  }
-}
-
-//General Button
-.button,
-button,
-input[type="submit"] {
-  transition: all 150ms ease-out;
-  &:hover {
-    transition: all 50ms ease-out;
-  }
 }
 
 .hero-banner .play-video-button {
@@ -128,6 +164,126 @@ input[type="submit"] {
       span {
         transition: margin 300ms ease-out, width 300ms ease-out, opacity 150ms ease-out 300ms;
       }
+    }
+  }
+}
+
+
+/*
+* ScrollMagic Animations
+*/
+section.enter,
+aside.enter {
+  //Prefooter
+  &.callout {
+    h3 {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    nav {
+      opacity: 1;
+    }
+  }
+
+  //Pictures
+  > .feature img {
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 300ms;
+  }
+
+  //Headlines
+  &.headline {
+    h2, h3, h4, h5, h6 {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  //Band
+  &.band {
+    h2, h3, h4, h5, h6, figcaption, p, li, time {
+      opacity: 1;
+      transition-delay: 350ms;
+    }
+    figure[class*="align-"] {
+      img.offset {
+        transform: translateY(0);
+      }
+      img:not(.offset) {
+        transform: scale(1);
+      }
+      figcaption {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  //Buttons
+  a.button {
+    span,
+    svg {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+/*
+* Pre-animation Settings
+*/
+//Prefooter
+aside.callout {
+  h3 {
+    opacity: 0;
+    transform: translateX(5vw);
+  }
+  nav {
+    opacity: 0;
+  }
+}
+
+//Headlines
+.headline {
+  h2, h3, h4, h5, h6 {
+    opacity: 0;
+    transform: translateX(5vw);
+  }
+}
+
+//Bands
+.band {
+  h2, h3, h4, h5, h6, figcaption, p, li, time {
+    opacity: 0;
+  }
+  figure[class*="align-"] {
+    img.offset {
+      transform: translateY(270px);
+    }
+    img:not(.offset) {
+      transform: scale(0);
+    }
+    figcaption {
+      transform: translateX(50px);
+    }
+  }
+}
+
+//Buttons
+a.button {
+  svg {
+    transform: scale(0.8);
+  }
+  span,
+  svg {
+    opacity: 0;
+  }
+}
+//Anchor Nav
+.anchor_nav {
+  li {
+    img,
+    span {
+      opacity: 0;
     }
   }
 }

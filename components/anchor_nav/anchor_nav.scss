@@ -3,7 +3,7 @@
   color: $white;
   span {
     width: 100%;
-    margin-left: 2rem;
+    margin-left: rem-calc(32);
     opacity: 1;
   }
 }
@@ -17,7 +17,7 @@
   &.top {
     position: fixed;
     background: rgba($black, 0.6);
-    top: 5.75rem;
+    top: rem-calc(96);
     margin-top: initial;
   }
 
@@ -41,7 +41,7 @@
       color: $white;
       a {
         display: flex;
-        padding: 2.0625rem 2.5rem 1.9375rem 2.5rem;
+        padding: 2.0625rem #{rem-calc(40)} 1.9375rem #{rem-calc(40)};
         color: inherit;
         @include screen-sm {
           font-size: rem-calc(14);
