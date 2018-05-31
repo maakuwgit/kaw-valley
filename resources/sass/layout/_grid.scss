@@ -4,14 +4,24 @@
  *
  *
  */
-
-.container {
-  position: relative;
-  body > * > & {
-    padding-left: $grid-gutter-width;
-    padding-right: $grid-gutter-width;
+.container,
+.wrapper {
+  body > *:not(main):not(footer):not(.callout) > & {
+    max-width: calc(#{$site-width} + #{rem-calc(32)});
+    padding-left: $padding-small;
+    padding-right: $padding-small;
+    .row {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
+}
+.container {
   @include container-fixed;
+}
+
+.wrapper {
+  @include container-fixed($site-width);
 }
 
 .row {
@@ -42,7 +52,7 @@
   [class^="col"],
   [class*="col-"] {
     align-self: auto;
-    padding: 0 #{$grid-gutter-width/2};
+    padding: 0 $grid-column-padding;
     &.flex-end {
       align-self: flex-end;
     }
@@ -75,6 +85,9 @@
 .col {
   width: 100%;
   max-width: 100%;
+  &:not([data-component]):not([data-slick-nav]) {
+    padding:0 $grid-column-padding;
+  }
 }
 
 @for $i from 2 through 12 {
@@ -85,48 +98,66 @@
 
     .col-#{$j}of#{$i} {
       width: $col_width;
+        max-width: $col_width;
       flex: $col_flex;
     }
+    .col-offset-#{$j}of#{$i} {
+      margin-left: calc(#{$j} / #{$i} * 100%);
+    }
 
-    @include screen-sm {
+    @include screen-xs-only {
       .col-xs-#{$j}of#{$i} {
         width: $col_width;
+        max-width: $col_width;
         flex: $col_flex;
+      }
+      .col-offset-xs-#{$j}of#{$i} {
+        margin-left: calc(#{$j} / #{$i} * 100%);
       }
     }
 
     @include screen-sm-only {
       .col-sm-#{$j}of#{$i} {
         width: $col_width;
+        max-width: $col_width;
         flex: $col_flex;
+      }
+      .col-offset-sm-#{$j}of#{$i} {
+        margin-left: calc(#{$j} / #{$i} * 100%);
       }
     }
 
     @include screen-md-only {
       .col-md-#{$j}of#{$i} {
         width: $col_width;
+        max-width: $col_width;
         flex: $col_flex;
+      }
+      .col-offset-md-#{$j}of#{$i} {
+        margin-left: calc(#{$j} / #{$i} * 100%);
       }
     }
 
     @include screen-lg-only {
       .col-lg-#{$j}of#{$i} {
         width: $col_width;
+        max-width: $col_width;
         flex: $col_flex;
+      }
+      .col-offset-lg-#{$j}of#{$i} {
+        margin-left: calc(#{$j} / #{$i} * 100%);
       }
     }
 
     @include screen-xl-up {
       .col-xl-#{$j}of#{$i} {
         width: $col_width;
+        max-width: $col_width;
         flex: $col_flex;
       }
+      .col-offset-xl-#{$j}of#{$i} {
+        margin-left: calc(#{$j} / #{$i} * 100%);
+      }
     }
-  }
-}
-
-@for $o from 1 through 12 {
-  .col-offset-1of#{$o} {
-    margin-left: calc(100% / #{$o});
   }
 }

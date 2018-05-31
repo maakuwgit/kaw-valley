@@ -14,7 +14,7 @@ $dd_top : $dl_padding_top;
   background-position: center;
   &.no-triangles {
     .accordion--trigger {
-      background: none !important;
+      background-image: none !important;
     }
   }
   @include screen-lg-up {
@@ -196,7 +196,10 @@ $dd_top : $dl_padding_top;
         .triangle {
           width: rem-calc(32);
           height: rem-calc(32);
-          margin-bottom: rem-calc(25);
+          @include screen-lg-up {
+            margin-top: #{$dt_height};
+            margin-bottom: rem-calc(25);
+          }
         }
         @include screen-lg {
           order: 2;

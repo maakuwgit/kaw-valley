@@ -11,8 +11,8 @@
     background-image: url(#{$terrain-bg});
   }
   body & {
-    background-size: contain;
-    background-position: center;
+    background-size: 200% auto;
+    background-position: left top;
     background-repeat: repeat;
   }
 
