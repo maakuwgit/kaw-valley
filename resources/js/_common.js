@@ -32,7 +32,7 @@
           primary_nav = 'body > header',
           footer      = 'body > footer',
           prefooter   = 'body > .callout',
-          sections    = $('body > article, body > section');
+          sections    = $('.home .main > article, .home .main > section, body > article, body > section');
 
       window.userLoggedIn = false;
       window.adminBarHeight = 0;
