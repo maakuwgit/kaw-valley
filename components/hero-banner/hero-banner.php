@@ -104,7 +104,7 @@ $spotlight = ' data-spotlight="'.$data['spotlight_strength'].'" style="opacity:'
     <a class="button" href="<?php echo $data['call_to_action']['url']; ?>" target="<?php echo $data['call_to_action']['target']; ?>"><?php echo $data['call_to_action']['title']; ?></a>
   <?php endif; ?>
   <?php if ( $data['popup_video'] ) : ?>
-    <a class="play-video-button js-init-video" href="<?php echo $data['popup_video']; ?>">
+    <a class="play-video-button js-init-video" data-component="modal" href="<?php echo $data['popup_video']; ?>">
       <svg width="25px" height="31px" viewBox="0 0 25 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g transform="translate(-703.000000, -740.000000)" stroke="#FFFFFF">

@@ -79,7 +79,7 @@ article.thumbnail {
     cursor: pointer;
   }
 
-  &:not([data-background]):not([data-mfp-src]):hover {
+  &:not([data-background]):not([class*="js-init-popup"]):hover {
     color: $white;
     background-color: $black;
   }

@@ -5,7 +5,7 @@
     $position = '<p class="red">' . $position[0]->name . '</p>';
   }
 ?>
-<figure class="thumbnail" data-mfp-src="#member-thumb-<?php the_ID(); ?>">
+<figure class="thumbnail js-init-popup" data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal">
   <div data-background>
     <div class="feature">
       <?php
@@ -20,6 +20,6 @@
   <figcaption>
     <h3 class="h1"><?php the_title(); ?></h3>
     <?php echo $position; ?>
-    <a href="#read_bio" data-mfp-src="#member-thumb-<?php the_ID(); ?>">Read Bio</a>
+    <a href="#read_bio" class="js-init-popup" data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal">Read Bio</a>
   </figcaption>
 </figure>
