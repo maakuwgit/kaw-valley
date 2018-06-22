@@ -58,6 +58,6 @@ if ( ! function_exists('register_project_custom_post_type') ) {
      'menu_title' => 'Settings',
      'menu_slug'  => 'project_settings',
      'parent'     => 'edit.php?post_type=project',
-     'capability' => 'manage_options'
+     'capability' => 'edit_posts'
    ));
  }

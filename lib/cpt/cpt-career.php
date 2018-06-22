@@ -58,6 +58,6 @@ if ( ! function_exists('register_career_custom_post_type') ) {
      'menu_title' => 'Settings',
      'menu_slug'  => 'career_settings',
      'parent'     => 'edit.php?post_type=career',
-     'capability' => 'manage_options'
+     'capability' => 'edit_posts'
    ));
  }
