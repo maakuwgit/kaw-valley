@@ -152,7 +152,7 @@ $dd_top : $dl_padding_top;
           width: 25%;
           height: calc(100% - #{$dl_padding_bottom} - #{$dl_padding_top});
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           flex-direction: column;
         }
 
@@ -197,7 +197,6 @@ $dd_top : $dl_padding_top;
           width: rem-calc(32);
           height: rem-calc(32);
           @include screen-lg-up {
-            margin-top: #{$dt_height};
             margin-bottom: rem-calc(25);
           }
         }
