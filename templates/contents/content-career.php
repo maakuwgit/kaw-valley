@@ -5,6 +5,10 @@ $pay_type     = get_field('career_pay_type');
 $job_link     = get_field('smart_recruiter_url');
 $location     = get_field('career_location');
 
+if( $pay_type ) {
+  $pay_type = ', ' . $pay_type;
+}
+
 if( $location ) {
   $state = get_the_terms($location->ID, 'state');
   $location = $location->post_title;
@@ -20,7 +24,7 @@ if( $location ) {
 
     <div class="col-12of12">
       <h2 class="hero">We're Hiring.</h2>
-      <p class="h1"><?php echo $contract; ?>, <?php echo $pay_type; ?> position in <?php echo $location; ?></p>
+      <p class="h1"><?php echo $contract; ?><?php echo $pay_type; ?> position in <?php echo $location; ?></p>
     </div>
 
   </div>
