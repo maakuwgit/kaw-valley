@@ -38,7 +38,9 @@ if( $location ) {
     <div class="col-12of12">
       <h3 class="post__header__title">Kaw Valley Engineering has an immediate opening for a <b><?php the_title(); ?>.</b></h2>
       <?php the_content(); ?>
+    <?php if( $job_link ) : ?>
       <p><a class="button" href="<?php echo $job_link; ?>" target="_blank">Apply Now</a></p>
+    <?php endif; ?>
     </h3>
 
   </div>
