@@ -9,7 +9,8 @@
   &.red-bg,
   &.dark.red-bg {
     @extend %red-bg;
-    body.page-about & {
+    body.page-about &,
+    body.single-location & {
       @extend %red-bg;
     }
   }
@@ -17,7 +18,8 @@
   &.teal-bg,
   &.dark.teal-bg {
     @extend %teal-bg;
-    body.page-about & {
+    body.page-about &,
+    body.single-location & {
       @extend %teal-bg;
     }
   }
@@ -25,7 +27,8 @@
   &.orange-bg,
   &.dark.orange-bg {
     @extend %orange-bg;
-    body.page-about & {
+    body.page-about &,
+    body.single-location & {
       @extend %orange-bg;
     }
   }
@@ -33,7 +36,8 @@
   &.chartreuse-bg,
   &.dark.chartreuse-bg {
     @extend %chartreuse-bg;
-    body.page-about & {
+    body.page-about &,
+    body.single-location & {
       @extend %chartreuse-bg;
     }
   }
@@ -41,7 +45,8 @@
   &.lt-grey-bg,
   &.dark.lt-grey-bg {
     @extend %lt-grey-bg;
-    body.page-about & {
+    body.page-about &,
+    body.single-location & {
       @extend %lt-grey-bg;
     }
   }
@@ -49,7 +54,8 @@
   &.grey-bg,
   &.dark.grey-bg {
     @extend %grey-bg;
-    body.page-about & {
+    body.page-about &,
+    body.single-location & {
       @extend %grey-bg;
     }
   }
@@ -91,8 +97,9 @@
     }
   }
 
-  body.page-about & {
-    @extend %grey-bg;
+  body.page-about &,
+  body.single-location & {
+    @extend %lt-grey-bg;
   }
 
   h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {

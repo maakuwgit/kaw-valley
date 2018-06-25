@@ -256,11 +256,6 @@
                 "param": "post_type",
                 "operator": "!=",
                 "value": "team"
-            },
-            {
-                "param": "post_type",
-                "operator": "!=",
-                "value": "location"
             }
         ]
     ],
@@ -272,5 +267,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1525525371
+    "modified": 1529957945
 }
