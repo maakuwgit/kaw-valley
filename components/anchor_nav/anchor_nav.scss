@@ -1,12 +1,14 @@
 @mixin anchorHover(){
   background-color: #b9b9b938;
   color: $white;
+
   span {
     width: 100%;
     margin-left: rem-calc(32);
     opacity: 1;
   }
 }
+
 [data-component="anchor_nav"] {
   margin-top: rem-calc(-90);
   min-height: rem-calc(90);
@@ -14,6 +16,7 @@
   width: 100%;
   position: relative;
   border-top: solid 1px $silver;
+
   &.top {
     position: fixed;
     background: rgba($black, 0.6);
@@ -30,44 +33,62 @@
   @include screen-md {
     display: none;
   }
+
   ol {
     counter-reset: lis;
     margin-top: 0;
     margin-bottom: 0;
     flex-wrap: nowrap;
+
     li {
       display: flex;
       position: relative;
+      margin-left: 0;
       color: $white;
+
+      &:before {
+        color: inherit;
+        margin-left: auto;
+        padding-left: rem-calc(30);
+      }
+
       a {
         display: flex;
+        min-width: rem-calc(80);
         padding: 2.0625rem #{rem-calc(40)} 1.9375rem #{rem-calc(40)};
         color: inherit;
+        z-index: 1;
+
         @include screen-sm {
           font-size: rem-calc(14);
         }
+
         @include screen-md-only {
           padding-left: 3.5vw;
           padding-right: 3.5vw;
         }
+
         @include screen-lg-up {
           &:hover {
             @include anchorHover;
           }
         }
-        &:before {
-          color: inherit;
-        }
+
         &.active {
           @include anchorHover;
         }
+
         span {
           overflow: hidden;
           width: 0;
           opacity: 0;
           white-space: nowrap;
         }
+
       }
+
     }
+
   }
+
 }

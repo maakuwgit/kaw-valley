@@ -81,13 +81,19 @@ $accordions = $data['accordion_wrapper'][0]['accordion_element'];
       <figure class="feature">
         <?php echo ll_get_triangle($icon_color); ?>
       </figure>
+
+    <?php if( $service ) : ?>
       <div>
         <?php echo $service->post_title; ?>
         <a class="hidden" href="<?php echo $service->guid; ?>"></a>
       </div>
+   <?php endif; ?>
+
     </dt>
     <dd class="accordion" data-background>
+
       <div class="accordion--spotlight">
+
         <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
             <radialGradient cx="63.1500244%" cy="62.1083984%" fx="63.1500244%" fy="62.1083984%" r="57.4003906%" gradientTransform="translate(0.631500,0.621084),scale(0.625000,1.000000),rotate(90.000000),scale(1.000000,1.006260),translate(-0.631500,-0.621084)" id="radialGradient-1">
@@ -95,17 +101,23 @@ $accordions = $data['accordion_wrapper'][0]['accordion_element'];
                 <stop stop-color="#000000" offset="100%"></stop>
             </radialGradient>
           </defs>
+
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g fill="url(#radialGradient-1)">
               <rect x="0" y="0" width="100%" height="100%"></rect>
             </g>
           </g>
+
         </svg>
+
       </div>
+
       <figure class="feature">
         <?php echo ll_format_image($bg); ?>
       </figure>
+
       <div class="row">
+
         <aside class="accordion--sidebar" data-background>
           <figure class="feature">
             <?php echo ll_format_image($sbg); ?>
@@ -114,12 +126,20 @@ $accordions = $data['accordion_wrapper'][0]['accordion_element'];
           <?php echo $accordion['accordion_sidebar']; ?>
           <a class="accordion--id" name="<?php echo 'accordion--id-' . $aID; ?>">0<?php echo $aID; ?></a>
         </aside>
+
         <article class="accordion--content">
+
+        <?php if( $service ) : ?>
           <div>
-          <h4><?php echo $service->post_title; ?></h4>
-          <?php echo $accordion['accordion_content']; ?>
+            <h4><?php echo $service->post_title; ?></h4>
+            <?php echo $accordion['accordion_content']; ?>
+          </div>
+        <?php endif; ?>
+
         </article>
+
       </div>
+
     </dd>
 <?php
   $aID++;

@@ -14,7 +14,8 @@
         $(this).closest('ol').find('a').removeClass('active');
         $(this).addClass('active');
       }
-      $('[data-component]').find('a[href^="#"]').on('click.setActive', setActive);
+
+      $('[data-component]').find('a[href^="#"]').off('click.setActive').on('click.setActive', setActive);
     },
 
     finalize: function() {
