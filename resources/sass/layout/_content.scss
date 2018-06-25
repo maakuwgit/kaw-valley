@@ -1,14 +1,64 @@
 /**
  * Content
  */
+
 .content {
   @include row-gutter;
   color: $text-color;
+
+  &.red-bg,
+  &.dark.red-bg {
+    @extend %red-bg;
+    body.page-about & {
+      @extend %red-bg;
+    }
+  }
+
+  &.teal-bg,
+  &.dark.teal-bg {
+    @extend %teal-bg;
+    body.page-about & {
+      @extend %teal-bg;
+    }
+  }
+
+  &.orange-bg,
+  &.dark.orange-bg {
+    @extend %orange-bg;
+    body.page-about & {
+      @extend %orange-bg;
+    }
+  }
+
+  &.chartreuse-bg,
+  &.dark.chartreuse-bg {
+    @extend %chartreuse-bg;
+    body.page-about & {
+      @extend %chartreuse-bg;
+    }
+  }
+
+  &.lt-grey-bg,
+  &.dark.lt-grey-bg {
+    @extend %lt-grey-bg;
+    body.page-about & {
+      @extend %lt-grey-bg;
+    }
+  }
+
+  &.grey-bg,
+  &.dark.grey-bg {
+    @extend %grey-bg;
+    body.page-about & {
+      @extend %grey-bg;
+    }
+  }
+
   &.dark {
     h1, h2, h3, h4, h5, h6, p, li, label, div {
       color: $white;
     }
-    background-image: url(#{$terrain-bg});
+    @extend %lt-grey-bg;
   }
   body & {
     background-size: 200% auto;
@@ -23,26 +73,26 @@
 
   body.single-project &,
   body.single-team & {
-    background-image: url(#{$terrain-bg--red});
+    @extend %red-bg;
   }
 
   body.single-service & {
     &.red-bg {
-      background-image: url(#{$terrain-bg--red});
+      @extend %red-bg;
     }
     &.teal-bg {
-      background-image: url(#{$terrain-bg--teal});
+      @extend %teal-bg;
     }
     &.orange-bg {
-      background-image: url(#{$terrain-bg--orange});
+      @extend %orange-bg;
     }
     &.chartreuse-bg {
-      background-image: url(#{$terrain-bg--chartreuse});
+      @extend %chartreuse-bg;
     }
   }
 
   body.page-about & {
-    background-image: url(#{$terrain-bg--grey});
+    @extend %grey-bg;
   }
 
   h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {

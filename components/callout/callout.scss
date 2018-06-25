@@ -4,10 +4,46 @@ body > aside {
   padding-top: $row-gutter;
   background: $white url(#{$terrain-bg--rainbow}) center no-repeat;
   background-size: cover;
+
+  &.red-bg {
+    @extend %red-bg;
+  }
+
+  &.teal-bg {
+    @extend %teal-bg;
+  }
+
+  &.orange-bg {
+    @extend %orange-bg;
+  }
+
+  &.chartreuse-bg {
+    @extend %chartreuse-bg;
+  }
+
+  &.lt-grey-bg {
+    @extend %lt-grey-bg;
+  }
+
+  &.grey-bg {
+    @extend %grey-bg;
+  }
+
+  &.red-bg,
+  &.teal-bg,
+  &.orange-bg,
+  &.chartreuse-bg,
+  &.lt-grey-bg,
+  &.grey-bg {
+    background-size: 200%;
+    background-position: left top;
+  }
+
   * {
     color: $black;
     align-self: center;
   }
+
   .hero {
     margin-left: 0;
     font-weight: $text-bold;
@@ -16,15 +52,21 @@ body > aside {
   nav {
     text-align: center;
   }
+
   @include screen-sm {
+
     button, .button {
       margin-left: 0;
     }
+
   }
+
   @include screen-lg-up {
     min-height: 515px;
+
     .hero, nav {
       width: 50%;
     }
+
   }
 }

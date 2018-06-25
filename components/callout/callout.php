@@ -42,20 +42,36 @@ do_action( "component_name_before_display", $component_data, $component_args );
 
 <?php
 
-$has_prefooter = get_field('has_prefooter', $post->ID);
+$has_prefooter    = get_field('has_prefooter', $post->ID);
+$topography_color = get_field('topography_color', $post->ID);
+
 if ( ll_empty( $data ) || !$has_prefooter || $has_prefooter === null ) return;
+
 if( $args['classes'] || $data['theme'] ) {
   $css = ' class="callout ';
+
   if( $args['classes'] ) $css .= implode( " ", $args['classes'] );
   if( $data['theme'] && $args['classes'] ) $css .= ' ';
   if( $data['theme'] ) $css .= $data['theme'] . '-bg';
+
+
+  if( $topography_color ) {
+    if ( $topography_color !== 'default' ) {
+      $css .= ' ' . $topography_color . '-bg';
+    }
+  }
+
   $css .= '"';
 }
+
 $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
 ?>
 <aside<?php echo $id . $css; ?>>
+
   <div class="container row">
+
     <h3 class="hero"><?php echo $data['headline']; ?></h3>
+
     <nav>
     <?php
       $button = array(
@@ -72,7 +88,9 @@ $id = ($args['id'] ? ' id="' . $args['id'] . '"' : '');
       );
     ?>
     </nav>
+
   </div>
+
 </aside>
 
 <?php

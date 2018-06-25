@@ -2,15 +2,24 @@
 /*
 Template Name: Form
 */
-$show_prefooter = get_field('has_prefooter');
-$show_locations = get_field('form_show_locations');
+$show_prefooter   = get_field('has_prefooter');
+$show_locations   = get_field('form_show_locations');
 $show_description = get_field('form_show_description');
+$topography_color = get_field('topography_color');
+
 $use_form = get_field('form_use');
 $css = ' ';
+
 if( $show_locations ) {
   $css .= 'has_locations';
 }else{
   $css .= 'fullwidth';
+}
+
+if( $topography_color ) {
+  if ( $topography_color !== 'default' ) {
+    $css .= ' ' . $topography_color . '-bg';
+  }
 }
 ?>
 <main class="main content dark<?php echo $css; ?>" role="main">

@@ -397,6 +397,30 @@ section.dark {
   }
 }
 
+%chartreuse-bg {
+  background-image: url(#{$terrain-bg--chartreuse});
+}
+
+%grey-bg {
+  background-image: url(#{$terrain-bg--grey});
+}
+
+%lt-grey-bg {
+  background-image: url(#{$terrain-bg});
+}
+
+%orange-bg {
+  background-image: url(#{$terrain-bg--orange});
+}
+
+%red-bg {
+  background-image: url(#{$terrain-bg--red});
+}
+
+%teal-bg {
+  background-image: url(#{$terrain-bg--teal});
+}
+
 a, p, dt, dd, span, time, address, ul {
   &.danger, &.danger li {
     color: $danger-color;
