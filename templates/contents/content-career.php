@@ -1,7 +1,7 @@
 <?php
 $application = get_field('career_application');
 $contract = get_field('career_contract');
-if( $contract ) $contract = $application['url'];
+
 $location = get_field('career_location');
 if( $location ) {
   $state = get_the_terms($location->ID, 'state');
@@ -14,7 +14,7 @@ if( $location ) {
     <nav class="breadcrumb"><a href="../">&lsaquo;&nbsp;Back to all job listings</a></nav>
     <div class="col-12of12">
       <h2 class="hero">We're Hiring.</h2>
-      <p class="h1">Full time, salaried position in <?php echo $location; ?></p>
+      <p class="h1"><?php echo $contract; ?>, salaried position in <?php echo $location; ?></p>
     </div>
   </div>
 </figure>
