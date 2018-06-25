@@ -20,7 +20,7 @@
     <dd><?php echo $pdescription; ?></dd>
     <dt class="h5">Hobbies and Interests</dt>
     <dd><?php echo $hobbies; ?></dd>
-    <dt class="h5">Favorite Marketing Project</dt>
+    <dt class="h5">Favorite Project</dt>
     <dd><?php echo $project; ?></dd>
     <dt class="h5">Motto</dt>
     <dd><?php echo $motto; ?></dd>
