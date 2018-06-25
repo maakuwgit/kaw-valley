@@ -103,6 +103,8 @@ function ll_get_locations( $use_grid=true, $echo=true, $wrapper=true ) {
       $title    = get_the_title();
       $city     = $title;
       $state    = get_the_terms($id, 'state');
+      $office_manager = get_field('location_office_director');
+
       if( $state ) {
         $title .= ',&nbsp;' . strtoupper( $state[0]->slug );
       }
@@ -120,6 +122,7 @@ function ll_get_locations( $use_grid=true, $echo=true, $wrapper=true ) {
       if( $email ) {
         $e_href = 'mailto:' . $email;
       }
+
       if( $wrapper ) {
         $output .= '<div class="col-6of12">';
         $output .= '<dt class="h5"><a href="' . get_the_permalink() . '">' . $title . '</a></dt>';
@@ -127,17 +130,25 @@ function ll_get_locations( $use_grid=true, $echo=true, $wrapper=true ) {
       }else{
         $output .= '<h5>' . $title . '</h5>';
       }
-      $output .= '<address>' . $address . '</address>';
+
+      if( $office_manager ) {
+        $output .= '<h6><a href="' . get_the_permalink() . '">' . $office_manager . '</a></h6>';
+      }
+
+      $output .= '<address><a href="' . get_the_permalink() . '">' . $address . '</a></address>';
       if( $phone ) {
         $output .= '<a class="block" href="' . $p_href . '">' . $phone . '</a>';
       }
+
       if( $email ) {
         $output .= '<a class="block" href="' . $e_href . '">' . $email . '</a>';
       }
+
       if( $wrapper ) {
         $output .= '</dd>';
         $output .= '</div>';
       }
+
     }
   }
 
