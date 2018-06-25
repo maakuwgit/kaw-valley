@@ -122,7 +122,7 @@ function ll_get_locations( $use_grid=true, $echo=true, $wrapper=true ) {
       }
       if( $wrapper ) {
         $output .= '<div class="col-6of12">';
-        $output .= '<dt class="h5">' . $title . '</dt>';
+        $output .= '<dt class="h5"><a href="' . get_the_permalink() . '">' . $title . '</a></dt>';
         $output .= '<dd>';
       }else{
         $output .= '<h5>' . $title . '</h5>';
