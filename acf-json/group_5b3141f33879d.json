@@ -1,12 +1,12 @@
 {
-    "key": "group_5ad1049d2e887",
-    "title": "Career Application",
+    "key": "group_5b3141f33879d",
+    "title": "Smart Recruiter",
     "fields": [
         {
-            "key": "field_5ad104bcedcea",
-            "label": "Application",
-            "name": "career_application",
-            "type": "file",
+            "key": "field_5b3141c3c02be",
+            "label": "Career Url",
+            "name": "smart_recruiter_url",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,11 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": 5,
-            "mime_types": ".pdf, .doc, .txt"
+            "default_value": "",
+            "placeholder": "http:\/\/smrtr.io\/DDgV"
         }
     ],
     "location": [
@@ -37,7 +34,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 0,
+    "active": 1,
     "description": "",
-    "modified": 1529954780
+    "modified": 1529954870
 }
