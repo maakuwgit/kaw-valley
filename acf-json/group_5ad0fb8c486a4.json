@@ -230,13 +230,6 @@
                 "operator": "==",
                 "value": "service"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "location"
-            }
         ]
     ],
     "menu_order": 3,
@@ -250,5 +243,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1529957979
+    "modified": 1529962901
 }

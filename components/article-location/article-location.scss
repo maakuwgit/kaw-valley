@@ -1,0 +1,35 @@
+/**
+ * article-location Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.ll-article-location {
+
+  .article-location__details {
+    display: flex;
+    flex-direction: row;
+
+    @include screen-lg-up {
+      address {
+        font-size: 1rem;
+      }
+    }
+
+  }
+
+  .article-location__details__location,
+  .article-location__details__hours {
+    width: 50%;
+    flex: 1 0.5 auto;
+    margin-top: 25px;
+
+    h4 {
+      margin-bottom: 1rem;
+    }
+
+  }
+
+}
