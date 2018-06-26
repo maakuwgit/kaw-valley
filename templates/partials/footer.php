@@ -33,8 +33,8 @@
 
       <?php if (has_nav_menu('secondary_navigation')) : ?>
         <ul class="no-bullet footer__menu">
-          <li>
-            <h5>General.</h5>
+          <li class="footer__menu__item">
+            <h5 class="footer__menu__header">General.</h5>
             <nav>
             <?php wp_nav_menu(array('theme_location' => 'secondary_navigation', 'menu_class' => 'menu no-bullet'));?>
             </nav>
@@ -55,8 +55,8 @@
           if ( $services->have_posts() ) :
       ?>
         <ul class="no-bullet footer__menu">
-          <li>
-            <h5>Services.</h5>
+          <li class="footer__menu__item">
+            <h5 class="footer__menu__header">Services.</h5>
             <nav>
               <ul class="no-bullet menu">
             <?php
@@ -89,8 +89,8 @@
           if ( $locations->have_posts() ) :
       ?>
         <ul class="no-bullet footer__menu">
-          <li>
-            <h5>Locations.</h5>
+          <li class="footer__menu__item">
+            <h5 class="footer__menu__header">Locations.</h5>
             <nav>
               <ul class="no-bullet menu">
             <?php

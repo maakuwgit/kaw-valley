@@ -15,8 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
+            "default_value": "A Civil Engineering Firm <br>in Junction City",
+            "placeholder": "A Civil Engineering Firm <br>in Junction City",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -34,8 +34,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
+            "default_value": "Kaw Valley Engineering has consistently provided civil engineering services throughout the Midwest",
+            "placeholder": "Kaw Valley Engineering has consistently provided civil engineering services throughout the Midwest",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -53,7 +53,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Kaw Valley Engineering established itself in Junction City, KS, on June 6, 1982. While our first location in Junction City was a two-bedroom home, we soon moved to our current location on North Jackson in XXXX.",
             "tabs": "all",
             "toolbar": "basic",
             "media_upload": 0,
@@ -80,5 +80,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1529962998
+    "modified": 1529982483
 }
