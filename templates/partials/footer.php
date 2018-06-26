@@ -4,8 +4,11 @@
   $name = get_bloginfo('name');
 ?>
 <footer class="footer dark" role="contentinfo">
+
   <div class="container row">
+
     <figure class="footer__social col col-md-4of12 col-lg-4of12 col-xl-4of12">
+
       <a href="<?php echo $href ?>" class="logo block">
     <?php if ( $logo ) : ?>
         <img class="logo logo--header" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>">
@@ -13,15 +16,21 @@
         <?php echo ll_get_logo(); ?>
     <?php endif; ?>
       </a>
+
     <?php if ( ll_has_social() ) : ?>
       <figcaption>
         <h5>Follow us.</h5>
         <?php ll_get_social_list(); ?>
       </figcaption>
     <?php endif; ?>
+
     </figure>
+    <!-- .footer__social -->
+
     <section class="footer__navigation col col-md-8of12 col-lg-8of12 col-xl-8of12 text-center">
+
       <div class="row text-left">
+
       <?php if (has_nav_menu('secondary_navigation')) : ?>
         <ul class="no-bullet footer__menu">
           <li>
@@ -32,6 +41,7 @@
           </li>
         </ul><!-- .menu -->
       <?php endif;?>
+
       <?php
           $args = array(
               'post_type'     => 'service',
@@ -65,6 +75,7 @@
           </li>
         </ul><!-- Services -->
       <?php endif; ?>
+
       <?php
           $args = array(
               'post_type'     => 'location',
@@ -90,7 +101,7 @@
                 $location_cat = get_the_terms(get_the_ID(), 'state');
                 if( $location_cat ) $title .= ',&nbsp;' . strtoupper($location_cat[0]->slug);
             ?>
-                <li><a><?php echo $title; ?></a></li>
+                <li><a href="<?php echo get_the_permalink(); ?>"><?php echo $title; ?></a></li>
             <?php
               endwhile;
               wp_reset_postdata();
@@ -100,9 +111,14 @@
           </li>
         </ul><!-- Locations -->
       <?php endif; ?>
+
       </div>
+
     </section><!-- .footer__social -->
+
   </div>
+  <!-- .container -->
+
   <dl class="footer__bottom container row small">
     <dt class="hide"></dt>
     <dd class="footer__copyright col col-md-5of12 col-lg-4of12">
