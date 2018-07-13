@@ -11,7 +11,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -38,7 +38,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -50,33 +50,6 @@
             "multiple": 0,
             "return_format": "object",
             "ui": 1
-        },
-        {
-            "key": "field_5b31449a76913",
-            "label": "Pay Type",
-            "name": "career_pay_type",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "salaried": "Salaried",
-                "contract": "Contract"
-            },
-            "default_value": [
-                "salaried"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
         }
     ],
     "location": [
@@ -96,5 +69,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529955648
+    "modified": 1531495211
 }
