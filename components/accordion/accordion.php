@@ -25,7 +25,8 @@ $default_data = [
         array(
           'accordion_bg'          => array(),
           'accordion_content'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          'accordion_sidebar'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          'accordion_sidebar'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          'accordion_target'      => false
         )
       )
     )
@@ -75,6 +76,7 @@ $accordions = $data['accordion_wrapper'][0]['accordion_element'];
     $bg   = $accordion['accordion_bg'];
     $sbg  = $accordion['accordion_sidebar_bg'];
     $service    = $accordion['accordion_service'];
+    $starget    = ( $accordion['accordion_target'] ? '#' . $accordion['accordion_target'] : '' );
     $icon_color = get_field('triangle_color', $service);
 ?>
     <dt class="accordion--trigger" data-clickthrough data-background>
@@ -85,7 +87,7 @@ $accordions = $data['accordion_wrapper'][0]['accordion_element'];
     <?php if( $service ) : ?>
       <div>
         <?php echo $service->post_title; ?>
-        <a class="hidden" href="<?php echo $service->guid; ?>"></a>
+        <a class="hidden" href="<?php echo get_the_permalink($service->ID) . $starget; ?>"></a>
       </div>
    <?php endif; ?>
 

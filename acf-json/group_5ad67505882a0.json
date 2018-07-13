@@ -90,6 +90,25 @@
                     "sub_fields": [
                         {
                             "key": "field_5b0eaf21bed2e",
+                            "label": "Target",
+                            "name": "accordion_target",
+                            "type": "text",
+                            "instructions": "Targets should be all lowercase, no spaces and no special characters.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "target_name",
+                            "prepend": "#",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b0eaf21bed2e-2",
                             "label": "Service",
                             "name": "accordion_service",
                             "type": "post_object",
@@ -218,5 +237,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1527689090
+    "modified": 1531485705
 }
