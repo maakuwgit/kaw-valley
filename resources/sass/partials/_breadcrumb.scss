@@ -4,8 +4,13 @@
 .breadcrumb {
   position: absolute;
   top: -5.5rem;
-  @include screen-lg-up {
+  left: 1rem;
+
+  @include screen-md-up {
     top: -13rem;
+  }
+
+  @include screen-xl-up {
     left: -10rem;
   }
 }

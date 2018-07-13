@@ -41,32 +41,61 @@ body.single-career {
   }
 
   #hero-career {
-    padding-top: 13rem;
+    padding: 13rem 0 0 0;
     padding-bottom: 0;
     color: $text-color;
-    @include screen-lg-up {
-      padding-top: 20rem;
+
+    .container {
+      @include container-fixed;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include screen-sm-up {
+
       .container {
-        position: relative;
-        overflow: visible;
+
         &:before {
           content: '';
           position: absolute;
-          width: 262px;
-          height: 220px;
+          margin-top: -165px;
+          margin-left: -5px;
+          width: 212px;
+          height: 150px;
+        }
+        
+      }
+    
+    }
+
+    @include screen-md-up {
+      padding-top: 20rem;
+
+      .container {
+        position: relative;
+
+        &:before {
           background: transparent url(../img/icons-triangles.svg) center no-repeat;
           background-size: contain;
-          margin-top: -220px;
-          margin-left: calc(50% - 131px);
-          @include screen-lg-up {
-            margin-top: -140px;
-            margin-left: -177px;
-          }
         }
-      }
-      @include screen-sm {
-        padding-top: 13rem;
+
       }
     }
+
+    @include screen-xl-up {
+
+      .container {
+        overflow: visible;
+
+        &:before {
+          width: 262px;
+          height: 220px;
+          margin-top: -140px;
+          margin-left: -177px;
+        }
+      }
+    }
+
   }
+
 }
