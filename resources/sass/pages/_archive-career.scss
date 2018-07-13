@@ -2,61 +2,81 @@
  * Career Archive
  */
 .post-type-archive-career {
+
   .hero-banner {
     max-height: $banner-height;
   }
+
   section.content:first-of-type {
     padding-top: rem-calc(50);
     padding-bottom: rem-calc(50);
   }
+
   section.content:last-of-type {
     padding-top: 0;
     padding-bottom: rem-calc(50);
   }
+
   article.content {
     padding-top: 0;
     padding-bottom: 4.25rem;
+
     .container {
+
       *[class*="col-"]:first-of-type {
         padding-left: 0;
       }
+
       *[class*="col-"]:last-of-type {
         padding-right: 0;
       }
     }
   }
+
   @include screen-lg-up {
+
     table {
       margin-bottom: rem-calc(75);
+
       th {
         width: 20%;
+
         &:nth-of-type(2) {
           width: 30%;
         }
+
         &:first-of-type {
           width: 35%;
         }
+
         &:last-of-type {
           text-align: center;
         }
       }
+
       td {
         padding-top: rem-calc(25);
         padding-bottom: rem-calc(25);
+
         &:last-of-type {
           text-align: center;
         }
       }
     }
   }
+
   @include screen-sm {
+
     table {
+
       td:nth-child(2),
       td:nth-child(3),
       th:nth-child(2),
       th:nth-child(3) {
         display: none;
       }
+
     }
+
   }
 }

@@ -1,25 +1,77 @@
 <?php
   global $post;
+
   $position = get_the_terms($post->ID, 'team_position');
-  if( $position ) {
-    $position = '<p class="red">' . $position[0]->name . '</p>';
-  }
+  $email    = get_field('member_email', $post->ID);
+  $linkedin = get_field('member_linkedin', $post->ID);
+
 ?>
-<figure class="thumbnail js-init-popup" data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal">
-  <div data-background>
-    <div class="feature">
-      <?php
-        if( !has_post_thumbnail() ) {
-          echo '<img width="378" height="601" src="http://via.placeholder.com/1600x1280" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://via.placeholder.com/1280x1600 378w, http://via.placeholder.com/320x640 189w" sizes="(max-width: 378px) 100vw, 378px">';
-        }else{
-          the_post_thumbnail();
-        }
-      ?>
-    </div>
-  </div>
-  <figcaption>
+<figure class="member-thumbnail thumbnail js-init-popup" data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal">
+
+  <div class="member-thumbnail__inner_wrap relative" data-background>
+
+    <div class="member-thumbnail__feature feature">
+      <?php if( !has_post_thumbnail() ) : ?>
+
+        <img class="member-thumbnail__feature__img" width="378" height="601" src="http://via.placeholder.com/1600x1280" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://via.placeholder.com/1280x1600 378w, http://via.placeholder.com/320x640 189w" sizes="(max-width: 378px) 100vw, 378px"><!-- .member-thumbnail__feature__img -->
+
+      <?php  else : ?>
+
+        <?php the_post_thumbnail(); ?>
+
+      <?php endif; ?>
+    </div><!-- .feature.member-thumbnail__feature -->
+
+  <?php if( $email || $linkedin ) : ?>
+
+    <ul class="member-thumbnail__social social-list">
+
+    <?php if ($email) : ?>
+      <li class="social-list__item">
+
+        <a class="social-list__link email white" href="<?php echo $email; ?>" target="_blank">
+
+          <svg class="icon icon-email">
+            <use xlink:href="#icon-email"></use>
+          </svg>
+
+        </a>
+
+      </li>
+    <?php endif; ?>
+
+    <?php if ($linkedin) : ?>
+      <li class="social-list__item">
+
+        <a class="social-list__link linkedin white" href="<?php echo $linkedin; ?>" target="_blank">
+
+          <svg class="icon icon-linkedin">
+            <use xlink:href="#icon-linkedin"></use>
+          </svg>
+
+        </a>
+
+      </li>
+    <?php endif; ?>
+
+    </ul><!-- .member-thumbnail__social -->
+
+  <?php endif; ?>
+
+  </div><!-- .member-thumbnail__inner_wrap -->
+
+  <figcaption class="member-thumbnail__figcaption">
+
     <h3 class="h1"><?php the_title(); ?></h3>
-    <?php echo $position; ?>
-    <a href="#read_bio" class="js-init-popup" data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal">Read Bio</a>
-  </figcaption>
-</figure>
+
+    <?php if( $position ) : ?>
+    <p class="member-thumbnail__position red"><?php echo $position[0]->name; ?></p>
+    <!-- .member-thumbnail__position -->
+    <?php endif; ?>
+
+    <a href="#read_bio" class="member-thumbnail__modal_trigger js-init-popup" data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal">Read Bio</a>
+    <!-- .member-thumbnail__modal_trigger -->
+
+  </figcaption><!-- .member-thumbnail__figcaption -->
+
+</figure><!-- .member-thumbnail -->

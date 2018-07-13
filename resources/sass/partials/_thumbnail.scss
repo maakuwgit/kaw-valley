@@ -15,6 +15,7 @@ article.thumbnail {
   display: table;
   padding: $thumb-padding;
   background-color: $white;
+
   [data-background] {
     height: 50vh;
     min-height: 440px;
@@ -22,17 +23,21 @@ article.thumbnail {
     padding: 0;
     background-color: #1f1f1f;
   }
+
   @include screen-sm-only {
     width: 50%;
   }
+
   @include screen-md-up {
     width: 33.3333%;
   }
+
   @include screen-sm-up {
     [data-background] {
       height: 25vw;
     }
   }
+
   @include screen-lg-up {
     [data-background] {
       box-shadow: 0 0 95px rgba($black, 0.6) inset;
@@ -42,6 +47,7 @@ article.thumbnail {
       }
     }
   }
+
   a {
     color: inherit;
     transition: none;

@@ -2,10 +2,26 @@
  * Team Archive
  */
 body.post-type-archive-team {
+
   @include screen-lg-up {
     .content {
       padding-top: 3rem;
       padding-bottom: 3rem;
     }
   }
+
+  .member-thumbnail__social {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 0;
+
+    a {
+      color: $link-hover-color;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
 }

@@ -24,6 +24,6 @@
       $members->the_post();
       include( locate_template('templates/partials/modal-team.php') );
     }
-    wp_reset_postdata();
 ?>
 <?php endif; ?>
+<?php wp_reset_postdata(); ?>
