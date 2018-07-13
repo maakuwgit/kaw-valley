@@ -116,8 +116,8 @@ function ll_get_locations( $use_grid=true, $echo=true, $wrapper=true ) {
 
       $address  = $street . '<br>' . $title . '&nbsp;' . $zip;
       if( $phone ) {
-        $p_href = 'tel:+1' . substr($phone, 0, 3) . substr($phone, 4, 3) . substr($phone, 6);
-        $phone  = '+' . substr($phone, 0, 3) . '.' . substr($phone, 4, 3) . '.' . substr($phone, 6);
+        $p_href = 'tel:+1' . $phone;
+        $phone  = '+' . format_phone($phone);
       }
       if( $email ) {
         $e_href = 'mailto:' . $email;
