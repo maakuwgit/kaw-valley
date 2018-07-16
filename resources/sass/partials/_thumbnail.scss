@@ -85,6 +85,10 @@ article.thumbnail {
     cursor: pointer;
   }
 
+  &.member-thumbnail:hover {
+    cursor: initial;
+  }
+
   &:not([data-background]):not(.member-thumbnail):hover {
     color: $white;
     background-color: $black;

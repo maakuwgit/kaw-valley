@@ -8,7 +8,7 @@
 ?>
 <figure class="member-thumbnail thumbnail">
 
-  <div class="member-thumbnail__inner_wrap relative js-init-popup" data-background data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal">
+  <div class="member-thumbnail__inner_wrap relative" data-background>
 
     <div class="member-thumbnail__feature feature">
       <?php if( !has_post_thumbnail() ) : ?>
@@ -60,7 +60,7 @@
 
   </div><!-- .member-thumbnail__inner_wrap -->
 
-  <figcaption class="member-thumbnail__figcaption">
+  <figcaption class="member-thumbnail__figcaption" data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal">
 
     <h3 class="h1 js-init-popup" data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal"><?php the_title(); ?></h3>
 
