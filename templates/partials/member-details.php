@@ -22,7 +22,7 @@
     <?php if ($email) : ?>
       <li class="social-list__item">
 
-        <a class="social-list__link email white" href="<?php echo $email; ?>" target="_blank">
+        <a class="social-list__link email white" href="mailto:<?php echo $email; ?>" target="_blank">
 
           <svg class="icon icon-email">
             <use xlink:href="#icon-email"></use>

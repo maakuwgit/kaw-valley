@@ -85,8 +85,9 @@ article.thumbnail {
     cursor: pointer;
   }
 
-  &:not([data-background]):not([class*="js-init-popup"]):hover {
+  &:not([data-background]):not(.member-thumbnail):hover {
     color: $white;
     background-color: $black;
   }
+
 }

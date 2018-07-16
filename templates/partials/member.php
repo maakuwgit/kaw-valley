@@ -6,9 +6,9 @@
   $linkedin = get_field('member_linkedin', $post->ID);
 
 ?>
-<figure class="member-thumbnail thumbnail js-init-popup" data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal">
+<figure class="member-thumbnail thumbnail">
 
-  <div class="member-thumbnail__inner_wrap relative" data-background>
+  <div class="member-thumbnail__inner_wrap relative js-init-popup" data-background data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal">
 
     <div class="member-thumbnail__feature feature">
       <?php if( !has_post_thumbnail() ) : ?>
@@ -29,7 +29,7 @@
     <?php if ($email) : ?>
       <li class="social-list__item">
 
-        <a class="social-list__link email white" href="<?php echo $email; ?>" target="_blank">
+        <a class="social-list__link email white" href="mailto:<?php echo $email; ?>" target="_blank">
 
           <svg class="icon icon-email">
             <use xlink:href="#icon-email"></use>
@@ -62,10 +62,10 @@
 
   <figcaption class="member-thumbnail__figcaption">
 
-    <h3 class="h1"><?php the_title(); ?></h3>
+    <h3 class="h1 js-init-popup" data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal"><?php the_title(); ?></h3>
 
     <?php if( $position ) : ?>
-    <p class="member-thumbnail__position red"><?php echo $position[0]->name; ?></p>
+    <p class="member-thumbnail__position red js-init-popup" data-modal="#member-thumb-<?php the_ID(); ?>" data-component="modal"><?php echo $position[0]->name; ?></p>
     <!-- .member-thumbnail__position -->
     <?php endif; ?>
 
